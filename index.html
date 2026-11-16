@@ -42,7 +42,7 @@ img{max-width:100%;display:block}
 .small{font-size:13px;color:#8f8f8f;line-height:1.8}
 .pill{display:inline-flex;align-items:center;gap:12px;border:1px solid #555;padding:15px 22px;border-radius:999px;background:transparent;color:#fff;transition:.25s;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .pill:hover{background:#fff;color:#000;border-color:#fff}
-.reveal{opacity:0;transform:translateY(38px);transition:opacity .75s ease, transform .75s ease}
+.reveal{opacity:1;transform:none;transition:opacity .75s ease, transform .75s ease}
 .reveal.visible{opacity:1;transform:none}
 
 .site-header{position:sticky;top:0;z-index:120;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
@@ -380,7 +380,7 @@ img{max-width:100%;display:block}
 
 <script src="assets/packages.js"></script>
 <script>
-const groups = window.groups || [];
+// Package data is declared by assets/packages.js as `groups`.
 const names={instagram:'Instagram',fivem:'FiveM',streaming:'Streaming',branding:'Branding',salla:'Salla Stores'};
 let active='instagram', currency='USD', lastFocus=null;
 const selector=document.getElementById('categorySelector');
