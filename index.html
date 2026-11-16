@@ -1,55 +1,477 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080808">
-<meta name="description" content="VERQO STUDIO — Branding, creative direction, social content, streaming visuals and digital experiences.">
-<title>Verqo Studio — Creative by Design</title>
-<link rel="icon" href="assets/verqo-mark.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="VERQO STUDIO — one-page creative studio website with services, work, pricing and contact.">
+<title>Verqo Studio</title>
+<link rel="icon" href="assets/verqo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080808;--fg:#f4f4f4;--muted:#8c8c8c;--line:#292929;--paper:#f3f3f0;--sans:Manrope,'DM Sans',sans-serif;--arab:Tajawal,Arial,sans-serif;scroll-behavior:smooth}
-*,*:before,*:after{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:#fff;color:#000}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px} .arab{font-family:var(--arab)}
-#progress{position:fixed;z-index:120;left:0;top:0;width:0;height:2px;background:#fff;transition:width .08s linear}.topbar{height:78px;position:absolute;z-index:35;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,100px);border-bottom:1px solid #ffffff20}.brand{font-weight:800;letter-spacing:-.085em;font-size:30px;line-height:1}.brand sup{font-size:9px;letter-spacing:0;vertical-align:super;margin-left:4px}.nav{display:flex;gap:36px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.nav a{transition:opacity .25s}.nav a:hover{opacity:.48}.pill{display:inline-flex;gap:20px;align-items:center;border:1px solid #6f6f6f;border-radius:50px;padding:14px 22px;white-space:nowrap;background:transparent;color:inherit;transition:.25s;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.05em}.pill:hover{background:white;color:black;border-color:white}.pill .arrow{font-size:18px}.menu-btn{display:none;background:none;border:0;color:#fff;font-size:25px;cursor:pointer}
-.hero{min-height:min(920px,100svh);height:820px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;background:radial-gradient(ellipse 75% 35% at 50% 72%,#222 0%,transparent 78%),linear-gradient(180deg,#080808,#141414 64%,#050505);text-align:center}.hero:before{content:'';position:absolute;inset:-35%;opacity:.4;background:repeating-linear-gradient(115deg,transparent 0 65px,#ffffff08 66px 67px,transparent 68px 135px);transform:skewX(-7deg);pointer-events:none}.hero-shadow{position:absolute;left:50%;top:60%;width:70vw;height:25vh;transform:translateX(-50%);filter:blur(65px);border-radius:50%;background:#ffffff0d}.hero-inner{position:relative;z-index:2;padding-top:60px;width:min(100%,1250px)}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#a8a8a8;display:flex;align-items:center;gap:14px}.eyebrow:before{content:'';height:1px;width:35px;background:currentColor}.centered{justify-content:center}.hero h1{margin:17px 0 0;font-size:clamp(84px,19vw,290px);letter-spacing:-.105em;font-weight:800;line-height:.83;transform:translateX(-.045em);white-space:nowrap}.hero h1 span{background:linear-gradient(180deg,#fff 9%,#777 35%,#fff 47%,#767676 57%,#fafafa 69%,#707070 88%,#fff);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 15px 45px #ffffff13}.hero-logo{position:absolute;left:50%;top:39%;transform:translate(-50%,-50%);width:min(56vw,660px);filter:contrast(1.08) drop-shadow(0 10px 55px #ffffff16);opacity:.1;pointer-events:none}.hero-title{font-size:clamp(24px,3.3vw,47px);letter-spacing:-.06em;line-height:1.3;margin:28px 0 6px}.hero-description{max-width:480px;margin:0 auto 30px;line-height:1.8;color:#b6b6b6;font-size:13px}.hero-buttons{display:flex;justify-content:center;gap:10px}.hero-scroll{position:absolute;bottom:30px;right:5vw;z-index:3;font-size:10px;text-transform:uppercase;letter-spacing:.15em;display:flex;align-items:center;gap:13px}.scroll-line{height:1px;width:50px;background:#fff}.meta-left{position:absolute;bottom:32px;left:5vw;font-size:10px;color:#888;letter-spacing:.14em}
-.marquee{height:62px;overflow:hidden;display:flex;align-items:center;background:#f3f3f0;color:#080808;white-space:nowrap;border-bottom:1px solid #aaa}.marquee-track{display:flex;width:max-content;gap:40px;animation:marq 28s linear infinite;font-size:12px;letter-spacing:.12em;font-weight:800}.marquee-track span{display:flex;align-items:center;gap:40px}.marquee-track b{font-size:26px;font-weight:400}@keyframes marq{to{transform:translateX(-50%)}}
-.section{padding:clamp(86px,10vw,165px) clamp(20px,6vw,110px)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:60px}.section h2{font-size:clamp(50px,7.5vw,124px);letter-spacing:-.09em;line-height:1;margin:22px 0 0;font-weight:800}.lead{font-size:clamp(21px,2.8vw,42px);letter-spacing:-.05em;line-height:1.42;max-width:1000px;font-weight:600}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.9}.about{border-bottom:1px solid var(--line)}.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12%;align-items:end}.about-aside{padding-bottom:10px}.about-index{font-size:11px;letter-spacing:.12em;color:#999}.statstrip{border-top:1px solid var(--line);margin-top:65px;display:flex;justify-content:space-between;gap:20px;padding-top:25px}.statstrip>div{display:flex;align-items:baseline;gap:12px}.statstrip strong{font-size:21px;letter-spacing:-.06em}.statstrip span{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.1em}
-.services{background:var(--paper);color:#090909}.services .eyebrow{color:#6b6b6b}.services .section-head{margin-bottom:44px}.service-list{border-top:1px solid #aaa}.service-row{border-bottom:1px solid #b8b8b8;display:grid;grid-template-columns:55px 1fr minmax(200px,34%) 25px;align-items:center;gap:20px;min-height:125px;transition:padding .3s,background .3s;padding:16px 14px}.service-row:hover{padding-left:25px;padding-right:25px;background:#e6e6e3}.service-num{font-size:12px;color:#757575}.service-row h3{font-size:clamp(24px,3.6vw,52px);font-weight:700;letter-spacing:-.065em;margin:0}.service-row p{font-size:13px;color:#555;margin:0;line-height:1.7}.service-row .arr{font-size:25px}
-.work{background:#090909}.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.work-card{display:block;min-width:0}.work-card .visual{height:clamp(270px,33vw,490px);background:#191919;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #272727}.work-card:nth-child(even){margin-top:95px}.work-card .visual:before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,#fff1,transparent 42%,#fff1 100%);transition:transform .6s}.work-card:hover .visual:before{transform:scale(1.15)}.visual .giant{font-size:clamp(50px,8vw,145px);font-weight:800;letter-spacing:-.1em;position:relative;z-index:1;transition:transform .45s}.work-card:hover .giant{transform:scale(1.09) rotate(-2deg)}.visual.chrome{background:radial-gradient(circle at 65% 30%,#777,#111 48%,#050505)}.visual.paper{background:#e9e9e5;color:#111}.visual.stripe{background:repeating-linear-gradient(105deg,#111 0 18px,#292929 19px 20px,#080808 21px 43px)}.visual.sphere{background:radial-gradient(circle at 50% 46%,#ddd 0 6%,#777 16%,#111 37%,#000 61%)}.work-meta{display:flex;justify-content:space-between;gap:15px;padding:19px 0 10px}.work-meta h3{font-size:18px;margin:0;letter-spacing:-.04em}.work-meta p{font-size:12px;color:#777;margin:4px 0}.work-meta span{font-size:22px}.work-note{margin-top:25px;color:#777;font-size:12px}
-.pricing{background:#f2f2ee;color:#090909}.pricing .eyebrow{color:#666}.price-head-note{max-width:390px;color:#777;font-size:13px;line-height:1.8}.category-selector{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.category-selector button{background:transparent;border:1px solid #bbb;border-radius:99px;color:#222;padding:13px 22px;font-weight:700;cursor:pointer;transition:.25s;font-size:12px}.category-selector button:hover,.category-selector button.active{background:#0b0b0b;color:#fff;border-color:#0b0b0b}.currency-row{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:20px 0 22px}.currency-row strong{font-size:20px;letter-spacing:-.04em}.currency-row .right{display:flex;align-items:center;gap:10px;color:#666;font-size:12px}.currency-row button{background:transparent;border:1px solid #aaa;border-radius:99px;padding:8px 13px;cursor:pointer;font-weight:700;font-size:12px}.currency-row button.active{background:#0a0a0a;color:#fff}.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}.package-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.package{background:#fff;color:#111;min-height:485px;border:1px solid #d5d5d2;padding:30px 25px;display:flex;flex-direction:column;animation:rise .45s both}.package:nth-child(2){animation-delay:.06s}.package:nth-child(3){animation-delay:.12s}.package:nth-child(4){animation-delay:.18s}.package-kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777}.package h3{font-size:29px;margin:17px 0 8px;letter-spacing:-.055em}.package .amount{font-size:clamp(30px,3.1vw,49px);letter-spacing:-.075em;line-height:1.2;font-weight:800}.package .other{font-size:12px;color:#777;margin:8px 0 23px}.package ul{list-style:none;margin:0 0 28px;padding:22px 0 0;border-top:1px solid #ddd;flex:1;font-family:var(--arab);font-size:13px;line-height:1.6;direction:rtl;text-align:right}.package li{margin-bottom:10px;display:flex;align-items:start;gap:8px}.package li:before{content:'✓';font-family:var(--sans);font-weight:900}.package .book{width:100%;border:1px solid #111;background:#111;color:#fff;cursor:pointer;text-align:center;border-radius:2px;padding:15px;transition:.25s;font-size:12px;font-weight:700}.package .book:hover{background:#eee;color:#111}.pricing-hint{color:#777;font-size:11px;margin-top:20px}
-.statement{min-height:410px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:#111}.statement:before{content:'';position:absolute;inset:-40%;background:radial-gradient(ellipse at 50% 50%,#444 0%,#080808 30%,transparent 55%);opacity:.5}.statement h2{position:relative;font-size:clamp(48px,9vw,155px);letter-spacing:-.09em;text-transform:uppercase;line-height:.92;margin:0}.statement p{position:relative;font-size:11px;letter-spacing:.2em;color:#999;text-transform:uppercase;margin:30px 0 0}
-.contact{background:#f0f0ec;color:#070707;padding-bottom:50px}.contact .eyebrow{color:#666}.contact h2{font-size:clamp(64px,11vw,175px);max-width:1050px}.contact-cta{margin:40px 0 105px;display:inline-flex;border-bottom:2px solid #111;font-size:clamp(20px,3vw,40px);font-weight:700;padding-bottom:9px;gap:45px;letter-spacing:-.05em}.contact-footer{padding-top:35px;border-top:1px solid #bbb;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}.contact-footer strong{font-size:25px;letter-spacing:-.08em}.contact-footer p,.contact-footer a{font-size:12px;line-height:2}.social{display:flex;flex-direction:column;align-items:start}.foot-copy{display:flex;justify-content:space-between;margin-top:65px;font-size:10px;letter-spacing:.1em;color:#777;text-transform:uppercase}
-.overlay{position:fixed;inset:0;background:#000b;z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}.overlay.show{opacity:1;pointer-events:auto}.drawer{position:fixed;z-index:85;right:0;top:0;height:100%;width:min(480px,100%);background:#f4f4f1;color:#111;transform:translateX(102%);transition:transform .45s cubic-bezier(.2,.75,.1,1);padding:35px;display:flex;flex-direction:column;overflow:auto;box-shadow:-10px 0 65px #0006}.drawer.show{transform:translateX(0)}.drawer-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;text-transform:uppercase;letter-spacing:.1em}.close{border:1px solid #aaa;background:transparent;border-radius:50%;width:38px;height:38px;cursor:pointer}.drawer h3{font-size:45px;letter-spacing:-.075em;margin:50px 0 0}.drawer .big-price{font-size:68px;letter-spacing:-.08em;font-weight:800}.drawer .sar{font-size:13px;color:#777}.drawer ul{font-family:var(--arab);direction:rtl;text-align:right;list-style:none;padding:25px 0;margin:30px 0;border-top:1px solid #ccc}.drawer li{padding:9px 0;border-bottom:1px solid #e4e4e4}.drawer li:before{content:'✓ ';font-family:var(--sans)}.drawer .book{display:block;text-align:center;background:#111;color:#fff;padding:17px;margin-top:auto;font-size:12px;letter-spacing:.06em}.drawer .fine{color:#777;font-size:11px;line-height:1.7;margin-top:15px}.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@media(max-width:1050px){.nav{gap:15px}.package-grid,.package-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.service-row{grid-template-columns:30px 1fr 30px}.service-row p{display:none}}@media(max-width:700px){.topbar{height:68px;padding:0 19px}.nav{display:none;position:absolute;left:0;top:68px;right:0;background:#111;flex-direction:column;align-items:stretch;padding:25px;gap:25px;border-bottom:1px solid #444}.nav.show{display:flex}.menu-btn{display:block}.hero{height:710px;min-height:85svh}.hero h1{font-size:clamp(68px,19vw,135px)}.hero-title{font-size:23px}.hero-description{padding:0 30px}.hero-buttons{flex-direction:column;align-items:center}.meta-left{display:none}.section{padding:85px 20px}.section-head{display:block;margin-bottom:35px}.section h2{font-size:54px}.about-grid{grid-template-columns:1fr;gap:10px}.lead{font-size:26px}.statstrip{flex-direction:column;gap:15px}.service-row{min-height:97px;padding:13px 5px;grid-template-columns:22px 1fr 20px}.service-row h3{font-size:24px}.work-grid{grid-template-columns:1fr}.work-card:nth-child(even){margin-top:0}.work-card .visual{height:340px}.package-grid,.package-grid.four{grid-template-columns:1fr}.package{min-height:420px}.currency-row{align-items:flex-start;flex-direction:column}.contact h2{font-size:67px}.contact-footer{grid-template-columns:1fr 1fr}.contact-footer .social{grid-column:1/-1}.foot-copy{gap:20px}.drawer{padding:23px}.drawer h3{font-size:38px}.drawer .big-price{font-size:58px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.drawer,.overlay{transition:none}}
+:root{
+  --bg:#050505;
+  --panel:#0c0c0c;
+  --card:#101010;
+  --soft:#171717;
+  --line:#2a2a2a;
+  --text:#f5f5f5;
+  --muted:#9d9d9d;
+  --paper:#f3f3ef;
+  --dark:#090909;
+  --sans:Inter,Manrope,Arial,sans-serif;
+  --arab:Tajawal,Arial,sans-serif;
+  scroll-behavior:smooth;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+img{max-width:100%;display:block}
+::selection{background:#fff;color:#000}
+.arab{font-family:var(--arab)}
+#progress{position:fixed;left:0;top:0;height:2px;width:0;background:#fff;z-index:200;transition:width .08s linear}
+.container{width:min(100% - 36px, 1360px);margin-inline:auto}
+.section{padding:110px 0;border-top:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8f8f8f;margin-bottom:18px}
+.title-xl{font-size:clamp(40px,7.5vw,98px);line-height:.95;letter-spacing:-.08em;margin:0 0 18px;font-weight:800}
+.title-lg{font-size:clamp(32px,5.2vw,72px);line-height:.95;letter-spacing:-.07em;margin:0 0 18px;font-weight:800}
+.lead{font-size:clamp(18px,2vw,28px);line-height:1.55;color:#d4d4d4;max-width:860px}
+.small{font-size:13px;color:#8f8f8f;line-height:1.8}
+.pill{display:inline-flex;align-items:center;gap:12px;border:1px solid #555;padding:15px 22px;border-radius:999px;background:transparent;color:#fff;transition:.25s;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.pill:hover{background:#fff;color:#000;border-color:#fff}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .75s ease, transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+.site-header{position:sticky;top:0;z-index:120;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+.header-row{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-size:28px;font-weight:800;letter-spacing:-.09em;display:flex;align-items:center;gap:12px}
+.brand img{width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(255,255,255,.1))}
+.nav{display:flex;align-items:center;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.nav a{color:#d3d3d3;transition:.2s}
+.nav a:hover{color:#fff}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:25px;cursor:pointer}
+
+.offer-strip{background:#f1f1ee;color:#080808;border-top:1px solid #d4d4cf;border-bottom:1px solid #d4d4cf;overflow:hidden;white-space:nowrap}
+.offer-track{display:flex;gap:42px;align-items:center;width:max-content;padding:16px 0;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;animation:marquee 22s linear infinite}
+.offer-track span{display:flex;align-items:center;gap:42px}
+.offer-track b{font-size:22px;font-weight:500;line-height:1}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.hero{padding:34px 0 70px}
+.hero-stage{position:relative;border:1px solid #1f1f1f;background:#0b0b0b;aspect-ratio:16/9;min-height:520px;overflow:hidden;border-radius:34px;box-shadow:0 30px 100px rgba(0,0,0,.34)}
+.hero-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .55s ease}
+.hero-slide.active{opacity:1;pointer-events:auto}
+.hero-slide .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.02) saturate(.98)}
+.hero-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.10) 20%,rgba(0,0,0,.48) 100%)}
+.hero-content{position:absolute;z-index:4;left:44px;bottom:42px;max-width:min(700px,55vw)}
+.hero-kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c7c7c7;margin-bottom:18px}
+.hero-heading{font-size:clamp(34px,4.5vw,74px);line-height:.92;letter-spacing:-.08em;margin:0 0 16px;font-weight:800}
+.hero-text{max-width:560px;color:#d7d7d7;font-size:15px;line-height:1.8;margin:0 0 22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-controls{position:absolute;right:34px;bottom:34px;z-index:6;display:flex;align-items:center;gap:14px}
+.hero-counter{min-width:94px;padding:14px 18px;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);text-align:center;font-size:13px;font-weight:700;letter-spacing:.08em}
+.hero-arrows{display:flex;gap:10px}
+.hero-arrow{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.24);background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;font-size:20px;cursor:pointer;backdrop-filter:blur(10px);transition:.25s}
+.hero-arrow:hover{background:#fff;color:#000;border-color:#fff}
+.hero-logo-badge{position:absolute;left:32px;bottom:32px;z-index:6;display:flex;align-items:end;gap:14px;padding:12px 14px;border-radius:18px;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px)}
+.hero-logo-badge img{width:44px;height:44px;object-fit:contain}
+.hero-logo-badge span{font-size:11px;line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:#d9d9d9}
+.hero-caption-right{position:absolute;right:36px;top:34px;z-index:6;padding:10px 14px;border-radius:16px;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#f2f2f2}
+.slide-plain{position:absolute;inset:0;background:radial-gradient(circle at 70% 10%,rgba(255,255,255,.08),transparent 35%),linear-gradient(180deg,#050505 0%,#0c0c0c 100%)}
+.slide-plain::before,.slide-plain::after{content:'';position:absolute;top:-8%;bottom:-8%;width:2px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7),transparent);filter:blur(.4px);opacity:.6;transform:rotate(18deg)}
+.slide-plain::before{left:20%}.slide-plain::after{left:29%}
+.slide-plain .mark{position:absolute;right:9%;top:16%;width:min(30vw,420px);opacity:.96;filter:drop-shadow(0 0 25px rgba(255,255,255,.08))}
+.slide-plain .line{position:absolute;left:8%;bottom:23%;width:28%;height:1px;background:linear-gradient(90deg,#fff,transparent)}
+
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.stat-box{padding:24px;border:1px solid var(--line);background:#0b0b0b;border-radius:22px}
+.stat-box strong{display:block;font-size:30px;letter-spacing:-.05em;margin-bottom:8px}
+.stat-box span{color:#8d8d8d;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+.services{background:var(--paper);color:#090909}
+.services .lead,.services .small{color:#4c4c4c}
+.service-list{margin-top:34px;border-top:1px solid #bdbdb8}
+.service-item{display:grid;grid-template-columns:58px 1.15fr .95fr 24px;gap:18px;align-items:center;padding:24px 8px;border-bottom:1px solid #c9c9c4;transition:.25s}
+.service-item:hover{background:#e8e8e2;padding-inline:18px}
+.service-item .num{font-size:12px;color:#808080}
+.service-item h3{font-size:clamp(24px,3vw,46px);margin:0;letter-spacing:-.06em}
+.service-item p{font-size:13px;color:#555;line-height:1.75;margin:0}
+.service-item .arr{font-size:22px}
+
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work-card{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#0d0d0d}
+.work-card:nth-child(2){transform:translateY(34px)}
+.work-card .thumb{aspect-ratio:4/5;position:relative;overflow:hidden;background:#131313}
+.work-card .thumb img{width:100%;height:100%;object-fit:cover}
+.work-card .thumb--plain{display:grid;place-items:center;background:linear-gradient(145deg,#0d0d0d,#1b1b1b)}
+.work-card .thumb--plain span{font-size:clamp(38px,4vw,72px);font-weight:800;letter-spacing:-.08em}
+.work-info{padding:20px}
+.work-info h3{margin:0 0 8px;font-size:20px;letter-spacing:-.04em}
+.work-info p{margin:0;color:#8f8f8f;font-size:13px;line-height:1.7}
+
+.pricing{background:#f3f3ef;color:#090909}
+.pricing .small,.pricing .lead{color:#555}
+.pricing-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
+.category-selector{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.category-selector button{padding:13px 18px;border-radius:999px;border:1px solid #bababa;background:transparent;color:#111;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.04em;transition:.2s}
+.category-selector button.active,.category-selector button:hover{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+.currency-row{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:18px}
+.currency-row strong{font-size:26px;letter-spacing:-.04em}
+.currency-row .right{display:flex;align-items:center;gap:10px;color:#666;font-size:12px}
+.currency-row button{padding:9px 14px;border-radius:999px;border:1px solid #aaa;background:transparent;cursor:pointer;font-weight:700;font-size:12px}
+.currency-row button.active{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.package-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.package{background:#fff;border:1px solid #dadad4;border-radius:26px;padding:26px;display:flex;flex-direction:column;min-height:450px;box-shadow:0 14px 35px rgba(0,0,0,.06)}
+.package-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7b7b7b}
+.package h3{margin:14px 0 8px;font-size:28px;letter-spacing:-.06em}
+.package .amount{font-size:clamp(30px,3vw,46px);font-weight:800;letter-spacing:-.08em}
+.package .other{font-size:12px;color:#777;margin:8px 0 18px}
+.package ul{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid #ddd;display:flex;flex-direction:column;gap:10px;flex:1;font-family:var(--arab);font-size:13px;line-height:1.7}
+.package ul li::before{content:'• ';color:#111;font-weight:800}
+.book{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;background:#090909;color:#fff;padding:16px 18px;border-radius:16px;cursor:pointer;font-weight:700;letter-spacing:.03em;transition:.2s}
+.book:hover{transform:translateY(-2px);background:#000}
+.pricing-hint{margin-top:14px;font-size:12px;color:#666;line-height:1.8}
+
+.contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:60px;align-items:start}
+.contact-card{padding:30px;border:1px solid var(--line);border-radius:28px;background:#0b0b0b}
+.contact-card h3{margin:0 0 12px;font-size:28px;letter-spacing:-.06em}
+.contact-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.contact-link{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border:1px solid #2b2b2b;border-radius:18px;color:#dedede;transition:.2s}
+.contact-link:hover{background:#fff;color:#000;border-color:#fff}
+.footer{padding:28px 0 54px;color:#888;border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;gap:22px;align-items:center;font-size:12px}
+
+.drawer{position:fixed;top:0;right:-100%;width:min(520px,100%);height:100vh;background:#fff;color:#090909;z-index:140;transition:right .35s ease;box-shadow:-20px 0 60px rgba(0,0,0,.25);padding:30px 26px 26px;overflow:auto}
+.drawer.show{right:0}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;color:#666;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.close{width:42px;height:42px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:18px}
+.big-price{font-size:56px;font-weight:800;letter-spacing:-.08em;margin:8px 0 6px}
+.sar{color:#666;margin-bottom:18px}
+#drawerFeatures{list-style:none;margin:0 0 24px;padding:18px 0 0;border-top:1px solid #ddd;display:flex;flex-direction:column;gap:12px;font-family:var(--arab)}
+#drawerFeatures li::before{content:'• ';font-weight:800}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s;z-index:130}
+.overlay.show{opacity:1;pointer-events:auto}
+.fine{color:#666;font-size:12px;line-height:1.8}
+
+@media (max-width:1100px){
+  .works-grid,.package-grid.four,.package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .service-item{grid-template-columns:52px 1fr;align-items:start}
+  .service-item p,.service-item .arr{grid-column:2}
+}
+@media (max-width:820px){
+  .nav{display:none;position:absolute;left:18px;right:18px;top:78px;background:#0b0b0b;border:1px solid #202020;border-radius:22px;padding:18px;flex-direction:column;align-items:flex-start}
+  .nav.show{display:flex}
+  .menu-toggle{display:block}
+  .hero-stage{min-height:460px;border-radius:24px}
+  .hero-content{left:22px;right:22px;bottom:95px;max-width:none}
+  .hero-logo-badge{left:18px;bottom:18px}
+  .hero-controls{right:18px;bottom:18px}
+  .hero-caption-right{right:18px;top:18px}
+  .stat-row,.works-grid,.package-grid,.package-grid.four{grid-template-columns:1fr}
+  .work-card:nth-child(2){transform:none}
+  .pricing-top,.currency-row,.footer-row{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:580px){
+  .header-row{height:66px}
+  .brand{font-size:24px}
+  .hero-heading{font-size:32px}
+  .hero-text{font-size:14px}
+  .hero-logo-badge span{display:none}
+  .hero-arrow{width:46px;height:46px}
+  .section{padding:84px 0}
+}
 </style>
 </head>
 <body>
-<div id="progress" aria-hidden="true"></div>
-<header class="topbar"><a class="brand" href="#home">VERQO<sup>STUDIO</sup></a><nav id="mainNav" class="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#pricing">Pricing</a><a href="#contact" class="pill">Let's talk <span class="arrow">↗</span></a></nav><button id="menuBtn" class="menu-btn" aria-label="Open navigation" aria-expanded="false">☰</button></header>
+<div id="progress"></div>
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#home" class="brand"><img src="assets/verqo-mark.png" alt="Verqo mark"> <span>VERQO STUDIO</span></a>
+    <nav class="nav" id="mainNav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#works">Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="offer-strip" aria-label="Offer strip">
+  <div class="offer-track">
+    <span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
+    <span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
+  </div>
+</div>
+
 <main>
-<section id="home" class="hero"><div class="hero-shadow"></div><img class="hero-logo" src="assets/verqo-mark.png" alt="" aria-hidden="true"><div class="hero-inner"><div class="eyebrow centered">Independent creative studio / 2026</div><h1><span>VERQO</span></h1><p class="hero-title">A studio for bold ideas.</p><p class="hero-description">Visual identities, digital experiences and distinctive creative work that make brands impossible to ignore.</p><div class="hero-buttons"><a class="pill" href="#works">Explore our work <span class="arrow">↗</span></a><a class="pill" href="#pricing">View packages <span class="arrow">↓</span></a></div></div><div class="meta-left">CREATIVE DIRECTION · DESIGN · DIGITAL</div><a href="#about" class="hero-scroll">Scroll to explore <span class="scroll-line"></span>↓</a></section>
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>VERQO STUDIO <b>✳</b> BEYOND THE ORDINARY <b>✳</b> BUILT TO STAND OUT <b>✳</b> DESIGN WITHOUT LIMITS <b>✳</b></span><span>VERQO STUDIO <b>✳</b> BEYOND THE ORDINARY <b>✳</b> BUILT TO STAND OUT <b>✳</b> DESIGN WITHOUT LIMITS <b>✳</b></span></div></div>
-<section id="about" class="section about"><div class="eyebrow reveal">01 / The studio</div><div class="about-grid"><div><h2 class="reveal">Not just<br>design.</h2><p class="lead reveal">We create visual worlds that tell your story before a single word is spoken.</p></div><div class="about-aside reveal"><p class="small muted">VERQO STUDIO is a creative design practice focused on bold identities, strong visual systems, digital content and bespoke creative solutions. Every project is a chance to make something memorable.</p><a class="pill" href="#services">What we do <span class="arrow">↗</span></a></div></div><div class="statstrip reveal"><div><strong>01—05</strong><span>Specialized disciplines</span></div><div><strong>100%</strong><span>Creative focus</span></div><div><strong>∞</strong><span>Fresh perspectives</span></div></div></section>
-<section id="services" class="section services"><div class="eyebrow reveal">02 / Expertise</div><div class="section-head"><h2 class="reveal">What we do.</h2><p class="small reveal" style="max-width:300px;color:#666">From identity to screen, our services turn great ideas into unmistakable visuals.</p></div><div class="service-list"><a href="#pricing" class="service-row reveal"><span class="service-num">01</span><h3>Brand Identity</h3><p>Logos, visual identities, brand systems and guidelines.</p><span class="arr">↗</span></a><a href="#pricing" class="service-row reveal"><span class="service-num">02</span><h3>Social Media</h3><p>Instagram campaigns, carousel posts, stories and content.</p><span class="arr">↗</span></a><a href="#pricing" class="service-row reveal"><span class="service-num">03</span><h3>FiveM & Gaming</h3><p>Custom server visuals, banners and animated assets.</p><span class="arr">↗</span></a><a href="#pricing" class="service-row reveal"><span class="service-num">04</span><h3>Streaming Design</h3><p>Channel identities, streaming overlays and emotes.</p><span class="arr">↗</span></a><a href="#pricing" class="service-row reveal"><span class="service-num">05</span><h3>Salla Stores</h3><p>Storefront presentation, product visuals and digital banners.</p><span class="arr">↗</span></a></div></section>
-<section id="works" class="section work"><div class="eyebrow reveal">03 / Visual directions</div><div class="section-head"><h2 class="reveal">Selected<br>visions.</h2><a class="pill reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio <span class="arrow">↗</span></a></div><div class="work-grid"><a class="work-card reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><div class="visual chrome"><span class="giant">V/</span></div><div class="work-meta"><div><h3>Form & Identity</h3><p>Brand direction / Concept</p></div><span>↗</span></div></a><a class="work-card reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><div class="visual paper"><span class="giant">TYPE.</span></div><div class="work-meta"><div><h3>Typography Systems</h3><p>Visual language / Concept</p></div><span>↗</span></div></a><a class="work-card reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><div class="visual stripe"><span class="giant">404</span></div><div class="work-meta"><div><h3>Digital Motion</h3><p>Gaming & stream design / Concept</p></div><span>↗</span></div></a><a class="work-card reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><div class="visual sphere"><span class="giant">◉</span></div><div class="work-meta"><div><h3>New Perspectives</h3><p>Art direction / Concept</p></div><span>↗</span></div></a></div><div class="work-note">* Concept visuals shown as placeholders. Add your real projects/images inside the “works” section when ready.</div></section>
-<section id="pricing" class="section pricing"><div class="eyebrow reveal">04 / Packages</div><div class="section-head"><h2 class="reveal">The right<br>fit for you.</h2><p class="price-head-note reveal">Explore design packages. Select a service, compare what is included, and request the one that fits your project. <span class="arab" lang="ar">اختر الخدمة وشوف تفاصيل الباقة المناسبة لك.</span></p></div><div class="category-selector reveal" id="categorySelector" role="group" aria-label="Choose service"></div><div class="currency-row"><strong id="categoryName">Instagram packages</strong><div class="right"><span>Currency</span><button class="active" id="usdBtn" type="button">USD $</button><button id="sarBtn" type="button">SAR ر.س</button></div></div><div id="packageGrid" class="package-grid" aria-live="polite"></div><p class="pricing-hint">SAR amounts are calculated using 1 USD = 3.75 SAR. Packages and final scope are confirmed before booking; Salla prices are suggested starting packages.</p></section>
-<section class="statement" aria-label="Studio motto"><h2 class="reveal">MAKE IT<br>MATTER.</h2><p>Designed to be remembered.</p></section>
-<section id="contact" class="section contact"><div class="eyebrow reveal">05 / Start something</div><h2 class="reveal">Have a<br>project in<br>mind?</h2><a class="contact-cta reveal" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">Let's create something <span>↗</span></a><div class="contact-footer"><div><strong>VERQO STUDIO.</strong><p>Independent creative design studio.</p></div><div><p>Identity / Art Direction<br>Social / Gaming / Digital</p></div><div class="social"><a href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">Behance ↗</a><a href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div><div class="foot-copy"><span>© 2026 Verqo Studio. All rights reserved.</span><a href="#home">Back to top ↑</a></div></section>
-</main><div class="overlay" id="overlay"></div><aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Package details" aria-hidden="true"><div class="drawer-top"><span>Selected package / <span class="arab">تفاصيل الباقة</span></span><button class="close" id="closeDrawer" aria-label="Close details">✕</button></div><h3 id="drawerTitle"></h3><div class="big-price" id="drawerAmount"></div><div class="sar" id="drawerAlternate"></div><ul id="drawerFeatures"></ul><a id="drawerLink" class="book" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">REQUEST THIS PACKAGE ↗</a><p class="fine">Contact us on Instagram and mention the package name. No payment is processed on this website.</p></aside>
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-stage reveal" id="heroStage">
+        <div class="hero-slide active" data-title="Verqo Studio" data-text="A monochrome creative presence designed to feel premium, cinematic and bold.">
+          <div class="slide-plain"></div>
+          <img class="mark" src="assets/verqo-chrome-logo.png" alt="" aria-hidden="true" style="position:absolute; right:9%; top:12%; width:min(30vw,420px); z-index:2;">
+          <div class="line"></div>
+          <div class="hero-content">
+            <div class="hero-kicker">Verqo Studio / Creative direction</div>
+            <h1 class="hero-heading">Design without limits.</h1>
+            <p class="hero-text">A one-page studio experience focused on visual identity, digital storytelling and standout design systems.</p>
+            <div class="hero-actions">
+              <a class="pill" href="#works">Explore work ↗</a>
+              <a class="pill" href="#pricing">View pricing ↓</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide" data-title="Campaign Visual" data-text="Outdoor advertising and polished campaign presentation.">
+          <img class="bg" src="assets/hero-slide-2.png" alt="Campaign billboard visual">
+          <div class="hero-content">
+            <div class="hero-kicker">Featured visual / Billboard showcase</div>
+            <h2 class="hero-heading">Presentation<br>that stands out.</h2>
+            <p class="hero-text">Showcase branding work, advertising mockups and campaign systems inside a more premium first impression.</p>
+          </div>
+        </div>
+
+        <div class="hero-slide" data-title="Monochrome Identity" data-text="Chrome-inspired mood and premium monochrome framing.">
+          <img class="bg" src="assets/hero-slide-3.png" alt="Monochrome logo artwork">
+          <div class="hero-content">
+            <div class="hero-kicker">Identity mood / Chrome mark</div>
+            <h2 class="hero-heading">Built to feel<br>beyond ordinary.</h2>
+            <p class="hero-text">A clean black-and-white language that gives the studio a stronger, more elevated visual signature.</p>
+          </div>
+        </div>
+
+        <div class="hero-caption-right" id="heroLabel">Featured / 01</div>
+        <div class="hero-logo-badge"><img src="assets/verqo-mark.png" alt="Verqo logo"><span>VERQO STUDIO<br>Independent creative studio</span></div>
+        <div class="hero-controls">
+          <div class="hero-counter" id="heroCounter">01 / 03</div>
+          <div class="hero-arrows">
+            <button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button>
+            <button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">01 / About the studio</div>
+      <div class="about-grid">
+        <div>
+          <h2 class="title-xl reveal">A studio for<br>clear impact.</h2>
+          <p class="lead reveal">Verqo Studio creates branding, content design, gaming visuals and digital experiences with a stronger monochrome direction and a cleaner one-page presentation.</p>
+        </div>
+        <div>
+          <p class="small reveal">The new structure keeps everything in one scrolling experience: a stronger hero, clearer services, selected visuals, interactive packages and direct contact. It is built to feel premium while staying simple to navigate.</p>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box reveal"><strong>01</strong><span>One-page experience</span></div>
+        <div class="stat-box reveal"><strong>05</strong><span>Main service categories</span></div>
+        <div class="stat-box reveal"><strong>BW</strong><span>Monochrome visual language</span></div>
+        <div class="stat-box reveal"><strong>24/7</strong><span>Direct communication flow</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="eyebrow reveal">02 / Services</div>
+      <h2 class="title-lg reveal">What we<br>build.</h2>
+      <p class="lead reveal">From studio branding to gaming and social design, each service is packaged to feel sharper, cleaner and more memorable.</p>
+      <div class="service-list">
+        <div class="service-item reveal"><div class="num">01</div><h3>Branding</h3><p>Logo systems, brand basics, visual language, launch kits and polished identity presentation.</p><div class="arr">↗</div></div>
+        <div class="service-item reveal"><div class="num">02</div><h3>Instagram</h3><p>Post systems, stories, profile visuals, thumbnails and consistent social design packages.</p><div class="arr">↗</div></div>
+        <div class="service-item reveal"><div class="num">03</div><h3>FiveM</h3><p>Server graphics, loading visuals, posters, banners, emojis and custom visual sets for communities.</p><div class="arr">↗</div></div>
+        <div class="service-item reveal"><div class="num">04</div><h3>Streaming</h3><p>Overlays, alerts, frames, face-cam design, motion assets and live channel identity packs.</p><div class="arr">↗</div></div>
+        <div class="service-item reveal"><div class="num">05</div><h3>Salla Stores</h3><p>Storefront sections, campaign banners, product imagery and a more polished store appearance.</p><div class="arr">↗</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">03 / Selected work</div>
+      <div style="display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin-bottom:34px">
+        <h2 class="title-lg reveal">Visuals with<br>presence.</h2>
+        <a class="pill reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio ↗</a>
+      </div>
+      <div class="works-grid">
+        <article class="work-card reveal">
+          <div class="thumb"><img src="assets/hero-slide-2.png" alt="Billboard showcase"></div>
+          <div class="work-info"><h3>Campaign Presentation</h3><p>Advertising mockups and real-world style presentation for client visuals.</p></div>
+        </article>
+        <article class="work-card reveal">
+          <div class="thumb thumb--plain"><span>VERQO</span></div>
+          <div class="work-info"><h3>Identity Direction</h3><p>Monochrome art direction, typography balance and signature visual structure.</p></div>
+        </article>
+        <article class="work-card reveal">
+          <div class="thumb"><img src="assets/hero-slide-3.png" alt="Chrome logo artwork"></div>
+          <div class="work-info"><h3>Chrome Mood Visual</h3><p>Premium black-and-white compositions that make the brand feel more elevated.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <div class="eyebrow reveal">04 / Pricing</div>
+      <div class="pricing-top">
+        <div>
+          <h2 class="title-lg reveal">Choose the<br>right package.</h2>
+          <p class="small reveal"><span class="arab">اختر الفئة المناسبة وشوف الباقة اللي تناسب مشروعك.</span> All pricing is shown in USD and SAR.</p>
+        </div>
+        <div class="small reveal">Interactive pricing inside the same page. Choose a category, compare packages and open details from the side panel.</div>
+      </div>
+      <div class="category-selector reveal" id="categorySelector" role="group" aria-label="Choose service"></div>
+      <div class="currency-row reveal"><strong id="categoryName">Instagram packages</strong><div class="right"><span>Currency</span><button class="active" id="usdBtn" type="button">USD $</button><button id="sarBtn" type="button">SAR ر.س</button></div></div>
+      <div id="packageGrid" class="package-grid" aria-live="polite"></div>
+      <p class="pricing-hint">SAR amounts are calculated using 1 USD = 3.75 SAR. Request buttons open package details and contact flow; no payment is processed on the site.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">05 / Contact</div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="title-lg reveal">Ready to build<br>something strong?</h2>
+          <p class="lead reveal">Start with a package, a visual direction or a custom request. We keep the process simple and direct.</p>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Contact Verqo Studio</h3>
+          <p class="small">Use any of the links below to request your package or ask for a custom quote.</p>
+          <div class="contact-list">
+            <a class="contact-link" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>↗</strong></a>
+            <a class="contact-link" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><span>Behance</span><strong>↗</strong></a>
+            <a class="contact-link" href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener noreferrer"><span>YouTube</span><strong>↗</strong></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Verqo Studio. All rights reserved.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Package details" aria-hidden="true">
+  <div class="drawer-top"><span>Selected package / <span class="arab">تفاصيل الباقة</span></span><button class="close" id="closeDrawer" aria-label="Close details">✕</button></div>
+  <h3 id="drawerTitle"></h3>
+  <div class="big-price" id="drawerAmount"></div>
+  <div class="sar" id="drawerAlternate"></div>
+  <ul id="drawerFeatures"></ul>
+  <a id="drawerLink" class="book" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">REQUEST THIS PACKAGE ↗</a>
+  <p class="fine">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
+</aside>
+
 <script src="assets/packages.js"></script>
 <script>
+const groups = window.groups || [];
 const names={instagram:'Instagram',fivem:'FiveM',streaming:'Streaming',branding:'Branding',salla:'Salla Stores'};
-let active='instagram',currency='USD',lastFocus=null;
-const selector=document.getElementById('categorySelector'),grid=document.getElementById('packageGrid'),categoryName=document.getElementById('categoryName'),drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay');
+let active='instagram', currency='USD', lastFocus=null;
+const selector=document.getElementById('categorySelector');
+const grid=document.getElementById('packageGrid');
+const categoryName=document.getElementById('categoryName');
+const drawer=document.getElementById('drawer');
+const overlay=document.getElementById('overlay');
 const money=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const displayPrice=n=>currency==='USD'?'$'+money(n):money(n*3.75)+' SAR';
-function renderCategories(){selector.replaceChildren();groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=g.name;b.className=g.id===active?'active':'';b.setAttribute('aria-pressed',String(g.id===active));b.addEventListener('click',()=>{active=g.id;renderCategories();renderPackages()});selector.append(b)})}
-function renderPackages(){const g=groups.find(g=>g.id===active);categoryName.textContent=names[g.id]+' packages';grid.replaceChildren();grid.className='package-grid'+(g.packs.length===4?' four':'');g.packs.forEach((p,i)=>{const card=document.createElement('article');card.className='package';const kicker=document.createElement('span');kicker.className='package-kicker';kicker.textContent=`0${i+1} / ${g.name}`;const title=document.createElement('h3');title.textContent=p.name;const amount=document.createElement('div');amount.className='amount';amount.textContent=displayPrice(p.usd);const other=document.createElement('div');other.className='other';other.textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);const list=document.createElement('ul');p.features.forEach(f=>{const li=document.createElement('li');li.textContent=f;list.append(li)});const button=document.createElement('button');button.className='book';button.textContent='VIEW PACKAGE / عرض الباقة ↗';button.addEventListener('click',()=>openPackage(g,p));card.append(kicker,title,amount,other,list,button);grid.append(card)})}
-function animateNumber(target,to,curr){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){target.textContent=(curr==='USD'?'$':'')+money(to)+(curr==='SAR'?' SAR':'');return}const start=performance.now(),duration=850;function step(t){if(!drawer.classList.contains('show'))return;const k=Math.min((t-start)/duration,1),e=1-Math.pow(1-k,4);target.textContent=(curr==='USD'?'$':'')+money(to*e)+(curr==='SAR'?' SAR':'');if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
-function openPackage(g,p){lastFocus=document.activeElement;drawer.classList.add('show');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('drawerTitle').textContent=g.name+' — '+p.name;animateNumber(document.getElementById('drawerAmount'),currency==='USD'?p.usd:p.usd*3.75,currency);document.getElementById('drawerAlternate').textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);const list=document.getElementById('drawerFeatures');list.replaceChildren();p.features.forEach(f=>{const li=document.createElement('li');li.textContent=f;list.append(li)});document.getElementById('drawerLink').setAttribute('aria-label','Request '+g.name+' '+p.name+' package on Instagram');document.getElementById('closeDrawer').focus()}
-function closePackage(){drawer.classList.remove('show');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
-document.getElementById('closeDrawer').addEventListener('click',closePackage);overlay.addEventListener('click',closePackage);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show'))closePackage();if(e.key==='Tab'&&drawer.classList.contains('show')){const focusables=[...drawer.querySelectorAll('button,a[href]')];let i=focusables.indexOf(document.activeElement);if(e.shiftKey&&i===0){e.preventDefault();focusables.at(-1).focus()}else if(!e.shiftKey&&i===focusables.length-1){e.preventDefault();focusables[0].focus()}}});
-const usd=document.getElementById('usdBtn'),sar=document.getElementById('sarBtn');[usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD';usd.classList.toggle('active',!i);sar.classList.toggle('active',!!i);renderPackages()}));
-document.getElementById('menuBtn').addEventListener('click',()=>{const nav=document.getElementById('mainNav');let open=nav.classList.toggle('show');document.getElementById('menuBtn').setAttribute('aria-expanded',String(open))});document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show');document.getElementById('menuBtn').setAttribute('aria-expanded','false')}));
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));function setProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%'}window.addEventListener('scroll',setProgress,{passive:true});window.addEventListener('resize',setProgress);setProgress();renderCategories();renderPackages();
+function renderCategories(){
+  selector.replaceChildren();
+  groups.forEach(g=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.textContent=g.name;
+    b.className=g.id===active?'active':'';
+    b.setAttribute('aria-pressed', String(g.id===active));
+    b.addEventListener('click',()=>{active=g.id;renderCategories();renderPackages()});
+    selector.append(b);
+  });
+}
+function renderPackages(){
+  const g=groups.find(x=>x.id===active) || groups[0];
+  if(!g) return;
+  categoryName.textContent=names[g.id]+' packages';
+  grid.replaceChildren();
+  grid.className='package-grid'+(g.packs.length===4?' four':'');
+  g.packs.forEach((p,i)=>{
+    const card=document.createElement('article');
+    card.className='package';
+    const kicker=document.createElement('span'); kicker.className='package-kicker'; kicker.textContent=`0${i+1} / ${g.name}`;
+    const title=document.createElement('h3'); title.textContent=p.name;
+    const amount=document.createElement('div'); amount.className='amount'; amount.textContent=displayPrice(p.usd);
+    const other=document.createElement('div'); other.className='other'; other.textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);
+    const list=document.createElement('ul');
+    p.features.forEach(f=>{const li=document.createElement('li'); li.textContent=f; list.append(li)});
+    const button=document.createElement('button'); button.className='book'; button.textContent='VIEW PACKAGE / عرض الباقة ↗'; button.addEventListener('click',()=>openPackage(g,p));
+    card.append(kicker,title,amount,other,list,button); grid.append(card);
+  });
+}
+function animateNumber(target,to,curr){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){target.textContent=(curr==='USD'?'$':'')+money(to)+(curr==='SAR'?' SAR':'');return;}
+  const start=performance.now(), duration=900;
+  function step(t){
+    if(!drawer.classList.contains('show')) return;
+    const k=Math.min((t-start)/duration,1), e=1-Math.pow(1-k,4);
+    target.textContent=(curr==='USD'?'$':'')+money(to*e)+(curr==='SAR'?' SAR':'');
+    if(k<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+function openPackage(g,p){
+  lastFocus=document.activeElement;
+  drawer.classList.add('show'); overlay.classList.add('show'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+  document.getElementById('drawerTitle').textContent=g.name+' — '+p.name;
+  animateNumber(document.getElementById('drawerAmount'), currency==='USD'?p.usd:p.usd*3.75, currency);
+  document.getElementById('drawerAlternate').textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);
+  const list=document.getElementById('drawerFeatures'); list.replaceChildren();
+  p.features.forEach(f=>{const li=document.createElement('li'); li.textContent=f; list.append(li)});
+  document.getElementById('closeDrawer').focus();
+}
+function closePackage(){drawer.classList.remove('show'); overlay.classList.remove('show'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if(lastFocus) lastFocus.focus();}
+document.getElementById('closeDrawer').addEventListener('click',closePackage); overlay.addEventListener('click',closePackage);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show')) closePackage();});
+const usd=document.getElementById('usdBtn'), sar=document.getElementById('sarBtn');
+[usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD'; usd.classList.toggle('active',!i); sar.classList.toggle('active',!!i); renderPackages();}));
+
+const menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav'); const open=nav.classList.toggle('show'); menuBtn.setAttribute('aria-expanded',String(open));});
+document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show'); menuBtn.setAttribute('aria-expanded','false');}));
+
+const slides=[...document.querySelectorAll('.hero-slide')];
+const counter=document.getElementById('heroCounter');
+const heroLabel=document.getElementById('heroLabel');
+let slideIndex=0, heroTimer=null;
+function updateHero(){
+  slides.forEach((s,i)=>s.classList.toggle('active',i===slideIndex));
+  counter.textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  heroLabel.textContent=(slides[slideIndex].dataset.title || 'Featured')+' / '+String(slideIndex+1).padStart(2,'0');
+}
+function goSlide(dir){ slideIndex=(slideIndex+dir+slides.length)%slides.length; updateHero(); restartHero(); }
+function restartHero(){ clearInterval(heroTimer); heroTimer=setInterval(()=>{slideIndex=(slideIndex+1)%slides.length; updateHero();}, 5500); }
+document.getElementById('prevSlide').addEventListener('click',()=>goSlide(-1));
+document.getElementById('nextSlide').addEventListener('click',()=>goSlide(1));
+updateHero(); restartHero();
+
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible'); observer.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+function setProgress(){const max=document.documentElement.scrollHeight-innerHeight; document.getElementById('progress').style.width=(max>0?(scrollY/max)*100:0)+'%';}
+window.addEventListener('scroll',setProgress,{passive:true}); window.addEventListener('resize',setProgress); setProgress();
+renderCategories(); renderPackages();
 </script>
-</body></html>
+</body>
+</html>
