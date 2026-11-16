@@ -1,0 +1,4 @@
+Hero slide 1: real photograph by Claudio Schwarz on Unsplash.
+https://unsplash.com/photos/black-and-white-photo-of-a-building-cg-H7STn1rc
+Photo is loaded from Unsplash CDN in index.html. Internet connection is required; a local image fallback is provided.
+License: https://unsplash.com/license
