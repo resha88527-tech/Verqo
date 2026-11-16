@@ -78,9 +78,9 @@ h1,h2,h3{font-weight:500;letter-spacing:-.04em;line-height:1.02;margin:0}
 .rise{display:block;animation:rise 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*.14s + .15s)}
 .wrap{max-width:1160px;margin:0 auto;padding:0 max(20px,4vw)}
 
-.hero h1{font-size:clamp(44px,7vw,100px);margin:22px auto}
-.hero p{color:var(--mut);max-width:46ch;font-size:18px;margin:0 auto 30px}.hero{position:relative;min-height:94vh;display:grid;place-items:center;text-align:center;padding:120px max(24px,5vw) 80px;overflow:hidden}
-.hero::before{content:"";position:absolute;left:50%;top:48%;width:70%;height:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(255,255,255,.1),transparent 70%)}
+.hero h1{font-size:clamp(40px,6.4vw,92px);margin:26px auto 20px;max-width:15ch}
+.hero p{color:var(--mut);max-width:46ch;font-size:18px;margin:0 auto 30px}.hero{position:relative;text-align:center;padding:130px max(24px,5vw) 0;overflow:hidden}
+
 .hc{position:relative;z-index:2}.hero .row{justify-content:center}
 .orb{position:absolute;inset:0;pointer-events:none}
 .or{position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%}
@@ -94,17 +94,35 @@ h1,h2,h3{font-weight:500;letter-spacing:-.04em;line-height:1.02;margin:0}
 .dk .t{display:flex;gap:5px;align-items:center;width:100%}.dk .t u{width:12px;height:12px;border-radius:50%;background:#ddd}.dk .t i{flex:1;width:auto}
 .dk .im{flex:1;width:100%;border-radius:10px;background:linear-gradient(160deg,#444,#0a0a0a)}
 .dk.r4{flex-direction:row;padding:10px}.dk.r4 u{flex:1;height:100%;border-radius:8px}.dk.r4 u:nth-child(1){background:#fff}.dk.r4 u:nth-child(2){background:#9a9a9a}.dk.r4 u:nth-child(3){background:#444}.dk.r4 u:nth-child(4){background:#0c0c0c;border:1px solid #333}
-#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;overflow:hidden;transition:opacity 1s,transform 1.3s cubic-bezier(.7,0,.2,1)}
-#intro.out{opacity:0;transform:scale(1.8);pointer-events:none}
-#intro .rg{position:absolute;width:30vmin;height:30vmin;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:ring 2.6s var(--d) cubic-bezier(.2,.6,.3,1) both}
-@keyframes ring{from{transform:scale(.3);opacity:0}25%{opacity:1}to{transform:scale(4.2);opacity:0}}
-.iv{position:relative;display:grid;justify-items:center;gap:3vmin}
-.ivm{width:24vmin;animation:ivm 1.6s .2s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 0 6vmin rgba(255,255,255,.28))}
-@keyframes ivm{from{opacity:0;transform:scale(.55) translateY(4vmin);filter:blur(18px)}}
-.ivl{width:min(52vmin,320px);animation:ivl 1.3s 1.3s cubic-bezier(.7,0,.2,1) both}
+.hero .btn.solid{box-shadow:0 0 44px rgba(255,255,255,.3)}.btn.gl2{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}.row.rise{display:flex}
+.pill b{background:rgba(255,255,255,.14);border-radius:99px;padding:2px 10px;font-weight:500;color:#fff}
+.beam{position:absolute;top:0;left:50%;width:560px;height:75%;transform:translateX(-50%);background:linear-gradient(180deg,rgba(255,255,255,.3),transparent 88%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);filter:blur(26px);animation:bm 2.4s .2s ease-out both;pointer-events:none}
+@keyframes bm{from{opacity:0;transform:translateX(-50%) scaleY(.3)}}
+.gridl{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 62% 55% at 50% 30%,#000,transparent);mask-image:radial-gradient(ellipse 62% 55% at 50% 30%,#000,transparent)}
+.stage{position:relative;height:430px;margin-top:70px;perspective:1300px;-webkit-mask-image:linear-gradient(#000 25%,transparent 92%);mask-image:linear-gradient(#000 25%,transparent 92%)}
+.plane{position:absolute;left:50%;top:0;width:1120px;transform:translateX(-50%) rotateX(var(--rx,54deg));transform-origin:50% 0;display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:18px;animation:plin 1.6s .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes plin{from{opacity:0;translate:0 90px}}
+.sc{padding:18px;text-align:left;border-radius:18px}.sc h5{margin:0 0 12px;font:500 13px "Instrument Sans";color:#d4d4d4}
+.tb{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr;gap:10px;font-size:12px;color:#9a9a9a;align-items:center}.tb b{font-weight:500;color:#eee}.tb .st{justify-self:start;background:rgba(255,255,255,.1);border-radius:8px;padding:3px 9px;color:#fff;font-size:11px}
+.bar2{height:6px;border-radius:9px;background:rgba(255,255,255,.12)}.bar2 i{display:block;height:100%;width:62%;border-radius:9px;background:#fff}
+.sws{display:flex;gap:6px;margin-bottom:14px}.sws i{flex:1;height:34px;border-radius:9px}.sws i:nth-child(1){background:#fff}.sws i:nth-child(2){background:#9a9a9a}.sws i:nth-child(3){background:#444}.sws i:nth-child(4){background:#111;border:1px solid #333}
+#intro{position:fixed;inset:0;z-index:100;overflow:hidden}
+.cu{position:absolute;left:0;right:0;height:50.3%;background:#000;z-index:0;transition:transform 1.05s cubic-bezier(.76,0,.24,1)}.cu.t{top:0}.cu.b{bottom:0}
+#intro.out .t{transform:translateY(-101%)}#intro.out .b{transform:translateY(101%)}
+.stg{position:absolute;inset:0;display:grid;place-items:center;z-index:1;transition:transform 1.2s cubic-bezier(.7,0,.2,1),opacity .8s .25s}.stg>*{grid-area:1/1}
+#intro.out .stg{transform:scale(4.5);opacity:0}
+.flare{width:100vw;height:2px;background:linear-gradient(90deg,transparent,#fff 50%,transparent);box-shadow:0 0 40px 6px rgba(255,255,255,.55);animation:fl 2.2s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fl{0%{transform:scaleX(0);opacity:1}30%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+.pr{width:min(46vmin,420px);rotate:-90deg;overflow:visible}.pr circle{fill:none;stroke-width:1}.trk{stroke:rgba(255,255,255,.14)}
+.fil{stroke:#fff;stroke-dasharray:578;stroke-dashoffset:578;animation:dr 2.8s .4s cubic-bezier(.5,0,.2,1) both}@keyframes dr{to{stroke-dashoffset:0}}
+.tk{stroke:rgba(255,255,255,.3);stroke-dasharray:1 7;transform-origin:100px 100px;animation:rot 9s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.vm{position:relative;width:21vmin;animation:vm 1.5s .6s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 0 7vmin rgba(255,255,255,.3))}.vm img{display:block;width:100%}
+@keyframes vm{from{opacity:0;transform:scale(.7);filter:blur(16px)}}
+.shine{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%);background-size:250% 100%;animation:sh 1.3s 1.3s ease-in-out both;-webkit-mask:url(v.png) center/contain no-repeat;mask:url(v.png) center/contain no-repeat}
+@keyframes sh{from{background-position:150% 0}to{background-position:-50% 0}}
+.ivl{width:min(40vmin,260px);align-self:end;margin-bottom:11vh;animation:ivl 1.2s 1.9s cubic-bezier(.7,0,.2,1) both}
 @keyframes ivl{from{clip-path:inset(0 50% 0 50%);opacity:0}to{clip-path:inset(0 0 0 0);opacity:1}}
-#intro .sw{position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,#fff,transparent);transform:scaleX(0);animation:sw 1.4s 1s ease-in-out both}
-@keyframes sw{50%{transform:scaleX(1);opacity:1}to{transform:scaleX(1);opacity:0}}
+.ct{align-self:end;margin-bottom:5vh;font:500 12px "Instrument Sans";letter-spacing:.3em;color:#8b8b8b;font-variant-numeric:tabular-nums;animation:rise 1s .3s both}
 
 .row{display:flex;gap:12px;flex-wrap:wrap}
 .vw{position:relative;display:grid;place-items:center;aspect-ratio:1}
@@ -143,7 +161,7 @@ footer{padding:70px max(24px,5vw) 24px;border-top:1px solid var(--ln);margin-top
 .cp{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#666;font-size:13px}
 @media(max-width:900px){
 .gm{grid-template-columns:1fr}.gl{min-height:0;gap:18px;padding:24px 20px}.gl .lg{order:1}.cl{position:relative;left:auto;top:auto;width:min(420px,100%);order:2;margin:0 auto}.gl h1{order:3;max-width:none}.rp{border-left:0;border-top:1px solid var(--ln);padding:32px 20px}
-.hero{min-height:90vh;padding:100px 20px 60px}.dc{scale:.62;opacity:.6}.dc.far{display:none}.vw{max-width:340px;margin:0 auto}
+.hero{padding:100px 18px 0}.stage{height:250px;margin-top:40px}.plane{scale:.55}.vw{max-width:340px;margin:0 auto}
 .cols,.g3,.pan{grid-template-columns:1fr}.cols>div{border:0;border-top:1px solid var(--ln);padding:22px 4px}.cols .ic{margin-bottom:24px}
 .fl.far{display:none}.up{min-height:70vh}.s{padding:64px 0}
 }
@@ -195,19 +213,31 @@ footer{padding:70px max(24px,5vw) 24px;border-top:1px solid var(--ln);margin-top
  <footer class="gf"><a href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener">YouTube</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener">Behance</a><span>© 2022 Verqo Studio</span></footer>
 </main>
 
-<div id="intro" class="hidden" aria-hidden="true"><i class="rg" style="--d:.2s"></i><i class="rg" style="--d:.7s"></i><i class="rg" style="--d:1.2s"></i><div class="iv"><img class="ivm" src="v.png" alt=""><img class="ivl" src="logo.png" alt=""></div><i class="sw"></i><button class="btn" id="sk" type="button" style="position:absolute;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));padding:8px 18px;font-size:12px">Skip</button></div>
+<div id="intro" class="hidden" aria-hidden="true"><div class="cu t"></div><div class="cu b"></div>
+<div class="stg"><i class="flare"></i>
+<svg class="pr" viewBox="0 0 200 200"><circle class="trk" cx="100" cy="100" r="92"/><circle class="fil" cx="100" cy="100" r="92"/><circle class="tk" cx="100" cy="100" r="99"/></svg>
+<div class="vm"><img src="v.png" alt=""><i class="shine"></i></div>
+<img class="ivl" src="logo.png" alt=""><div class="ct"><span id="cnt">000</span>%</div></div>
+<button class="btn" id="sk" type="button" style="position:absolute;z-index:3;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));padding:8px 18px;font-size:12px">Skip</button></div>
 <div id="site" class="frame hidden">
 <nav class="nav" aria-label="Main"><img src="v.png" alt="Verqo"><a class="on" href="index.html">Home Page</a><a href="store.html">Store</a><a href="works.html">Works</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><button class="so" id="out" type="button">Sign out</button></nav>
 
 <div class="view on" id="v-home">
   <header class="hero">
-    <div class="orb" id="orb" aria-hidden="true"></div>
+    <i class="beam"></i><i class="gridl"></i>
     <div class="hc">
-      <span class="pill rise" style="--i:0">Graphic design studio · Egypt</span>
-      <h1><span class="rise" style="--i:1">Give Your Brand</span><span class="rise it" style="--i:2">a Face</span></h1>
+      <div class="rise" style="--i:0"><a class="pill" href="works.html"><b>Graphic design studio</b>See our work<svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="m9 6 6 6-6 6"/></svg></a></div>
+      <h1><span class="rise" style="--i:1">Craft brand identities</span><span class="rise it" style="--i:2">people remember</span></h1>
       <p class="rise" style="--i:3">Verqo Studio designs logos, brand systems and marketing visuals for companies that want to be taken seriously.</p>
-      <div class="row rise" style="--i:4"><a class="btn solid" href="contact.html">Start a project</a><a class="btn" href="works.html">View works</a></div>
+      <div class="row rise" style="--i:4"><a class="btn solid" href="contact.html">Start a project</a><a class="btn gl2" href="works.html">View works</a></div>
     </div>
+    <div class="stage" aria-hidden="true"><div class="plane" id="plane">
+      <div class="sc glass"><h5>Brand identity</h5><img src="v.png" alt="" style="width:46px"><p style="font-size:12px;color:#8b8b8b;margin:10px 0 12px">Logo, color and type system</p><div class="bar2"><i></i></div></div>
+      <div class="sc glass"><h5>Active projects</h5><div class="tb"><span>Service</span><span>Stage</span><span>Delivery</span><span>Status</span><b>Logo design</b><span>Concepts</span><span>5 days</span><span class="st">Active</span><b>Social media kit</b><span>Refine</span><span>3 days</span><span class="st">Review</span><b>Packaging</b><span>Brief</span><span>9 days</span><span class="st">New</span><b>Brand guidelines</b><span>Final files</span><span>1 day</span><span class="st">Ready</span></div></div>
+      <div class="sc glass"><h5>Color system</h5><div class="sws"><i></i><i></i><i></i><i></i></div><span class="btn solid" style="padding:9px 16px;font-size:12px">Request a quote</span></div>
+      <div class="sc glass"><h5>Social media kit</h5><div class="tb" style="grid-template-columns:1fr auto"><b>Stories</b><span class="st">Ready</span><b>Posts</b><span class="st">Ready</span><b>Covers</b><span class="st">Draft</span></div></div>
+      <div class="sc glass" style="grid-column:span 2"><h5>Delivery timeline</h5><div class="tb" style="grid-template-columns:1fr 3fr"><b>Concepts</b><div class="bar2"><i style="width:90%"></i></div><b>Refine</b><div class="bar2"><i style="width:60%"></i></div><b>Final files</b><div class="bar2"><i style="width:30%"></i></div></div></div>
+    </div></div>
   </header>
 
   <section class="up" aria-label="Process">
@@ -253,13 +283,11 @@ $('steps').innerHTML=map(fp,function(f){return '<div class="fl glass '+f[6]+'" d
 $('serv').innerHTML=map([['Logo design','Marks and wordmarks with clear usage rules.','logo'],['Brand guidelines','Color, type and layout systems.','grid'],['Social media','Post, story and campaign templates.','phone'],['Packaging & print','Labels, menus and brochures.','box']],function(s){return '<div>'+ic(s[2])+'<h4>'+s[0]+'</h4><p>'+s[1]+'</p></div>'});
 $('pans').innerHTML=map([['For businesses','Business partners','Monthly design retainers, priority turnaround and written agreements.'],['For agencies','Agencies & collaborators','White-label support, co-branded campaigns and referral options.']],function(p){return '<div class="pan"><div><span class="pill">'+p[0]+'</span><h3>'+p[1]+'</h3><p>'+p[2]+'</p><a class="btn solid" href="contact.html">Start a partnership</a></div><div class="mk"><i></i><img src="v.png" alt=""><i></i><i></i></div></div>'});
 var ig='https://www.instagram.com/verqostudio/';
-function dc(t,pos,r,ry,s,far,i){var b={logo:['150px','112px','<div class="dk"><img src="v.png" alt="" style="width:46%"></div>'],poster:['124px','164px','<div class="dk lt"><b class="aa">Aa</b><i></i><i></i></div>'],phone:['100px','190px','<div class="dk"><div class="t"><u></u><i></i></div><div class="im"></div><div class="t"><i></i></div></div>'],bcard:['176px','104px','<div class="dk"><img src="v.png" alt="" style="width:26px"><i></i><i></i></div>'],pack:['122px','122px','<div class="dk">'+sv('box').replace('<svg','<svg style="width:40px;height:40px"')+'</div>'],pal:['156px','72px','<div class="dk r4"><u></u><u></u><u></u><u></u></div>']}[t];return '<div class="dc '+far+'" data-s="'+s+'" style="'+pos+';width:'+b[0]+';height:'+b[1]+';--r:'+r+'deg;--ry:'+ry+'deg;--i:'+i+'">'+b[2]+'</div>'}
-$('orb').innerHTML='<i class="or o1"></i><i class="or o2"></i>'+[['26%','30%',0],['72%','24%',.6],['50%','12%',1.1],['88%','60%',1.7],['12%','78%',.3],['64%','86%',2.1]].map(function(p){return '<i class="sp" style="left:'+p[0]+';top:'+p[1]+';--d:'+p[2]+'s"></i>'}).join('')+dc('logo','left:4%;top:16%',-8,18,.07,'',0)+dc('phone','left:8%;top:56%',6,22,-.06,'',1)+dc('pal','left:22%;top:80%',-4,14,.05,'far',2)+dc('poster','right:4%;top:14%',7,-18,-.07,'',3)+dc('bcard','right:7%;top:54%',-6,-20,.06,'',4)+dc('pack','right:22%;top:78%',5,-14,-.05,'far',5);
-var introT=[];
+var introT=[];function cnt(){var c=$('cnt'),t0=performance.now();(function f(n){var p=Math.min((n-t0)/3000,1),e=1-Math.pow(1-p,3);c.textContent=String(Math.round(e*100)).padStart(3,'0');if(p<1&&!$('intro').classList.contains('hidden'))requestAnimationFrame(f)})(t0)}
 function showSite(){try{sessionStorage.setItem('vq','1')}catch(e){}inSite=true;$('gate').classList.add('hidden');$('site').classList.remove('hidden');route()}
-function enter(){if(rm){showSite();return}$('gate').classList.add('hidden');var it=$('intro');it.classList.remove('hidden','out');introT=[setTimeout(function(){showSite();it.classList.add('out')},3100),setTimeout(function(){it.classList.add('hidden');it.classList.remove('out')},4500)]}
+function enter(){if(rm){showSite();return}$('gate').classList.add('hidden');var it=$('intro');it.classList.remove('hidden','out');cnt();introT=[setTimeout(function(){showSite();it.classList.add('out')},3900),setTimeout(function(){it.classList.add('hidden');it.classList.remove('out')},5300)]}
 function leave(){try{sessionStorage.removeItem('vq')}catch(e){}inSite=false;introT.forEach(clearTimeout);$('intro').classList.add('hidden');$('site').classList.add('hidden');$('gate').classList.remove('hidden');document.title='Log in · Verqo Studio'}
-$('sk').onclick=function(){introT.forEach(clearTimeout);showSite();var it=$('intro');it.classList.add('out');setTimeout(function(){it.classList.add('hidden');it.classList.remove('out')},1300)};
+$('sk').onclick=function(){introT.forEach(clearTimeout);showSite();var it=$('intro');it.classList.add('out');setTimeout(function(){it.classList.add('hidden');it.classList.remove('out')},1400)};
 
 
 var signup=false;
@@ -285,7 +313,7 @@ var inSite=false;function route(){document.title='Home Page · Verqo Studio';win
 
 // parallax floats
 var tk=false,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function par(){tk=false;if(rm||!inSite)return;[].forEach.call(document.querySelectorAll('[data-s]'),function(el){var r=el.parentNode.getBoundingClientRect();el.style.setProperty('--y',((r.top+r.height/2-innerHeight/2)*el.dataset.s)+'px')})}
+function par(){tk=false;if(rm||!inSite)return;var pl=$('plane');if(pl)pl.style.setProperty('--rx',Math.max(26,54-Math.min(scrollY/innerHeight,1)*28)+'deg');[].forEach.call(document.querySelectorAll('[data-s]'),function(el){var r=el.parentNode.getBoundingClientRect();el.style.setProperty('--y',((r.top+r.height/2-innerHeight/2)*el.dataset.s)+'px')})}
 addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(par)}},{passive:true});
 try{if(sessionStorage.getItem('vq')==='1')showSite()}catch(e){}
 </script>
