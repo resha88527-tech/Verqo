@@ -287,6 +287,15 @@ body{isolation:isolate}
 @media(max-width:700px){#works .portfolio-gallery{grid-template-columns:1fr;gap:30px}#works .portfolio-gallery .portfolio-info{padding-top:14px}#works .portfolio-gallery .portfolio-view{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#works .portfolio-gallery .portfolio-thumb img{transition:none}}
 
+
+/* Fast, reliable native wheel scroll with cinematic visual effects only. */
+html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+body { overscroll-behavior-y: auto; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-slide .bg, .reveal, .hero-content > * { animation: none !important; transition: none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -316,43 +325,46 @@ body{isolation:isolate}
   <section id="home" class="hero">
     <div class="hero-wide">
       <div class="hero-stage" id="heroStage">
-        <div class="hero-slide" data-title="Verqo Studio" data-text="An architectural photography backdrop in black and white.">
-          <img class="bg hero-photo" src="https://images.unsplash.com/photo-1613068431397-ba25f75a7a44?auto=format&amp;fit=crop&amp;w=1920&amp;h=1080&amp;q=88" alt="Black and white architectural reflection photography by Claudio Schwarz" fetchpriority="high" onerror="this.onerror=null;this.src='assets/hero-slide-2.png';">
+        <div class="hero-slide active" data-title="VERQO STUDIO">
+          <img class="bg" src="https://i.postimg.cc/HkSjpSP6/10.png" alt="VERQO STUDIO portfolio visual" fetchpriority="high" loading="eager" decoding="async" referrerpolicy="no-referrer">
           <div class="hero-content">
-            <div class="hero-kicker">Verqo Studio / Creative direction</div>
+            <div class="hero-kicker">Creative direction / Visual identity</div>
             <h1 class="hero-heading">Design without limits.</h1>
-            <p class="hero-text">A monochrome creative studio for identity, visual storytelling and distinctive digital experiences.</p>
-            <div class="hero-actions">
-              <a class="pill" href="#works">Explore work ↗</a>
-              <a class="pill" href="#pricing">View pricing ↓</a>
-            </div>
+            <p class="hero-text">Strong concepts. Distinctive digital experiences.</p>
+            <div class="hero-actions"><a class="pill" href="#works">Explore work ↗</a><a class="pill" href="#pricing">View pricing ↓</a></div>
           </div>
         </div>
-
-        <div class="hero-slide active" data-title="Campaign Visual" data-text="Outdoor advertising and polished campaign presentation.">
-          <img class="bg" src="assets/hero-slide-2.png" alt="Campaign billboard visual">
+        <div class="hero-slide" data-title="BILLBOARD VISUAL">
+          <img class="bg" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png" alt="BILLBOARD VISUAL portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
           <div class="hero-content">
-            <div class="hero-kicker">Featured visual / Billboard showcase</div>
-            <h2 class="hero-heading">Presentation<br>that stands out.</h2>
-            <p class="hero-text">Showcase branding work, advertising mockups and campaign systems inside a more premium first impression.</p>
+            <div class="hero-kicker">Featured work / Outdoor visual</div>
+            <h2 class="hero-heading">Made to stand out.</h2>
+            <p class="hero-text">Creative work with presence beyond the screen.</p>
           </div>
         </div>
-
-        <div class="hero-slide" data-title="Monochrome Identity" data-text="Chrome-inspired mood and premium monochrome framing.">
-          <img class="bg" src="assets/hero-slide-3.png" alt="Monochrome logo artwork">
+        <div class="hero-slide" data-title="POSTER SHOWCASE">
+          <img class="bg" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png" alt="POSTER SHOWCASE portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
           <div class="hero-content">
-            <div class="hero-kicker">Identity mood / Chrome mark</div>
-            <h2 class="hero-heading">Built to feel<br>beyond ordinary.</h2>
-            <p class="hero-text">A clean black-and-white language that gives the studio a stronger, more elevated visual signature.</p>
+            <div class="hero-kicker">Featured work / Poster design</div>
+            <h2 class="hero-heading">Ideas become visual.</h2>
+            <p class="hero-text">Art direction with attention to every detail.</p>
+          </div>
+        </div>
+        <div class="hero-slide" data-title="LOGO CORE">
+          <img class="bg" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png" alt="LOGO CORE portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <div class="hero-content">
+            <div class="hero-kicker">Brand design / Logo core</div>
+            <h2 class="hero-heading">Built around identity.</h2>
+            <p class="hero-text">Memorable design begins with a strong identity.</p>
           </div>
         </div>
 
-        <div class="hero-caption-right" id="heroLabel">Campaign Visual / 02</div>
+        <div class="hero-caption-right" id="heroLabel">VERQO STUDIO / 01</div>
         <div class="hero-logo-badge"><img src="assets/verqo-mark.png" alt="Verqo logo"><span>VERQO STUDIO<br>Independent creative studio</span></div>
         <div class="scroll-cue" aria-hidden="true">Scroll to explore <i></i></div>
         <div class="hero-progress" id="heroProgress" aria-hidden="true"><span></span></div>
         <div class="hero-controls">
-          <div class="hero-counter" id="heroCounter">02 / 03</div>
+          <div class="hero-counter" id="heroCounter">01 / 04</div>
           <div class="hero-arrows">
             <button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button>
             <button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button>
@@ -407,32 +419,32 @@ body{isolation:isolate}
       </div>
       <div class="works-grid portfolio-gallery">
         <article class="work-card reveal" data-project="01">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" target="_blank" rel="noopener noreferrer" aria-label="Open Project 01 image">
-            <img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt="Portfolio project 01" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" target="_blank" rel="noopener noreferrer" aria-label="Open Arab Designers project image">
+            <img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt="Arab Designers design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             <span class="portfolio-view">VIEW PROJECT ↗</span>
           </a>
-          <div class="work-info portfolio-info"><div><h3>Project 01</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+          <div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
         </article>
         <article class="work-card reveal" data-project="02">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" target="_blank" rel="noopener noreferrer" aria-label="Open Project 02 image">
-            <img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt="Portfolio project 02" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" target="_blank" rel="noopener noreferrer" aria-label="Open One Nation project image">
+            <img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt="One Nation design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             <span class="portfolio-view">VIEW PROJECT ↗</span>
           </a>
-          <div class="work-info portfolio-info"><div><h3>Project 02</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+          <div class="work-info portfolio-info"><div><h3>One Nation</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
         </article>
         <article class="work-card reveal" data-project="03">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" target="_blank" rel="noopener noreferrer" aria-label="Open Project 03 image">
-            <img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt="Portfolio project 03" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" target="_blank" rel="noopener noreferrer" aria-label="Open Gulf project image">
+            <img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt="Gulf design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             <span class="portfolio-view">VIEW PROJECT ↗</span>
           </a>
-          <div class="work-info portfolio-info"><div><h3>Project 03</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+          <div class="work-info portfolio-info"><div><h3>Gulf</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
         </article>
         <article class="work-card reveal" data-project="04">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" target="_blank" rel="noopener noreferrer" aria-label="Open Project 04 image">
-            <img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt="Portfolio project 04" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" target="_blank" rel="noopener noreferrer" aria-label="Open Dajani project image">
+            <img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt="Dajani design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             <span class="portfolio-view">VIEW PROJECT ↗</span>
           </a>
-          <div class="work-info portfolio-info"><div><h3>Project 04</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+          <div class="work-info portfolio-info"><div><h3>Dajani</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
         </article>
       </div>
     </div>
@@ -573,7 +585,7 @@ document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()
 const slides=[...document.querySelectorAll('.hero-slide')];
 const counter=document.getElementById('heroCounter');
 const heroLabel=document.getElementById('heroLabel');
-let slideIndex=1, heroTimer=null;
+let slideIndex=0, heroTimer=null;
 function updateHero(){
   slides.forEach((s,i)=>s.classList.toggle('active',i===slideIndex));
   counter.textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
@@ -610,45 +622,8 @@ if(!reduceMotion.matches && 'IntersectionObserver' in window){
   document.documentElement.classList.add('motion-ready');
   setTimeout(()=>motionElements.forEach(el=>{if(el.getBoundingClientRect().top < innerHeight)el.classList.add('visible')}),1200);
 }else{motionElements.forEach(el=>el.classList.add('visible'))}
-// Medium-speed, consistent scrolling in both directions. No large wheel backlog.
-// On touch screens and with reduced-motion settings, retain native scrolling.
-if(!reduceMotion.matches && matchMedia('(hover:hover) and (pointer:fine)').matches){
-  let currentY=window.scrollY, targetY=window.scrollY, frame=0, previousDirection=0;
-  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-  const maxScroll=()=>Math.max(0,document.documentElement.scrollHeight-innerHeight);
-  function glide(){
-    // A fixed response curve means up and down feel alike.
-    currentY+=(targetY-currentY)*.20;
-    if(Math.abs(targetY-currentY)<.65){currentY=targetY;frame=0;window.scrollTo(0,currentY);return;}
-    window.scrollTo(0,currentY);
-    frame=requestAnimationFrame(glide);
-  }
-  function cancelGlide(){
-    if(frame)cancelAnimationFrame(frame);
-    frame=0;currentY=window.scrollY;targetY=currentY;previousDirection=0;
-  }
-  window.addEventListener('wheel',e=>{
-    if(e.ctrlKey||e.metaKey||document.body.style.overflow==='hidden')return;
-    if(e.target.closest('.drawer,textarea,select,[data-native-scroll]'))return;
-    if(!e.deltaY)return;
-    e.preventDefault();
-    if(!frame){currentY=window.scrollY;targetY=currentY;}
-    const direction=Math.sign(e.deltaY);
-    // Discard opposite-direction momentum instantly instead of reversing slowly then jumping.
-    if(previousDirection&&previousDirection!==direction)targetY=currentY;
-    previousDirection=direction;
-    const unit=e.deltaMode===1?16:e.deltaMode===2?innerHeight:1;
-    const step=clamp(Math.abs(e.deltaY*unit)*.76,0,115);
-    // Keep at most 180 px pending, regardless of how fast the wheel is spun.
-    const pending=clamp(targetY-currentY+direction*step,-180,180);
-    targetY=clamp(currentY+pending,0,maxScroll());
-    if(!frame)frame=requestAnimationFrame(glide);
-  },{passive:false});
-  window.addEventListener('keydown',e=>{if(['Home','End','PageUp','PageDown','ArrowUp','ArrowDown',' '].includes(e.key))cancelGlide();});
-  document.addEventListener('click',e=>{if(e.target.closest('a[href^="#"]'))cancelGlide();});
-  window.addEventListener('popstate',cancelGlide);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelGlide()});
-}
+// Native browser scrolling: intentionally no wheel interception or queued inertia.
+// Cinematic feel is retained by section reveals and slide transitions.
 // Small cursor-responsive lighting on desktop.
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){
   let scheduled=false, mouseX=0,mouseY=0;
