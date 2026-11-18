@@ -317,8 +317,64 @@ body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20p
 <p class="fine" data-en="Contact us on Instagram and mention the package name. No payment is processed on this website." data-ar="تواصل معنا على إنستجرام مع ذكر اسم الباقة. لا توجد عمليات دفع على هذا الموقع.">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
 </aside>
 
-<!-- pricing data: defines `groups` = [{id,en,ar,note_en,note_ar,packs:[{en,ar,sar,enf:[],arf:[]}]}] -->
-<script src="assets/pricing-data.js"></script>
+<script>
+/* VERQO price list 2026 — SAR. Edit prices here. */
+window.groups=[
+{id:"monthly",en:"Monthly Content",ar:"المحتوى الرقمي الشهري",
+ note_en:"12-month contract, paid monthly in advance. Videos 15–30 seconds, each design is one page, published on the client's authorized accounts. Does not include replying to customers or paid ads. No guarantee of sales results.",
+ note_ar:"عقد لمدة 12 شهرًا، والدفع شهريًا مقدمًا. فيديوهات 15–30 ثانية، وكل تصميم صفحة واحدة، والنشر على حسابات العميل المصرح بها. لا تشمل الرد على العملاء أو الحملات الممولة، ولا يوجد ضمان لنتائج المبيعات.",
+ packs:[
+ {en:"Essential",ar:"الباقة الأساسية",sar:849,
+  enf:["4 AI videos per month","8 ad designs per month","Marketing copywriting","Publishing on agreed platforms","One revision round per item"],
+  arf:["4 فيديوهات AI شهريًا","8 تصميمات إعلانية شهريًا","كتابة النصوص التسويقية","النشر على المنصات المتفق عليها","جولة تعديل واحدة لكل مادة"]},
+ {en:"Professional",ar:"الباقة المتقدمة",sar:1399,
+  enf:["8 AI videos per month","12 ad designs per month","Content writing and publishing","Post scheduling and monthly plan","Two revision rounds per item"],
+  arf:["8 فيديوهات AI شهريًا","12 تصميمًا إعلانيًا شهريًا","كتابة المحتوى والنشر","جدولة المواد وخطة شهرية","جولتا تعديل لكل مادة"]},
+ {en:"Premium",ar:"الباقة المتكاملة",sar:1999,
+  enf:["12 AI videos per month","16 ad designs per month","Content writing and publishing","Expanded content calendar","Production priority","Two revision rounds per item"],
+  arf:["12 فيديو AI شهريًا","16 تصميمًا إعلانيًا شهريًا","كتابة المحتوى والنشر","تقويم محتوى موسّع","أولوية في جدول الإنتاج","جولتا تعديل لكل مادة"]}
+ ]},
+{id:"identity",en:"Brand Identity",ar:"الهوية البصرية",
+ note_en:"One-time projects, no monthly subscription. Each price covers only the items listed in its tier.",
+ note_ar:"مشروعات مستقلة بدون اشتراك شهري. السعر يشمل العناصر المحددة في كل مستوى فقط.",
+ packs:[
+ {en:"Basic Identity",ar:"الهوية الأساسية",sar:999,
+  enf:["Professional logo design","Brand colors and fonts","Business card and email signature"],
+  arf:["تصميم شعار احترافي","ألوان وخطوط الهوية","بطاقة عمل وتوقيع إلكتروني"]},
+ {en:"Professional Identity",ar:"الهوية الاحترافية",sar:1999,
+  enf:["Everything in Basic","Office stationery and social media templates","Short visual brand guide"],
+  arf:["جميع عناصر الباقة الأساسية","مطبوعات مكتبية وقوالب للسوشيال ميديا","دليل هوية بصري مختصر"]},
+ {en:"Complete Identity",ar:"الهوية المتكاملة",sar:3999,
+  enf:["Everything in Professional","Extended brand guide and extra applications","Short company presentation"],
+  arf:["جميع عناصر الباقة الاحترافية","دليل هوية موسع وتطبيقات إضافية","عرض تقديمي مختصر للشركة"]}
+ ]},
+{id:"profile",en:"Company Profiles",ar:"بروفايلات الشركات",
+ note_en:"Price covers page design, organizing the client's text and images, and a final PDF. Writing content from scratch, translation, extra pages and custom artwork are priced separately. Independent of brand identity design.",
+ note_ar:"السعر يشمل تصميم الصفحات وتنظيم النصوص والصور التي يقدمها العميل وتجهيز ملف PDF نهائي. إعداد المحتوى من الصفر والترجمة والصفحات الإضافية والأعمال الفنية الخاصة تُسعّر باتفاق مستقل. الخدمة مستقلة عن تصميم الهوية البصرية.",
+ packs:[
+ {en:"Up to 10 pages",ar:"حتى 10 صفحات",sar:690,
+  enf:["Consistent page design","Layout of client-provided text and images","Final PDF ready to share"],
+  arf:["تصميم صفحات متناسقة","تنظيم النصوص والصور المقدمة من العميل","ملف PDF نهائي جاهز للمشاركة"]},
+ {en:"Up to 15 pages",ar:"حتى 15 صفحة",sar:990,
+  enf:["Consistent page design","Layout of client-provided text and images","Final PDF ready to share"],
+  arf:["تصميم صفحات متناسقة","تنظيم النصوص والصور المقدمة من العميل","ملف PDF نهائي جاهز للمشاركة"]},
+ {en:"Up to 20 pages",ar:"حتى 20 صفحة",sar:1290,
+  enf:["Consistent page design","Layout of client-provided text and images","Final PDF ready to share"],
+  arf:["تصميم صفحات متناسقة","تنظيم النصوص والصور المقدمة من العميل","ملف PDF نهائي جاهز للمشاركة"]}
+ ]},
+{id:"web",en:"Website Design",ar:"تصميم المواقع",
+ note_en:"Stores and custom websites are priced separately by required features and integrations. Hosting, domain, licenses, future services and ongoing maintenance are not included unless stated in the quote.",
+ note_ar:"المتاجر والمواقع المخصصة تُسعّر بشكل مستقل حسب الوظائف والتكاملات المطلوبة. الاستضافة واسم النطاق والتراخيص والخدمات المستقبلية والصيانة المستمرة ليست ضمن أسعار التصميم ما لم تُذكر في العرض.",
+ packs:[
+ {en:"Company Website",ar:"موقع تعريفي للشركة",sar:1790,
+  enf:["Up to 5 pages","Mobile-responsive design","Services and contact pages","Site prepared for publishing"],
+  arf:["حتى 5 صفحات","تصميم متجاوب مع الجوال","صفحات الخدمات والتواصل","تجهيز الموقع للنشر"]},
+ {en:"Professional Business Site",ar:"موقع أعمال احترافي",sar:2990,
+  enf:["Up to 10 pages","Services and projects sections","WhatsApp link and contact form","Custom interface for the company"],
+  arf:["حتى 10 صفحات","أقسام للخدمات والمشروعات","ربط واتساب ونموذج تواصل","واجهة مخصصة للشركة"]}
+ ]}
+];
+</script>
 <script>
 const $=id=>document.getElementById(id),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let language='en',active=(window.groups&&groups[0]&&groups[0].id)||'monthly',currency='SAR',lastFocus=null,nf=0;
