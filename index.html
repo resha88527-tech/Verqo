@@ -288,6 +288,28 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 #verqoIntro .intro-loading-number{font-family:var(--display),Cairo,sans-serif!important;font-weight:400!important;color:#fff;font-size:clamp(22px,3vw,38px);letter-spacing:-.04em;text-align:right;margin-bottom:14px;font-variant-numeric:tabular-nums}
 #verqoIntro .intro-loading-track{height:3px;width:100%;background:rgba(255,255,255,.22);overflow:hidden;border-radius:6px}
 #verqoIntro .intro-loading-fill{height:100%;width:0;background:#fff;box-shadow:0 0 14px rgba(255,255,255,.45);transform-origin:left;transition:none}
+
+/* 2026 update: faster cinematic pacing + 3D rotating work gallery */
+.offer-strip.monochrome-divider{position:relative;height:12px;background:#fff;overflow:hidden;white-space:normal;direction:ltr;border-top:1px solid #d7d7d7;border-bottom:1px solid #eee}
+.monochrome-divider .mono-sweep{position:absolute;inset:0;width:220%;background:repeating-linear-gradient(100deg,#050505 0 90px,#fff 90px 165px,#050505 165px 205px,#fff 205px 310px);animation:monoSweep 3s linear infinite;will-change:transform}
+@keyframes monoSweep{from{transform:translateX(-45%)}to{transform:translateX(0)}}
+#verqoIntro .intro-word{animation-duration:.58s}
+#verqoIntro .intro-word.w1{animation-delay:.18s}
+#verqoIntro .intro-word.w2{animation-delay:.62s}
+#verqoIntro .intro-word.w3{animation-delay:1.06s}
+#verqoIntro .intro-words{animation:introSentenceOut .48s ease 2.12s both}
+#verqoIntro .intro-work{animation:introWorkStage 2.85s ease 2.45s both;perspective:1100px}
+#verqoIntro .intro-work-title{top:12%;font-size:clamp(36px,7vw,90px);animation:workTitle 2.6s ease 2.5s both}
+#verqoIntro .intro-arc{left:50%;top:58%;width:min(100vw,1100px);height:min(62vh,470px);transform:translate(-50%,-50%);transform-style:preserve-3d;animation:fastGallery 2.65s ease-in-out 2.5s both}
+#verqoIntro .intro-arc-card{width:clamp(165px,24vw,320px);aspect-ratio:1.52;left:50%;top:50%;border:0;border-radius:24px;overflow:hidden;backface-visibility:visible;box-shadow:0 20px 65px #0009;transform:translate(-50%,-50%) rotateY(calc(var(--i) * 45deg)) translateZ(clamp(230px,39vw,480px)) rotateZ(calc((var(--i) - 3) * 2deg));}
+#verqoIntro .intro-arc-card:nth-child(n){transform:translate(-50%,-50%) rotateY(calc(var(--i) * 45deg)) translateZ(clamp(230px,39vw,480px)) rotateZ(calc((var(--i) - 3) * 2deg))}
+#verqoIntro .intro-arc-card img{width:100%;height:100%;object-fit:cover}
+@keyframes fastGallery{0%{opacity:0;transform:translate(-50%,-50%) rotateY(-75deg) rotateX(-7deg) scale(.68);filter:blur(9px)}18%{opacity:1;filter:blur(0)}76%{opacity:1;transform:translate(-50%,-50%) rotateY(80deg) rotateX(5deg) scale(1.03);filter:blur(0)}100%{opacity:0;transform:translate(-50%,-50%) rotateY(145deg) rotateX(10deg) scale(1.32);filter:blur(8px)}}
+#verqoIntro .intro-logo-stage{animation:logoStage 1.5s ease 5.13s both}
+#verqoIntro .intro-logo-stage img{animation:logoZoom 1.5s cubic-bezier(.18,.7,.2,1) 5.13s both}
+@media(max-width:650px){#verqoIntro .intro-arc{top:58%;height:300px}#verqoIntro .intro-arc-card{width:44vw;border-radius:14px;transform:translate(-50%,-50%) rotateY(calc(var(--i) * 45deg)) translateZ(48vw)!important}#verqoIntro .intro-work-title{top:25%}}
+@media(prefers-reduced-motion:reduce){.monochrome-divider .mono-sweep{animation:none}}
+
 </style>
 </head>
 <body>
@@ -296,11 +318,15 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 <div id="verqoIntro" role="dialog" aria-modal="true" aria-label="Verqo Studio opening animation">
  <div class="intro-noise" aria-hidden="true"></div>
  <div class="intro-words" aria-label="Verqo Studio 2026 Vision"><div class="intro-word w1">VERQO</div><div class="intro-word w2">STUDIO</div><div class="intro-word w3">2026 VISION</div></div>
- <div class="intro-work" aria-hidden="true"><div class="intro-work-title">OUR WORK<span style="color:#999">.</span></div><div class="intro-arc">
-  <div class="intro-arc-card"><img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt=""></div>
-  <div class="intro-arc-card"><img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt=""></div>
-  <div class="intro-arc-card"><img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt=""></div>
-  <div class="intro-arc-card"><img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt=""></div>
+  <div class="intro-work" aria-hidden="true"><div class="intro-work-title">OUR WORK</div><div class="intro-arc">
+  <div class="intro-arc-card" style="--i:0"><img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:1"><img src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:2"><img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:3"><img src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:4"><img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:5"><img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:6"><img src="https://i.postimg.cc/jjm5fDTM/Logo-core.png" alt="" decoding="async"></div>
+  <div class="intro-arc-card" style="--i:7"><img src="https://i.postimg.cc/HkSjpSP6/10.png" alt="" decoding="async"></div>
  </div></div>
  <div class="intro-logo-stage" aria-hidden="true"><img src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" alt="VERQO STUDIO" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></div>
  <div class="intro-loading" aria-label="Intro loading progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -341,7 +367,7 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 <div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
 </div></section>
 
-<div class="offer-strip" aria-label="Offer"><div class="offer-track"><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span></div></div>
+<div class="offer-strip monochrome-divider" aria-hidden="true"><div class="mono-sweep"></div></div>
 
 <section class="services-showcase motion-shell" id="services"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">BEYOND ORDINARY</span><span class="edge-label from-right">FORM FOLLOWS VISION</span></div><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
@@ -553,7 +579,7 @@ setLanguage('en');prog();restart();
  let ended=false;
  const progressEl=document.getElementById('introLoadPercent');
  const progressFill=document.getElementById('introLoadFill');
- const duration=10300;
+ const duration=6700;
  let startingAt=null,frameId=null;
  const updateProgress=(timestamp)=>{
   if(ended)return;
@@ -575,7 +601,7 @@ setLanguage('en');prog();restart();
   document.body.classList.remove('intro-lock');
   setTimeout(()=>layer.remove(),950);
  };
- const endTimer=setTimeout(end,10300);
+ const endTimer=setTimeout(end,6700);
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!ended)end()});
 })();
 /* Reveal the side hex labels only when their sections enter the viewport. */
