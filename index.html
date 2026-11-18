@@ -446,6 +446,17 @@ body:not(.is-ar) .side-fact-inner{text-align:left;direction:ltr}
 body:not(.is-ar) .verqo-side-fact{direction:ltr}
 @media(max-width:600px){.verqo-side-fact{top:auto;bottom:18%;width:min(300px,calc(100vw - 24px));min-height:120px;transform:translate(110%,0)}.verqo-side-fact.is-visible{transform:translate(0,0)}.side-fact-inner{padding:22px 24px 22px 48px}.side-fact-kicker{font-size:15px}.side-fact-inner p{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.verqo-side-fact{transition:none}}
+
+/* Clients heading + normalized logo sizing */
+.clients-band{background:#fff;padding:28px 0 8px;color:#111}
+.clients-head-wrap{display:flex;justify-content:center;align-items:center}
+.clients-kicker{font-family:var(--display),Cairo,sans-serif!important;font-size:clamp(18px,2vw,28px);font-weight:400;letter-spacing:-.03em;color:#111;text-align:center}
+.partners-strip{padding:18px 0 22px!important}
+.partners-strip .partners-group{gap:clamp(26px,3.2vw,56px)!important;padding-right:clamp(26px,3.2vw,56px)!important}
+.partners-strip .partner-item{flex:0 0 clamp(128px,12.5vw,170px)!important;width:clamp(128px,12.5vw,170px)!important;height:78px!important}
+.partners-strip .partner-logo{width:auto!important;max-width:82%!important;height:auto!important;max-height:34px!important;object-fit:contain!important;object-position:center!important}
+@media(max-width:700px){.clients-band{padding:22px 0 6px}.clients-kicker{font-size:20px}.partners-strip .partner-item{flex-basis:118px!important;width:118px!important;height:66px!important}.partners-strip .partner-logo{max-width:84%!important;max-height:28px!important}}
+
 </style>
 </head>
 <body>
@@ -506,6 +517,11 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 <div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
 </div></section>
 
+<section class="clients-band reveal side-left" aria-label="Our Clients section">
+  <div class="container clients-head-wrap">
+    <div class="clients-kicker">Our Clients</div>
+  </div>
+</section>
 <section class="partners-strip" aria-label="Partners" dir="ltr">
   <div class="partners-track" dir="ltr">
     <div class="partners-group"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
