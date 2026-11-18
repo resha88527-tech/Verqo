@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -391,6 +391,24 @@ body{--verqo-accent:#e91e63;--paper:#ffffff}
 .hero-progress span,#progress,.category-selector button.active,.category-selector button:hover,.currency-row button.active{background:var(--verqo-accent)!important}
 .site-header.scrolled{border-bottom-color:var(--verqo-accent)!important}
 
+
+/* VERQO — black-to-pink partner hover, minimal page language transition */
+.site-header .nav{text-transform:none!important;letter-spacing:0!important}
+.site-header .nav a{text-transform:none!important;letter-spacing:0!important}
+body.is-ar .site-header .nav a{text-transform:none!important}
+.partners-strip{background:#050505!important;border-top:1px solid #161616!important;border-bottom:1px solid #161616!important}
+.partners-strip .partner-item{background:#050505!important;border-color:#202020!important;border-radius:15px;transition:background-color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+.partners-strip .partner-item:hover{background:var(--verqo-accent)!important;border-color:var(--verqo-accent)!important;box-shadow:0 10px 30px rgba(233,30,99,.28)}
+.partners-strip .partner-logo{filter:brightness(0) invert(1);opacity:.9;transition:opacity .25s ease;}
+.partners-strip .partner-item:hover .partner-logo{opacity:1}
+.language-transition{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;background:rgba(255,255,255,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .26s ease,visibility .26s ease;color:#080808}
+.language-transition.show{opacity:1;visibility:visible;pointer-events:auto}
+.language-transition-inner{display:flex;flex-direction:column;gap:19px;align-items:center;text-align:center}
+.language-spinner{width:44px;height:44px;border:3px solid #e6e6e6;border-top-color:var(--verqo-accent);border-radius:50%;animation:verqoLangSpin .65s linear infinite}
+@keyframes verqoLangSpin{to{transform:rotate(360deg)}}
+.language-transition p{font-family:"Cairo",sans-serif!important;font-size:16px;font-weight:400;margin:0;color:#111}
+@media(prefers-reduced-motion:reduce){.language-spinner{animation-duration:1.4s}}
+
 </style>
 </head>
 <body>
@@ -416,6 +434,12 @@ body{--verqo-accent:#e91e63;--paper:#ffffff}
  </div>
 </div>
 
+<div id="languageTransition" class="language-transition" role="status" aria-live="polite" aria-hidden="true">
+  <div class="language-transition-inner">
+    <div class="language-spinner" aria-hidden="true"></div>
+    <p id="languageTransitionText">جاري تحويل اللغة...</p>
+  </div>
+</div>
 <div id="progress"></div>
 <header class="site-header"><div class="container header-row">
 <a class="brand" href="#home" aria-label="Verqo Studio"><img alt="Verqo Studio" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></a>
@@ -424,9 +448,9 @@ body{--verqo-accent:#e91e63;--paper:#ffffff}
 </nav>
 <div class="header-tools">
 <div class="language-switch" id="languageSwitch" role="group" aria-label="Choose language / اختر اللغة">
-<button class="language-option is-active" data-lang="en" type="button" aria-label="English" aria-pressed="true">EN</button>
+<button class="language-option" data-lang="en" type="button" aria-label="English" aria-pressed="false">EN</button>
 <span class="language-divider" aria-hidden="true"></span>
-<button class="language-option arabic-option" data-lang="ar" type="button" aria-label="العربية" aria-pressed="false">ع</button>
+<button class="language-option arabic-option is-active" data-lang="ar" type="button" aria-label="العربية" aria-pressed="true">ع</button>
 </div>
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
@@ -577,7 +601,7 @@ window.groups=[
 </script>
 <script>
 const $=id=>document.getElementById(id),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let language='en',active=(window.groups&&groups[0]&&groups[0].id)||'monthly',currency='SAR',lastFocus=null,nf=0;
+let language='ar',active=(window.groups&&groups[0]&&groups[0].id)||'monthly',currency='SAR',lastFocus=null,nf=0;
 const fmt=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const trans=(e,a)=>language==='ar'?a:e;
 const money=(s,u=currency)=>u==='SAR'?fmt(s)+' '+trans('SAR','ر.س'):'$'+fmt(s/3.75);
@@ -623,7 +647,25 @@ function openPackage(g,p){
 function closePackage(){cancelAnimationFrame(nf);$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
 $('closeDrawer').onclick=closePackage;$('overlay').onclick=closePackage;
 [$('sarBtn'),$('usdBtn')].forEach((b,i)=>b.onclick=()=>{currency=i?'USD':'SAR';$('sarBtn').classList.toggle('active',!i);$('usdBtn').classList.toggle('active',!!i);renderPackages()});
-document.querySelectorAll('.language-option').forEach(b=>b.onclick=()=>setLanguage(b.dataset.lang));
+let languageSwitchPending=false;
+function transitionLanguage(target){
+ if(languageSwitchPending || target===language)return;
+ languageSwitchPending=true;
+ const layer=$('languageTransition');
+ const message=$('languageTransitionText');
+ message.textContent=target==='ar'?'جاري تحويل اللغة...':'Switching language...';
+ layer.classList.add('show');layer.setAttribute('aria-hidden','false');
+ window.setTimeout(()=>{
+  if($('drawer').classList.contains('show'))closePackage();
+  setLanguage(target);
+  nav.classList.remove('show');mb.setAttribute('aria-expanded','false');
+  window.setTimeout(()=>{
+   layer.classList.remove('show');layer.setAttribute('aria-hidden','true');
+   languageSwitchPending=false;
+  },260);
+ },690);
+}
+document.querySelectorAll('.language-option').forEach(b=>b.onclick=()=>transitionLanguage(b.dataset.lang));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('drawer').classList.contains('show'))closePackage()});
 const mb=$('menuBtn'),nav=$('mainNav');
 mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('show'));
@@ -643,7 +685,7 @@ function updateHeader(){header.classList.toggle('scrolled',window.scrollY>48)}
 addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader);
 updateHeader();
 
-setLanguage('en');prog();restart();
+setLanguage('ar');prog();restart();
 </script>
 <script>
 
