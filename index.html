@@ -566,6 +566,15 @@ body{background:#fff}
 .language-dropdown .language-option .flag{font-size:26px!important}
 .language-dropdown .language-check{display:none!important}
 @media(max-width:760px){.language-dropdown .language-trigger{width:45px!important;height:42px!important}}
+
+/* Image flags instead of emoji: no GB/SA fallback letters. */
+.language-dropdown img.language-current-flag,.language-dropdown .language-option img.flag{display:block!important;width:29px!important;height:20px!important;object-fit:cover!important;border-radius:3px!important;box-shadow:0 0 0 1px rgba(255,255,255,.28)!important;flex-shrink:0!important}
+.language-dropdown .language-trigger{width:50px!important;height:44px!important;min-width:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.language-dropdown .language-trigger svg{display:none!important}
+.language-dropdown .language-menu{width:62px!important;min-width:0!important;padding:6px!important;right:0!important;left:auto!important}
+.language-dropdown .language-menu .language-option{display:flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;padding:8px 6px!important;gap:0!important}
+.language-dropdown .language-menu .language-option.is-active{background:rgba(255,255,255,.16)!important}
+.language-dropdown .language-menu .language-option:hover{background:rgba(255,255,255,.25)!important}
 </style></head>
 <body>
 <div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
@@ -581,11 +590,11 @@ body{background:#fff}
 </nav>
 <div class="language-dropdown" id="languageDropdown">
   <button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu">
-    <span class="language-current-flag" id="currentFlag" aria-hidden="true">🇬🇧</span><span class="language-current-name" id="currentLanguage" hidden>English</span>
+    <img class="language-current-flag" id="currentFlag" src="assets/flag-gb.svg" alt="" aria-hidden="true"><span class="language-current-name" id="currentLanguage" hidden>English</span>
   </button>
   <div class="language-menu" id="languageMenu" role="menu" aria-label="Languages" hidden>
-    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="sr-only">English</span><span class="language-check" aria-hidden="true">✓</span></button>
-    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><span class="flag" aria-hidden="true">🇸🇦</span><span class="sr-only">العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
+    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><img class="flag" src="assets/flag-gb.svg" alt="" aria-hidden="true"><span class="sr-only">English</span><span class="language-check" aria-hidden="true">✓</span></button>
+    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><img class="flag" src="assets/flag-sa.svg" alt="" aria-hidden="true"><span class="sr-only">العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
   </div>
 </div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
 </div>
@@ -754,7 +763,7 @@ function setLanguage(next){
  document.querySelectorAll('[data-en][data-ar]').forEach(el=>{if(!el.closest('#packageGrid'))el.textContent=el.getAttribute('data-'+next);});
  document.querySelectorAll('[data-en-html][data-ar-html]').forEach(el=>el.innerHTML=el.getAttribute('data-'+next+'-html'));
  document.querySelectorAll('.language-option').forEach(el=>{const yes=el.dataset.lang===next;el.classList.toggle('is-active',yes);el.setAttribute('aria-checked',String(yes));});
- document.getElementById('currentFlag').textContent=next==='ar'?'🇸🇦':'🇬🇧';
+ document.getElementById('currentFlag').src=next==='ar'?'assets/flag-sa.svg':'assets/flag-gb.svg';
  document.getElementById('currentLanguage').textContent=next==='ar'?'العربية':'English';
  closeLangMenu();
  document.querySelectorAll('.hero-slide').forEach(el=>{el.dataset.title=el.getAttribute('data-title-'+next);});
