@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="VERQO STUDIO — one-page creative studio website with services, work, pricing and contact.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#050505" name="theme-color"/>
+<meta content="VERQO STUDIO — one-page creative studio website with services, work, pricing and contact." name="description"/>
 <title>Verqo Studio</title>
-<link rel="icon" href="assets/verqo-mark.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="assets/verqo-mark.png" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --bg:#050505;
@@ -296,217 +297,265 @@ body { overscroll-behavior-y: auto; }
   .hero-slide .bg, .reveal, .hero-content > * { animation: none !important; transition: none !important; }
 }
 
+
+
+/* Verqo Studio refresh – image-first landing / white welcome / dark service cards / white footer */
+html{scroll-behavior:smooth}
+body{background:#fff}
+.site-header{position:absolute!important;top:0;left:0;right:0;z-index:160;background:linear-gradient(to bottom,rgba(0,0,0,.50),rgba(0,0,0,0))!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+.site-header .header-row{height:88px}
+.site-header .nav{gap:25px}.site-header .nav a{color:#fff!important;text-shadow:0 1px 6px #0005}
+.site-header .brand{font-size:23px;letter-spacing:-.075em;color:#fff}
+.site-header .brand img{width:35px;height:35px}
+.site-header .nav a:last-child{border:1px solid #fff9;border-radius:50px;padding:11px 23px}
+.hero{padding:0!important;background:#060606!important}
+.hero-wide{width:100%!important;max-width:none!important;margin:0!important}
+.hero-stage{border-radius:0!important;min-height:640px!important;height:min(100svh,950px)!important;aspect-ratio:auto!important;border:0!important;box-shadow:none!important}
+.hero-slide .bg{object-position:center center!important}
+.hero-slide::after{background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,transparent 28%,transparent 58%,rgba(0,0,0,.65) 100%)!important}
+.hero-content{bottom:88px!important;left:max(5.5vw,26px)!important;right:auto!important;width:auto!important;max-width:70vw!important}
+.hero-content .hero-heading{font-size:clamp(26px,3vw,49px)!important;line-height:1.12!important;letter-spacing:-.045em!important;margin:0!important}
+.hero-caption-right,.hero-logo-badge,.scroll-cue{display:none!important}
+.hero-controls{bottom:70px!important;right:5.5vw!important;left:auto!important;width:auto!important;display:flex!important;flex-direction:row-reverse!important;align-items:center!important;gap:28px!important}
+.hero-counter{font-weight:600!important;font-size:18px!important;letter-spacing:.04em!important;background:transparent!important;border:0!important;padding:0!important;color:white!important}
+.hero-arrows{display:flex!important;gap:10px!important}
+.hero-arrow{width:45px!important;height:45px!important;border:1px solid #fffb!important;background:#0004!important;color:white!important;transition:background .25s,transform .25s!important}
+.hero-arrow:hover{background:#fff!important;color:#000!important;transform:translateY(-2px)}
+.hero-progress{bottom:0!important;top:auto!important}
+.offer-strip{height:48px!important;min-height:48px!important;background:#f5f5f2!important;color:#090909!important}
+.offer-track{padding:12px 0!important}
+.welcome-section{background:#fff;color:#080808;padding:clamp(78px,8vw,128px) 0 104px}
+.welcome-inner{max-width:1110px!important}
+.welcome-rule{font-size:11px;color:#777;letter-spacing:.23em;margin-bottom:32px}
+.welcome-title{font-size:clamp(42px,5.2vw,82px);font-weight:800;letter-spacing:-.075em;line-height:1.08;margin:0 0 28px}
+.welcome-title span{white-space:nowrap}
+.welcome-intro{max-width:720px;font-size:clamp(16px,1.4vw,21px);line-height:1.65;color:#282828;margin:0 0 30px}
+.welcome-buttons{display:flex;gap:13px;flex-wrap:wrap}
+.welcome-btn{font-size:12px;font-weight:700;padding:13px 24px;border-radius:100px;display:inline-flex;gap:20px;align-items:center;border:1px solid #111;transition:.25s}
+.welcome-btn.dark{background:#050505;color:#fff}.welcome-btn.light{color:#111;background:#fff}
+.welcome-btn:hover{transform:translateY(-3px)}
+.services-showcase{background:#050505;color:#fff;padding:110px 0 118px}
+.services-showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,140px);align-items:start}
+.services-showcase-heading{position:sticky;top:50px;align-self:start;padding-top:42px}
+.services-showcase-heading .section-index{font-size:11px;letter-spacing:.2em;color:#aaa}
+.services-showcase-heading h2{font-size:clamp(42px,5vw,76px);line-height:1.06;letter-spacing:-.06em;margin:26px 0 28px}
+.red-dot{color:#e81c35}
+.services-showcase-heading p{max-width:490px;line-height:1.9;color:#bbb;font-size:15px;margin-bottom:35px}
+.white-action{background:#fff;color:#080808;border-radius:100px;padding:15px 25px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:23px;transition:.25s}
+.white-action:hover{transform:translateY(-4px);background:#eee}
+.services-cards{display:flex;flex-direction:column;gap:20px}
+.svc-card{background:#fff;color:#070707;border-radius:22px;padding:36px 38px;position:relative;transition:transform .28s ease,box-shadow .28s ease}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 55px #ffffff10}
+.svc-index{font-size:11px;letter-spacing:.18em;color:#888}
+.svc-card h3{font-size:clamp(28px,3vw,43px);letter-spacing:-.045em;margin:10px 0 24px;color:#e71935}
+.svc-tags{display:grid;grid-template-columns:1fr 1fr;gap:11px 25px}
+.svc-tags span{font-size:13px;line-height:1.35;color:#161616;display:flex;gap:9px;align-items:flex-start}
+.svc-tags span::before{content:'•';color:#e71935;font-weight:900}
+/* Preserve original pricing and portfolio sections, including existing classes */
+#works{background:#fff!important;color:#111!important}
+#works .work-card{background:#fff!important;border-color:#eee!important}
+#works .work-info h3{color:#111!important}
+#works .work-info p{color:#777!important}
+#works .eyebrow{color:#777!important}
+#works .pill{background:#050505!important;color:#fff!important;border-color:#050505!important}
+#works .title-lg{color:#050505!important}
+.contact-finish{background:#fff;padding:72px 0 30px}
+.red-cta{position:relative;overflow:hidden;background:#e51b35;color:#fff;border-radius:22px;text-align:center;padding:64px 25px}
+.red-cta-orb{position:absolute;right:4%;top:-140px;font-size:360px;line-height:1;color:#ffffff13;pointer-events:none}
+.red-cta>span{font-size:11px;letter-spacing:.2em;font-weight:700;display:block;margin-bottom:16px}
+.red-cta h2{font-size:clamp(25px,3.7vw,52px);line-height:1.12;letter-spacing:-.055em;margin:0 auto 14px}
+.red-cta p{font-size:15px;margin:0 auto 26px;opacity:.93}
+.red-cta a{display:inline-flex;gap:28px;align-items:center;background:#fff;color:#e51b35;padding:14px 27px;border-radius:60px;font-size:12px;font-weight:800;transition:.25s}
+.red-cta a:hover{transform:translateY(-4px);background:#0a0a0a;color:#fff}
+.footer-refined{background:#fff!important;color:#111!important;padding:62px 0 25px!important;border:0!important}
+.footer-columns{display:grid;grid-template-columns:1.5fr .75fr 1fr 1.15fr;gap:55px;padding-bottom:64px}
+.footer-brand img{width:54px;height:54px;object-fit:contain;background:#050505;border-radius:15px;padding:6px;margin-bottom:12px}
+.footer-brand h2{font-size:clamp(38px,4vw,60px);letter-spacing:-.09em;line-height:.85;margin:0 0 20px}
+.footer-brand p{color:#777;font-size:13px;line-height:1.8}
+.footer-columns h3{font-size:15px;letter-spacing:-.03em;margin:0 0 22px}
+.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+.footer-col h3{margin-bottom:8px}
+.footer-col a{font-size:13px;color:#555;transition:color .2s}
+.footer-col a:hover,.footer-inquiry a:hover{color:#e51b35}
+.footer-social-icons{display:flex;gap:9px;flex-wrap:wrap}
+.footer-social-icons a{width:48px;height:48px;border-radius:50%;background:#0b0b0b;color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;transition:transform .2s}
+.footer-social-icons a:hover{transform:translateY(-4px);background:#e51b35}
+.footer-inquiry{margin-top:32px;display:flex;flex-direction:column;gap:10px}
+.footer-inquiry strong{font-size:15px}.footer-inquiry a{font-size:13px;color:#555}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:24px;border-top:1px solid #e5e5e5;color:#777;font-size:12px}
+.back-top{background:#080808;color:#fff;padding:12px 16px;border-radius:10px;margin-left:24px}
+@media(max-width:940px){.services-showcase-grid{grid-template-columns:1fr}.services-showcase-heading{position:static;padding-top:0}.footer-columns{grid-template-columns:repeat(2,1fr);gap:44px}.hero-stage{min-height:550px!important;height:86svh!important}.site-header .nav{gap:13px}}
+@media(max-width:700px){.site-header .nav{background:#090909!important;top:75px!important;padding:25px!important}.hero-stage{height:80svh!important;min-height:440px!important}.hero-content{bottom:108px!important;max-width:88vw!important}.hero-controls{right:20px!important;bottom:28px!important}.hero-content{left:20px!important}.welcome-section{padding:68px 0 78px}.welcome-title span{white-space:normal}.services-showcase{padding:78px 0}.svc-card{padding:30px 24px}.svc-tags{gap:12px}.footer-columns{grid-template-columns:1fr 1fr;gap:38px 22px}.footer-bottom{align-items:flex-start;flex-direction:column}.footer-bottom span:last-child{display:flex;align-items:center;gap:18px}.back-top{margin-left:0}.red-cta{padding:50px 20px}}
+@media(max-width:420px){.footer-columns{grid-template-columns:1fr}.svc-tags{grid-template-columns:1fr 1fr}.hero-stage{min-height:425px!important}.hero-content .hero-heading{font-size:26px!important}}
+@media(prefers-reduced-motion:reduce){.reveal,.svc-card,.red-cta,.welcome-btn{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<div id="progress"></div><div class="cursor-aura" aria-hidden="true"></div>
+<div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
 <header class="site-header">
-  <div class="container header-row">
-    <a href="#home" class="brand"><img src="assets/verqo-mark.png" alt="Verqo mark"> <span>VERQO STUDIO</span></a>
-    <nav class="nav" id="mainNav">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#works">Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-  </div>
+<div class="container header-row">
+<a class="brand" href="#home"><img alt="Verqo mark" src="assets/verqo-mark.png"/> <span>VERQO STUDIO</span></a>
+<nav class="nav" id="mainNav"><a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#works">Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
+</div>
 </header>
 
-<div class="offer-strip" aria-label="Offer strip">
-  <div class="offer-track">
-    <span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
-    <span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
-  </div>
-</div>
-
 <main>
-  <section id="home" class="hero">
-    <div class="hero-wide">
-      <div class="hero-stage" id="heroStage">
-        <div class="hero-slide active" data-title="VERQO STUDIO">
-          <img class="bg" src="https://i.postimg.cc/HkSjpSP6/10.png" alt="VERQO STUDIO portfolio visual" fetchpriority="high" loading="eager" decoding="async" referrerpolicy="no-referrer">
-          <div class="hero-content">
-            <div class="hero-kicker">Creative direction / Visual identity</div>
-            <h1 class="hero-heading">Design without limits.</h1>
-            <p class="hero-text">Strong concepts. Distinctive digital experiences.</p>
-            <div class="hero-actions"><a class="pill" href="#works">Explore work ↗</a><a class="pill" href="#pricing">View pricing ↓</a></div>
-          </div>
-        </div>
-        <div class="hero-slide" data-title="BILLBOARD VISUAL">
-          <img class="bg" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png" alt="BILLBOARD VISUAL portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-          <div class="hero-content">
-            <div class="hero-kicker">Featured work / Outdoor visual</div>
-            <h2 class="hero-heading">Made to stand out.</h2>
-            <p class="hero-text">Creative work with presence beyond the screen.</p>
-          </div>
-        </div>
-        <div class="hero-slide" data-title="POSTER SHOWCASE">
-          <img class="bg" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png" alt="POSTER SHOWCASE portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-          <div class="hero-content">
-            <div class="hero-kicker">Featured work / Poster design</div>
-            <h2 class="hero-heading">Ideas become visual.</h2>
-            <p class="hero-text">Art direction with attention to every detail.</p>
-          </div>
-        </div>
-        <div class="hero-slide" data-title="LOGO CORE">
-          <img class="bg" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png" alt="LOGO CORE portfolio visual" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-          <div class="hero-content">
-            <div class="hero-kicker">Brand design / Logo core</div>
-            <h2 class="hero-heading">Built around identity.</h2>
-            <p class="hero-text">Memorable design begins with a strong identity.</p>
-          </div>
-        </div>
-
-        <div class="hero-caption-right" id="heroLabel">VERQO STUDIO / 01</div>
-        <div class="hero-logo-badge"><img src="assets/verqo-mark.png" alt="Verqo logo"><span>VERQO STUDIO<br>Independent creative studio</span></div>
-        <div class="scroll-cue" aria-hidden="true">Scroll to explore <i></i></div>
-        <div class="hero-progress" id="heroProgress" aria-hidden="true"><span></span></div>
-        <div class="hero-controls">
-          <div class="hero-counter" id="heroCounter">01 / 04</div>
-          <div class="hero-arrows">
-            <button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button>
-            <button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <div class="eyebrow reveal">01 / About the studio</div>
-      <div class="about-grid">
-        <div>
-          <h2 class="title-xl reveal">A studio for<br>clear impact.</h2>
-          <p class="lead reveal">Verqo Studio creates branding, content design, gaming visuals and digital experiences with a stronger monochrome direction and a cleaner one-page presentation.</p>
-        </div>
-        <div>
-          <p class="small reveal">The new structure keeps everything in one scrolling experience: a stronger hero, clearer services, selected visuals, interactive packages and direct contact. It is built to feel premium while staying simple to navigate.</p>
-        </div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-box reveal"><strong>01</strong><span>One-page experience</span></div>
-        <div class="stat-box reveal"><strong>05</strong><span>Main service categories</span></div>
-        <div class="stat-box reveal"><strong>BW</strong><span>Monochrome visual language</span></div>
-        <div class="stat-box reveal"><strong>24/7</strong><span>Direct communication flow</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section services">
-    <div class="container">
-      <div class="eyebrow reveal">02 / Services</div>
-      <h2 class="title-lg reveal">What we<br>build.</h2>
-      <p class="lead reveal">From studio branding to gaming and social design, each service is packaged to feel sharper, cleaner and more memorable.</p>
-      <div class="service-list">
-        <div class="service-item reveal"><div class="num">01</div><h3>Branding</h3><p>Logo systems, brand basics, visual language, launch kits and polished identity presentation.</p><div class="arr">↗</div></div>
-        <div class="service-item reveal"><div class="num">02</div><h3>Instagram</h3><p>Post systems, stories, profile visuals, thumbnails and consistent social design packages.</p><div class="arr">↗</div></div>
-        <div class="service-item reveal"><div class="num">03</div><h3>FiveM</h3><p>Server graphics, loading visuals, posters, banners, emojis and custom visual sets for communities.</p><div class="arr">↗</div></div>
-        <div class="service-item reveal"><div class="num">04</div><h3>Streaming</h3><p>Overlays, alerts, frames, face-cam design, motion assets and live channel identity packs.</p><div class="arr">↗</div></div>
-        <div class="service-item reveal"><div class="num">05</div><h3>Salla Stores</h3><p>Storefront sections, campaign banners, product imagery and a more polished store appearance.</p><div class="arr">↗</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="works" class="section">
-    <div class="container">
-      <div class="eyebrow reveal">03 / Selected work</div>
-      <div style="display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin-bottom:34px">
-        <h2 class="title-lg reveal">Visuals with<br>presence.</h2>
-        <a class="pill reveal" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio ↗</a>
-      </div>
-      <div class="works-grid portfolio-gallery">
-        <article class="work-card reveal" data-project="01">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" target="_blank" rel="noopener noreferrer" aria-label="Open Arab Designers project image">
-            <img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt="Arab Designers design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-            <span class="portfolio-view">VIEW PROJECT ↗</span>
-          </a>
-          <div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
-        </article>
-        <article class="work-card reveal" data-project="02">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" target="_blank" rel="noopener noreferrer" aria-label="Open One Nation project image">
-            <img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt="One Nation design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-            <span class="portfolio-view">VIEW PROJECT ↗</span>
-          </a>
-          <div class="work-info portfolio-info"><div><h3>One Nation</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
-        </article>
-        <article class="work-card reveal" data-project="03">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" target="_blank" rel="noopener noreferrer" aria-label="Open Gulf project image">
-            <img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt="Gulf design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-            <span class="portfolio-view">VIEW PROJECT ↗</span>
-          </a>
-          <div class="work-info portfolio-info"><div><h3>Gulf</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
-        </article>
-        <article class="work-card reveal" data-project="04">
-          <a class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" target="_blank" rel="noopener noreferrer" aria-label="Open Dajani project image">
-            <img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt="Dajani design project" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-            <span class="portfolio-view">VIEW PROJECT ↗</span>
-          </a>
-          <div class="work-info portfolio-info"><div><h3>Dajani</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing" class="section pricing">
-    <div class="container">
-      <div class="eyebrow reveal">04 / Pricing</div>
-      <div class="pricing-top">
-        <div>
-          <h2 class="title-lg reveal">Choose the<br>right package.</h2>
-          <p class="small reveal"><span class="arab">اختر الفئة المناسبة وشوف الباقة اللي تناسب مشروعك.</span> All pricing is shown in USD and SAR.</p>
-        </div>
-        <div class="small reveal">Interactive pricing inside the same page. Choose a category, compare packages and open details from the side panel.</div>
-      </div>
-      <div class="category-selector reveal" id="categorySelector" role="group" aria-label="Choose service"></div>
-      <div class="currency-row reveal"><strong id="categoryName">Instagram packages</strong><div class="right"><span>Currency</span><button class="active" id="usdBtn" type="button">USD $</button><button id="sarBtn" type="button">SAR ر.س</button></div></div>
-      <div id="packageGrid" class="package-grid" aria-live="polite"></div>
-      <p class="pricing-hint">SAR amounts are calculated using 1 USD = 3.75 SAR. Request buttons open package details and contact flow; no payment is processed on the site.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="eyebrow reveal">05 / Contact</div>
-      <div class="contact-grid">
-        <div>
-          <h2 class="title-lg reveal">Ready to build<br>something strong?</h2>
-          <p class="lead reveal">Start with a package, a visual direction or a custom request. We keep the process simple and direct.</p>
-        </div>
-        <div class="contact-card reveal">
-          <h3>Contact Verqo Studio</h3>
-          <p class="small">Use any of the links below to request your package or ask for a custom quote.</p>
-          <div class="contact-list">
-            <a class="contact-link" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>↗</strong></a>
-            <a class="contact-link" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><span>Behance</span><strong>↗</strong></a>
-            <a class="contact-link" href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener noreferrer"><span>YouTube</span><strong>↗</strong></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="hero" id="home">
+<div class="hero-wide">
+<div class="hero-stage" id="heroStage">
+<div class="hero-slide active" data-title="VERQO STUDIO">
+<img alt="VERQO STUDIO portfolio visual" class="bg" decoding="async" fetchpriority="high" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/HkSjpSP6/10.png"/>
+<div class="hero-content"><h1 class="hero-heading">VERQO STUDIO</h1></div>
+</div>
+<div class="hero-slide" data-title="BILLBOARD CAMPAIGN">
+<img alt="BILLBOARD VISUAL portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png"/>
+<div class="hero-content"><h2 class="hero-heading">BILLBOARD CAMPAIGN</h2></div>
+</div>
+<div class="hero-slide" data-title="POSTER VISUAL">
+<img alt="POSTER SHOWCASE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png"/>
+<div class="hero-content"><h2 class="hero-heading">POSTER VISUAL</h2></div>
+</div>
+<div class="hero-slide" data-title="LOGO CORE">
+<img alt="LOGO CORE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png"/>
+<div class="hero-content"><h2 class="hero-heading">LOGO CORE</h2></div>
+</div>
+<div class="hero-caption-right" id="heroLabel">VERQO STUDIO / 01</div>
+<div class="hero-logo-badge"><img alt="Verqo logo" src="assets/verqo-mark.png"/><span>VERQO STUDIO<br/>Independent creative studio</span></div>
+<div aria-hidden="true" class="scroll-cue">Scroll to explore <i></i></div>
+<div aria-hidden="true" class="hero-progress" id="heroProgress"><span></span></div>
+<div class="hero-controls">
+<div class="hero-counter" id="heroCounter">01 / 04</div>
+<div class="hero-arrows">
+<button aria-label="Previous slide" class="hero-arrow" id="prevSlide">←</button>
+<button aria-label="Next slide" class="hero-arrow" id="nextSlide">→</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="welcome-section" id="about">
+<div class="container welcome-inner">
+<div class="welcome-rule reveal">01 / THE STUDIO</div>
+<h2 class="welcome-title reveal">Welcome To <span>Verqo Studio.</span></h2>
+<p class="welcome-intro reveal">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
+<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services">Know about us <span>↗</span></a><a class="welcome-btn light" href="#contact">Let's Connect <span>↗</span></a></div>
+</div>
+</section><div aria-label="Offer strip" class="offer-strip">
+<div class="offer-track">
+<span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
+<span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
+</div>
+</div>
+<section class="services-showcase" id="services">
+<div class="container services-showcase-grid">
+<div class="services-showcase-heading">
+<span class="section-index reveal">02 / OUR EXPERTISE</span>
+<h2 class="reveal">Our Services<span class="red-dot">.</span></h2>
+<p class="reveal">We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.</p>
+<a class="white-action reveal" href="#pricing">Explore Our Services <span>↗</span></a>
+</div>
+<div class="services-cards">
+<article class="svc-card reveal"><span class="svc-index">01 /</span><h3>Brand Identity</h3><div class="svc-tags"><span>Logo Design</span><span>Visual Identity</span><span>Brand Guidelines</span><span>Social Media Design</span><span>Brand Touchpoints</span><span>Packaging Concepts</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">02 /</span><h3>Digital &amp; Social</h3><div class="svc-tags"><span>Instagram Posts</span><span>Story Templates</span><span>Campaign Graphics</span><span>Reels Covers</span><span>Social Identity</span><span>Salla Stores</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">03 /</span><h3>Gaming &amp; Streaming</h3><div class="svc-tags"><span>FiveM Branding</span><span>Streaming Overlays</span><span>Banners</span><span>Motion Assets</span><span>Alerts &amp; Panels</span><span>Channel Visuals</span></div></article>
+</div>
+</div>
+</section>
+<section class="section" id="works">
+<div class="container">
+<div class="eyebrow reveal">03 / Selected work</div>
+<div style="display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin-bottom:34px">
+<h2 class="title-lg reveal">Visuals with<br/>presence.</h2>
+<a class="pill reveal" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">View portfolio ↗</a>
+</div>
+<div class="works-grid portfolio-gallery">
+<article class="work-card reveal" data-project="01">
+<a aria-label="Open Arab Designers project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" rel="noopener noreferrer" target="_blank">
+<img alt="Arab Designers design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"/>
+<span class="portfolio-view">VIEW PROJECT ↗</span>
+</a>
+<div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+</article>
+<article class="work-card reveal" data-project="02">
+<a aria-label="Open One Nation project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" rel="noopener noreferrer" target="_blank">
+<img alt="One Nation design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"/>
+<span class="portfolio-view">VIEW PROJECT ↗</span>
+</a>
+<div class="work-info portfolio-info"><div><h3>One Nation</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+</article>
+<article class="work-card reveal" data-project="03">
+<a aria-label="Open Gulf project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" rel="noopener noreferrer" target="_blank">
+<img alt="Gulf design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"/>
+<span class="portfolio-view">VIEW PROJECT ↗</span>
+</a>
+<div class="work-info portfolio-info"><div><h3>Gulf</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+</article>
+<article class="work-card reveal" data-project="04">
+<a aria-label="Open Dajani project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" rel="noopener noreferrer" target="_blank">
+<img alt="Dajani design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"/>
+<span class="portfolio-view">VIEW PROJECT ↗</span>
+</a>
+<div class="work-info portfolio-info"><div><h3>Dajani</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section pricing" id="pricing">
+<div class="container">
+<div class="eyebrow reveal">04 / Pricing</div>
+<div class="pricing-top">
+<div>
+<h2 class="title-lg reveal">Choose the<br/>right package.</h2>
+<p class="small reveal"><span class="arab">اختر الفئة المناسبة وشوف الباقة اللي تناسب مشروعك.</span> All pricing is shown in USD and SAR.</p>
+</div>
+<div class="small reveal">Interactive pricing inside the same page. Choose a category, compare packages and open details from the side panel.</div>
+</div>
+<div aria-label="Choose service" class="category-selector reveal" id="categorySelector" role="group"></div>
+<div class="currency-row reveal"><strong id="categoryName">Instagram packages</strong><div class="right"><span>Currency</span><button class="active" id="usdBtn" type="button">USD $</button><button id="sarBtn" type="button">SAR ر.س</button></div></div>
+<div aria-live="polite" class="package-grid" id="packageGrid"></div>
+<p class="pricing-hint">SAR amounts are calculated using 1 USD = 3.75 SAR. Request buttons open package details and contact flow; no payment is processed on the site.</p>
+</div>
+</section>
+<section class="contact-finish" id="contact">
+<div class="container">
+<div class="red-cta reveal">
+<div aria-hidden="true" class="red-cta-orb">✳</div>
+<span>LET'S MAKE SOMETHING GREAT</span>
+<h2>Are You Ready To Build Your Brand?</h2>
+<p>Tell us about your project. Let's create something that stands out.</p>
+<a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Connect With Us <span>↗</span></a>
+</div>
+</div>
+</section>
 </main>
-
-<footer class="footer">
-  <div class="container footer-row">
-    <span>© 2026 Verqo Studio. All rights reserved.</span>
-    <a href="#home">Back to top ↑</a>
-  </div>
+<footer class="footer footer-refined">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-brand"><img alt="Verqo Studio logo" src="assets/verqo-mark.png"/><h2>VERQO<br/>STUDIO.</h2><p>Independent creative design studio.<br/>Made to stand out.</p></div>
+<div class="footer-col"><h3>Pages</h3><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Portfolio</a><a href="#pricing">Pricing</a></div>
+<div class="footer-col"><h3>Explore</h3><a href="#pricing">Our Packages</a><a href="#works">Selected Work</a><a href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a href="#contact">Start a Project</a></div>
+<div class="footer-social"><h3>Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">IG</a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Bē</a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank">YT</a></div><div class="footer-inquiry"><strong>Let's build something.</strong><a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Verqo Studio. All rights reserved.</span><span>Creative by design. <a class="back-top" href="#home">Back to top ↑</a></span></div>
+</div>
 </footer>
-
 <div class="overlay" id="overlay"></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Package details" aria-hidden="true">
-  <div class="drawer-top"><span>Selected package / <span class="arab">تفاصيل الباقة</span></span><button class="close" id="closeDrawer" aria-label="Close details">✕</button></div>
-  <h3 id="drawerTitle"></h3>
-  <div class="big-price" id="drawerAmount"></div>
-  <div class="sar" id="drawerAlternate"></div>
-  <ul id="drawerFeatures"></ul>
-  <a id="drawerLink" class="book" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">REQUEST THIS PACKAGE ↗</a>
-  <p class="fine">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
+<aside aria-hidden="true" aria-label="Package details" aria-modal="true" class="drawer" id="drawer" role="dialog">
+<div class="drawer-top"><span>Selected package / <span class="arab">تفاصيل الباقة</span></span><button aria-label="Close details" class="close" id="closeDrawer">✕</button></div>
+<h3 id="drawerTitle"></h3>
+<div class="big-price" id="drawerAmount"></div>
+<div class="sar" id="drawerAlternate"></div>
+<ul id="drawerFeatures"></ul>
+<a class="book" href="https://www.instagram.com/verqostudio/" id="drawerLink" rel="noopener noreferrer" target="_blank">REQUEST THIS PACKAGE ↗</a>
+<p class="fine">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
 </aside>
-
 <script src="assets/packages.js"></script>
 <script>
 // Package data is declared by assets/packages.js as `groups`.
