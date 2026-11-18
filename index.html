@@ -318,6 +318,79 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 @media(max-width:650px){#verqoIntro .intro-arc{top:59%;height:220px;gap:11px}#verqoIntro .intro-arc-card{width:65vw;border-radius:16px}#verqoIntro .intro-work-title{top:26%}@keyframes appleFilmstrip{0%{opacity:0;transform:translate(-27%,-50%) scale(.95)}17%{opacity:1}72%{opacity:1;transform:translate(-52%,-50%) scale(1)}100%{opacity:0;transform:translate(-61%,-50%) scale(1.015)}}}
 @media(prefers-reduced-motion:reduce){.monochrome-divider .mono-sweep{animation:none}}
 
+
+/* 2026 Verqo header: clean transparent overlay, white fixed state, minimal language type */
+:root{--verqo-accent:#e91e63}
+.site-header{position:fixed!important;top:0;left:0;right:0;z-index:170;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:1px solid transparent!important;box-shadow:none;transition:background .35s ease,box-shadow .35s ease,border-color .35s ease,backdrop-filter .35s ease}
+.site-header.scrolled{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;border-bottom:1px solid var(--verqo-accent)!important;box-shadow:0 5px 24px rgba(0,0,0,.055)}
+.site-header .header-row{direction:inherit}
+.site-header .brand{flex:0 0 auto;display:flex;align-items:center}
+.site-header .brand img{height:43px;max-width:160px;object-fit:contain}
+.site-header .nav{gap:clamp(14px,2vw,28px)}
+.site-header .nav a{color:#fff;opacity:1;font-size:12px;font-weight:500;letter-spacing:0;transition:color .25s ease}
+.site-header .nav a:last-child{border:none!important;border-radius:0!important;padding:0!important;background:transparent!important}
+.site-header .nav a:hover,.site-header .nav a:last-child:hover{color:var(--verqo-accent)!important;background:transparent!important}
+.site-header.scrolled .brand img{filter:brightness(0)}
+.site-header.scrolled .nav a,.site-header.scrolled .language-option,.site-header.scrolled .menu-toggle{color:#151515}
+.site-header.scrolled .nav a:hover{color:var(--verqo-accent)}
+.site-header .header-tools{gap:17px;flex:0 0 auto}
+.site-header .language-switch{display:flex;align-items:center;direction:ltr;gap:9px}
+.site-header .language-option{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#fff;opacity:.6;cursor:pointer;padding:8px 0!important;min-height:0!important;width:auto!important;font-family:"Cairo",sans-serif!important;font-size:12px!important;font-weight:500!important;transition:color .22s ease,opacity .22s ease}
+.site-header .language-option.arabic-option{font-size:18px!important;line-height:1.2}
+.site-header .language-option.is-active{opacity:1}
+.site-header .language-option:hover{opacity:1;color:var(--verqo-accent)!important}
+.site-header .language-divider{height:16px;width:1px;background:currentColor;opacity:.3;color:#fff}
+.site-header.scrolled .language-divider{color:#111}
+.site-header.scrolled .language-option.is-active{color:var(--verqo-accent)}
+.site-header .menu-toggle{color:#fff}
+body.is-ar .site-header .header-row{direction:rtl}
+body.is-ar .site-header .nav{direction:rtl}
+body:not(.is-ar) .site-header .header-row{direction:ltr}
+#progress{background:var(--verqo-accent);z-index:180}
+.category-selector button.active,.category-selector button:hover,.currency-row button.active{background:var(--verqo-accent);border-color:var(--verqo-accent);color:#fff}
+.welcome-btn.dark:hover,.white-action:hover,.pill:hover,.book:hover{box-shadow:0 3px 0 var(--verqo-accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--verqo-accent);outline-offset:4px}
+@media(max-width:820px){
+ .site-header .nav{position:absolute;top:calc(100% + 4px);left:16px;right:16px;background:#fff;border:1px solid #f0f0f0;box-shadow:0 18px 45px #0002;padding:22px;align-items:flex-start}
+ .site-header .nav a{color:#151515!important}
+ .site-header .nav a:hover{color:var(--verqo-accent)!important}
+ .site-header .brand img{height:37px;max-width:115px}
+}
+
+
+/* Partner strip + tighter black/white/accent palette */
+body{--verqo-accent:#e91e63;--paper:#ffffff}
+.offer-strip{display:none!important}
+.partners-strip{position:relative;background:#fff;border-top:1px solid #efefef;border-bottom:1px solid #efefef;overflow:hidden;padding:14px 0}
+.partners-track{display:flex;align-items:center;gap:14px;width:max-content;animation:partnersMarquee 26s linear infinite;will-change:transform}
+.partners-strip:hover .partners-track,.partners-track:hover{animation-play-state:paused}
+.partner-item{width:160px;height:68px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;padding:10px 14px;border-radius:18px;background:#fff;border:1px solid #f1f1f1;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.partner-item:hover{transform:translateY(-2px);border-color:var(--verqo-accent);box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.partner-logo{width:132px;height:42px;object-fit:contain;object-position:center;display:block;user-select:none;pointer-events:none;filter:none}
+@keyframes partnersMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){.partners-strip{padding:10px 0}.partners-track{gap:10px}.partner-item{width:132px;height:56px;border-radius:14px;padding:8px 10px}.partner-logo{width:110px;height:34px}}
+
+/* Global palette cleanup */
+::selection{background:var(--verqo-accent);color:#fff}
+.welcome-section,.works,.contact-finish,.footer{background:#fff!important;color:#0d0d0d}
+.services-showcase,.hero-stage,.red-cta,.pricing-hero{background:#050505!important;color:#fff}
+.red-cta{border-color:#1f1f1f!important}
+.red-cta-orb{color:#e91e6322!important}
+.pricing{background:#fff!important;color:#111}
+.pricing-hero::after{border-color:#e91e6326!important;box-shadow:0 0 0 55px #e91e6310,0 0 0 110px #e91e6308!important}
+.welcome-btn.dark{background:#050505!important;color:#fff!important}
+.welcome-btn.light,.white-action,.pill,.book{background:#fff;color:#111}
+.white-action,.pill,.book,.welcome-btn,.category-selector button,.currency-row button,.language-trigger{transition:.24s ease}
+.white-action:hover,.pill:hover,.book:hover,.welcome-btn:hover{border-color:var(--verqo-accent)!important;color:var(--verqo-accent)!important;box-shadow:none!important}
+.package:hover{border-color:var(--verqo-accent)!important}
+.package.popular{background:#050505!important;border-color:#050505!important}
+.package.popular .book{background:#fff!important;color:#111!important}
+.package.popular .book:hover{background:var(--verqo-accent)!important;color:#fff!important;border-color:var(--verqo-accent)!important}
+.footer-social-icons a:hover{box-shadow:0 0 0 2px var(--verqo-accent)!important}
+.portfolio-tags span,.nav a:last-child,.back-top{border-color:#111}
+.hero-progress span,#progress,.category-selector button.active,.category-selector button:hover,.currency-row button.active{background:var(--verqo-accent)!important}
+.site-header.scrolled{border-bottom-color:var(--verqo-accent)!important}
+
 </style>
 </head>
 <body>
@@ -350,12 +423,11 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
 </nav>
 <div class="header-tools">
-<div class="language-dropdown" id="languageDropdown">
-<button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false"><img class="flag" id="currentFlag" alt=""></button>
-<div class="language-menu" id="languageMenu" role="menu" hidden>
-<button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><img class="flag" alt=""><span class="sr-only">English</span></button>
-<button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><img class="flag" alt=""><span class="sr-only">العربية</span></button>
-</div></div>
+<div class="language-switch" id="languageSwitch" role="group" aria-label="Choose language / اختر اللغة">
+<button class="language-option is-active" data-lang="en" type="button" aria-label="English" aria-pressed="true">EN</button>
+<span class="language-divider" aria-hidden="true"></span>
+<button class="language-option arabic-option" data-lang="ar" type="button" aria-label="العربية" aria-pressed="false">ع</button>
+</div>
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
 <main>
@@ -375,7 +447,7 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 <div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
 </div></section>
 
-<div class="offer-strip monochrome-divider" aria-hidden="true"><div class="mono-sweep"></div></div>
+<section class="partners-strip" aria-label="Partners"><div class="partners-track"><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp" alt="Partner logo 1" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp" alt="Partner logo 2" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/25DqXDhR/26-png.webp" alt="Partner logo 3" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/mrsc6sCW/30-png.webp" alt="Partner logo 4" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp" alt="Partner logo 5" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/FK4fn4cM/6-png.webp" alt="Partner logo 6" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp" alt="Partner logo 7" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp" alt="Partner logo 8" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp" alt="Partner logo 9" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp" alt="Partner logo 10" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp" alt="Partner logo 1" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp" alt="Partner logo 2" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/25DqXDhR/26-png.webp" alt="Partner logo 3" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/mrsc6sCW/30-png.webp" alt="Partner logo 4" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp" alt="Partner logo 5" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/FK4fn4cM/6-png.webp" alt="Partner logo 6" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp" alt="Partner logo 7" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp" alt="Partner logo 8" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp" alt="Partner logo 9" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp" alt="Partner logo 10" loading="lazy" referrerpolicy="no-referrer"></div></div></section>
 
 <section class="services-showcase motion-shell" id="services"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">BEYOND ORDINARY</span><span class="edge-label from-right">FORM FOLLOWS VISION</span></div><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
@@ -506,9 +578,6 @@ window.groups=[
 <script>
 const $=id=>document.getElementById(id),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let language='en',active=(window.groups&&groups[0]&&groups[0].id)||'monthly',currency='SAR',lastFocus=null,nf=0;
-const FLAGS={
-en:'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="s"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#s)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>'),
-ar:'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40"><rect width="60" height="40" fill="#006C35"/><g stroke="#fff" stroke-linecap="round" fill="none"><path d="M16 14h28" stroke-width="3" stroke-dasharray="3 2"/><path d="M14 28h32" stroke-width="2.4"/><path d="M14 28l-2-2M14 28l-2 2" stroke-width="1.8"/></g></svg>')};
 const fmt=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const trans=(e,a)=>language==='ar'?a:e;
 const money=(s,u=currency)=>u==='SAR'?fmt(s)+' '+trans('SAR','ر.س'):'$'+fmt(s/3.75);
@@ -516,8 +585,8 @@ function setLanguage(l){
  language=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.body.classList.toggle('is-ar',l==='ar');
  document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=el.dataset[l]);
  document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
- document.querySelectorAll('.language-option').forEach(b=>{const y=b.dataset.lang===l;b.classList.toggle('is-active',y);b.setAttribute('aria-checked',y);b.querySelector('img').src=FLAGS[b.dataset.lang]});
- $('currentFlag').src=FLAGS[l];closeLang();renderCategories();renderPackages();updateHero();
+ document.querySelectorAll('.language-option').forEach(b=>{const y=b.dataset.lang===l;b.classList.toggle('is-active',y);b.setAttribute('aria-pressed',String(y));});
+ renderCategories();renderPackages();updateHero();
 }
 function renderCategories(){
  if(!window.groups)return;const s=$('categorySelector');s.replaceChildren();
@@ -554,12 +623,8 @@ function openPackage(g,p){
 function closePackage(){cancelAnimationFrame(nf);$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
 $('closeDrawer').onclick=closePackage;$('overlay').onclick=closePackage;
 [$('sarBtn'),$('usdBtn')].forEach((b,i)=>b.onclick=()=>{currency=i?'USD':'SAR';$('sarBtn').classList.toggle('active',!i);$('usdBtn').classList.toggle('active',!!i);renderPackages()});
-const dd=$('languageDropdown'),lt=$('languageTrigger'),lm=$('languageMenu');
-function closeLang(){lm.hidden=true;dd.classList.remove('open');lt.setAttribute('aria-expanded','false')}
-lt.onclick=()=>{const o=lm.hidden;lm.hidden=!o;dd.classList.toggle('open',o);lt.setAttribute('aria-expanded',o)};
 document.querySelectorAll('.language-option').forEach(b=>b.onclick=()=>setLanguage(b.dataset.lang));
-document.addEventListener('click',e=>{if(!dd.contains(e.target))closeLang()});
-document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('drawer').classList.contains('show'))closePackage();if(!lm.hidden){closeLang();lt.focus()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('drawer').classList.contains('show'))closePackage()});
 const mb=$('menuBtn'),nav=$('mainNav');
 mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('show'));
 nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('show');mb.setAttribute('aria-expanded','false')});
@@ -573,6 +638,11 @@ const rv=[...document.querySelectorAll('.reveal')];
 if(!RM&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.06});rv.forEach(el=>io.observe(el));document.documentElement.classList.add('motion-ready');setTimeout(()=>rv.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('visible')}),1300)}else rv.forEach(el=>el.classList.add('visible'));
 function prog(){const m=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(m>0?scrollY/m*100:0)+'%'}
 addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);
+const header=document.querySelector('.site-header');
+function updateHeader(){header.classList.toggle('scrolled',window.scrollY>48)}
+addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader);
+updateHeader();
+
 setLanguage('en');prog();restart();
 </script>
 <script>
