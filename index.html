@@ -553,6 +553,19 @@ body{background:#fff}
 /* Remove project overlay labels entirely. */
 #works .portfolio-gallery .portfolio-view{display:none!important}
 @media(max-width:760px){.language-trigger{min-width:114px;padding:8px 10px}.language-current-name{font-size:11px}.site-header .brand img{max-width:105px!important;height:37px!important}.language-menu{width:185px}}
+
+/* Footer logo: transparent PNG, no black square. */
+.footer-brand .footer-new-logo{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;width:134px!important;height:134px!important;max-height:none!important;object-fit:contain!important;margin-bottom:10px!important}
+/* Flag-only language selector. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.language-dropdown .language-trigger{min-width:0!important;width:49px!important;height:44px!important;padding:0!important;justify-content:center!important;gap:0!important}
+.language-dropdown .language-trigger .language-current-name{display:none!important}
+.language-dropdown .language-current-flag{font-size:25px!important}
+.language-dropdown .language-menu{width:68px!important;min-width:0!important;padding:6px!important;right:0!important}
+.language-dropdown .language-option{justify-content:center!important;padding:9px 5px!important;position:relative!important;min-height:44px!important}
+.language-dropdown .language-option .flag{font-size:26px!important}
+.language-dropdown .language-check{display:none!important}
+@media(max-width:760px){.language-dropdown .language-trigger{width:45px!important;height:42px!important}}
 </style></head>
 <body>
 <div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
@@ -568,11 +581,11 @@ body{background:#fff}
 </nav>
 <div class="language-dropdown" id="languageDropdown">
   <button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu">
-    <span class="language-current-flag" id="currentFlag" aria-hidden="true">🇬🇧</span><span class="language-current-name" id="currentLanguage">English</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    <span class="language-current-flag" id="currentFlag" aria-hidden="true">🇬🇧</span><span class="language-current-name" id="currentLanguage" hidden>English</span>
   </button>
   <div class="language-menu" id="languageMenu" role="menu" aria-label="Languages" hidden>
-    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span><span class="language-check" aria-hidden="true">✓</span></button>
-    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><span class="flag" aria-hidden="true">🇸🇦</span><span>العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
+    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="sr-only">English</span><span class="language-check" aria-hidden="true">✓</span></button>
+    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><span class="flag" aria-hidden="true">🇸🇦</span><span class="sr-only">العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
   </div>
 </div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
 </div>
@@ -707,7 +720,7 @@ body{background:#fff}
 <footer class="footer footer-refined">
 <div class="container">
 <div class="footer-columns">
-<div class="footer-brand"><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-mark.png'"/><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
+<div class="footer-brand"><img class="footer-new-logo" alt="Verqo Studio logo" src="assets/verqo-logo.png"/><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
 <div class="footer-col"><h3 data-ar="الصفحات" data-en="Pages">Pages</h3><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a><a data-ar="من نحن" data-en="About" href="#about">About</a><a data-ar="الخدمات" data-en="Services" href="#services">Services</a><a data-ar="معرض الأعمال" data-en="Portfolio" href="#works">Portfolio</a><a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a></div>
 <div class="footer-col"><h3 data-ar="استكشف" data-en="Explore">Explore</h3><a data-ar="الباقات" data-en="Our Packages" href="#pricing">Our Packages</a><a data-ar="أعمال مختارة" data-en="Selected Work" href="#works">Selected Work</a><a data-ar="أعمالنا على بيهانس ↗" data-en="Behance Portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a data-ar="ابدأ مشروعك" data-en="Start a Project" href="#contact">Start a Project</a></div>
 <div class="footer-social"><h3 data-ar="تابعنا" data-en="Follow Us">Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg"><rect height="19" rx="5.4" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 32 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h11.2c5.2 0 7.4 2.3 7.4 5.7 0 2.3-1.2 3.8-3.1 4.6 2.8.7 4.1 2.8 4.1 5.3 0 4.4-3.7 6.4-8.3 6.4H0V3zm5.4 8.6h5.1c1.7 0 2.7-.9 2.7-2.3S12.2 7 10.5 7H5.4v4.6zm0 9h5.6c2 0 3.2-1 3.2-2.7 0-1.6-1.2-2.5-3.2-2.5H5.4v5.2z" transform="scale(.85)"></path><path d="M21 5h10v2.2H21zM32 15.7c0-5.5-3.4-8.7-8.5-8.7-5.3 0-8.5 3.8-8.5 8.7 0 5.2 3.2 8.5 8.5 8.5 4 0 6.7-1.8 8.1-5.2h-4.7c-.4 1-1.5 1.4-3.1 1.4-2 0-3.3-1.3-3.4-3.2H32v-1.5zm-12.1-2.3c.2-1.7 1.5-2.7 3.4-2.7 1.8 0 3.1 1.1 3.3 2.7h-6.7z" transform="translate(5 -2) scale(.8)"></path></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"></path></svg></a></div><div class="footer-inquiry"><strong data-ar="لنصنع شيئًا مميزًا." data-en="Let's build something.">Let's build something.</strong><a data-ar="أرسل استفسار مشروع ↗" data-en="Send a project inquiry ↗" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
