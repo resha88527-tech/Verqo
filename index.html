@@ -1,844 +1,395 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#050505" name="theme-color"/>
-<meta content="VERQO STUDIO — one-page creative studio website with services, work, pricing and contact." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="VERQO STUDIO — creative studio: services, work, pricing and contact.">
 <title>VERQO Studio | Creative Solutions &amp; Pricing</title>
-<link href="assets/verqo-logo.png" rel="icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link rel="icon" href="assets/verqo-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#050505;
-  --panel:#0c0c0c;
-  --card:#101010;
-  --soft:#171717;
-  --line:#2a2a2a;
-  --text:#f5f5f5;
-  --muted:#9d9d9d;
-  --paper:#f3f3ef;
-  --dark:#090909;
-  --sans:Inter,Manrope,Arial,sans-serif;
-  --arab:Tajawal,Arial,sans-serif;
-  scroll-behavior:smooth;
-}
+/* Thmanyah Sans: put the font files in assets/fonts/ (Tajawal is the fallback until then) */
+@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Bold.woff2") format("woff2");font-weight:700 800;font-display:swap}
+:root{--bg:#050505;--line:#2a2a2a;--paper:#f2f2f0;--muted:#8f8f8f;
+--sans:Inter,"Thmanyah Sans",Tajawal,Arial,sans-serif;--ar:"Thmanyah Sans",Tajawal,Inter,Arial,sans-serif;--ease:cubic-bezier(.19,1,.22,1)}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-img{max-width:100%;display:block}
-::selection{background:#fff;color:#000}
-.arab{font-family:var(--arab)}
-#progress{position:fixed;left:0;top:0;height:2px;width:0;background:#fff;z-index:200;transition:width .08s linear}
-.container{width:min(100% - 36px, 1360px);margin-inline:auto}
-.section{padding:110px 0;border-top:1px solid var(--line)}
-.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8f8f8f;margin-bottom:18px}
-.title-xl{font-size:clamp(40px,7.5vw,98px);line-height:.95;letter-spacing:-.08em;margin:0 0 18px;font-weight:800}
-.title-lg{font-size:clamp(32px,5.2vw,72px);line-height:.95;letter-spacing:-.07em;margin:0 0 18px;font-weight:800}
-.lead{font-size:clamp(18px,2vw,28px);line-height:1.55;color:#d4d4d4;max-width:860px}
-.small{font-size:13px;color:#8f8f8f;line-height:1.8}
-.pill{display:inline-flex;align-items:center;gap:12px;border:1px solid #555;padding:15px 22px;border-radius:999px;background:transparent;color:#fff;transition:.25s;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
-.pill:hover{background:#fff;color:#000;border-color:#fff}
-.reveal{opacity:1;transform:none;transition:opacity .75s ease, transform .75s ease}
-.reveal.visible{opacity:1;transform:none}
-
-.site-header{position:sticky;top:0;z-index:120;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
-.header-row{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-size:28px;font-weight:800;letter-spacing:-.09em;display:flex;align-items:center;gap:12px}
-.brand img{width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(255,255,255,.1))}
-.nav{display:flex;align-items:center;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
-.nav a{color:#d3d3d3;transition:.2s}
-.nav a:hover{color:#fff}
-.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:25px;cursor:pointer}
-
-.offer-strip{background:#f1f1ee;color:#080808;border-top:1px solid #d4d4cf;border-bottom:1px solid #d4d4cf;overflow:hidden;white-space:nowrap}
-.offer-track{display:flex;gap:42px;align-items:center;width:max-content;padding:16px 0;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;animation:marquee 22s linear infinite}
-.offer-track span{display:flex;align-items:center;gap:42px}
-.offer-track b{font-size:22px;font-weight:500;line-height:1}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.hero{padding:34px 0 70px}
-.hero-stage{position:relative;border:1px solid #1f1f1f;background:#0b0b0b;aspect-ratio:16/9;min-height:520px;overflow:hidden;border-radius:34px;box-shadow:0 30px 100px rgba(0,0,0,.34)}
-.hero-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .55s ease}
-.hero-slide.active{opacity:1;pointer-events:auto}
-.hero-slide .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.02) saturate(.98)}
-.hero-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.10) 20%,rgba(0,0,0,.48) 100%)}
-.hero-content{position:absolute;z-index:4;left:44px;bottom:42px;max-width:min(700px,55vw)}
-.hero-kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c7c7c7;margin-bottom:18px}
-.hero-heading{font-size:clamp(34px,4.5vw,74px);line-height:.92;letter-spacing:-.08em;margin:0 0 16px;font-weight:800}
-.hero-text{max-width:560px;color:#d7d7d7;font-size:15px;line-height:1.8;margin:0 0 22px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-controls{position:absolute;right:34px;bottom:34px;z-index:6;display:flex;align-items:center;gap:14px}
-.hero-counter{min-width:94px;padding:14px 18px;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);text-align:center;font-size:13px;font-weight:700;letter-spacing:.08em}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+html,body{margin:0;background:#fff;color:#fff;font-family:var(--sans);overflow-x:hidden}
+body.is-ar,body.is-ar *{font-family:var(--ar)!important;letter-spacing:0!important;text-transform:none!important}
+a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}
+::selection{background:#000;color:#fff}
+.container{width:min(100% - 40px,1180px);margin-inline:auto}
+#progress{position:fixed;left:0;top:0;height:2px;width:0;background:#fff;z-index:300}
+.amount,.big-price,.hero-counter,.svc-index{font-family:Inter,sans-serif!important;font-variant-numeric:tabular-nums}
+/* header */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:170;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.22)}
+.header-row{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand img{height:43px;width:auto;max-width:170px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.nav a{color:#fff;transition:.2s;opacity:.85}.nav a:hover{opacity:1}
+.nav a:last-child{border:1px solid rgba(255,255,255,.75);border-radius:99px;padding:10px 22px;opacity:1}
+.nav a:last-child:hover{background:#fff;color:#000}
+body.is-ar .nav{font-size:14px}
+.header-tools{display:flex;align-items:center;gap:10px}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+/* language dropdown (flags are inline SVG, injected by JS) */
+.language-dropdown{position:relative;direction:ltr}
+.language-trigger{width:52px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(12,12,12,.9);border:1px solid rgba(255,255,255,.45);border-radius:99px;cursor:pointer;transition:.2s}
+.language-trigger:hover,.language-dropdown.open .language-trigger{border-color:#fff;background:#171717}
+.flag{width:28px;height:20px;border-radius:4px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.28)}
+.language-menu{position:absolute;right:0;top:calc(100% + 10px);width:64px;padding:6px;background:#111;border:1px solid #555;border-radius:14px;box-shadow:0 16px 42px rgba(0,0,0,.5)}
+.language-menu[hidden]{display:none}
+.language-option{width:100%;min-height:42px;display:flex;align-items:center;justify-content:center;background:none;border:0;border-radius:10px;cursor:pointer;transition:.2s}
+.language-option:hover{background:rgba(255,255,255,.22)}.language-option.is-active{background:rgba(255,255,255,.16)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+/* hero */
+.hero-stage{position:relative;height:clamp(420px,46vw,760px);overflow:hidden;background:#060606}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.1s,visibility 1.1s}
+.hero-slide.active{opacity:1;visibility:visible}
+.hero-slide .bg{width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.08);transition:transform 8s linear}
+.hero-slide.active .bg{transform:scale(1)}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),transparent 30%,transparent 55%,rgba(0,0,0,.72))}
+.hero-content{position:absolute;z-index:4;left:max(4.2vw,24px);bottom:clamp(60px,6vw,105px);max-width:62vw}
+.hero-heading{font-size:clamp(26px,3vw,50px);line-height:1.1;letter-spacing:-.05em;margin:0;font-weight:800;text-shadow:0 3px 20px rgba(0,0,0,.5)}
+body.is-ar .hero-heading{line-height:1.35}
+.hero-controls{position:absolute;z-index:6;right:max(4.2vw,24px);bottom:clamp(50px,5vw,96px);display:flex;flex-direction:row-reverse;align-items:center;gap:18px}
+.hero-counter{font-size:16px;font-weight:600}
 .hero-arrows{display:flex;gap:10px}
-.hero-arrow{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.24);background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;font-size:20px;cursor:pointer;backdrop-filter:blur(10px);transition:.25s}
-.hero-arrow:hover{background:#fff;color:#000;border-color:#fff}
-.hero-logo-badge{position:absolute;left:32px;bottom:32px;z-index:6;display:flex;align-items:end;gap:14px;padding:12px 14px;border-radius:18px;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px)}
-.hero-logo-badge img{width:44px;height:44px;object-fit:contain}
-.hero-logo-badge span{font-size:11px;line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:#d9d9d9}
-.hero-caption-right{position:absolute;right:36px;top:34px;z-index:6;padding:10px 14px;border-radius:16px;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#f2f2f2}
-.slide-plain{position:absolute;inset:0;background:radial-gradient(circle at 70% 10%,rgba(255,255,255,.08),transparent 35%),linear-gradient(180deg,#050505 0%,#0c0c0c 100%)}
-.slide-plain::before,.slide-plain::after{content:'';position:absolute;top:-8%;bottom:-8%;width:2px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7),transparent);filter:blur(.4px);opacity:.6;transform:rotate(18deg)}
-.slide-plain::before{left:20%}.slide-plain::after{left:29%}
-.slide-plain .mark{position:absolute;right:9%;top:16%;width:min(30vw,420px);opacity:.96;filter:drop-shadow(0 0 25px rgba(255,255,255,.08))}
-.slide-plain .line{position:absolute;left:8%;bottom:23%;width:28%;height:1px;background:linear-gradient(90deg,#fff,transparent)}
-
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}
-.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
-.stat-box{padding:24px;border:1px solid var(--line);background:#0b0b0b;border-radius:22px}
-.stat-box strong{display:block;font-size:30px;letter-spacing:-.05em;margin-bottom:8px}
-.stat-box span{color:#8d8d8d;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-
-.services{background:var(--paper);color:#090909}
-.services .lead,.services .small{color:#4c4c4c}
-.service-list{margin-top:34px;border-top:1px solid #bdbdb8}
-.service-item{display:grid;grid-template-columns:58px 1.15fr .95fr 24px;gap:18px;align-items:center;padding:24px 8px;border-bottom:1px solid #c9c9c4;transition:.25s}
-.service-item:hover{background:#e8e8e2;padding-inline:18px}
-.service-item .num{font-size:12px;color:#808080}
-.service-item h3{font-size:clamp(24px,3vw,46px);margin:0;letter-spacing:-.06em}
-.service-item p{font-size:13px;color:#555;line-height:1.75;margin:0}
-.service-item .arr{font-size:22px}
-
-.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.work-card{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#0d0d0d}
-.work-card:nth-child(2){transform:translateY(34px)}
-.work-card .thumb{aspect-ratio:4/5;position:relative;overflow:hidden;background:#131313}
-.work-card .thumb img{width:100%;height:100%;object-fit:cover}
-.work-card .thumb--plain{display:grid;place-items:center;background:linear-gradient(145deg,#0d0d0d,#1b1b1b)}
-.work-card .thumb--plain span{font-size:clamp(38px,4vw,72px);font-weight:800;letter-spacing:-.08em}
-.work-info{padding:20px}
-.work-info h3{margin:0 0 8px;font-size:20px;letter-spacing:-.04em}
-.work-info p{margin:0;color:#8f8f8f;font-size:13px;line-height:1.7}
-
-.pricing{background:#f3f3ef;color:#090909}
-.pricing .small,.pricing .lead{color:#555}
-.pricing-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
-.category-selector{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.category-selector button{padding:13px 18px;border-radius:999px;border:1px solid #bababa;background:transparent;color:#111;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.04em;transition:.2s}
-.category-selector button.active,.category-selector button:hover{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
-.currency-row{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:18px}
-.currency-row strong{font-size:26px;letter-spacing:-.04em}
-.currency-row .right{display:flex;align-items:center;gap:10px;color:#666;font-size:12px}
-.currency-row button{padding:9px 14px;border-radius:999px;border:1px solid #aaa;background:transparent;cursor:pointer;font-weight:700;font-size:12px}
-.currency-row button.active{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
-.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.package-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
-.package{background:#fff;border:1px solid #dadad4;border-radius:26px;padding:26px;display:flex;flex-direction:column;min-height:450px;box-shadow:0 14px 35px rgba(0,0,0,.06)}
-.package-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7b7b7b}
-.package h3{margin:14px 0 8px;font-size:28px;letter-spacing:-.06em}
-.package .amount{font-size:clamp(30px,3vw,46px);font-weight:800;letter-spacing:-.08em}
-.package .other{font-size:12px;color:#777;margin:8px 0 18px}
-.package ul{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid #ddd;display:flex;flex-direction:column;gap:10px;flex:1;font-family:var(--arab);font-size:13px;line-height:1.7}
-.package ul li::before{content:'• ';color:#111;font-weight:800}
-.book{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;background:#090909;color:#fff;padding:16px 18px;border-radius:16px;cursor:pointer;font-weight:700;letter-spacing:.03em;transition:.2s}
-.book:hover{transform:translateY(-2px);background:#000}
-.pricing-hint{margin-top:14px;font-size:12px;color:#666;line-height:1.8}
-
-.contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:60px;align-items:start}
-.contact-card{padding:30px;border:1px solid var(--line);border-radius:28px;background:#0b0b0b}
-.contact-card h3{margin:0 0 12px;font-size:28px;letter-spacing:-.06em}
-.contact-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.contact-link{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border:1px solid #2b2b2b;border-radius:18px;color:#dedede;transition:.2s}
-.contact-link:hover{background:#fff;color:#000;border-color:#fff}
-.footer{padding:28px 0 54px;color:#888;border-top:1px solid var(--line)}
-.footer-row{display:flex;justify-content:space-between;gap:22px;align-items:center;font-size:12px}
-
-.drawer{position:fixed;top:0;right:-100%;width:min(520px,100%);height:100vh;background:#fff;color:#090909;z-index:140;transition:right .35s ease;box-shadow:-20px 0 60px rgba(0,0,0,.25);padding:30px 26px 26px;overflow:auto}
-.drawer.show{right:0}
-.drawer-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;color:#666;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-.close{width:42px;height:42px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:18px}
-.big-price{font-size:56px;font-weight:800;letter-spacing:-.08em;margin:8px 0 6px}
-.sar{color:#666;margin-bottom:18px}
-#drawerFeatures{list-style:none;margin:0 0 24px;padding:18px 0 0;border-top:1px solid #ddd;display:flex;flex-direction:column;gap:12px;font-family:var(--arab)}
-#drawerFeatures li::before{content:'• ';font-weight:800}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s;z-index:130}
-.overlay.show{opacity:1;pointer-events:auto}
-.fine{color:#666;font-size:12px;line-height:1.8}
-
-/* Full-screen 16:9 photography hero: 1920x1080 image endpoint, cover every screen */
-.hero{padding:0;}
-.hero-wide{width:100%;max-width:none;margin:0;padding:0;}
-.hero-stage{height:calc(100svh - 72px - 54px);min-height:540px;width:100%;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none;}
-.hero-slide .bg{width:100%;height:100%;object-fit:cover;object-position:center;}
-.hero-slide .hero-photo{object-position:center 48%;}
-.hero-slide::after{background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.18) 73%),linear-gradient(0deg,rgba(0,0,0,.42),transparent 48%);}
-.hero-content{left:clamp(24px,5vw,100px);bottom:clamp(135px,17vh,225px);max-width:min(720px,64vw);}
-.hero-logo-badge{left:clamp(24px,4vw,70px);bottom:28px;}
-.hero-controls{right:clamp(24px,4vw,70px);bottom:28px;}
-.hero-caption-right{right:clamp(24px,4vw,70px);top:28px;}
-.hero-slide .hero-heading{text-shadow:0 3px 22px rgba(0,0,0,.55);}
-@media(max-width:820px){.hero-stage{height:calc(100svh - 66px - 54px);min-height:480px;border-radius:0;}.hero-content{left:22px;right:22px;bottom:128px;max-width:none}.hero-logo-badge{left:18px;bottom:18px}.hero-controls{right:18px;bottom:18px}.hero-caption-right{right:18px;top:18px}}
-@media (max-width:1100px){
-  .works-grid,.package-grid.four,.package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .about-grid,.contact-grid{grid-template-columns:1fr}
-  .service-item{grid-template-columns:52px 1fr;align-items:start}
-  .service-item p,.service-item .arr{grid-column:2}
-}
-@media (max-width:820px){
-  .nav{display:none;position:absolute;left:18px;right:18px;top:78px;background:#0b0b0b;border:1px solid #202020;border-radius:22px;padding:18px;flex-direction:column;align-items:flex-start}
-  .nav.show{display:flex}
-  .menu-toggle{display:block}
-  .hero-stage{min-height:460px;border-radius:0;height:calc(100svh - 66px - 54px)}
-  .hero-content{left:22px;right:22px;bottom:95px;max-width:none}
-  .hero-logo-badge{left:18px;bottom:18px}
-  .hero-controls{right:18px;bottom:18px}
-  .hero-caption-right{right:18px;top:18px}
-  .stat-row,.works-grid,.package-grid,.package-grid.four{grid-template-columns:1fr}
-  .work-card:nth-child(2){transform:none}
-  .pricing-top,.currency-row,.footer-row{flex-direction:column;align-items:flex-start}
-}
-@media (max-width:580px){
-  .header-row{height:66px}
-  .brand{font-size:24px}
-  .hero-heading{font-size:32px}
-  .hero-text{font-size:14px}
-  .hero-logo-badge span{display:none}
-  .hero-arrow{width:46px;height:46px}
-  .section{padding:84px 0}
-}
-
-/* VERQO STUDIO — MOTION DIRECTION 02 */
-:root{--ease-expo:cubic-bezier(.19,1,.22,1);--ease-soft:cubic-bezier(.22,1,.36,1)}
-html{scroll-padding-top:82px}
-body{isolation:isolate}
-/* Staged entrances: only hidden after JS is actively running. Fallback stays visible. */
-.motion-ready .reveal:not(.visible){opacity:0;transform:translate3d(0,62px,0);filter:blur(5px)}
-.motion-ready .reveal.from-left:not(.visible){transform:translate3d(-95px,0,0)}
-.motion-ready .reveal.from-right:not(.visible){transform:translate3d(95px,0,0)}
-.motion-ready .reveal.from-scale:not(.visible){transform:scale(.91) translateY(30px)}
-.motion-ready .reveal{transition:opacity 1.04s var(--ease-soft),transform 1.15s var(--ease-expo),filter .95s ease;transition-delay:var(--reveal-delay,0ms)}
-.motion-ready .reveal.visible{opacity:1;transform:none;filter:blur(0)}
-.section .eyebrow{overflow:hidden}
-.section .eyebrow::before{content:'';display:inline-block;height:1px;width:25px;background:currentColor;vertical-align:middle;margin-right:12px;transition:width 1s var(--ease-expo)}
-.section:has(.visible) .eyebrow::before{width:49px}
-/* Full-width cinematic slide transitions */
-.hero-slide{transition:opacity 1.1s ease,visibility 1.1s ease;visibility:hidden}
-.hero-slide.active{visibility:visible}
-.hero-slide .bg{transform:scale(1.09);transition:transform 8s linear,filter 1.5s ease;will-change:transform}
-.hero-slide.active .bg{transform:scale(1.01)}
-.hero-content>*{transform:translateY(24px);opacity:0;transition:transform 1s var(--ease-expo),opacity .8s ease}
-.hero-slide.active .hero-content>*{transform:translateY(0);opacity:1}
-.hero-slide.active .hero-content>*:nth-child(2){transition-delay:.12s}
-.hero-slide.active .hero-content>*:nth-child(3){transition-delay:.24s}
-.hero-slide.active .hero-content>*:nth-child(4){transition-delay:.34s}
-.hero-caption-right,.hero-logo-badge,.hero-controls{transition:transform .5s var(--ease-expo),border-color .5s ease}
-.hero-logo-badge:hover{transform:translateY(-5px);border-color:#ffffff60}
-.hero-arrow:hover{transform:scale(1.09)}
-/* A progress underline moves as the slide counts down */
-.hero-progress{position:absolute;z-index:7;bottom:0;left:0;width:100%;height:3px;background:#ffffff21;overflow:hidden}
-.hero-progress span{display:block;width:100%;height:100%;background:#f8f8f8;transform-origin:left;transform:scaleX(0)}
-.hero-progress.running span{animation:slideProgress 5.5s linear forwards}
-@keyframes slideProgress{to{transform:scaleX(1)}}
-/* high-end hover motion and subtle lighting */
-.service-item{position:relative;overflow:hidden;transition:background .45s ease,padding .5s var(--ease-expo)}
-.service-item h3,.service-item .arr{transition:transform .5s var(--ease-expo)}
-.service-item:hover h3{transform:translateX(13px)}
-.service-item:hover .arr{transform:rotate(45deg) translate(4px,-4px)}
-.work-card{position:relative;transition:transform .8s var(--ease-expo),border-color .45s ease,box-shadow .65s ease;transform-style:preserve-3d}
-.work-card:hover{border-color:#777;box-shadow:0 30px 95px #ffffff0d}
-.work-card .thumb{overflow:hidden}
-.work-card .thumb img{transition:transform 1.4s var(--ease-expo);transform:scale(1.045)}
-.work-card:hover .thumb img{transform:scale(1.14)}
-.work-card .thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(112deg,transparent 30%,#fff2 50%,transparent 70%);transform:translateX(-130%);transition:transform .95s ease;pointer-events:none}
-.work-card:hover .thumb:after{transform:translateX(130%)}
-.work-card:hover .work-info h3{letter-spacing:-.06em}
-.stat-box{position:relative;overflow:hidden;transition:transform .5s var(--ease-expo),border-color .35s ease}
-.stat-box:before{content:'';position:absolute;inset:-100%;background:radial-gradient(circle at center,#ffffff0e,transparent 45%);transform:translate(-35%,-35%);transition:transform .7s ease;pointer-events:none}
-.stat-box:hover{transform:translateY(-9px);border-color:#999}
-.stat-box:hover:before{transform:translate(15%,10%)}
-.package{position:relative;overflow:hidden;transition:transform .55s var(--ease-expo),box-shadow .55s ease,border-color .35s ease}
-.package:hover{transform:translateY(-12px);box-shadow:0 35px 85px #00000023;border-color:#aaa}
-.category-selector button{transition:background .3s ease,color .3s ease,transform .4s var(--ease-expo)}
-.category-selector button:hover{transform:translateY(-3px)}
-.contact-link{transition:transform .45s var(--ease-expo),background .3s ease,color .3s ease}
-.contact-link:hover{transform:translateX(10px)}
-.pill,.book{position:relative;overflow:hidden}
-.pill:after,.book:after{content:'';position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 30%,#ffffff35 50%,transparent 70%);transform:translateX(-120%);transition:transform .65s ease;pointer-events:none}
-.pill:hover:after,.book:hover:after{transform:translateX(120%)}
-/* Cursor spotlight, desktop only, never obstructs controls */
-.cursor-aura{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0;transition:opacity .5s ease;background:radial-gradient(460px circle at var(--cx,50%) var(--cy,50%),#ffffff09,transparent 70%)}
-@media(hover:hover) and (pointer:fine){body:hover .cursor-aura{opacity:1}}
-/* scrolling cue */
-.scroll-cue{position:absolute;z-index:7;bottom:30px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.22em;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:9px;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px #0009}
-.scroll-cue i{display:block;width:1px;height:36px;background:linear-gradient(#fff,transparent);animation:cuePulse 2s ease-in-out infinite}
-@keyframes cuePulse{0%,100%{transform:scaleY(.45);opacity:.5}50%{transform:scaleY(1);opacity:1}}
-/* Prevent layout/animation collisions at mobile width */
-@media(max-width:820px){.scroll-cue{display:none}.work-card:nth-child(2){transform:none}.motion-ready .reveal.from-left:not(.visible),.motion-ready .reveal.from-right:not(.visible){transform:translateY(38px)}.cursor-aura{display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.motion-ready .reveal:not(.visible){opacity:1!important;transform:none!important;filter:none!important}.hero-content>*{opacity:1!important;transform:none!important}}
-
-
-/* Portfolio projects: editorial 2-column layout inspired by the reference */
-#works .portfolio-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 26px;align-items:start}
-#works .portfolio-gallery .work-card{transform:none!important;border:0;border-radius:0;background:transparent;overflow:visible;box-shadow:none!important}
-#works .portfolio-gallery .portfolio-thumb{display:block;aspect-ratio:1.8;overflow:hidden;border-radius:12px;position:relative;background:#202020;border:1px solid #292929}
-#works .portfolio-gallery .portfolio-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .75s cubic-bezier(.2,.7,.1,1);transform:scale(1.001)}
-#works .portfolio-gallery .portfolio-thumb:hover img{transform:scale(1.045)}
-#works .portfolio-gallery .portfolio-thumb:after{display:none}
-#works .portfolio-gallery .portfolio-view{position:absolute;bottom:16px;right:16px;z-index:2;border-radius:99px;padding:10px 14px;color:#0a0a0a;background:#f6f6f4;font-size:10px;font-weight:800;letter-spacing:.07em;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
-#works .portfolio-gallery .portfolio-thumb:hover .portfolio-view,#works .portfolio-gallery .portfolio-thumb:focus-visible .portfolio-view{opacity:1;transform:none}
-#works .portfolio-gallery .portfolio-info{display:flex;justify-content:space-between;align-items:start;gap:14px;padding:16px 2px 0;flex-wrap:wrap}
-#works .portfolio-gallery .portfolio-info h3{font-size:18px;margin:0 0 6px;letter-spacing:-.035em}
-#works .portfolio-gallery .portfolio-info p{font-size:12px;margin:0;color:#929292}
-#works .portfolio-gallery .portfolio-tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-#works .portfolio-gallery .portfolio-tags span{font-size:10px;border:1px solid #666;border-radius:99px;padding:5px 9px;white-space:nowrap;color:#dedede}
-@media(max-width:700px){#works .portfolio-gallery{grid-template-columns:1fr;gap:30px}#works .portfolio-gallery .portfolio-info{padding-top:14px}#works .portfolio-gallery .portfolio-view{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){#works .portfolio-gallery .portfolio-thumb img{transition:none}}
-
-
-/* Fast, reliable native wheel scroll with cinematic visual effects only. */
-html { scroll-behavior: smooth; scroll-padding-top: 78px; }
-body { overscroll-behavior-y: auto; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .hero-slide .bg, .reveal, .hero-content > * { animation: none !important; transition: none !important; }
-}
-
-
-
-/* Verqo Studio refresh – image-first landing / white welcome / dark service cards / white footer */
-html{scroll-behavior:smooth}
-body{background:#fff}
-.site-header{position:absolute!important;top:0;left:0;right:0;z-index:160;background:linear-gradient(to bottom,rgba(0,0,0,.50),rgba(0,0,0,0))!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
-.site-header .header-row{height:88px}
-.site-header .nav{gap:25px}.site-header .nav a{color:#fff!important;text-shadow:0 1px 6px #0005}
-.site-header .brand{font-size:23px;letter-spacing:-.075em;color:#fff}
-.site-header .brand img{width:35px;height:35px}
-.site-header .nav a:last-child{border:1px solid #fff9;border-radius:50px;padding:11px 23px}
-.hero{padding:0!important;background:#060606!important}
-.hero-wide{width:100%!important;max-width:none!important;margin:0!important}
-.hero-stage{border-radius:0!important;min-height:640px!important;height:min(100svh,950px)!important;aspect-ratio:auto!important;border:0!important;box-shadow:none!important}
-.hero-slide .bg{object-position:center center!important}
-.hero-slide::after{background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,transparent 28%,transparent 58%,rgba(0,0,0,.65) 100%)!important}
-.hero-content{bottom:88px!important;left:max(5.5vw,26px)!important;right:auto!important;width:auto!important;max-width:70vw!important}
-.hero-content .hero-heading{font-size:clamp(26px,3vw,49px)!important;line-height:1.12!important;letter-spacing:-.045em!important;margin:0!important}
-.hero-caption-right,.hero-logo-badge,.scroll-cue{display:none!important}
-.hero-controls{bottom:70px!important;right:5.5vw!important;left:auto!important;width:auto!important;display:flex!important;flex-direction:row-reverse!important;align-items:center!important;gap:28px!important}
-.hero-counter{font-weight:600!important;font-size:18px!important;letter-spacing:.04em!important;background:transparent!important;border:0!important;padding:0!important;color:white!important}
-.hero-arrows{display:flex!important;gap:10px!important}
-.hero-arrow{width:45px!important;height:45px!important;border:1px solid #fffb!important;background:#0004!important;color:white!important;transition:background .25s,transform .25s!important}
-.hero-arrow:hover{background:#fff!important;color:#000!important;transform:translateY(-2px)}
-.hero-progress{bottom:0!important;top:auto!important}
-.offer-strip{height:48px!important;min-height:48px!important;background:#f5f5f2!important;color:#090909!important}
-.offer-track{padding:12px 0!important}
+.hero-arrow{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(0,0,0,.3);color:#fff;font-size:18px;cursor:pointer;transition:.25s}
+.hero-arrow:hover{background:#fff;color:#000;transform:scale(1.08)}
+.hero-progress{position:absolute;z-index:7;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.15)}
+.hero-progress span{display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0)}
+.hero-progress.running span{animation:prog 5.5s linear forwards}
+@keyframes prog{to{transform:scaleX(1)}}
+body.is-ar .hero-content{left:auto;right:max(4.2vw,24px);text-align:right}
+body.is-ar .hero-controls{right:auto;left:max(4.2vw,24px)}
+/* offer strip */
+.offer-strip{height:48px;background:#f5f5f2;color:#090909;overflow:hidden;white-space:nowrap;direction:ltr}
+.offer-track{display:flex;width:max-content;padding:15px 0;font-size:12px;font-weight:800;letter-spacing:.14em;animation:marquee 22s linear infinite}
+.offer-track span{padding-right:42px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* welcome */
 .welcome-section{background:#fff;color:#080808;padding:clamp(78px,8vw,128px) 0 104px}
-.welcome-inner{max-width:1110px!important}
-.welcome-rule{font-size:11px;color:#777;letter-spacing:.23em;margin-bottom:32px}
-.welcome-title{font-size:clamp(42px,5.2vw,82px);font-weight:800;letter-spacing:-.075em;line-height:1.08;margin:0 0 28px}
-.welcome-title span{white-space:nowrap}
-.welcome-intro{max-width:720px;font-size:clamp(16px,1.4vw,21px);line-height:1.65;color:#282828;margin:0 0 30px}
-.welcome-buttons{display:flex;gap:13px;flex-wrap:wrap}
-.welcome-btn{font-size:12px;font-weight:700;padding:13px 24px;border-radius:100px;display:inline-flex;gap:20px;align-items:center;border:1px solid #111;transition:.25s}
-.welcome-btn.dark{background:#050505;color:#fff}.welcome-btn.light{color:#111;background:#fff}
-.welcome-btn:hover{transform:translateY(-3px)}
-.services-showcase{background:#050505;color:#fff;padding:110px 0 118px}
-.services-showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,140px);align-items:start}
-.services-showcase-heading{position:sticky;top:50px;align-self:start;padding-top:42px}
-.services-showcase-heading .section-index{font-size:11px;letter-spacing:.2em;color:#aaa}
-.services-showcase-heading h2{font-size:clamp(42px,5vw,76px);line-height:1.06;letter-spacing:-.06em;margin:26px 0 28px}
-.red-dot{color:#111111}
-.services-showcase-heading p{max-width:490px;line-height:1.9;color:#bbb;font-size:15px;margin-bottom:35px}
-.white-action{background:#fff;color:#080808;border-radius:100px;padding:15px 25px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:23px;transition:.25s}
-.white-action:hover{transform:translateY(-4px);background:#eee}
-.services-cards{display:flex;flex-direction:column;gap:20px}
-.svc-card{background:#fff;color:#070707;border-radius:22px;padding:36px 38px;position:relative;transition:transform .28s ease,box-shadow .28s ease}
-.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 55px #ffffff10}
+.welcome-inner{max-width:1000px}
+.welcome-rule{font-size:11px;color:#777;letter-spacing:.23em;margin-bottom:30px}
+.welcome-title{font-size:clamp(42px,5.2vw,82px);font-weight:800;letter-spacing:-.07em;line-height:1.08;margin:0 0 26px}
+body.is-ar .welcome-title{line-height:1.35}
+.welcome-title span{display:inline-block;margin-right:.25em}
+.welcome-intro{max-width:720px;font-size:clamp(16px,1.4vw,21px);line-height:1.7;color:#282828;margin:0 0 30px}
+.welcome-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.welcome-btn,.white-action,.red-cta a,.pill{display:inline-flex;align-items:center;gap:20px;border-radius:99px;font-size:12px;font-weight:700;padding:14px 24px;border:1px solid #111;transition:.25s}
+.welcome-btn.dark{background:#050505;color:#fff}.welcome-btn.light{background:#fff;color:#111}
+.welcome-btn:hover,.white-action:hover,.red-cta a:hover{transform:translateY(-3px)}
+body.is-ar .welcome-btn,body.is-ar .white-action,body.is-ar .red-cta a,body.is-ar .pill{font-size:14px}
+/* services */
+.services-showcase{background:#050505;padding:110px 0}
+.services-showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,120px);align-items:start}
+.services-showcase-heading{position:sticky;top:50px;padding-top:40px}
+.section-index{font-size:11px;letter-spacing:.2em;color:#aaa}
+.services-showcase-heading h2{font-size:clamp(42px,5vw,74px);line-height:1.08;letter-spacing:-.06em;margin:24px 0}
+body.is-ar .services-showcase-heading h2{line-height:1.35}
+.services-showcase-heading p{max-width:480px;line-height:1.9;color:#bbb;font-size:15px;margin:0 0 32px}
+.white-action{background:#fff;color:#080808;border-color:#fff}
+.services-cards{display:flex;flex-direction:column;gap:18px}
+.svc-card{background:#fff;color:#070707;border-radius:22px;padding:34px 38px;transition:transform .3s}
+.svc-card:hover{transform:translateY(-5px)}
 .svc-index{font-size:11px;letter-spacing:.18em;color:#888}
-.svc-card h3{font-size:clamp(28px,3vw,43px);letter-spacing:-.045em;margin:10px 0 24px;color:#101010}
-.svc-tags{display:grid;grid-template-columns:1fr 1fr;gap:11px 25px}
-.svc-tags span{font-size:13px;line-height:1.35;color:#161616;display:flex;gap:9px;align-items:flex-start}
-.svc-tags span::before{content:'•';color:#101010;font-weight:900}
-/* Preserve original pricing and portfolio sections, including existing classes */
-#works{background:#fff!important;color:#111!important}
-#works .work-card{background:#fff!important;border-color:#eee!important}
-#works .work-info h3{color:#111!important}
-#works .work-info p{color:#777!important}
-#works .eyebrow{color:#777!important}
-#works .pill{background:#050505!important;color:#fff!important;border-color:#050505!important}
-#works .title-lg{color:#050505!important}
-.contact-finish{background:#fff;padding:72px 0 30px}
-.red-cta{position:relative;overflow:hidden;background:#090909;color:#fff;border-radius:22px;text-align:center;padding:64px 25px}
-.red-cta-orb{position:absolute;right:4%;top:-140px;font-size:360px;line-height:1;color:#ffffff13;pointer-events:none}
-.red-cta>span{font-size:11px;letter-spacing:.2em;font-weight:700;display:block;margin-bottom:16px}
-.red-cta h2{font-size:clamp(25px,3.7vw,52px);line-height:1.12;letter-spacing:-.055em;margin:0 auto 14px}
-.red-cta p{font-size:15px;margin:0 auto 26px;opacity:.93}
-.red-cta a{display:inline-flex;gap:28px;align-items:center;background:#fff;color:#090909;padding:14px 27px;border-radius:60px;font-size:12px;font-weight:800;transition:.25s}
-.red-cta a:hover{transform:translateY(-4px);background:#0a0a0a;color:#fff}
-.footer-refined{background:#fff!important;color:#111!important;padding:62px 0 25px!important;border:0!important}
-.footer-columns{display:grid;grid-template-columns:1.5fr .75fr 1fr 1.15fr;gap:55px;padding-bottom:64px}
-.footer-brand img{width:54px;height:54px;object-fit:contain;background:#050505;border-radius:15px;padding:6px;margin-bottom:12px}
-.footer-brand h2{font-size:clamp(38px,4vw,60px);letter-spacing:-.09em;line-height:.85;margin:0 0 20px}
-.footer-brand p{color:#777;font-size:13px;line-height:1.8}
-.footer-columns h3{font-size:15px;letter-spacing:-.03em;margin:0 0 22px}
-.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
-.footer-col h3{margin-bottom:8px}
-.footer-col a{font-size:13px;color:#555;transition:color .2s}
-.footer-col a:hover,.footer-inquiry a:hover{color:#090909}
-.footer-social-icons{display:flex;gap:9px;flex-wrap:wrap}
-.footer-social-icons a{width:48px;height:48px;border-radius:50%;background:#0b0b0b;color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;transition:transform .2s}
-.footer-social-icons a:hover{transform:translateY(-4px);background:#090909}
-.footer-inquiry{margin-top:32px;display:flex;flex-direction:column;gap:10px}
-.footer-inquiry strong{font-size:15px}.footer-inquiry a{font-size:13px;color:#555}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:24px;border-top:1px solid #e5e5e5;color:#777;font-size:12px}
-.back-top{background:#080808;color:#fff;padding:12px 16px;border-radius:10px;margin-left:24px}
-@media(max-width:940px){.services-showcase-grid{grid-template-columns:1fr}.services-showcase-heading{position:static;padding-top:0}.footer-columns{grid-template-columns:repeat(2,1fr);gap:44px}.hero-stage{min-height:550px!important;height:86svh!important}.site-header .nav{gap:13px}}
-@media(max-width:700px){.site-header .nav{background:#090909!important;top:75px!important;padding:25px!important}.hero-stage{height:80svh!important;min-height:440px!important}.hero-content{bottom:108px!important;max-width:88vw!important}.hero-controls{right:20px!important;bottom:28px!important}.hero-content{left:20px!important}.welcome-section{padding:68px 0 78px}.welcome-title span{white-space:normal}.services-showcase{padding:78px 0}.svc-card{padding:30px 24px}.svc-tags{gap:12px}.footer-columns{grid-template-columns:1fr 1fr;gap:38px 22px}.footer-bottom{align-items:flex-start;flex-direction:column}.footer-bottom span:last-child{display:flex;align-items:center;gap:18px}.back-top{margin-left:0}.red-cta{padding:50px 20px}}
-@media(max-width:420px){.footer-columns{grid-template-columns:1fr}.svc-tags{grid-template-columns:1fr 1fr}.hero-stage{min-height:425px!important}.hero-content .hero-heading{font-size:26px!important}}
-@media(prefers-reduced-motion:reduce){.reveal,.svc-card,.red-cta,.welcome-btn{transition:none!important;animation:none!important}}
-
-/* 2026 Verqo monochrome update: only black, white, and neutral grays */
-.hero-separator{height:22px;background:#fff;border-top:1px solid #e6e6e6;border-bottom:1px solid #dadada;position:relative;z-index:1}
-.site-header{position:relative!important;background:#080808!important;backdrop-filter:none!important;border-bottom:1px solid #303030!important}
-.site-header .header-row{height:78px!important}
-.site-header .nav a:last-child{background:#fff;color:#080808!important;border-color:#fff!important;text-shadow:none!important}
-.site-header .nav a:last-child:hover{background:#d9d9d9}
-.hero-stage{height:min(calc(100svh - 100px),980px)!important}
-.red-dot{color:#fff!important}
-.svc-card h3{color:#0a0a0a!important}
-.svc-tags span::before{color:#090909!important}
-.red-cta{background:#080808!important;color:#fff!important;border:1px solid #202020!important}
-.red-cta a{color:#080808!important}
-.footer-col a:hover,.footer-inquiry a:hover{color:#000!important;text-decoration:underline}
-.footer-social-icons a{color:#fff!important;background:#070707!important}
-.footer-social-icons a:hover{color:#090909!important;box-shadow:0 0 0 2px #333;transform:translateY(-4px)}
-.footer-social-icons svg{display:block;width:23px;height:23px}
-.footer-brand img{width:56px;height:56px;object-fit:cover;background:#060606;padding:0;border:1px solid #1c1c1c}
-@media(max-width:700px){.site-header .header-row{height:68px!important}.hero-separator{height:14px}.hero-stage{height:calc(100svh - 82px)!important;min-height:410px!important}}
-
-/* Header and hero: editorial image-first layout, matching supplied reference */
-.site-header{
-  position:absolute!important;
-  top:0!important;left:0!important;right:0!important;
-  z-index:170!important;
-  background:rgba(8,8,8,.76)!important;
-  -webkit-backdrop-filter:blur(12px)!important;
-  backdrop-filter:blur(12px)!important;
-  border:0!important;
-  border-bottom:1px solid rgba(255,255,255,.20)!important;
-}
-.site-header .header-row{
-  height:78px!important;
-  width:min(calc(100% - 48px),1120px)!important;
-  padding:0!important;
-}
-.site-header .brand{min-width:100px!important;line-height:1!important;display:flex!important;align-items:center!important}
-.site-header .brand img{
-  width:auto!important;height:52px!important;max-width:148px!important;
-  object-fit:contain!important;object-position:left center!important;
-  filter:none!important;
-}
-.site-header .nav a:last-child{
-  background:transparent!important;color:#fff!important;
-  border:1px solid rgba(255,255,255,.76)!important;
-}
-.site-header .nav a:last-child:hover{background:#fff!important;color:#000!important}
-.hero{padding:0!important;margin:0!important}
-.hero-wide{width:100%!important;max-width:none!important;margin:0!important}
-.hero-stage{
-  height:clamp(390px, 31.85vw, 650px)!important;
-  min-height:390px!important;
-  max-height:none!important;
-  border-radius:0!important;
-  border:0!important;
-}
-.hero-slide .bg{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}
-.hero-slide::after{
-  background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, transparent 31%,transparent 62%,rgba(0,0,0,.72) 100%)!important;
-}
-.hero-content{
-  left:max(4.2vw,25px)!important;bottom:clamp(56px,5.6vw,105px)!important;
-  max-width:60vw!important;
-}
-.hero-content .hero-heading{font-size:clamp(25px,2.0vw,39px)!important;letter-spacing:-.055em!important}
-.hero-controls{right:max(4.2vw,25px)!important;bottom:clamp(50px,5.2vw,96px)!important;gap:18px!important}
-.hero-counter{font-size:16px!important}
-.hero-arrow{width:40px!important;height:40px!important}
-@media(max-width:800px){
-  .site-header .header-row{height:68px!important;width:calc(100% - 32px)!important}
-  .site-header .brand img{height:44px!important;max-width:120px!important}
-  .hero-stage{height:64svh!important;min-height:390px!important;max-height:650px!important}
-  .hero-content{left:22px!important;bottom:92px!important;max-width:72vw!important}
-  .hero-controls{right:20px!important;bottom:22px!important}
-  .site-header .nav{background:rgba(8,8,8,.96)!important}
-}
-@media(max-width:480px){
-  .hero-stage{height:61svh!important;min-height:380px!important}
-  .hero-content{max-width:80vw!important;bottom:88px!important}
-  .hero-content .hero-heading{font-size:26px!important}
-}
-</style>
-<style>
-/* 2026 bilingual official VERQO pricing + refinements */
-:root{--mono:#0b0b0b}
-.portfolio-tags span{color:#0a0a0a!important;border:1px solid #171717!important;background:#fff!important;font-weight:700!important;opacity:1!important}
-.portfolio-info h3{color:#0a0a0a!important}
-.hero-slide .bg{object-position:center 61%!important}
-.site-header{background:rgba(5,5,5,.72)!important;backdrop-filter:blur(16px)!important;border-bottom:1px solid rgba(255,255,255,.24)!important}
-.header-row{gap:14px!important}
-.language-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.32);border-radius:100px;direction:ltr;flex-shrink:0}
-.language-option{border:0;background:transparent;color:#eee;display:flex;align-items:center;gap:7px;border-radius:40px;padding:9px 12px;cursor:pointer;font-weight:750;font-size:12px;transition:.2s;white-space:nowrap}
-.language-option .flag{font-size:18px;line-height:1}
-.language-option.is-active{color:#0a0a0a;background:#fff;box-shadow:0 3px 12px #0002}
-.language-option:hover:not(.is-active){background:rgba(255,255,255,.16)}
-.pricing-redesign{background:#f2f2f0!important;color:#111!important;padding-block:90px 110px!important}
-.pricing-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:35px;background:#101010;color:#fff;border-radius:30px;padding:clamp(24px,5vw,65px);min-height:235px;overflow:hidden;position:relative}
-.pricing-hero:after{content:'';position:absolute;right:-80px;top:-120px;width:350px;height:350px;border-radius:50%;border:1px solid #ffffff24;box-shadow:0 0 0 55px #ffffff07,0 0 0 110px #ffffff04;pointer-events:none}
+.svc-card h3{font-size:clamp(26px,3vw,40px);letter-spacing:-.045em;margin:10px 0 22px}
+body.is-ar .svc-card h3{line-height:1.4}
+.svc-tags{display:grid;grid-template-columns:1fr 1fr;gap:11px 24px}
+.svc-tags span{font-size:13px;display:flex;gap:9px;line-height:1.5}
+.svc-tags span::before{content:"•";font-weight:900}
+/* works */
+.works{background:#fff;color:#111;padding:110px 0;border-top:1px solid #eee}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#777;margin-bottom:18px}
+.works-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.title-lg{font-size:clamp(32px,5.2vw,70px);line-height:1;letter-spacing:-.07em;margin:0;font-weight:800;color:#050505}
+body.is-ar .title-lg{line-height:1.3}
+.pill{background:#050505;color:#fff}.pill:hover{background:#fff;color:#000}
+.portfolio-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 26px}
+.portfolio-thumb{display:block;aspect-ratio:1.8;overflow:hidden;border-radius:12px;border:1px solid #ddd;background:#eee}
+.portfolio-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.portfolio-thumb:hover img{transform:scale(1.05)}
+.portfolio-info{display:flex;justify-content:space-between;align-items:start;gap:14px;flex-wrap:wrap;padding-top:16px}
+.portfolio-info h3{font-size:18px;margin:0 0 6px;color:#0a0a0a}.portfolio-info p{font-size:12px;margin:0;color:#777}
+.portfolio-tags{display:flex;gap:6px;flex-wrap:wrap}
+.portfolio-tags span{font-size:10px;font-weight:700;color:#0a0a0a;border:1px solid #171717;border-radius:99px;padding:5px 10px}
+/* pricing */
+.pricing{background:var(--paper);color:#111;padding:90px 0 110px}
+.pricing-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:34px;background:#101010;color:#fff;border-radius:30px;padding:clamp(24px,5vw,60px);position:relative;overflow:hidden}
+.pricing-hero::after{content:"";position:absolute;right:-80px;top:-120px;width:340px;height:340px;border-radius:50%;border:1px solid #ffffff24;box-shadow:0 0 0 55px #ffffff07,0 0 0 110px #ffffff04}
 .pricing-overline{font-weight:800;letter-spacing:.18em;font-size:11px;color:#bbb}
-.pricing-hero h2{font-size:clamp(36px,5vw,76px);letter-spacing:-.075em;line-height:1.04;margin:12px 0}
-.pricing-hero p{max-width:600px;color:#b9b9b9;line-height:1.7;font-size:14px;margin:0}
-.pricing-hero-stamp{font-size:40px;font-weight:900;letter-spacing:-.1em;position:relative;z-index:1;text-align:right;white-space:nowrap}
-.pricing-hero-stamp small{font-size:10px;letter-spacing:.18em;display:block;color:#aaa;font-weight:600}
-.category-selector{display:flex!important;flex-wrap:wrap!important;gap:9px!important;margin:0 0 25px!important}
-.category-selector button{color:#111!important;border:1px solid #929292!important;background:#fff!important;border-radius:999px!important;padding:13px 22px!important}
-.category-selector button.active,.category-selector button:hover{color:#fff!important;background:#111!important;border-color:#111!important}
-.currency-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-.currency-row .right{display:flex;align-items:center;gap:10px}
-.currency-row button{color:#111;background:#fff;border:1px solid #aaa;border-radius:99px;padding:9px 13px;cursor:pointer}
-.currency-row button.active{background:#111;color:#fff}
-.package-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;perspective:1300px}
-.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-.package{background:#fff!important;border-radius:25px!important;border:1px solid #d0d0cf!important;min-height:490px!important;padding:30px!important;display:flex!important;flex-direction:column!important;transition:box-shadow .35s,border-color .35s,translate .35s!important;transform-style:preserve-3d;box-shadow:0 10px 26px #0000000a}
-.package:hover{box-shadow:0 25px 55px #0000001c;border-color:#555!important;translate:0 -6px}
-.package.popular{background:#0b0b0b!important;color:#fff!important;border-color:#0b0b0b!important}
-.package.popular .amount,.package.popular h3{color:#fff!important}
-.package.popular .other,.package.popular .package-kicker{color:#b9b9b9!important}
-.package.popular .package-line{background:#555!important}
-.package.popular li{color:#eee!important}
-.package.popular .book{background:#fff!important;color:#000!important}
-.package h3{font-weight:800!important;font-size:25px!important;line-height:1.3!important;margin:22px 0 15px!important}
-.package .amount{font-size:clamp(33px,3.6vw,51px)!important;font-weight:850!important;letter-spacing:-.055em!important;white-space:nowrap!important;font-variant-numeric:tabular-nums!important}
-.package .other{font-size:13px!important;margin:6px 0 20px!important;color:#777!important}
-.package-line{height:1px;background:#ddd;margin:0 0 18px}
-.package ul{list-style:none!important;padding:0!important;margin:0 0 28px!important;display:flex!important;flex-direction:column!important;gap:14px!important;flex:1!important;font-size:13px!important;line-height:1.5!important;border:0!important}
-.package ul li{display:flex!important;gap:10px!important;align-items:flex-start!important;color:#333!important}
-.package ul li:before{content:'✓'!important;flex-shrink:0;border-radius:50%;background:#ececea;color:#111;width:19px;height:19px;display:grid;place-items:center;font-size:12px!important}
-.package .book{margin-top:auto;border-radius:14px;cursor:pointer}
-.pricing-hint{color:#555!important;font-size:13px!important;line-height:1.8!important;margin-top:22px!important}
-.pricing-legal{font-size:11px;color:#777;line-height:1.8;margin-top:6px}
-.drawer{direction:inherit!important}
-.drawer .big-price{font-variant-numeric:tabular-nums}
-.is-ar{font-family:'Tajawal',Arial,sans-serif!important}
-.is-ar .nav,.is-ar .footer,.is-ar .services-showcase,.is-ar .welcome-section,.is-ar .pricing-redesign{font-family:'Tajawal',Arial,sans-serif}
-.is-ar .hero-logo-badge,.is-ar .scroll-cue,.is-ar .hero-controls{direction:ltr}
-.is-ar .hero-content{left:auto!important;right:4%!important;text-align:right!important}
-.is-ar .hero-logo-badge{left:4%!important;right:auto!important}
-.is-ar .hero-controls{right:4%!important;left:auto!important}
-.is-ar .portfolio-info{direction:rtl;text-align:right}
-.is-ar .portfolio-tags{justify-content:flex-start}
-.is-ar .footer-columns{direction:rtl;text-align:right}
-.is-ar .pricing-hero-stamp{text-align:left}
-@media(max-width:950px){.language-switch{margin-left:auto}.site-header .nav.show{background:#080808!important}.language-option{padding:8px 9px}.package-grid,.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:640px){.package-grid,.package-grid.two{grid-template-columns:1fr!important}.pricing-hero-stamp{display:none}.pricing-hero{min-height:unset}.language-option .flag{font-size:16px}.language-option{font-size:11px;padding:6px 8px}.currency-row{align-items:flex-start;flex-direction:column}.portfolio-tags span{font-size:10px!important}}
-@media(prefers-reduced-motion:reduce){.package{transition:none!important}}
-
-/* Real language picker: white-on-black, anchored menu, clear flags. */
-.language-dropdown{position:relative;flex-shrink:0;direction:ltr;z-index:170}
-.language-trigger{display:flex;align-items:center;justify-content:space-between;gap:9px;min-width:147px;padding:10px 13px;background:rgba(12,12,12,.90);border:1px solid rgba(255,255,255,.46);border-radius:999px;color:#fff;cursor:pointer;font-weight:700;font-size:12px;transition:border-color .2s,background .2s}
-.language-trigger:hover,.language-dropdown.open .language-trigger{background:#171717;border-color:#fff}
-.language-trigger svg{transition:transform .2s;flex-shrink:0}
-.language-dropdown.open .language-trigger svg{transform:rotate(180deg)}
-.language-current-flag{font-size:20px;line-height:1}
-.language-menu{position:absolute;right:0;top:calc(100% + 11px);width:198px;max-width:calc(100vw - 30px);padding:6px;background:#111;border:1px solid #555;border-radius:16px;box-shadow:0 16px 42px rgba(0,0,0,.5);z-index:200;direction:ltr}
-.language-menu[hidden]{display:none!important}
-.language-menu .language-option{display:flex;align-items:center;width:100%;gap:12px;background:transparent;border:0;border-radius:11px;padding:12px 13px;text-align:left;color:#fff;font-size:13px;cursor:pointer;font-weight:650;transition:background .2s}
-.language-menu .language-option:hover,.language-menu .language-option.is-active{background:#303030;color:#fff;box-shadow:none}
-.language-menu .language-option .flag{font-size:22px}
-.language-check{margin-left:auto;opacity:0;color:#fff}
-.language-option.is-active .language-check{opacity:1}
-.site-header .brand img{width:auto!important;height:43px!important;max-width:170px!important;object-fit:contain!important}
-.footer-brand .footer-new-logo{width:175px!important;height:auto!important;max-height:165px!important;object-fit:contain!important;object-position:left center!important;display:block!important;margin-bottom:17px!important}
-/* Remove project overlay labels entirely. */
-#works .portfolio-gallery .portfolio-view{display:none!important}
-@media(max-width:760px){.language-trigger{min-width:114px;padding:8px 10px}.language-current-name{font-size:11px}.site-header .brand img{max-width:105px!important;height:37px!important}.language-menu{width:185px}}
-
-/* Footer logo: transparent PNG, no black square. */
-.footer-brand .footer-new-logo{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;width:134px!important;height:134px!important;max-height:none!important;object-fit:contain!important;margin-bottom:10px!important}
-/* Flag-only language selector. */
-.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.language-dropdown .language-trigger{min-width:0!important;width:49px!important;height:44px!important;padding:0!important;justify-content:center!important;gap:0!important}
-.language-dropdown .language-trigger .language-current-name{display:none!important}
-.language-dropdown .language-current-flag{font-size:25px!important}
-.language-dropdown .language-menu{width:68px!important;min-width:0!important;padding:6px!important;right:0!important}
-.language-dropdown .language-option{justify-content:center!important;padding:9px 5px!important;position:relative!important;min-height:44px!important}
-.language-dropdown .language-option .flag{font-size:26px!important}
-.language-dropdown .language-check{display:none!important}
-@media(max-width:760px){.language-dropdown .language-trigger{width:45px!important;height:42px!important}}
-
-/* Image flags instead of emoji: no GB/SA fallback letters. */
-.language-dropdown img.language-current-flag,.language-dropdown .language-option img.flag{display:block!important;width:29px!important;height:20px!important;object-fit:cover!important;border-radius:3px!important;box-shadow:0 0 0 1px rgba(255,255,255,.28)!important;flex-shrink:0!important}
-.language-dropdown .language-trigger{width:50px!important;height:44px!important;min-width:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
-.language-dropdown .language-trigger svg{display:none!important}
-.language-dropdown .language-menu{width:62px!important;min-width:0!important;padding:6px!important;right:0!important;left:auto!important}
-.language-dropdown .language-menu .language-option{display:flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;padding:8px 6px!important;gap:0!important}
-.language-dropdown .language-menu .language-option.is-active{background:rgba(255,255,255,.16)!important}
-.language-dropdown .language-menu .language-option:hover{background:rgba(255,255,255,.25)!important}
-</style></head>
+.pricing-hero h2{font-size:clamp(36px,5vw,74px);letter-spacing:-.07em;line-height:1.05;margin:12px 0}
+body.is-ar .pricing-hero h2{line-height:1.35}
+.pricing-hero p{max-width:580px;color:#b9b9b9;line-height:1.8;font-size:14px;margin:0}
+.stamp{font-size:40px;font-weight:900;letter-spacing:-.1em;position:relative;z-index:1;white-space:nowrap}
+.stamp small{display:block;font-size:10px;letter-spacing:.18em;color:#aaa;font-weight:600}
+.category-selector{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.category-selector button,.currency-row button{color:#111;background:#fff;border:1px solid #929292;border-radius:99px;padding:12px 22px;cursor:pointer;font-weight:700;font-size:12px;transition:.25s}
+.category-selector button.active,.category-selector button:hover,.currency-row button.active{background:#111;color:#fff;border-color:#111}
+.currency-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.currency-row strong{font-size:26px;letter-spacing:-.04em}
+.currency-row .right{display:flex;align-items:center;gap:10px;font-size:12px;color:#666}
+.currency-row button{padding:9px 14px}
+.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.package{background:#fff;border:1px solid #d0d0cf;border-radius:25px;padding:30px;min-height:480px;display:flex;flex-direction:column;box-shadow:0 10px 26px #0000000a;transition:.4s var(--ease)}
+.package:hover{transform:translateY(-8px);box-shadow:0 25px 55px #0000001c;border-color:#555}
+.package.popular{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
+.package-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7b7b7b}
+.package h3{font-size:25px;line-height:1.3;margin:20px 0 14px;letter-spacing:-.04em}
+.package .amount{font-size:clamp(32px,3.4vw,48px);font-weight:800;letter-spacing:-.05em;white-space:nowrap}
+.package .other{font-size:13px;color:#777;margin:6px 0 20px}
+.package.popular .other,.package.popular .package-kicker{color:#b9b9b9}
+.package-line{height:1px;background:#ddd;margin-bottom:18px}.package.popular .package-line{background:#555}
+.package ul{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:13px;flex:1;font-size:13px;line-height:1.6}
+.package li{display:flex;gap:10px;align-items:flex-start}
+.package li::before{content:"✓";flex:none;width:19px;height:19px;border-radius:50%;background:#ececea;color:#111;display:grid;place-items:center;font-size:11px}
+.package.popular li::before{background:#2a2a2a;color:#fff}
+.book{display:block;width:100%;border:0;background:#090909;color:#fff;padding:16px;border-radius:14px;cursor:pointer;font-weight:700;margin-top:auto;text-align:center;transition:.25s}
+.book:hover{transform:translateY(-2px)}
+.package.popular .book{background:#fff;color:#000}
+.pricing-hint{margin:22px 0 4px;font-size:13px;color:#555;line-height:1.8}
+.pricing-legal{font-size:11px;color:#777;line-height:1.8;margin:0}
+body.is-ar .package ul,body.is-ar .package h3,body.is-ar .package-kicker{text-align:right}
+/* cta + footer */
+.contact-finish{background:#fff;padding:72px 0 30px}
+.red-cta{position:relative;overflow:hidden;background:#080808;border:1px solid #202020;border-radius:22px;text-align:center;padding:64px 25px}
+.red-cta-orb{position:absolute;right:4%;top:-130px;font-size:340px;line-height:1;color:#ffffff12;pointer-events:none}
+.red-cta>span{font-size:11px;letter-spacing:.2em;font-weight:700;display:block;margin-bottom:16px}
+.red-cta h2{font-size:clamp(25px,3.7vw,50px);line-height:1.15;letter-spacing:-.05em;margin:0 auto 14px}
+body.is-ar .red-cta h2{line-height:1.4}
+.red-cta p{margin:0 auto 26px;opacity:.9}
+.red-cta a{background:#fff;color:#080808;border-color:#fff}.red-cta a:hover{background:#0a0a0a;color:#fff}
+.footer{background:#fff;color:#111;padding:62px 0 25px}
+.footer-columns{display:grid;grid-template-columns:1.5fr .8fr 1fr 1.2fr;gap:50px;padding-bottom:60px}
+.footer-new-logo{width:130px;height:130px;object-fit:contain;margin-bottom:10px}
+.footer p{color:#777;font-size:13px;line-height:1.8;margin:0}
+.footer h3{font-size:15px;margin:0 0 18px}
+.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.footer-col h3{margin-bottom:6px}
+.footer-col a,.footer-inquiry a{font-size:13px;color:#555}.footer-col a:hover,.footer-inquiry a:hover{color:#000;text-decoration:underline}
+.footer-social-icons{display:flex;gap:9px}
+.footer-social-icons a{width:48px;height:48px;border-radius:50%;background:#070707;color:#fff;display:grid;place-items:center;transition:.2s}
+.footer-social-icons a:hover{transform:translateY(-4px);box-shadow:0 0 0 2px #333}
+.footer-inquiry{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid #e5e5e5;color:#777;font-size:12px}
+.back-top{background:#080808;color:#fff;padding:12px 16px;border-radius:10px;margin-inline-start:20px}
+body.is-ar .footer-columns{direction:rtl;text-align:right}body.is-ar .footer-col{align-items:flex-start}
+/* drawer */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s;z-index:230}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:-100%;width:min(520px,100%);height:100vh;background:#fff;color:#090909;z-index:240;transition:right .35s;padding:30px 26px;overflow:auto;box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+.drawer.show{right:0}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:#666;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.close{width:42px;height:42px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer}
+.big-price{font-size:54px;font-weight:800;letter-spacing:-.07em;margin:8px 0 4px}
+.sar{color:#666;margin-bottom:18px}
+#drawerFeatures{list-style:none;margin:0 0 24px;padding:18px 0 0;border-top:1px solid #ddd;display:flex;flex-direction:column;gap:12px}
+#drawerFeatures li::before{content:"• ";font-weight:800}
+.fine{color:#666;font-size:12px;line-height:1.8}
+/* reveal */
+.motion-ready .reveal:not(.visible){opacity:0;transform:translateY(50px);filter:blur(4px)}
+.reveal{transition:opacity 1s,transform 1.1s var(--ease),filter .9s}
+/* responsive */
+@media(max-width:1000px){.services-showcase-grid{grid-template-columns:1fr}.services-showcase-heading{position:static;padding:0}.package-grid,.package-grid.two{grid-template-columns:repeat(2,1fr)}.footer-columns{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){
+.menu-toggle{display:block}
+.nav{display:none;position:absolute;left:16px;right:16px;top:72px;background:#090909;border:1px solid #222;border-radius:20px;padding:22px;flex-direction:column;align-items:flex-start}
+.nav.show{display:flex}
+.header-row{height:68px}.brand img{height:37px;max-width:110px}
+.hero-stage{height:62svh;min-height:400px}
+.hero-content{left:22px;max-width:75vw;bottom:92px}.hero-controls{right:20px;bottom:24px}
+body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20px;right:auto}
+.portfolio-gallery{grid-template-columns:1fr}.svc-card{padding:28px 22px}
+.pricing-hero .stamp{display:none}.currency-row{flex-direction:column;align-items:flex-start}
+.footer-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){.package-grid,.package-grid.two{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr 1fr}.welcome-section,.services-showcase,.works{padding:72px 0}}
+@media(max-width:420px){.footer-columns{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready .reveal:not(.visible){opacity:1;transform:none;filter:none}}
+</style>
+</head>
 <body>
-<div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
-<header class="site-header">
-<div class="container header-row">
-<a aria-label="Verqo Studio — Home" class="brand" href="#home"><img alt="Verqo Studio" onerror="this.onerror=null;this.src='assets/verqo-logo.png'" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png"/></a>
-<nav class="nav" id="mainNav"><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a>
-<a data-ar="من نحن" data-en="About" href="#about">About</a>
-<a data-ar="الخدمات" data-en="Services" href="#services">Services</a>
-<a data-ar="الأعمال" data-en="Works" href="#works">Works</a>
-<a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a>
-<a data-ar="تواصل معنا" data-en="Contact" href="#contact">Contact</a>
+<div id="progress"></div>
+<header class="site-header"><div class="container header-row">
+<a class="brand" href="#home" aria-label="Verqo Studio"><img alt="Verqo Studio" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></a>
+<nav class="nav" id="mainNav">
+<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
 </nav>
+<div class="header-tools">
 <div class="language-dropdown" id="languageDropdown">
-  <button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu">
-    <img class="language-current-flag" id="currentFlag" src="assets/flag-gb.svg" alt="" aria-hidden="true"><span class="language-current-name" id="currentLanguage" hidden>English</span>
-  </button>
-  <div class="language-menu" id="languageMenu" role="menu" aria-label="Languages" hidden>
-    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><img class="flag" src="assets/flag-gb.svg" alt="" aria-hidden="true"><span class="sr-only">English</span><span class="language-check" aria-hidden="true">✓</span></button>
-    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><img class="flag" src="assets/flag-sa.svg" alt="" aria-hidden="true"><span class="sr-only">العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
-  </div>
-</div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
-</div>
-</header>
+<button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false"><img class="flag" id="currentFlag" alt=""></button>
+<div class="language-menu" id="languageMenu" role="menu" hidden>
+<button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><img class="flag" alt=""><span class="sr-only">English</span></button>
+<button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><img class="flag" alt=""><span class="sr-only">العربية</span></button>
+</div></div>
+<button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</div></div></header>
 <main>
-<section class="hero" id="home">
-<div class="hero-wide">
-<div class="hero-stage" id="heroStage">
-<div class="hero-slide active" data-title="VERQO STUDIO" data-title-ar="فيركو ستوديو" data-title-en="VERQO STUDIO">
-<img alt="VERQO STUDIO portfolio visual" class="bg" decoding="async" fetchpriority="high" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/HkSjpSP6/10.png"/>
-<div class="hero-content"><h1 class="hero-heading" data-ar="فيركو ستوديو" data-en="VERQO STUDIO">VERQO STUDIO</h1></div>
-</div>
-<div class="hero-slide" data-title="BILLBOARD CAMPAIGN" data-title-ar="حملة إعلانية" data-title-en="BILLBOARD CAMPAIGN">
-<img alt="BILLBOARD VISUAL portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png"/>
-<div class="hero-content"><h2 class="hero-heading" data-ar="حملة إعلانية" data-en="BILLBOARD CAMPAIGN">BILLBOARD CAMPAIGN</h2></div>
-</div>
-<div class="hero-slide" data-title="POSTER VISUAL" data-title-ar="تصميم بوستر" data-title-en="POSTER VISUAL">
-<img alt="POSTER SHOWCASE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png"/>
-<div class="hero-content"><h2 class="hero-heading" data-ar="تصميم بوستر" data-en="POSTER VISUAL">POSTER VISUAL</h2></div>
-</div>
-<div class="hero-slide" data-title="LOGO CORE" data-title-ar="تصميم شعار" data-title-en="LOGO CORE">
-<img alt="LOGO CORE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png"/>
-<div class="hero-content"><h2 class="hero-heading" data-ar="تصميم شعار" data-en="LOGO CORE">LOGO CORE</h2></div>
-</div>
-<div class="hero-caption-right" id="heroLabel">VERQO STUDIO / 01</div>
-<div class="hero-logo-badge"><img alt="Verqo logo" src="assets/verqo-logo.png"/><span>VERQO STUDIO<br/>Independent creative studio</span></div>
-<div aria-hidden="true" class="scroll-cue">Scroll to explore <i></i></div>
-<div aria-hidden="true" class="hero-progress" id="heroProgress"><span></span></div>
-<div class="hero-controls">
-<div class="hero-counter" data-ar="01 / 04" data-en="01 / 04" id="heroCounter">01 / 04</div>
-<div class="hero-arrows">
-<button aria-label="Previous slide" class="hero-arrow" id="prevSlide">←</button>
-<button aria-label="Next slide" class="hero-arrow" id="nextSlide">→</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="welcome-section" id="about">
-<div class="container welcome-inner">
-<div class="welcome-rule reveal" data-ar="01 / الاستوديو" data-en="01 / THE STUDIO">01 / THE STUDIO</div>
-<h2 class="welcome-title reveal" data-ar-html="مرحبًا بك في &lt;span&gt;فيركو ستوديو.&lt;/span&gt;" data-en-html="Welcome To &lt;span&gt;Verqo Studio.&lt;/span&gt;"><span data-ar="مرحبًا بك في" data-en="Welcome To">Welcome To</span><span data-ar="فيركو ستوديو." data-en="Verqo Studio.">Verqo Studio.</span></h2>
-<p class="welcome-intro reveal" data-ar="نحوّل الأفكار إلى هويات بصرية مميزة ومحتوى مؤثر وتجارب رقمية جريئة، لنمنح كل علامة حضورًا استثنائيًا." data-en="We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
-<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-ar="اعرف المزيد عنا" data-en="Know about us">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-ar="تواصل معنا" data-en="Let's Connect">Let's Connect</span><span>↗</span></a></div>
-</div>
-</section><div aria-label="Offer strip" class="offer-strip">
-<div class="offer-track">
-<span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
-<span>VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b> VERQO STUDIO 10% OFFER <b>✶</b></span>
-</div>
-</div>
-<section class="services-showcase" id="services">
-<div class="container services-showcase-grid">
+<section class="hero" id="home"><div class="hero-stage">
+<div class="hero-slide active"><img class="bg" alt="VERQO STUDIO" src="https://i.postimg.cc/HkSjpSP6/10.png" fetchpriority="high" referrerpolicy="no-referrer"><div class="hero-content"><h1 class="hero-heading" data-en="VERQO STUDIO" data-ar="فيركو ستوديو">VERQO STUDIO</h1></div></div>
+<div class="hero-slide"><img class="bg" alt="Billboard campaign" loading="lazy" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="BILLBOARD CAMPAIGN" data-ar="حملة إعلانية">BILLBOARD CAMPAIGN</h2></div></div>
+<div class="hero-slide"><img class="bg" alt="Poster visual" loading="lazy" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="POSTER VISUAL" data-ar="تصميم بوستر">POSTER VISUAL</h2></div></div>
+<div class="hero-slide"><img class="bg" alt="Logo core" loading="lazy" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="LOGO CORE" data-ar="تصميم شعار">LOGO CORE</h2></div></div>
+<div class="hero-progress" id="heroProgress" aria-hidden="true"><span></span></div>
+<div class="hero-controls"><div class="hero-counter" id="heroCounter">01 / 04</div><div class="hero-arrows"><button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button><button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button></div></div>
+</div></section>
+
+<section class="welcome-section" id="about"><div class="container welcome-inner">
+<div class="welcome-rule reveal" data-en="01 / THE STUDIO" data-ar="01 / الاستوديو">01 / THE STUDIO</div>
+<h2 class="welcome-title reveal"><span data-en="Welcome To" data-ar="مرحبًا بك في">Welcome To</span><span data-en="Verqo Studio." data-ar="فيركو ستوديو.">Verqo Studio.</span></h2>
+<p class="welcome-intro reveal" data-en="We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out." data-ar="نحوّل الأفكار إلى هويات بصرية مميزة ومحتوى مؤثر وتجارب رقمية جريئة، لنمنح كل علامة حضورًا استثنائيًا.">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
+<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
+</div></section>
+
+<div class="offer-strip" aria-label="Offer"><div class="offer-track"><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span></div></div>
+
+<section class="services-showcase" id="services"><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
-<span class="section-index reveal" data-ar="02 / خبراتنا" data-en="02 / OUR EXPERTISE">02 / OUR EXPERTISE</span>
-<h2 class="reveal"><span data-ar="خدماتنا" data-en="Our Services">Our Services</span><span class="red-dot">.</span></h2>
-<p class="reveal" data-ar="نصنع تجارب تصميم متكاملة، من الهوية البصرية إلى الحضور الرقمي المستمر. اكتشف الخدمة المناسبة لرؤيتك." data-en="We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.">We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.</p>
-<a class="white-action reveal" href="#pricing"><span data-ar="استكشف خدماتنا" data-en="Explore Our Services">Explore Our Services</span><span>↗</span></a>
+<span class="section-index reveal" data-en="02 / OUR EXPERTISE" data-ar="02 / خبراتنا">02 / OUR EXPERTISE</span>
+<h2 class="reveal"><span data-en="Our Services" data-ar="خدماتنا">Our Services</span>.</h2>
+<p class="reveal" data-en="We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision." data-ar="نصنع تجارب تصميم متكاملة، من الهوية البصرية إلى الحضور الرقمي المستمر. اكتشف الخدمة المناسبة لرؤيتك.">We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.</p>
+<a class="white-action reveal" href="#pricing"><span data-en="Explore Our Services" data-ar="استكشف خدماتنا">Explore Our Services</span><span>↗</span></a>
 </div>
 <div class="services-cards">
-<article class="svc-card reveal"><span class="svc-index">01 /</span><h3 data-ar="الهوية البصرية" data-en="Brand Identity">Brand Identity</h3><div class="svc-tags"><span data-ar="تصميم الشعارات" data-en="Logo Design">Logo Design</span><span data-ar="الهوية المرئية" data-en="Visual Identity">Visual Identity</span><span data-ar="دليل الهوية" data-en="Brand Guidelines">Brand Guidelines</span><span data-ar="تصميم وسائل التواصل" data-en="Social Media Design">Social Media Design</span><span data-ar="تطبيقات الهوية" data-en="Brand Touchpoints">Brand Touchpoints</span><span data-ar="تصميم العبوات" data-en="Packaging Concepts">Packaging Concepts</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">02 /</span><h3 data-ar="التصميم الرقمي والسوشيال" data-en="Digital &amp; Social">Digital &amp; Social</h3><div class="svc-tags"><span data-ar="بوستات إنستجرام" data-en="Instagram Posts">Instagram Posts</span><span data-ar="قوالب القصص" data-en="Story Templates">Story Templates</span><span data-ar="تصميم الحملات" data-en="Campaign Graphics">Campaign Graphics</span><span data-ar="أغلفة الريلز" data-en="Reels Covers">Reels Covers</span><span data-ar="هوية السوشيال" data-en="Social Identity">Social Identity</span><span data-ar="متاجر سلة" data-en="Salla Stores">Salla Stores</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">03 /</span><h3 data-ar="الألعاب والبث المباشر" data-en="Gaming &amp; Streaming">Gaming &amp; Streaming</h3><div class="svc-tags"><span data-ar="هويات فايف إم" data-en="FiveM Branding">FiveM Branding</span><span data-ar="واجهات البث" data-en="Streaming Overlays">Streaming Overlays</span><span data-ar="البنرات" data-en="Banners">Banners</span><span data-ar="تصاميم متحركة" data-en="Motion Assets">Motion Assets</span><span data-ar="تنبيهات ولوحات" data-en="Alerts &amp; Panels">Alerts &amp; Panels</span><span data-ar="تصميم القنوات" data-en="Channel Visuals">Channel Visuals</span></div></article>
-</div>
-</div>
-</section>
-<section class="section" id="works">
-<div class="container">
-<div class="eyebrow reveal" data-ar="03 / أعمال مختارة" data-en="03 / Selected work">03 / Selected work</div>
-<div style="display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin-bottom:34px">
-<h2 class="title-lg reveal" data-ar-html="أعمال&lt;br&gt;تلفت الأنظار." data-en-html="Visuals with&lt;br&gt;presence.">Visuals with<br/>presence.</h2>
-<a class="pill reveal" data-ar="عرض معرض الأعمال ↗" data-en="View portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">View portfolio ↗</a>
-</div>
-<div class="works-grid portfolio-gallery">
-<article class="work-card reveal" data-project="01">
-<a aria-label="Open Arab Designers project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" rel="noopener noreferrer" target="_blank">
-<img alt="Arab Designers design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"/>
+<article class="svc-card reveal"><span class="svc-index">01 /</span><h3 data-en="Brand Identity" data-ar="الهوية البصرية">Brand Identity</h3><div class="svc-tags"><span data-en="Logo Design" data-ar="تصميم الشعارات">Logo Design</span><span data-en="Visual Identity" data-ar="الهوية المرئية">Visual Identity</span><span data-en="Brand Guidelines" data-ar="دليل الهوية">Brand Guidelines</span><span data-en="Social Media Design" data-ar="تصميم وسائل التواصل">Social Media Design</span><span data-en="Brand Touchpoints" data-ar="تطبيقات الهوية">Brand Touchpoints</span><span data-en="Packaging Concepts" data-ar="تصميم العبوات">Packaging Concepts</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">02 /</span><h3 data-en="Digital &amp; Social" data-ar="التصميم الرقمي والسوشيال">Digital &amp; Social</h3><div class="svc-tags"><span data-en="Instagram Posts" data-ar="بوستات إنستجرام">Instagram Posts</span><span data-en="Story Templates" data-ar="قوالب القصص">Story Templates</span><span data-en="Campaign Graphics" data-ar="تصميم الحملات">Campaign Graphics</span><span data-en="Reels Covers" data-ar="أغلفة الريلز">Reels Covers</span><span data-en="Social Identity" data-ar="هوية السوشيال">Social Identity</span><span data-en="Salla Stores" data-ar="متاجر سلة">Salla Stores</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">03 /</span><h3 data-en="Gaming &amp; Streaming" data-ar="الألعاب والبث المباشر">Gaming &amp; Streaming</h3><div class="svc-tags"><span data-en="FiveM Branding" data-ar="هويات فايف إم">FiveM Branding</span><span data-en="Streaming Overlays" data-ar="واجهات البث">Streaming Overlays</span><span data-en="Banners" data-ar="البنرات">Banners</span><span data-en="Motion Assets" data-ar="تصاميم متحركة">Motion Assets</span><span data-en="Alerts &amp; Panels" data-ar="تنبيهات ولوحات">Alerts &amp; Panels</span><span data-en="Channel Visuals" data-ar="تصميم القنوات">Channel Visuals</span></div></article>
+</div></div></section>
 
-</a>
-<div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
-</article>
-<article class="work-card reveal" data-project="02">
-<a aria-label="Open One Nation project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" rel="noopener noreferrer" target="_blank">
-<img alt="One Nation design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"/>
+<section class="works" id="works"><div class="container">
+<div class="eyebrow reveal" data-en="03 / Selected work" data-ar="03 / أعمال مختارة">03 / Selected work</div>
+<div class="works-head"><h2 class="title-lg reveal" data-en-html="Visuals with<br>presence." data-ar-html="أعمال<br>تلفت الأنظار.">Visuals with<br>presence.</h2>
+<a class="pill reveal" data-en="View portfolio ↗" data-ar="عرض معرض الأعمال ↗" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio ↗</a></div>
+<div class="portfolio-gallery">
+<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" target="_blank" rel="noopener noreferrer"><img alt="Arab Designers" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"></a><div class="portfolio-info"><div><h3>Arab Designers</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" target="_blank" rel="noopener noreferrer"><img alt="One Nation" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"></a><div class="portfolio-info"><div><h3>One Nation</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" target="_blank" rel="noopener noreferrer"><img alt="Gulf" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"></a><div class="portfolio-info"><div><h3>Gulf</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" target="_blank" rel="noopener noreferrer"><img alt="Dajani" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"></a><div class="portfolio-info"><div><h3>Dajani</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+</div></div></section>
 
-</a>
-<div class="work-info portfolio-info"><div><h3>One Nation</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
-</article>
-<article class="work-card reveal" data-project="03">
-<a aria-label="Open Gulf project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" rel="noopener noreferrer" target="_blank">
-<img alt="Gulf design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"/>
-
-</a>
-<div class="work-info portfolio-info"><div><h3>Gulf</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
-</article>
-<article class="work-card reveal" data-project="04">
-<a aria-label="Open Dajani project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" rel="noopener noreferrer" target="_blank">
-<img alt="Dajani design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"/>
-
-</a>
-<div class="work-info portfolio-info"><div><h3>Dajani</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
-</article>
-</div>
-</div>
-</section>
-<section class="section pricing pricing-redesign" id="pricing"><div class="container">
-<div class="eyebrow reveal" data-ar="04 / الأسعار" data-en="04 / PRICING">04 / PRICING</div>
-<div class="pricing-hero reveal">
-<div><div class="pricing-overline" data-ar="باقات واضحة. بدون مفاجآت." data-en="CLEAR PLANS. NO SURPRISES.">CLEAR PLANS. NO SURPRISES.</div>
-<h2 data-ar="اختر باقتك." data-en="Choose your plan.">Choose your plan.</h2>
-<p data-ar="باقات الخدمات الرسمية حسب ملف أسعار فيركو. اختر الفئة واستعرض تفاصيل الخدمات." data-en="Official service packages from VERQO's rate card. Select a category and see what's included.">Official service packages from VERQO's rate card. Select a category and see what's included.</p></div>
-<div class="pricing-hero-stamp"><span>VERQO</span><small>2026 / PRICE GUIDE</small></div>
-</div>
-<div aria-label="Choose service" class="category-selector" id="categorySelector" role="group"></div>
-<div class="currency-row"><strong id="categoryName"></strong><div class="right"><span data-ar="عرض السعر" data-en="DISPLAY">DISPLAY</span><button class="active" id="sarBtn" type="button">SAR / ر.س</button><button id="usdBtn" type="button">USD / $</button></div></div>
-<div aria-live="polite" class="package-grid" id="packageGrid"></div>
+<section class="pricing" id="pricing"><div class="container">
+<div class="eyebrow reveal" data-en="04 / PRICING" data-ar="04 / الأسعار">04 / PRICING</div>
+<div class="pricing-hero reveal"><div><div class="pricing-overline" data-en="CLEAR PLANS. NO SURPRISES." data-ar="باقات واضحة. بدون مفاجآت.">CLEAR PLANS. NO SURPRISES.</div><h2 data-en="Choose your plan." data-ar="اختر باقتك.">Choose your plan.</h2><p data-en="Official service packages from VERQO's rate card. Select a category and see what's included." data-ar="باقات الخدمات الرسمية حسب ملف أسعار فيركو. اختر الفئة واستعرض تفاصيل الخدمات.">Official service packages from VERQO's rate card. Select a category and see what's included.</p></div><div class="stamp">VERQO<small>2026 / PRICE GUIDE</small></div></div>
+<div class="category-selector" id="categorySelector" role="group" aria-label="Choose service"></div>
+<div class="currency-row"><strong id="categoryName"></strong><div class="right"><span data-en="DISPLAY" data-ar="عرض السعر">DISPLAY</span><button class="active" id="sarBtn" type="button">SAR / ر.س</button><button id="usdBtn" type="button">USD / $</button></div></div>
+<div class="package-grid" id="packageGrid" aria-live="polite"></div>
 <p class="pricing-hint" id="pricingNote"></p>
-<p class="pricing-legal" data-ar="الدولار تقديري على أساس 1 دولار = 3.75 ريال. الأسعار الرسمية في الملف بالريال السعودي، وتُعتمد الشروط النهائية كتابيًا." data-en="USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.">USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.</p>
+<p class="pricing-legal" data-en="USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing." data-ar="الدولار تقديري على أساس 1 دولار = 3.75 ريال. الأسعار الرسمية في الملف بالريال السعودي، وتُعتمد الشروط النهائية كتابيًا.">USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.</p>
 </div></section>
-<section class="contact-finish" id="contact">
-<div class="container">
-<div class="red-cta reveal">
-<div aria-hidden="true" class="red-cta-orb">✳</div>
-<span data-ar="لنبنِ شيئًا مميزًا" data-en="LET'S MAKE SOMETHING GREAT">LET'S MAKE SOMETHING GREAT</span>
-<h2 data-ar="هل أنت مستعد لبناء علامتك؟" data-en="Are You Ready To Build Your Brand?">Are You Ready To Build Your Brand?</h2>
-<p data-ar="أخبرنا عن مشروعك، ولنصنع معًا حضورًا يلفت الأنظار." data-en="Tell us about your project. Let's create something that stands out.">Tell us about your project. Let's create something that stands out.</p>
-<a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><span data-ar="تواصل معنا" data-en="Connect With Us">Connect With Us</span><span>↗</span></a>
-</div>
-</div>
-</section>
+
+<section class="contact-finish" id="contact"><div class="container"><div class="red-cta reveal">
+<div class="red-cta-orb" aria-hidden="true">✳</div>
+<span data-en="LET'S MAKE SOMETHING GREAT" data-ar="لنبنِ شيئًا مميزًا">LET'S MAKE SOMETHING GREAT</span>
+<h2 data-en="Are You Ready To Build Your Brand?" data-ar="هل أنت مستعد لبناء علامتك؟">Are You Ready To Build Your Brand?</h2>
+<p data-en="Tell us about your project. Let's create something that stands out." data-ar="أخبرنا عن مشروعك، ولنصنع معًا حضورًا يلفت الأنظار.">Tell us about your project. Let's create something that stands out.</p>
+<a href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><span data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</span><span>↗</span></a>
+</div></div></section>
 </main>
-<footer class="footer footer-refined">
-<div class="container">
+
+<footer class="footer"><div class="container">
 <div class="footer-columns">
-<div class="footer-brand"><img class="footer-new-logo" alt="Verqo Studio logo" src="assets/verqo-logo.png"/><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
-<div class="footer-col"><h3 data-ar="الصفحات" data-en="Pages">Pages</h3><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a><a data-ar="من نحن" data-en="About" href="#about">About</a><a data-ar="الخدمات" data-en="Services" href="#services">Services</a><a data-ar="معرض الأعمال" data-en="Portfolio" href="#works">Portfolio</a><a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a></div>
-<div class="footer-col"><h3 data-ar="استكشف" data-en="Explore">Explore</h3><a data-ar="الباقات" data-en="Our Packages" href="#pricing">Our Packages</a><a data-ar="أعمال مختارة" data-en="Selected Work" href="#works">Selected Work</a><a data-ar="أعمالنا على بيهانس ↗" data-en="Behance Portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a data-ar="ابدأ مشروعك" data-en="Start a Project" href="#contact">Start a Project</a></div>
-<div class="footer-social"><h3 data-ar="تابعنا" data-en="Follow Us">Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg"><rect height="19" rx="5.4" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 32 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h11.2c5.2 0 7.4 2.3 7.4 5.7 0 2.3-1.2 3.8-3.1 4.6 2.8.7 4.1 2.8 4.1 5.3 0 4.4-3.7 6.4-8.3 6.4H0V3zm5.4 8.6h5.1c1.7 0 2.7-.9 2.7-2.3S12.2 7 10.5 7H5.4v4.6zm0 9h5.6c2 0 3.2-1 3.2-2.7 0-1.6-1.2-2.5-3.2-2.5H5.4v5.2z" transform="scale(.85)"></path><path d="M21 5h10v2.2H21zM32 15.7c0-5.5-3.4-8.7-8.5-8.7-5.3 0-8.5 3.8-8.5 8.7 0 5.2 3.2 8.5 8.5 8.5 4 0 6.7-1.8 8.1-5.2h-4.7c-.4 1-1.5 1.4-3.1 1.4-2 0-3.3-1.3-3.4-3.2H32v-1.5zm-12.1-2.3c.2-1.7 1.5-2.7 3.4-2.7 1.8 0 3.1 1.1 3.3 2.7h-6.7z" transform="translate(5 -2) scale(.8)"></path></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"></path></svg></a></div><div class="footer-inquiry"><strong data-ar="لنصنع شيئًا مميزًا." data-en="Let's build something.">Let's build something.</strong><a data-ar="أرسل استفسار مشروع ↗" data-en="Send a project inquiry ↗" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
+<div><img class="footer-new-logo" alt="Verqo Studio logo" src="assets/verqo-logo.png"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
+<div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a></div>
+<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="#pricing" data-en="Our Packages" data-ar="الباقات">Our Packages</a><a href="#works" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="#contact" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a></div>
+<div><h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
+<div class="footer-social-icons">
+<a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a aria-label="Behance" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><b style="font-size:15px;letter-spacing:-.03em">Bē</b></a>
+<a aria-label="YouTube" href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener noreferrer"><svg width="25" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg></a>
 </div>
-<div class="footer-bottom"><span>© 2026 Verqo Studio. All rights reserved.</span><span><span data-ar="إبداع في كل تفصيلة." data-en="Creative by design.">Creative by design.</span><a class="back-top" data-ar="العودة للأعلى ↑" data-en="Back to top ↑" href="#home">Back to top ↑</a></span></div>
+<div class="footer-inquiry"><strong data-en="Let's build something." data-ar="لنصنع شيئًا مميزًا.">Let's build something.</strong><a href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer" data-en="Send a project inquiry ↗" data-ar="أرسل استفسار مشروع ↗">Send a project inquiry ↗</a></div></div>
 </div>
-</footer>
+<div class="footer-bottom"><span data-en="© 2026 Verqo Studio. All rights reserved." data-ar="© 2026 فيركو ستوديو. جميع الحقوق محفوظة.">© 2026 Verqo Studio. All rights reserved.</span><span><span data-en="Creative by design." data-ar="إبداع في كل تفصيلة.">Creative by design.</span><a class="back-top" href="#home" data-en="Back to top ↑" data-ar="العودة للأعلى ↑">Back to top ↑</a></span></div>
+</div></footer>
+
 <div class="overlay" id="overlay"></div>
-<aside aria-hidden="true" aria-label="Package details" aria-modal="true" class="drawer" id="drawer" role="dialog">
-<div class="drawer-top"><span>Selected package / <span class="arab">تفاصيل الباقة</span></span><button aria-label="Close details" class="close" id="closeDrawer">✕</button></div>
-<h3 id="drawerTitle"></h3>
-<div class="big-price" id="drawerAmount"></div>
-<div class="sar" id="drawerAlternate"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Package details">
+<div class="drawer-top"><span>Selected package / تفاصيل الباقة</span><button class="close" id="closeDrawer" aria-label="Close">✕</button></div>
+<h3 id="drawerTitle"></h3><div class="big-price" id="drawerAmount"></div><div class="sar" id="drawerAlternate"></div>
 <ul id="drawerFeatures"></ul>
-<a class="book" href="https://www.instagram.com/verqostudio/" id="drawerLink" rel="noopener noreferrer" target="_blank">REQUEST THIS PACKAGE ↗</a>
-<p class="fine" data-ar="تواصل معنا على إنستجرام مع ذكر اسم الباقة. لا توجد عمليات دفع على هذا الموقع." data-en="Contact us on Instagram and mention the package name. No payment is processed on this website.">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
+<a class="book" id="drawerLink" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer">REQUEST THIS PACKAGE ↗</a>
+<p class="fine" data-en="Contact us on Instagram and mention the package name. No payment is processed on this website." data-ar="تواصل معنا على إنستجرام مع ذكر اسم الباقة. لا توجد عمليات دفع على هذا الموقع.">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
 </aside>
+
+<!-- pricing data: defines `groups` = [{id,en,ar,note_en,note_ar,packs:[{en,ar,sar,enf:[],arf:[]}]}] -->
 <script src="assets/pricing-data.js"></script>
 <script>
-const I18N={en:'en',ar:'ar'};
-let language='en',active='monthly',currency='SAR',lastFocus=null,numberFrame=0;
-const selector=document.getElementById('categorySelector'),grid=document.getElementById('packageGrid'),drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay');
+const $=id=>document.getElementById(id),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let language='en',active=(window.groups&&groups[0]&&groups[0].id)||'monthly',currency='SAR',lastFocus=null,nf=0;
+const FLAGS={
+en:'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="s"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#s)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>'),
+ar:'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40"><rect width="60" height="40" fill="#006C35"/><g stroke="#fff" stroke-linecap="round" fill="none"><path d="M16 14h28" stroke-width="3" stroke-dasharray="3 2"/><path d="M14 28h32" stroke-width="2.4"/><path d="M14 28l-2-2M14 28l-2 2" stroke-width="1.8"/></g></svg>')};
 const fmt=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-const money=(sar,unit=currency)=>unit==='SAR'?fmt(sar)+' '+(language==='ar'?'ر.س':'SAR'):'$'+fmt(sar/3.75);
-const trans=(en,ar)=>language==='ar'?ar:en;
-function setLanguage(next){
- language=next;
- document.documentElement.lang=next;
- document.documentElement.dir=next==='ar'?'rtl':'ltr';
- document.body.classList.toggle('is-ar',next==='ar');
- document.querySelectorAll('[data-en][data-ar]').forEach(el=>{if(!el.closest('#packageGrid'))el.textContent=el.getAttribute('data-'+next);});
- document.querySelectorAll('[data-en-html][data-ar-html]').forEach(el=>el.innerHTML=el.getAttribute('data-'+next+'-html'));
- document.querySelectorAll('.language-option').forEach(el=>{const yes=el.dataset.lang===next;el.classList.toggle('is-active',yes);el.setAttribute('aria-checked',String(yes));});
- document.getElementById('currentFlag').src=next==='ar'?'assets/flag-sa.svg':'assets/flag-gb.svg';
- document.getElementById('currentLanguage').textContent=next==='ar'?'العربية':'English';
- closeLangMenu();
- document.querySelectorAll('.hero-slide').forEach(el=>{el.dataset.title=el.getAttribute('data-title-'+next);});
- document.querySelectorAll('.work-card .portfolio-thumb').forEach(a=>{a.setAttribute('aria-label',trans('Open project image','افتح صورة المشروع'));});
- renderCategories();renderPackages();updateHero();
+const trans=(e,a)=>language==='ar'?a:e;
+const money=(s,u=currency)=>u==='SAR'?fmt(s)+' '+trans('SAR','ر.س'):'$'+fmt(s/3.75);
+function setLanguage(l){
+ language=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.body.classList.toggle('is-ar',l==='ar');
+ document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=el.dataset[l]);
+ document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
+ document.querySelectorAll('.language-option').forEach(b=>{const y=b.dataset.lang===l;b.classList.toggle('is-active',y);b.setAttribute('aria-checked',y);b.querySelector('img').src=FLAGS[b.dataset.lang]});
+ $('currentFlag').src=FLAGS[l];closeLang();renderCategories();renderPackages();updateHero();
 }
 function renderCategories(){
- selector.replaceChildren();groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=trans(g.en,g.ar);b.className=(g.id===active?'active ':'')+'service-tab';b.setAttribute('aria-pressed',String(g.id===active));b.addEventListener('click',()=>{active=g.id;renderCategories();renderPackages();});selector.append(b);});
+ if(!window.groups)return;const s=$('categorySelector');s.replaceChildren();
+ groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=trans(g.en,g.ar);b.className=g.id===active?'active':'';b.setAttribute('aria-pressed',g.id===active);b.onclick=()=>{active=g.id;renderCategories();renderPackages()};s.append(b)});
 }
 function renderPackages(){
- const g=groups.find(v=>v.id===active);if(!g)return;
- document.getElementById('categoryName').textContent=trans(g.en,g.ar);
- document.getElementById('pricingNote').textContent=trans(g.note_en,g.note_ar);
+ if(!window.groups)return;const g=groups.find(v=>v.id===active);if(!g)return;const grid=$('packageGrid');
+ $('categoryName').textContent=trans(g.en,g.ar);$('pricingNote').textContent=trans(g.note_en,g.note_ar);
  grid.replaceChildren();grid.className='package-grid'+(g.packs.length===2?' two':'');
  g.packs.forEach((p,i)=>{
-  const card=document.createElement('article');card.className='package price-tilt';card.tabIndex=0;
-  if(i===1 && g.packs.length===3)card.classList.add('popular');
-  const kicker=document.createElement('div');kicker.className='package-kicker';kicker.textContent=String(i+1).padStart(2,'0')+' / '+trans(g.en,g.ar);
-  const heading=document.createElement('h3');heading.textContent=trans(p.en,p.ar);
-  const amount=document.createElement('div');amount.className='amount';amount.textContent=money(p.sar);
-  const other=document.createElement('div');other.className='other';other.textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
-  const line=document.createElement('div');line.className='package-line';
-  const list=document.createElement('ul');list.dir=language==='ar'?'rtl':'ltr';(language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;list.append(li);});
-  const button=document.createElement('button');button.type='button';button.className='book';button.textContent=trans('VIEW PACKAGE ↗','تفاصيل الباقة ↗');button.addEventListener('click',()=>openPackage(g,p));
-  card.append(kicker,heading,amount,other,line,list,button);
-  grid.append(card);
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) card.animate([{opacity:0,transform:'translateY(32px) rotateY(-7deg)'},{opacity:1,transform:'translateY(0) rotateY(0deg)'}],{duration:580,delay:i*95,easing:'cubic-bezier(.18,.7,.2,1)',fill:'both'});
+  const c=document.createElement('article');c.className='package'+(i===1&&g.packs.length===3?' popular':'');
+  const mk=(t,cls,txt)=>{const e=document.createElement(t);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
+  const ul=mk('ul');ul.dir=language==='ar'?'rtl':'ltr';(language==='ar'?p.arf:p.enf).forEach(f=>ul.append(mk('li',0,f)));
+  const b=mk('button','book',trans('VIEW PACKAGE ↗','تفاصيل الباقة ↗'));b.type='button';b.onclick=()=>openPackage(g,p);
+  c.append(mk('div','package-kicker',String(i+1).padStart(2,'0')+' / '+trans(g.en,g.ar)),mk('h3',0,trans(p.en,p.ar)),mk('div','amount',money(p.sar)),mk('div','other',money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا')),mk('div','package-line'),ul,b);
+  grid.append(c);
+  if(!RM)c.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:560,delay:i*90,easing:'cubic-bezier(.18,.7,.2,1)',fill:'both'});
  });
 }
-function animateNumber(target,to,unit){
- cancelAnimationFrame(numberFrame);
- if(matchMedia('(prefers-reduced-motion: reduce)').matches){target.textContent=(unit==='SAR'?fmt(to)+' '+trans('SAR','ر.س'):'$'+fmt(to));return;}
- const start=performance.now();function frame(now){if(!drawer.classList.contains('show'))return;const t=Math.min((now-start)/1050,1);const v=to*(1-Math.pow(1-t,3));target.textContent=(unit==='SAR'?fmt(v)+' '+trans('SAR','ر.س'):'$'+fmt(v));if(t<1)numberFrame=requestAnimationFrame(frame);}
- numberFrame=requestAnimationFrame(frame);
+function animateNumber(el,to,u){
+ cancelAnimationFrame(nf);const show=v=>el.textContent=u==='SAR'?fmt(v)+' '+trans('SAR','ر.س'):'$'+fmt(v);
+ if(RM){show(to);return}const t0=performance.now();
+ (function f(n){if(!$('drawer').classList.contains('show'))return;const t=Math.min((n-t0)/1000,1);show(to*(1-Math.pow(1-t,3)));if(t<1)nf=requestAnimationFrame(f)})(t0);
 }
 function openPackage(g,p){
- lastFocus=document.activeElement;drawer.classList.add('show');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
- document.getElementById('drawerTitle').textContent=trans(g.en,g.ar)+' — '+trans(p.en,p.ar);
- document.getElementById('drawerFeatures').replaceChildren();
- (language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;document.getElementById('drawerFeatures').append(li);});
- const actual=currency==='SAR'?p.sar:p.sar/3.75;
- document.getElementById('drawerAlternate').textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
- document.getElementById('drawerLink').textContent=trans('REQUEST THIS PACKAGE ↗','اطلب هذه الباقة ↗');
- document.getElementById('drawerLink').setAttribute('aria-label',trans('Request','اطلب')+' '+trans(p.en,p.ar));
- animateNumber(document.getElementById('drawerAmount'),actual,currency);
- document.getElementById('closeDrawer').focus();
+ lastFocus=document.activeElement;$('drawer').classList.add('show');$('overlay').classList.add('show');$('drawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+ $('drawerTitle').textContent=trans(g.en,g.ar)+' — '+trans(p.en,p.ar);
+ const ul=$('drawerFeatures');ul.replaceChildren();(language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;ul.append(li)});
+ $('drawer').dir=language==='ar'?'rtl':'ltr';
+ $('drawerAlternate').textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
+ $('drawerLink').textContent=trans('REQUEST THIS PACKAGE ↗','اطلب هذه الباقة ↗');
+ animateNumber($('drawerAmount'),currency==='SAR'?p.sar:p.sar/3.75,currency);$('closeDrawer').focus();
 }
-function closePackage(){cancelAnimationFrame(numberFrame);drawer.classList.remove('show');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
-document.getElementById('closeDrawer').addEventListener('click',closePackage);overlay.addEventListener('click',closePackage);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show'))closePackage();});
-const usd=document.getElementById('usdBtn'),sar=document.getElementById('sarBtn');
-[usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD';sar.classList.toggle('active',currency==='SAR');usd.classList.toggle('active',currency==='USD');renderPackages();}));
-const langDropdown=document.getElementById('languageDropdown');
-const langTrigger=document.getElementById('languageTrigger');
-const langMenu=document.getElementById('languageMenu');
-function closeLangMenu(){langMenu.hidden=true;langDropdown.classList.remove('open');langTrigger.setAttribute('aria-expanded','false');}
-function toggleLangMenu(){const opening=langMenu.hidden;langMenu.hidden=!opening;langDropdown.classList.toggle('open',opening);langTrigger.setAttribute('aria-expanded',String(opening));}
-langTrigger.addEventListener('click',toggleLangMenu);
-document.querySelectorAll('.language-option').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
-document.addEventListener('click',e=>{if(!langDropdown.contains(e.target))closeLangMenu();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!langMenu.hidden){closeLangMenu();langTrigger.focus();}});
-const menuBtn=document.getElementById('menuBtn');
-menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav');const open=nav.classList.toggle('show');menuBtn.setAttribute('aria-expanded',String(open));});
-document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show');menuBtn.setAttribute('aria-expanded','false');}));
-const slides=[...document.querySelectorAll('.hero-slide')],counter=document.getElementById('heroCounter'),heroLabel=document.getElementById('heroLabel');let slideIndex=0,heroTimer=null;
-function updateHero(){slides.forEach((s,i)=>s.classList.toggle('active',i===slideIndex));counter.textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');heroLabel.textContent=(slides[slideIndex].dataset.title || 'VERQO')+' / '+String(slideIndex+1).padStart(2,'0');const line=document.getElementById('heroProgress');if(line){line.classList.remove('running');void line.offsetWidth;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)line.classList.add('running');}}
-function goSlide(dir){slideIndex=(slideIndex+dir+slides.length)%slides.length;updateHero();restartHero();}
-function restartHero(){clearInterval(heroTimer);heroTimer=setInterval(()=>{slideIndex=(slideIndex+1)%slides.length;updateHero();},5500);}
-document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(heroTimer);else restartHero();});
-document.getElementById('prevSlide').addEventListener('click',()=>goSlide(-1));document.getElementById('nextSlide').addEventListener('click',()=>goSlide(1));
-// Visual entrances only; leave wheel scrolling to browser, avoid previous stutter.
-const motion=[...document.querySelectorAll('.reveal')],reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
-if(!reduceMotion.matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.06});motion.forEach(el=>observer.observe(el));document.documentElement.classList.add('motion-ready');setTimeout(()=>motion.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('visible');}),1300);}else motion.forEach(el=>el.classList.add('visible'));
-function setProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%';}window.addEventListener('scroll',setProgress,{passive:true});window.addEventListener('resize',setProgress);
-setLanguage('en');setProgress();restartHero();
+function closePackage(){cancelAnimationFrame(nf);$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+$('closeDrawer').onclick=closePackage;$('overlay').onclick=closePackage;
+[$('sarBtn'),$('usdBtn')].forEach((b,i)=>b.onclick=()=>{currency=i?'USD':'SAR';$('sarBtn').classList.toggle('active',!i);$('usdBtn').classList.toggle('active',!!i);renderPackages()});
+const dd=$('languageDropdown'),lt=$('languageTrigger'),lm=$('languageMenu');
+function closeLang(){lm.hidden=true;dd.classList.remove('open');lt.setAttribute('aria-expanded','false')}
+lt.onclick=()=>{const o=lm.hidden;lm.hidden=!o;dd.classList.toggle('open',o);lt.setAttribute('aria-expanded',o)};
+document.querySelectorAll('.language-option').forEach(b=>b.onclick=()=>setLanguage(b.dataset.lang));
+document.addEventListener('click',e=>{if(!dd.contains(e.target))closeLang()});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('drawer').classList.contains('show'))closePackage();if(!lm.hidden){closeLang();lt.focus()}});
+const mb=$('menuBtn'),nav=$('mainNav');
+mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('show'));
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('show');mb.setAttribute('aria-expanded','false')});
+const slides=[...document.querySelectorAll('.hero-slide')];let si=0,timer;
+function updateHero(){slides.forEach((s,i)=>s.classList.toggle('active',i===si));$('heroCounter').textContent=String(si+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');const l=$('heroProgress');l.classList.remove('running');void l.offsetWidth;if(!RM)l.classList.add('running')}
+function restart(){clearInterval(timer);timer=setInterval(()=>{si=(si+1)%slides.length;updateHero()},5500)}
+function go(d){si=(si+d+slides.length)%slides.length;updateHero();restart()}
+$('prevSlide').onclick=()=>go(-1);$('nextSlide').onclick=()=>go(1);
+document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):restart());
+const rv=[...document.querySelectorAll('.reveal')];
+if(!RM&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.06});rv.forEach(el=>io.observe(el));document.documentElement.classList.add('motion-ready');setTimeout(()=>rv.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('visible')}),1300)}else rv.forEach(el=>el.classList.add('visible'));
+function prog(){const m=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(m>0?scrollY/m*100:0)+'%'}
+addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);
+setLanguage('en');prog();restart();
 </script>
 </body>
 </html>
