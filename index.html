@@ -9,14 +9,12 @@
 <link rel="icon" href="assets/verqo-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* Thmanyah Sans: put the font files in assets/fonts/ (Tajawal is the fallback until then) */
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Bold.woff2") format("woff2");font-weight:700 800;font-display:swap}
+/* Thmanyah Sans for headings, Cairo for body text. Hosted Thmanyah webfont with local fallback. */
+@font-face{font-family:"Thmanyah Sans";src:url("https://qusaialbahri.github.io/thmanyah-font-host/fonts/thmanyah-sans.woff2") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
 :root{--bg:#050505;--line:#2a2a2a;--paper:#f2f2f0;--muted:#8f8f8f;
---sans:Inter,"Thmanyah Sans",Tajawal,Arial,sans-serif;--ar:"Thmanyah Sans",Tajawal,Inter,Arial,sans-serif;--ease:cubic-bezier(.19,1,.22,1)}
+--sans:"Cairo",Arial,sans-serif;--ar:"Cairo",Arial,sans-serif;--display:"Thmanyah Sans","Cairo",Arial,sans-serif;--ease:cubic-bezier(.19,1,.22,1)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 html,body{margin:0;background:#fff;color:#fff;font-family:var(--sans);overflow-x:hidden}
@@ -25,7 +23,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 ::selection{background:#000;color:#fff}
 .container{width:min(100% - 40px,1180px);margin-inline:auto}
 #progress{position:fixed;left:0;top:0;height:2px;width:0;background:#fff;z-index:300}
-.amount,.big-price,.hero-counter,.svc-index{font-family:Inter,sans-serif!important;font-variant-numeric:tabular-nums}
+.amount,.big-price,.hero-counter,.svc-index{font-family:"Cairo",sans-serif!important;font-variant-numeric:tabular-nums}
 /* header */
 .site-header{position:absolute;top:0;left:0;right:0;z-index:170;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.22)}
 .header-row{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -212,9 +210,105 @@ body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20p
 @media(max-width:640px){.package-grid,.package-grid.two{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr 1fr}.welcome-section,.services-showcase,.works{padding:72px 0}}
 @media(max-width:420px){.footer-columns{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready .reveal:not(.visible){opacity:1;transform:none;filter:none}}
+
+/* ================= VERQO / 2026 MOTION EXPERIENCE ================= */
+body.intro-lock{overflow:hidden}
+.portfolio-thumb{cursor:default;user-select:none;pointer-events:none}
+.portfolio-thumb img{pointer-events:none}
+/* Intro: isolated from the site, but uses the actual portfolio imagery */
+#verqoIntro{position:fixed;inset:0;z-index:9999;overflow:hidden;background:rgba(8,10,13,.16);backdrop-filter:blur(17px) brightness(.68);-webkit-backdrop-filter:blur(17px) brightness(.68);color:#fff;isolation:isolate;display:grid;place-items:center;transition:opacity .85s ease,visibility .85s ease}
+#verqoIntro.finished{opacity:0;visibility:hidden;pointer-events:none}
+.intro-noise{position:absolute;inset:0;opacity:.55;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(18,25,32,.16),rgba(3,8,15,.3) 78%)}
+.intro-grid{display:none;position:absolute;inset:-60%;opacity:.15;background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:90px 90px;transform:perspective(900px) rotateX(72deg) scale(1.3);animation:introGridMove 8.5s linear both}
+@keyframes introGridMove{to{transform:perspective(900px) rotateX(72deg) translateY(135px) scale(1.45)}}
+.intro-edges{display:none!important}
+.intro-topline,.intro-bottomline{position:absolute;z-index:15;left:clamp(22px,5vw,78px);right:clamp(22px,5vw,78px);display:flex;justify-content:space-between;font-size:10px;font-weight:400;letter-spacing:.22em;color:#ffffff72;pointer-events:none}
+.intro-topline{top:clamp(36px,5vw,66px)}.intro-bottomline{bottom:clamp(36px,5vw,66px)}
+/* One continuous sentence, revealed word by word from above */
+.intro-words{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(7px,1.25vw,23px);padding:0 3vw;z-index:4;white-space:nowrap;animation:introSentenceOut .65s ease 4.42s both}
+.intro-word{position:relative;flex:0 0 auto;max-width:none;text-align:center;font-family:var(--display)!important;font-size:clamp(20px,5.6vw,91px);font-weight:400!important;line-height:1.2;letter-spacing:-.055em;white-space:nowrap;opacity:0;filter:blur(10px);transform:translateY(-95px);will-change:transform,opacity,filter;animation:introWordDrop .85s cubic-bezier(.18,.8,.2,1) both}
+.intro-word.w1{animation-delay:.45s}
+.intro-word.w2{animation-delay:1.15s}
+.intro-word.w3{animation-delay:1.85s}
+@keyframes introWordDrop{0%{opacity:0;filter:blur(10px);transform:translateY(-95px)}65%{opacity:1;filter:blur(0);transform:translateY(5px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes introSentenceOut{0%,65%{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}100%{opacity:0;filter:blur(12px);transform:translateY(-32px) scale(1.08)}}
+.intro-work{position:absolute;inset:0;opacity:0;z-index:7;pointer-events:none;animation:introWorkStage 3.65s ease 5.15s both;perspective:1200px}
+@keyframes introWorkStage{0%{opacity:0;filter:blur(14px)}16%,76%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(12px)}}
+.intro-work-title{position:absolute;top:15%;left:0;right:0;text-align:center;z-index:3;font-size:clamp(48px,8vw,116px);line-height:1;font-weight:400;letter-spacing:-.06em;animation:workTitle 3.35s ease 5.2s both}
+@keyframes workTitle{0%{opacity:0;transform:translateY(40px) scale(.85)}25%,70%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-30px) scale(1.2)}}
+.intro-arc{position:absolute;left:50%;top:61%;width:min(820px,95vw);height:350px;transform:translate(-50%,-50%);transform-style:preserve-3d;animation:arcOrbit 3.3s cubic-bezier(.2,.6,.1,1) 5.3s both}
+.intro-arc-card{position:absolute;left:50%;top:50%;width:clamp(140px,22vw,275px);aspect-ratio:1.5;border-radius:12px;border:0;overflow:hidden;box-shadow:0 25px 75px #000b;background:#222;backface-visibility:hidden}
+.intro-arc-card img{width:100%;height:100%;object-fit:cover}
+.intro-arc-card:nth-child(1){transform:translate(-50%,-50%) translateX(-120%) translateY(35px) rotateY(29deg) rotateZ(-13deg)}
+.intro-arc-card:nth-child(2){transform:translate(-50%,-50%) translateX(-43%) translateY(-32px) translateZ(90px) rotateY(12deg) rotateZ(-4deg)}
+.intro-arc-card:nth-child(3){transform:translate(-50%,-50%) translateX(40%) translateY(-32px) translateZ(70px) rotateY(-12deg) rotateZ(4deg)}
+.intro-arc-card:nth-child(4){transform:translate(-50%,-50%) translateX(117%) translateY(35px) rotateY(-29deg) rotateZ(13deg)}
+@keyframes arcOrbit{0%{opacity:0;transform:translate(-50%,-50%) rotateY(-62deg) scale(.55)}25%{opacity:1}70%{transform:translate(-50%,-50%) rotateY(17deg) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) rotateY(95deg) scale(1.5)}}
+.intro-logo-stage{position:absolute;inset:0;z-index:9;display:grid;place-items:center;opacity:0;animation:logoStage 1.85s ease 8.45s both}
+.intro-logo-stage::before{display:none;content:"";position:absolute;width:clamp(240px,35vw,490px);aspect-ratio:1;border:1px solid #ffffff30;border-radius:50%;box-shadow:0 0 0 58px #ffffff07,0 0 0 130px #ffffff03;animation:logoRings 1.8s ease 8.45s both}
+.intro-logo-stage img{position:relative;display:block;width:min(66vw,360px);max-height:34vh;object-fit:contain;filter:drop-shadow(0 0 35px #ffffff30);animation:logoZoom 1.85s cubic-bezier(.18,.7,.2,1) 8.45s both}
+@keyframes logoStage{0%{opacity:0}24%,76%{opacity:1}100%{opacity:0}}
+@keyframes logoRings{0%{opacity:0;transform:scale(.5)}40%{opacity:1}100%{opacity:0;transform:scale(2.8)}}
+@keyframes logoZoom{0%{opacity:0;transform:scale(.12);filter:blur(20px)}40%{opacity:1;transform:scale(1);filter:blur(0)}100%{opacity:1;transform:scale(4.7);filter:blur(8px)}}
+.intro-skip{position:absolute;z-index:40;bottom:clamp(80px,9vw,120px);right:clamp(26px,5vw,80px);background:#ffffff16;border:1px solid #ffffff50;color:#fff;border-radius:30px;padding:11px 18px;cursor:pointer;font-size:11px;letter-spacing:.16em;font-weight:400;transition:.2s}
+.intro-skip:hover{background:#fff;color:#000}
+/* Edge hexagons and side-entering creative labels */
+.motion-shell{position:relative;isolation:isolate}
+.edge-decoration{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.motion-shell>.container{position:relative;z-index:1}
+.edge-hex{position:absolute;width:clamp(85px,13vw,190px);aspect-ratio:1;background:linear-gradient(145deg,#ffffff10,#ffffff03);clip-path:polygon(25% 6.7%,75% 6.7%,100% 50%,75% 93.3%,25% 93.3%,0 50%);opacity:.68;transform:rotate(18deg);animation:hexDrift 10s ease-in-out infinite alternate}
+.edge-hex::before{content:"";position:absolute;inset:2px;background:var(--hex-cut,#050505);clip-path:inherit}
+.edge-hex:nth-child(1){left:-65px;top:13%}.edge-hex:nth-child(2){right:-70px;top:44%;width:clamp(110px,19vw,260px);animation-delay:-4s}.edge-hex:nth-child(3){left:-36px;bottom:4%;width:100px;animation-delay:-6s}
+@keyframes hexDrift{to{transform:translateY(-30px) rotate(45deg)}}
+.edge-label{position:absolute;z-index:1;display:flex;align-items:center;gap:11px;font-size:10px;font-weight:700;letter-spacing:.22em;line-height:1.4;text-transform:uppercase;opacity:0;transition:opacity 1s ease,transform 1.2s var(--ease);color:var(--edge-label,#aaa);pointer-events:none}
+.edge-label::before{content:"";width:38px;height:1px;background:currentColor;opacity:.65}
+.edge-label.from-left{left:clamp(14px,3vw,55px);top:30%;transform:translateX(-110px)}
+.edge-label.from-right{right:clamp(14px,3vw,55px);bottom:18%;transform:translateX(110px)}
+.edge-label.edge-show{opacity:.78;transform:translateX(0)}
+.services-showcase{--hex-cut:#050505;--edge-label:#b3b3b3}
+.works{--hex-cut:#fff;--edge-label:#4a4a4a}
+.pricing{--hex-cut:var(--paper);--edge-label:#555}
+/* Original reveal now alternates entry directions for a more cinematic scroll */
+.motion-ready .reveal.side-left:not(.visible){transform:translateX(-95px);opacity:0;filter:blur(7px)}
+.motion-ready .reveal.side-right:not(.visible){transform:translateX(95px);opacity:0;filter:blur(7px)}
+@media(max-width:820px){.edge-label{display:none}.edge-hex{opacity:.35}.intro-arc{transform:translate(-50%,-50%) scale(.75)}.intro-arc-card{width:clamp(110px,24vw,175px)}.intro-topline,.intro-bottomline{font-size:8px}.intro-work-title{top:23%}}
+@media(max-width:520px){.intro-word{font-size:clamp(16px,5.45vw,29px)}.intro-arc-card{width:32vw}.intro-arc{top:58%}.intro-arc-card:nth-child(1){transform:translate(-50%,-50%) translateX(-90%) translateY(45px) rotateZ(-12deg)}.intro-arc-card:nth-child(4){transform:translate(-50%,-50%) translateX(88%) translateY(45px) rotateZ(12deg)}.intro-work-title{top:24%}}
+@media(prefers-reduced-motion:reduce){#verqoIntro{display:none!important}body.intro-lock{overflow:auto}.edge-label{opacity:.7;transform:none!important}.edge-hex{animation:none}}
+
+
+/* Global typography: Thmanyah headings and cinematic typography / Cairo content and controls */
+:is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-word,.intro-work-title,.intro-topline,.intro-bottomline,.stamp,.big-price){font-family:var(--display)!important}
+body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-word,.intro-work-title,.intro-topline,.intro-bottomline,.stamp,.big-price){font-family:var(--display)!important}
+#verqoIntro .intro-word,#verqoIntro .intro-work-title{font-family:var(--display)!important;font-weight:400!important}
+#verqoIntro .intro-topline,#verqoIntro .intro-bottomline,#verqoIntro .intro-skip{font-family:var(--sans)!important}
+@media(max-width:640px){#verqoIntro{backdrop-filter:blur(11px) brightness(.63);-webkit-backdrop-filter:blur(11px) brightness(.63)}}
+
+/* Minimal intro progress, floating over the blurred site. */
+#verqoIntro .intro-loading{position:absolute;z-index:35;bottom:clamp(24px,5vh,56px);left:clamp(20px,5vw,76px);right:clamp(20px,5vw,76px);pointer-events:none;direction:ltr}
+#verqoIntro .intro-loading-number{font-family:var(--display),Cairo,sans-serif!important;font-weight:400!important;color:#fff;font-size:clamp(22px,3vw,38px);letter-spacing:-.04em;text-align:right;margin-bottom:14px;font-variant-numeric:tabular-nums}
+#verqoIntro .intro-loading-track{height:3px;width:100%;background:rgba(255,255,255,.22);overflow:hidden;border-radius:6px}
+#verqoIntro .intro-loading-fill{height:100%;width:0;background:#fff;box-shadow:0 0 14px rgba(255,255,255,.45);transform-origin:left;transition:none}
 </style>
 </head>
 <body>
+
+<!-- Cinematic launch intro: VERQO / STUDIO / 2026 VISION / OUR WORK / LOGO -->
+<div id="verqoIntro" role="dialog" aria-modal="true" aria-label="Verqo Studio opening animation">
+ <div class="intro-noise" aria-hidden="true"></div>
+ <div class="intro-words" aria-label="Verqo Studio 2026 Vision"><div class="intro-word w1">VERQO</div><div class="intro-word w2">STUDIO</div><div class="intro-word w3">2026 VISION</div></div>
+ <div class="intro-work" aria-hidden="true"><div class="intro-work-title">OUR WORK<span style="color:#999">.</span></div><div class="intro-arc">
+  <div class="intro-arc-card"><img src="https://i.postimg.cc/1z1b2Pyw/7.png" alt=""></div>
+  <div class="intro-arc-card"><img src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" alt=""></div>
+  <div class="intro-arc-card"><img src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" alt=""></div>
+  <div class="intro-arc-card"><img src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" alt=""></div>
+ </div></div>
+ <div class="intro-logo-stage" aria-hidden="true"><img src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" alt="VERQO STUDIO" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></div>
+ <div class="intro-loading" aria-label="Intro loading progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <div class="intro-loading-number" id="introLoadPercent">0%</div>
+  <div class="intro-loading-track"><div class="intro-loading-fill" id="introLoadFill"></div></div>
+ </div>
+</div>
+
 <div id="progress"></div>
 <header class="site-header"><div class="container header-row">
 <a class="brand" href="#home" aria-label="Verqo Studio"><img alt="Verqo Studio" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></a>
@@ -249,7 +343,7 @@ body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20p
 
 <div class="offer-strip" aria-label="Offer"><div class="offer-track"><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span><span>VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶ VERQO STUDIO 10% OFFER ✶</span></div></div>
 
-<section class="services-showcase" id="services"><div class="container services-showcase-grid">
+<section class="services-showcase motion-shell" id="services"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">BEYOND ORDINARY</span><span class="edge-label from-right">FORM FOLLOWS VISION</span></div><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
 <span class="section-index reveal" data-en="02 / OUR EXPERTISE" data-ar="02 / خبراتنا">02 / OUR EXPERTISE</span>
 <h2 class="reveal"><span data-en="Our Services" data-ar="خدماتنا">Our Services</span>.</h2>
@@ -257,25 +351,25 @@ body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20p
 <a class="white-action reveal" href="#pricing"><span data-en="Explore Our Services" data-ar="استكشف خدماتنا">Explore Our Services</span><span>↗</span></a>
 </div>
 <div class="services-cards">
-<article class="svc-card reveal"><span class="svc-index">01 /</span><h3 data-en="Brand Identity" data-ar="الهوية البصرية">Brand Identity</h3><div class="svc-tags"><span data-en="Logo Design" data-ar="تصميم الشعارات">Logo Design</span><span data-en="Visual Identity" data-ar="الهوية المرئية">Visual Identity</span><span data-en="Brand Guidelines" data-ar="دليل الهوية">Brand Guidelines</span><span data-en="Social Media Design" data-ar="تصميم وسائل التواصل">Social Media Design</span><span data-en="Brand Touchpoints" data-ar="تطبيقات الهوية">Brand Touchpoints</span><span data-en="Packaging Concepts" data-ar="تصميم العبوات">Packaging Concepts</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">02 /</span><h3 data-en="Digital &amp; Social" data-ar="التصميم الرقمي والسوشيال">Digital &amp; Social</h3><div class="svc-tags"><span data-en="Instagram Posts" data-ar="بوستات إنستجرام">Instagram Posts</span><span data-en="Story Templates" data-ar="قوالب القصص">Story Templates</span><span data-en="Campaign Graphics" data-ar="تصميم الحملات">Campaign Graphics</span><span data-en="Reels Covers" data-ar="أغلفة الريلز">Reels Covers</span><span data-en="Social Identity" data-ar="هوية السوشيال">Social Identity</span><span data-en="Salla Stores" data-ar="متاجر سلة">Salla Stores</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">03 /</span><h3 data-en="Gaming &amp; Streaming" data-ar="الألعاب والبث المباشر">Gaming &amp; Streaming</h3><div class="svc-tags"><span data-en="FiveM Branding" data-ar="هويات فايف إم">FiveM Branding</span><span data-en="Streaming Overlays" data-ar="واجهات البث">Streaming Overlays</span><span data-en="Banners" data-ar="البنرات">Banners</span><span data-en="Motion Assets" data-ar="تصاميم متحركة">Motion Assets</span><span data-en="Alerts &amp; Panels" data-ar="تنبيهات ولوحات">Alerts &amp; Panels</span><span data-en="Channel Visuals" data-ar="تصميم القنوات">Channel Visuals</span></div></article>
+<article class="svc-card reveal side-right"><span class="svc-index">01 /</span><h3 data-en="Brand Identity" data-ar="الهوية البصرية">Brand Identity</h3><div class="svc-tags"><span data-en="Logo Design" data-ar="تصميم الشعارات">Logo Design</span><span data-en="Visual Identity" data-ar="الهوية المرئية">Visual Identity</span><span data-en="Brand Guidelines" data-ar="دليل الهوية">Brand Guidelines</span><span data-en="Social Media Design" data-ar="تصميم وسائل التواصل">Social Media Design</span><span data-en="Brand Touchpoints" data-ar="تطبيقات الهوية">Brand Touchpoints</span><span data-en="Packaging Concepts" data-ar="تصميم العبوات">Packaging Concepts</span></div></article>
+<article class="svc-card reveal side-right"><span class="svc-index">02 /</span><h3 data-en="Digital &amp; Social" data-ar="التصميم الرقمي والسوشيال">Digital &amp; Social</h3><div class="svc-tags"><span data-en="Instagram Posts" data-ar="بوستات إنستجرام">Instagram Posts</span><span data-en="Story Templates" data-ar="قوالب القصص">Story Templates</span><span data-en="Campaign Graphics" data-ar="تصميم الحملات">Campaign Graphics</span><span data-en="Reels Covers" data-ar="أغلفة الريلز">Reels Covers</span><span data-en="Social Identity" data-ar="هوية السوشيال">Social Identity</span><span data-en="Salla Stores" data-ar="متاجر سلة">Salla Stores</span></div></article>
+<article class="svc-card reveal side-right"><span class="svc-index">03 /</span><h3 data-en="Gaming &amp; Streaming" data-ar="الألعاب والبث المباشر">Gaming &amp; Streaming</h3><div class="svc-tags"><span data-en="FiveM Branding" data-ar="هويات فايف إم">FiveM Branding</span><span data-en="Streaming Overlays" data-ar="واجهات البث">Streaming Overlays</span><span data-en="Banners" data-ar="البنرات">Banners</span><span data-en="Motion Assets" data-ar="تصاميم متحركة">Motion Assets</span><span data-en="Alerts &amp; Panels" data-ar="تنبيهات ولوحات">Alerts &amp; Panels</span><span data-en="Channel Visuals" data-ar="تصميم القنوات">Channel Visuals</span></div></article>
 </div></div></section>
 
-<section class="works" id="works"><div class="container">
+<section class="works motion-shell" id="works"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">SELECTED CREATIONS</span><span class="edge-label from-right">MADE TO STAND OUT</span></div><div class="container">
 <div class="eyebrow reveal" data-en="03 / Selected work" data-ar="03 / أعمال مختارة">03 / Selected work</div>
 <div class="works-head"><h2 class="title-lg reveal" data-en-html="Visuals with<br>presence." data-ar-html="أعمال<br>تلفت الأنظار.">Visuals with<br>presence.</h2>
 <a class="pill reveal" data-en="View portfolio ↗" data-ar="عرض معرض الأعمال ↗" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio ↗</a></div>
 <div class="portfolio-gallery">
-<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" target="_blank" rel="noopener noreferrer"><img alt="Arab Designers" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"></a><div class="portfolio-info"><div><h3>Arab Designers</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
-<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" target="_blank" rel="noopener noreferrer"><img alt="One Nation" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"></a><div class="portfolio-info"><div><h3>One Nation</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
-<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" target="_blank" rel="noopener noreferrer"><img alt="Gulf" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"></a><div class="portfolio-info"><div><h3>Gulf</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
-<article class="reveal"><a class="portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" target="_blank" rel="noopener noreferrer"><img alt="Dajani" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"></a><div class="portfolio-info"><div><h3>Dajani</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="Arab Designers" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"></div><div class="portfolio-info"><div><h3>Arab Designers</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="One Nation" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"></div><div class="portfolio-info"><div><h3>One Nation</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="Gulf" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"></div><div class="portfolio-info"><div><h3>Gulf</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
+<article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="Dajani" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"></div><div class="portfolio-info"><div><h3>Dajani</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
 </div></div></section>
 
-<section class="pricing" id="pricing"><div class="container">
+<section class="pricing motion-shell" id="pricing"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">DESIGNED FOR YOU</span><span class="edge-label from-right">THE NEXT CHAPTER</span></div><div class="container">
 <div class="eyebrow reveal" data-en="04 / PRICING" data-ar="04 / الأسعار">04 / PRICING</div>
-<div class="pricing-hero reveal"><div><div class="pricing-overline" data-en="CLEAR PLANS. NO SURPRISES." data-ar="باقات واضحة. بدون مفاجآت.">CLEAR PLANS. NO SURPRISES.</div><h2 data-en="Choose your plan." data-ar="اختر باقتك.">Choose your plan.</h2><p data-en="Official service packages from VERQO's rate card. Select a category and see what's included." data-ar="باقات الخدمات الرسمية حسب ملف أسعار فيركو. اختر الفئة واستعرض تفاصيل الخدمات.">Official service packages from VERQO's rate card. Select a category and see what's included.</p></div><div class="stamp">VERQO<small>2026 / PRICE GUIDE</small></div></div>
+<div class="pricing-hero reveal side-right"><div><div class="pricing-overline" data-en="CLEAR PLANS. NO SURPRISES." data-ar="باقات واضحة. بدون مفاجآت.">CLEAR PLANS. NO SURPRISES.</div><h2 data-en="Choose your plan." data-ar="اختر باقتك.">Choose your plan.</h2><p data-en="Official service packages from VERQO's rate card. Select a category and see what's included." data-ar="باقات الخدمات الرسمية حسب ملف أسعار فيركو. اختر الفئة واستعرض تفاصيل الخدمات.">Official service packages from VERQO's rate card. Select a category and see what's included.</p></div><div class="stamp">VERQO<small>2026 / PRICE GUIDE</small></div></div>
 <div class="category-selector" id="categorySelector" role="group" aria-label="Choose service"></div>
 <div class="currency-row"><strong id="categoryName"></strong><div class="right"><span data-en="DISPLAY" data-ar="عرض السعر">DISPLAY</span><button class="active" id="sarBtn" type="button">SAR / ر.س</button><button id="usdBtn" type="button">USD / $</button></div></div>
 <div class="package-grid" id="packageGrid" aria-live="polite"></div>
@@ -294,7 +388,7 @@ body.is-ar .hero-content{right:22px;left:auto}body.is-ar .hero-controls{left:20p
 
 <footer class="footer"><div class="container">
 <div class="footer-columns">
-<div><img class="footer-new-logo" alt="Verqo Studio logo" src="assets/verqo-logo.png"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
+<div><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
 <div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a></div>
 <div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="#pricing" data-en="Our Packages" data-ar="الباقات">Our Packages</a><a href="#works" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="#contact" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a></div>
 <div><h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
@@ -446,6 +540,55 @@ if(!RM&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>
 function prog(){const m=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(m>0?scrollY/m*100:0)+'%'}
 addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);
 setLanguage('en');prog();restart();
+</script>
+<script>
+
+/* Controlled intro. Works on each new page load; reduced motion skips it. */
+(function initVerqoIntro(){
+ const layer=document.getElementById('verqoIntro');
+ if(!layer)return;
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduced){layer.remove();return}
+ document.body.classList.add('intro-lock');
+ let ended=false;
+ const progressEl=document.getElementById('introLoadPercent');
+ const progressFill=document.getElementById('introLoadFill');
+ const duration=10300;
+ let startingAt=null,frameId=null;
+ const updateProgress=(timestamp)=>{
+  if(ended)return;
+  if(startingAt===null)startingAt=timestamp;
+  const progress=Math.min(100,Math.floor((timestamp-startingAt)/duration*100));
+  progressEl.textContent=progress+'%';
+  progressFill.style.width=progress+'%';
+  layer.querySelector('.intro-loading').setAttribute('aria-valuenow',String(progress));
+  if(progress<100)frameId=requestAnimationFrame(updateProgress);
+ };
+ frameId=requestAnimationFrame(updateProgress);
+ const end=()=>{
+  if(ended)return;ended=true;
+  clearTimeout(endTimer);
+  cancelAnimationFrame(frameId);
+  progressEl.textContent='100%';progressFill.style.width='100%';
+  layer.querySelector('.intro-loading').setAttribute('aria-valuenow','100');
+  layer.classList.add('finished');
+  document.body.classList.remove('intro-lock');
+  setTimeout(()=>layer.remove(),950);
+ };
+ const endTimer=setTimeout(end,10300);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!ended)end()});
+})();
+/* Reveal the side hex labels only when their sections enter the viewport. */
+(function initEdgeMotion(){
+ const labels=document.querySelectorAll('.edge-label');
+ if(!labels.length)return;
+ if(!('IntersectionObserver' in window)){labels.forEach(x=>x.classList.add('edge-show'));return}
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.querySelectorAll('.edge-label').forEach(x=>x.classList.add('edge-show'));observer.unobserve(entry.target)}
+ }),{threshold:.12});
+ document.querySelectorAll('.motion-shell').forEach(x=>observer.observe(x));
+})();
+
 </script>
 </body>
 </html>
