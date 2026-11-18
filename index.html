@@ -533,12 +533,32 @@ body{background:#fff}
 @media(max-width:950px){.language-switch{margin-left:auto}.site-header .nav.show{background:#080808!important}.language-option{padding:8px 9px}.package-grid,.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:640px){.package-grid,.package-grid.two{grid-template-columns:1fr!important}.pricing-hero-stamp{display:none}.pricing-hero{min-height:unset}.language-option .flag{font-size:16px}.language-option{font-size:11px;padding:6px 8px}.currency-row{align-items:flex-start;flex-direction:column}.portfolio-tags span{font-size:10px!important}}
 @media(prefers-reduced-motion:reduce){.package{transition:none!important}}
+
+/* Real language picker: white-on-black, anchored menu, clear flags. */
+.language-dropdown{position:relative;flex-shrink:0;direction:ltr;z-index:170}
+.language-trigger{display:flex;align-items:center;justify-content:space-between;gap:9px;min-width:147px;padding:10px 13px;background:rgba(12,12,12,.90);border:1px solid rgba(255,255,255,.46);border-radius:999px;color:#fff;cursor:pointer;font-weight:700;font-size:12px;transition:border-color .2s,background .2s}
+.language-trigger:hover,.language-dropdown.open .language-trigger{background:#171717;border-color:#fff}
+.language-trigger svg{transition:transform .2s;flex-shrink:0}
+.language-dropdown.open .language-trigger svg{transform:rotate(180deg)}
+.language-current-flag{font-size:20px;line-height:1}
+.language-menu{position:absolute;right:0;top:calc(100% + 11px);width:198px;max-width:calc(100vw - 30px);padding:6px;background:#111;border:1px solid #555;border-radius:16px;box-shadow:0 16px 42px rgba(0,0,0,.5);z-index:200;direction:ltr}
+.language-menu[hidden]{display:none!important}
+.language-menu .language-option{display:flex;align-items:center;width:100%;gap:12px;background:transparent;border:0;border-radius:11px;padding:12px 13px;text-align:left;color:#fff;font-size:13px;cursor:pointer;font-weight:650;transition:background .2s}
+.language-menu .language-option:hover,.language-menu .language-option.is-active{background:#303030;color:#fff;box-shadow:none}
+.language-menu .language-option .flag{font-size:22px}
+.language-check{margin-left:auto;opacity:0;color:#fff}
+.language-option.is-active .language-check{opacity:1}
+.site-header .brand img{width:auto!important;height:43px!important;max-width:170px!important;object-fit:contain!important}
+.footer-brand .footer-new-logo{width:175px!important;height:auto!important;max-height:165px!important;object-fit:contain!important;object-position:left center!important;display:block!important;margin-bottom:17px!important}
+/* Remove project overlay labels entirely. */
+#works .portfolio-gallery .portfolio-view{display:none!important}
+@media(max-width:760px){.language-trigger{min-width:114px;padding:8px 10px}.language-current-name{font-size:11px}.site-header .brand img{max-width:105px!important;height:37px!important}.language-menu{width:185px}}
 </style></head>
 <body>
 <div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
 <header class="site-header">
 <div class="container header-row">
-<a aria-label="Verqo Studio — Home" class="brand" href="#home"><img alt="Verqo Studio" onerror="this.onerror=null;this.src='assets/verqo-logo.png'" src="https://i.postimg.cc/tJMZBBGy/verqo-logo.png"/></a>
+<a aria-label="Verqo Studio — Home" class="brand" href="#home"><img alt="Verqo Studio" onerror="this.onerror=null;this.src='assets/verqo-logo.png'" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png"/></a>
 <nav class="nav" id="mainNav"><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a>
 <a data-ar="من نحن" data-en="About" href="#about">About</a>
 <a data-ar="الخدمات" data-en="Services" href="#services">Services</a>
@@ -546,7 +566,15 @@ body{background:#fff}
 <a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a>
 <a data-ar="تواصل معنا" data-en="Contact" href="#contact">Contact</a>
 </nav>
-<div aria-label="Language / اللغة" class="language-switch" role="group"><button aria-pressed="true" class="language-option is-active" data-lang="en" type="button"><span class="flag">🇬🇧</span><span>EN</span></button><button aria-pressed="false" class="language-option" data-lang="ar" type="button"><span class="flag">🇸🇦</span><span>عربي</span></button></div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
+<div class="language-dropdown" id="languageDropdown">
+  <button type="button" class="language-trigger" id="languageTrigger" aria-label="Choose language / اختر اللغة" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu">
+    <span class="language-current-flag" id="currentFlag" aria-hidden="true">🇬🇧</span><span class="language-current-name" id="currentLanguage">English</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+  <div class="language-menu" id="languageMenu" role="menu" aria-label="Languages" hidden>
+    <button class="language-option is-active" data-lang="en" type="button" role="menuitemradio" aria-checked="true"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span><span class="language-check" aria-hidden="true">✓</span></button>
+    <button class="language-option" data-lang="ar" type="button" role="menuitemradio" aria-checked="false"><span class="flag" aria-hidden="true">🇸🇦</span><span>العربية</span><span class="language-check" aria-hidden="true">✓</span></button>
+  </div>
+</div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
 </div>
 </header>
 <main>
@@ -622,28 +650,28 @@ body{background:#fff}
 <article class="work-card reveal" data-project="01">
 <a aria-label="Open Arab Designers project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" rel="noopener noreferrer" target="_blank">
 <img alt="Arab Designers design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"/>
-<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
+
 </a>
 <div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="02">
 <a aria-label="Open One Nation project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" rel="noopener noreferrer" target="_blank">
 <img alt="One Nation design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"/>
-<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
+
 </a>
 <div class="work-info portfolio-info"><div><h3>One Nation</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="03">
 <a aria-label="Open Gulf project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" rel="noopener noreferrer" target="_blank">
 <img alt="Gulf design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"/>
-<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
+
 </a>
 <div class="work-info portfolio-info"><div><h3>Gulf</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="04">
 <a aria-label="Open Dajani project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dajani design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"/>
-<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
+
 </a>
 <div class="work-info portfolio-info"><div><h3>Dajani</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
@@ -679,7 +707,7 @@ body{background:#fff}
 <footer class="footer footer-refined">
 <div class="container">
 <div class="footer-columns">
-<div class="footer-brand"><img alt="Verqo Studio logo" src="assets/verqo-logo.png"/><h2>VERQO<br/>STUDIO.</h2><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
+<div class="footer-brand"><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-mark.png'"/><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
 <div class="footer-col"><h3 data-ar="الصفحات" data-en="Pages">Pages</h3><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a><a data-ar="من نحن" data-en="About" href="#about">About</a><a data-ar="الخدمات" data-en="Services" href="#services">Services</a><a data-ar="معرض الأعمال" data-en="Portfolio" href="#works">Portfolio</a><a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a></div>
 <div class="footer-col"><h3 data-ar="استكشف" data-en="Explore">Explore</h3><a data-ar="الباقات" data-en="Our Packages" href="#pricing">Our Packages</a><a data-ar="أعمال مختارة" data-en="Selected Work" href="#works">Selected Work</a><a data-ar="أعمالنا على بيهانس ↗" data-en="Behance Portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a data-ar="ابدأ مشروعك" data-en="Start a Project" href="#contact">Start a Project</a></div>
 <div class="footer-social"><h3 data-ar="تابعنا" data-en="Follow Us">Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg"><rect height="19" rx="5.4" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 32 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h11.2c5.2 0 7.4 2.3 7.4 5.7 0 2.3-1.2 3.8-3.1 4.6 2.8.7 4.1 2.8 4.1 5.3 0 4.4-3.7 6.4-8.3 6.4H0V3zm5.4 8.6h5.1c1.7 0 2.7-.9 2.7-2.3S12.2 7 10.5 7H5.4v4.6zm0 9h5.6c2 0 3.2-1 3.2-2.7 0-1.6-1.2-2.5-3.2-2.5H5.4v5.2z" transform="scale(.85)"></path><path d="M21 5h10v2.2H21zM32 15.7c0-5.5-3.4-8.7-8.5-8.7-5.3 0-8.5 3.8-8.5 8.7 0 5.2 3.2 8.5 8.5 8.5 4 0 6.7-1.8 8.1-5.2h-4.7c-.4 1-1.5 1.4-3.1 1.4-2 0-3.3-1.3-3.4-3.2H32v-1.5zm-12.1-2.3c.2-1.7 1.5-2.7 3.4-2.7 1.8 0 3.1 1.1 3.3 2.7h-6.7z" transform="translate(5 -2) scale(.8)"></path></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"></path></svg></a></div><div class="footer-inquiry"><strong data-ar="لنصنع شيئًا مميزًا." data-en="Let's build something.">Let's build something.</strong><a data-ar="أرسل استفسار مشروع ↗" data-en="Send a project inquiry ↗" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
@@ -712,7 +740,10 @@ function setLanguage(next){
  document.body.classList.toggle('is-ar',next==='ar');
  document.querySelectorAll('[data-en][data-ar]').forEach(el=>{if(!el.closest('#packageGrid'))el.textContent=el.getAttribute('data-'+next);});
  document.querySelectorAll('[data-en-html][data-ar-html]').forEach(el=>el.innerHTML=el.getAttribute('data-'+next+'-html'));
- document.querySelectorAll('.language-option').forEach(el=>{const yes=el.dataset.lang===next;el.classList.toggle('is-active',yes);el.setAttribute('aria-pressed',String(yes));});
+ document.querySelectorAll('.language-option').forEach(el=>{const yes=el.dataset.lang===next;el.classList.toggle('is-active',yes);el.setAttribute('aria-checked',String(yes));});
+ document.getElementById('currentFlag').textContent=next==='ar'?'🇸🇦':'🇬🇧';
+ document.getElementById('currentLanguage').textContent=next==='ar'?'العربية':'English';
+ closeLangMenu();
  document.querySelectorAll('.hero-slide').forEach(el=>{el.dataset.title=el.getAttribute('data-title-'+next);});
  document.querySelectorAll('.work-card .portfolio-thumb').forEach(a=>{a.setAttribute('aria-label',trans('Open project image','افتح صورة المشروع'));});
  renderCategories();renderPackages();updateHero();
@@ -763,7 +794,15 @@ document.getElementById('closeDrawer').addEventListener('click',closePackage);ov
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show'))closePackage();});
 const usd=document.getElementById('usdBtn'),sar=document.getElementById('sarBtn');
 [usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD';sar.classList.toggle('active',currency==='SAR');usd.classList.toggle('active',currency==='USD');renderPackages();}));
+const langDropdown=document.getElementById('languageDropdown');
+const langTrigger=document.getElementById('languageTrigger');
+const langMenu=document.getElementById('languageMenu');
+function closeLangMenu(){langMenu.hidden=true;langDropdown.classList.remove('open');langTrigger.setAttribute('aria-expanded','false');}
+function toggleLangMenu(){const opening=langMenu.hidden;langMenu.hidden=!opening;langDropdown.classList.toggle('open',opening);langTrigger.setAttribute('aria-expanded',String(opening));}
+langTrigger.addEventListener('click',toggleLangMenu);
 document.querySelectorAll('.language-option').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+document.addEventListener('click',e=>{if(!langDropdown.contains(e.target))closeLangMenu();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!langMenu.hidden){closeLangMenu();langTrigger.focus();}});
 const menuBtn=document.getElementById('menuBtn');
 menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav');const open=nav.classList.toggle('show');menuBtn.setAttribute('aria-expanded',String(open));});
 document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show');menuBtn.setAttribute('aria-expanded','false');}));
