@@ -409,6 +409,43 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 .language-transition p{font-family:"Cairo",sans-serif!important;font-size:16px;font-weight:400;margin:0;color:#111}
 @media(prefers-reduced-motion:reduce){.language-spinner{animation-duration:1.4s}}
 
+
+/* Partners: no cards, seamless RTL-safe full-width ticker */
+.partners-strip{background:#050505!important;border:0!important;overflow:hidden;position:relative;width:100%;direction:ltr!important;padding:20px 0!important}
+.partners-strip .partners-track{display:flex!important;flex-wrap:nowrap!important;align-items:center;gap:0!important;width:max-content;max-width:none;direction:ltr!important;animation:partnersFlow 28s linear infinite!important;will-change:transform}
+.partners-strip .partners-group{display:flex;flex:0 0 auto;align-items:center;gap:clamp(26px,4vw,72px);padding-right:clamp(26px,4vw,72px);direction:ltr!important;white-space:nowrap}
+.partners-strip .partner-item{display:flex;flex:0 0 clamp(120px,12vw,185px);width:clamp(120px,12vw,185px);height:75px;align-items:center;justify-content:center;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transform:none!important;cursor:default}
+.partners-strip .partner-logo{display:block;width:100%;height:56px;object-fit:contain;object-position:center;filter:brightness(0) invert(1)!important;opacity:.86;transition:filter .25s ease,opacity .25s ease,transform .25s ease}
+.partners-strip .partner-item:hover{background:transparent!important;border:0!important;box-shadow:none!important;transform:none!important}
+.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(3998%) hue-rotate(321deg) brightness(94%) contrast(94%)!important;opacity:1;transform:scale(1.06)}
+.partners-strip:hover .partners-track,.partners-strip:focus-within .partners-track{animation-play-state:paused!important}
+@keyframes partnersFlow{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:650px){.partners-strip{padding:14px 0!important}.partners-strip .partner-item{flex-basis:120px;width:120px;height:62px}.partners-strip .partner-logo{height:45px}.partners-strip .partners-group{gap:30px;padding-right:30px}}
+@media(prefers-reduced-motion:reduce){.partners-strip .partners-track{animation:none!important}}
+
+
+/* White partners band, dark logos with pink hover; preserves seamless RTL ticker. */
+.partners-strip{background:#fff!important;border-top:1px solid #eee!important;border-bottom:1px solid #eee!important}
+.partners-strip .partner-logo{filter:brightness(0)!important;opacity:.88}
+.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(3998%) hue-rotate(321deg) brightness(94%) contrast(94%)!important;opacity:1}
+
+/* Single language indicator / interaction: no second option or divider */
+.site-header .language-divider{display:none!important}
+.site-header .language-switch{gap:0!important}
+.site-header #singleLangToggle{font-weight:500!important;min-width:27px!important;opacity:1!important;cursor:pointer}
+/* Pink off-canvas triangular editorial facts */
+.verqo-side-fact{position:fixed;z-index:205;right:0;top:50%;width:min(352px,calc(100vw - 28px));min-height:148px;transform:translate(110%,-50%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .45s ease,visibility .45s ease;filter:drop-shadow(0 12px 34px rgba(233,30,99,.18));font-family:var(--ar),Cairo,sans-serif!important;direction:rtl}
+.verqo-side-fact.is-visible{transform:translate(0,-50%);opacity:1;visibility:visible;pointer-events:auto}
+.verqo-side-fact::before{content:"";position:absolute;inset:0;background:#e91e63;clip-path:polygon(11% 0,100% 0,100% 100%,11% 100%,0 50%)}
+.side-fact-triangle{position:absolute;left:-36px;top:40%;width:40px;height:40px;background:#e91e63;clip-path:polygon(100% 0,100% 100%,0 50%);opacity:.9;transform:rotate(0deg)}
+.side-fact-inner{position:relative;z-index:1;padding:30px 32px 30px 58px;color:#fff;text-align:right}
+.side-fact-kicker{display:block;font-size:17px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.side-fact-inner p{margin:0;font-size:14px;line-height:1.85;font-weight:400}
+.side-fact-close{position:absolute;z-index:3;top:9px;left:38px;border:0;background:transparent;color:white;font-size:24px;line-height:1;cursor:pointer;padding:2px 7px}
+body:not(.is-ar) .side-fact-inner{text-align:left;direction:ltr}
+body:not(.is-ar) .verqo-side-fact{direction:ltr}
+@media(max-width:600px){.verqo-side-fact{top:auto;bottom:18%;width:min(300px,calc(100vw - 24px));min-height:120px;transform:translate(110%,0)}.verqo-side-fact.is-visible{transform:translate(0,0)}.side-fact-inner{padding:22px 24px 22px 48px}.side-fact-kicker{font-size:15px}.side-fact-inner p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.verqo-side-fact{transition:none}}
 </style>
 </head>
 <body>
@@ -447,10 +484,8 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
 </nav>
 <div class="header-tools">
-<div class="language-switch" id="languageSwitch" role="group" aria-label="Choose language / اختر اللغة">
-<button class="language-option" data-lang="en" type="button" aria-label="English" aria-pressed="false">EN</button>
-<span class="language-divider" aria-hidden="true"></span>
-<button class="language-option arabic-option is-active" data-lang="ar" type="button" aria-label="العربية" aria-pressed="true">ع</button>
+<div class="language-switch" id="languageSwitch" role="group" aria-label="Switch language / تغيير اللغة">
+<button class="language-option arabic-option is-active" id="singleLangToggle" type="button" aria-label="Switch to English" title="English">ع</button>
 </div>
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
@@ -471,7 +506,12 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 <div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
 </div></section>
 
-<section class="partners-strip" aria-label="Partners"><div class="partners-track"><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp" alt="Partner logo 1" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp" alt="Partner logo 2" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/25DqXDhR/26-png.webp" alt="Partner logo 3" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/mrsc6sCW/30-png.webp" alt="Partner logo 4" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp" alt="Partner logo 5" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/FK4fn4cM/6-png.webp" alt="Partner logo 6" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp" alt="Partner logo 7" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp" alt="Partner logo 8" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp" alt="Partner logo 9" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp" alt="Partner logo 10" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp" alt="Partner logo 1" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp" alt="Partner logo 2" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/25DqXDhR/26-png.webp" alt="Partner logo 3" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/mrsc6sCW/30-png.webp" alt="Partner logo 4" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp" alt="Partner logo 5" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/FK4fn4cM/6-png.webp" alt="Partner logo 6" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp" alt="Partner logo 7" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp" alt="Partner logo 8" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp" alt="Partner logo 9" loading="lazy" referrerpolicy="no-referrer"></div><div class="partner-item"><img class="partner-logo" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp" alt="Partner logo 10" loading="lazy" referrerpolicy="no-referrer"></div></div></section>
+<section class="partners-strip" aria-label="Partners" dir="ltr">
+  <div class="partners-track" dir="ltr">
+    <div class="partners-group"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
+    <div class="partners-group" aria-hidden="true"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
+  </div>
+</section>
 
 <section class="services-showcase motion-shell" id="services"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">BEYOND ORDINARY</span><span class="edge-label from-right">FORM FOLLOWS VISION</span></div><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
@@ -529,9 +569,14 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 </div>
 <div class="footer-inquiry"><strong data-en="Let's build something." data-ar="لنصنع شيئًا مميزًا.">Let's build something.</strong><a href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer" data-en="Send a project inquiry ↗" data-ar="أرسل استفسار مشروع ↗">Send a project inquiry ↗</a></div></div>
 </div>
-<div class="footer-bottom"><span data-en="© 2026 Verqo Studio. All rights reserved." data-ar="© 2026 فيركو ستوديو. جميع الحقوق محفوظة.">© 2026 Verqo Studio. All rights reserved.</span><span><span data-en="Creative by design." data-ar="إبداع في كل تفصيلة.">Creative by design.</span><a class="back-top" href="#home" data-en="Back to top ↑" data-ar="العودة للأعلى ↑">Back to top ↑</a></span></div>
+<div class="footer-bottom"><span data-en="© 2018 Verqo Studio. All rights reserved." data-ar="© 2018 فيركو ستوديو. جميع الحقوق محفوظة.">© 2018 Verqo Studio. All rights reserved.</span><span><span data-en="Creative by design." data-ar="إبداع في كل تفصيلة.">Creative by design.</span><a class="back-top" href="#home" data-en="Back to top ↑" data-ar="العودة للأعلى ↑">Back to top ↑</a></span></div>
 </div></footer>
 
+<aside class="verqo-side-fact" id="verqoSideFact" aria-live="polite" aria-atomic="true" aria-hidden="true">
+ <div class="side-fact-triangle" aria-hidden="true"></div>
+ <button type="button" class="side-fact-close" id="sideFactClose" aria-label="Close / إغلاق">×</button>
+ <div class="side-fact-inner"><span class="side-fact-kicker" id="sideFactKicker">هل تعلم؟</span><p id="sideFactText">فيركو استوديو من أقدم الاستوديوهات في مجال التصاميم.</p></div>
+</aside>
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Package details">
 <div class="drawer-top"><span>Selected package / تفاصيل الباقة</span><button class="close" id="closeDrawer" aria-label="Close">✕</button></div>
@@ -609,7 +654,11 @@ function setLanguage(l){
  language=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.body.classList.toggle('is-ar',l==='ar');
  document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=el.dataset[l]);
  document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
- document.querySelectorAll('.language-option').forEach(b=>{const y=b.dataset.lang===l;b.classList.toggle('is-active',y);b.setAttribute('aria-pressed',String(y));});
+ const langToggle=$('singleLangToggle');
+ langToggle.textContent=l==='ar'?'ع':'EN';
+ langToggle.classList.toggle('arabic-option',l==='ar');
+ langToggle.setAttribute('aria-label',l==='ar'?'Switch to English':'التبديل إلى العربية');
+ langToggle.title=l==='ar'?'English':'العربية';
  renderCategories();renderPackages();updateHero();
 }
 function renderCategories(){
@@ -665,7 +714,7 @@ function transitionLanguage(target){
   },260);
  },690);
 }
-document.querySelectorAll('.language-option').forEach(b=>b.onclick=()=>transitionLanguage(b.dataset.lang));
+$('singleLangToggle').onclick=()=>transitionLanguage(language==='ar'?'en':'ar');
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('drawer').classList.contains('show'))closePackage()});
 const mb=$('menuBtn'),nav=$('mainNav');
 mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('show'));
@@ -735,6 +784,39 @@ setLanguage('ar');prog();restart();
  document.querySelectorAll('.motion-shell').forEach(x=>observer.observe(x));
 })();
 
+</script>
+<script>
+/* Scroll-triggered editorial facts: single pop-out, no obstruction of page content. */
+(function initSideFacts(){
+ const panel=document.getElementById('verqoSideFact');
+ const kicker=document.getElementById('sideFactKicker');
+ const message=document.getElementById('sideFactText');
+ const close=document.getElementById('sideFactClose');
+ if(!panel || !('IntersectionObserver' in window))return;
+ const facts=[
+  {id:'about',ar:'فيركو استوديو من أقدم الاستوديوهات في مجال التصاميم.',en:'Verqo Studio is one of the longest-established studios in the design field.'},
+  {id:'services',ar:'نحوّل الأفكار إلى هويات بصرية وتجارب رقمية مميزة.',en:'We transform ideas into memorable visual identities and digital experiences.'},
+  {id:'works',ar:'كل تصميم فرصة جديدة لترك بصمة مختلفة.',en:'Every project is a new opportunity to leave a distinctive mark.'}
+ ];
+ let hideTimer=null,activeIndex=-1;
+ function hide(){panel.classList.remove('is-visible');panel.setAttribute('aria-hidden','true');clearTimeout(hideTimer)}
+ function show(index){
+  if(index===activeIndex || document.body.classList.contains('intro-lock'))return;
+  activeIndex=index;clearTimeout(hideTimer);
+  const f=facts[index],ar=document.body.classList.contains('is-ar');
+  kicker.textContent=ar?'هل تعلم؟':'Did you know?';
+  message.textContent=ar?f.ar:f.en;
+  panel.classList.add('is-visible');panel.setAttribute('aria-hidden','false');
+  hideTimer=setTimeout(hide,4400);
+ }
+ close.addEventListener('click',hide);
+ panel.addEventListener('mouseenter',()=>clearTimeout(hideTimer));
+ panel.addEventListener('mouseleave',()=>{hideTimer=setTimeout(hide,1600)});
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){const i=facts.findIndex(f=>f.id===entry.target.id);if(i!==-1){show(i);observer.unobserve(entry.target)}}});
+ },{threshold:.27});
+ facts.forEach(f=>{const el=document.getElementById(f.id);if(el)observer.observe(el)});
+})();
 </script>
 </body>
 </html>
