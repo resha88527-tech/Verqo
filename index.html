@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#050505" name="theme-color"/>
 <meta content="VERQO STUDIO — one-page creative studio website with services, work, pricing and contact." name="description"/>
-<title>Verqo Studio</title>
+<title>VERQO Studio | Creative Solutions &amp; Pricing</title>
 <link href="assets/verqo-logo.png" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -470,50 +470,111 @@ body{background:#fff}
   .hero-content .hero-heading{font-size:26px!important}
 }
 </style>
-</head>
+<style>
+/* 2026 bilingual official VERQO pricing + refinements */
+:root{--mono:#0b0b0b}
+.portfolio-tags span{color:#0a0a0a!important;border:1px solid #171717!important;background:#fff!important;font-weight:700!important;opacity:1!important}
+.portfolio-info h3{color:#0a0a0a!important}
+.hero-slide .bg{object-position:center 61%!important}
+.site-header{background:rgba(5,5,5,.72)!important;backdrop-filter:blur(16px)!important;border-bottom:1px solid rgba(255,255,255,.24)!important}
+.header-row{gap:14px!important}
+.language-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.32);border-radius:100px;direction:ltr;flex-shrink:0}
+.language-option{border:0;background:transparent;color:#eee;display:flex;align-items:center;gap:7px;border-radius:40px;padding:9px 12px;cursor:pointer;font-weight:750;font-size:12px;transition:.2s;white-space:nowrap}
+.language-option .flag{font-size:18px;line-height:1}
+.language-option.is-active{color:#0a0a0a;background:#fff;box-shadow:0 3px 12px #0002}
+.language-option:hover:not(.is-active){background:rgba(255,255,255,.16)}
+.pricing-redesign{background:#f2f2f0!important;color:#111!important;padding-block:90px 110px!important}
+.pricing-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:35px;background:#101010;color:#fff;border-radius:30px;padding:clamp(24px,5vw,65px);min-height:235px;overflow:hidden;position:relative}
+.pricing-hero:after{content:'';position:absolute;right:-80px;top:-120px;width:350px;height:350px;border-radius:50%;border:1px solid #ffffff24;box-shadow:0 0 0 55px #ffffff07,0 0 0 110px #ffffff04;pointer-events:none}
+.pricing-overline{font-weight:800;letter-spacing:.18em;font-size:11px;color:#bbb}
+.pricing-hero h2{font-size:clamp(36px,5vw,76px);letter-spacing:-.075em;line-height:1.04;margin:12px 0}
+.pricing-hero p{max-width:600px;color:#b9b9b9;line-height:1.7;font-size:14px;margin:0}
+.pricing-hero-stamp{font-size:40px;font-weight:900;letter-spacing:-.1em;position:relative;z-index:1;text-align:right;white-space:nowrap}
+.pricing-hero-stamp small{font-size:10px;letter-spacing:.18em;display:block;color:#aaa;font-weight:600}
+.category-selector{display:flex!important;flex-wrap:wrap!important;gap:9px!important;margin:0 0 25px!important}
+.category-selector button{color:#111!important;border:1px solid #929292!important;background:#fff!important;border-radius:999px!important;padding:13px 22px!important}
+.category-selector button.active,.category-selector button:hover{color:#fff!important;background:#111!important;border-color:#111!important}
+.currency-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.currency-row .right{display:flex;align-items:center;gap:10px}
+.currency-row button{color:#111;background:#fff;border:1px solid #aaa;border-radius:99px;padding:9px 13px;cursor:pointer}
+.currency-row button.active{background:#111;color:#fff}
+.package-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;perspective:1300px}
+.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.package{background:#fff!important;border-radius:25px!important;border:1px solid #d0d0cf!important;min-height:490px!important;padding:30px!important;display:flex!important;flex-direction:column!important;transition:box-shadow .35s,border-color .35s,translate .35s!important;transform-style:preserve-3d;box-shadow:0 10px 26px #0000000a}
+.package:hover{box-shadow:0 25px 55px #0000001c;border-color:#555!important;translate:0 -6px}
+.package.popular{background:#0b0b0b!important;color:#fff!important;border-color:#0b0b0b!important}
+.package.popular .amount,.package.popular h3{color:#fff!important}
+.package.popular .other,.package.popular .package-kicker{color:#b9b9b9!important}
+.package.popular .package-line{background:#555!important}
+.package.popular li{color:#eee!important}
+.package.popular .book{background:#fff!important;color:#000!important}
+.package h3{font-weight:800!important;font-size:25px!important;line-height:1.3!important;margin:22px 0 15px!important}
+.package .amount{font-size:clamp(33px,3.6vw,51px)!important;font-weight:850!important;letter-spacing:-.055em!important;white-space:nowrap!important;font-variant-numeric:tabular-nums!important}
+.package .other{font-size:13px!important;margin:6px 0 20px!important;color:#777!important}
+.package-line{height:1px;background:#ddd;margin:0 0 18px}
+.package ul{list-style:none!important;padding:0!important;margin:0 0 28px!important;display:flex!important;flex-direction:column!important;gap:14px!important;flex:1!important;font-size:13px!important;line-height:1.5!important;border:0!important}
+.package ul li{display:flex!important;gap:10px!important;align-items:flex-start!important;color:#333!important}
+.package ul li:before{content:'✓'!important;flex-shrink:0;border-radius:50%;background:#ececea;color:#111;width:19px;height:19px;display:grid;place-items:center;font-size:12px!important}
+.package .book{margin-top:auto;border-radius:14px;cursor:pointer}
+.pricing-hint{color:#555!important;font-size:13px!important;line-height:1.8!important;margin-top:22px!important}
+.pricing-legal{font-size:11px;color:#777;line-height:1.8;margin-top:6px}
+.drawer{direction:inherit!important}
+.drawer .big-price{font-variant-numeric:tabular-nums}
+.is-ar{font-family:'Tajawal',Arial,sans-serif!important}
+.is-ar .nav,.is-ar .footer,.is-ar .services-showcase,.is-ar .welcome-section,.is-ar .pricing-redesign{font-family:'Tajawal',Arial,sans-serif}
+.is-ar .hero-logo-badge,.is-ar .scroll-cue,.is-ar .hero-controls{direction:ltr}
+.is-ar .hero-content{left:auto!important;right:4%!important;text-align:right!important}
+.is-ar .hero-logo-badge{left:4%!important;right:auto!important}
+.is-ar .hero-controls{right:4%!important;left:auto!important}
+.is-ar .portfolio-info{direction:rtl;text-align:right}
+.is-ar .portfolio-tags{justify-content:flex-start}
+.is-ar .footer-columns{direction:rtl;text-align:right}
+.is-ar .pricing-hero-stamp{text-align:left}
+@media(max-width:950px){.language-switch{margin-left:auto}.site-header .nav.show{background:#080808!important}.language-option{padding:8px 9px}.package-grid,.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:640px){.package-grid,.package-grid.two{grid-template-columns:1fr!important}.pricing-hero-stamp{display:none}.pricing-hero{min-height:unset}.language-option .flag{font-size:16px}.language-option{font-size:11px;padding:6px 8px}.currency-row{align-items:flex-start;flex-direction:column}.portfolio-tags span{font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){.package{transition:none!important}}
+</style></head>
 <body>
 <div id="progress"></div><div aria-hidden="true" class="cursor-aura"></div>
 <header class="site-header">
 <div class="container header-row">
-<a class="brand" href="#home" aria-label="Verqo Studio — Home"><img alt="Verqo Studio" src="https://i.postimg.cc/tJMZBBGy/verqo-logo.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"/></a>
-<nav class="nav" id="mainNav"><a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#works">Works</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
+<a aria-label="Verqo Studio — Home" class="brand" href="#home"><img alt="Verqo Studio" onerror="this.onerror=null;this.src='assets/verqo-logo.png'" src="https://i.postimg.cc/tJMZBBGy/verqo-logo.png"/></a>
+<nav class="nav" id="mainNav"><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a>
+<a data-ar="من نحن" data-en="About" href="#about">About</a>
+<a data-ar="الخدمات" data-en="Services" href="#services">Services</a>
+<a data-ar="الأعمال" data-en="Works" href="#works">Works</a>
+<a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a>
+<a data-ar="تواصل معنا" data-en="Contact" href="#contact">Contact</a>
 </nav>
-<button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
+<div aria-label="Language / اللغة" class="language-switch" role="group"><button aria-pressed="true" class="language-option is-active" data-lang="en" type="button"><span class="flag">🇬🇧</span><span>EN</span></button><button aria-pressed="false" class="language-option" data-lang="ar" type="button"><span class="flag">🇸🇦</span><span>عربي</span></button></div><button aria-expanded="false" aria-label="Toggle menu" class="menu-toggle" id="menuBtn">☰</button>
 </div>
 </header>
-
-
 <main>
 <section class="hero" id="home">
 <div class="hero-wide">
 <div class="hero-stage" id="heroStage">
-<div class="hero-slide active" data-title="VERQO STUDIO">
+<div class="hero-slide active" data-title="VERQO STUDIO" data-title-ar="فيركو ستوديو" data-title-en="VERQO STUDIO">
 <img alt="VERQO STUDIO portfolio visual" class="bg" decoding="async" fetchpriority="high" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/HkSjpSP6/10.png"/>
-<div class="hero-content"><h1 class="hero-heading">VERQO STUDIO</h1></div>
+<div class="hero-content"><h1 class="hero-heading" data-ar="فيركو ستوديو" data-en="VERQO STUDIO">VERQO STUDIO</h1></div>
 </div>
-<div class="hero-slide" data-title="BILLBOARD CAMPAIGN">
+<div class="hero-slide" data-title="BILLBOARD CAMPAIGN" data-title-ar="حملة إعلانية" data-title-en="BILLBOARD CAMPAIGN">
 <img alt="BILLBOARD VISUAL portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png"/>
-<div class="hero-content"><h2 class="hero-heading">BILLBOARD CAMPAIGN</h2></div>
+<div class="hero-content"><h2 class="hero-heading" data-ar="حملة إعلانية" data-en="BILLBOARD CAMPAIGN">BILLBOARD CAMPAIGN</h2></div>
 </div>
-<div class="hero-slide" data-title="POSTER VISUAL">
+<div class="hero-slide" data-title="POSTER VISUAL" data-title-ar="تصميم بوستر" data-title-en="POSTER VISUAL">
 <img alt="POSTER SHOWCASE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png"/>
-<div class="hero-content"><h2 class="hero-heading">POSTER VISUAL</h2></div>
+<div class="hero-content"><h2 class="hero-heading" data-ar="تصميم بوستر" data-en="POSTER VISUAL">POSTER VISUAL</h2></div>
 </div>
-<div class="hero-slide" data-title="LOGO CORE">
+<div class="hero-slide" data-title="LOGO CORE" data-title-ar="تصميم شعار" data-title-en="LOGO CORE">
 <img alt="LOGO CORE portfolio visual" class="bg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png"/>
-<div class="hero-content"><h2 class="hero-heading">LOGO CORE</h2></div>
+<div class="hero-content"><h2 class="hero-heading" data-ar="تصميم شعار" data-en="LOGO CORE">LOGO CORE</h2></div>
 </div>
 <div class="hero-caption-right" id="heroLabel">VERQO STUDIO / 01</div>
 <div class="hero-logo-badge"><img alt="Verqo logo" src="assets/verqo-logo.png"/><span>VERQO STUDIO<br/>Independent creative studio</span></div>
 <div aria-hidden="true" class="scroll-cue">Scroll to explore <i></i></div>
 <div aria-hidden="true" class="hero-progress" id="heroProgress"><span></span></div>
 <div class="hero-controls">
-<div class="hero-counter" id="heroCounter">01 / 04</div>
+<div class="hero-counter" data-ar="01 / 04" data-en="01 / 04" id="heroCounter">01 / 04</div>
 <div class="hero-arrows">
 <button aria-label="Previous slide" class="hero-arrow" id="prevSlide">←</button>
 <button aria-label="Next slide" class="hero-arrow" id="nextSlide">→</button>
@@ -524,10 +585,10 @@ body{background:#fff}
 </section>
 <section class="welcome-section" id="about">
 <div class="container welcome-inner">
-<div class="welcome-rule reveal">01 / THE STUDIO</div>
-<h2 class="welcome-title reveal">Welcome To <span>Verqo Studio.</span></h2>
-<p class="welcome-intro reveal">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
-<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services">Know about us <span>↗</span></a><a class="welcome-btn light" href="#contact">Let's Connect <span>↗</span></a></div>
+<div class="welcome-rule reveal" data-ar="01 / الاستوديو" data-en="01 / THE STUDIO">01 / THE STUDIO</div>
+<h2 class="welcome-title reveal" data-ar-html="مرحبًا بك في &lt;span&gt;فيركو ستوديو.&lt;/span&gt;" data-en-html="Welcome To &lt;span&gt;Verqo Studio.&lt;/span&gt;"><span data-ar="مرحبًا بك في" data-en="Welcome To">Welcome To</span><span data-ar="فيركو ستوديو." data-en="Verqo Studio.">Verqo Studio.</span></h2>
+<p class="welcome-intro reveal" data-ar="نحوّل الأفكار إلى هويات بصرية مميزة ومحتوى مؤثر وتجارب رقمية جريئة، لنمنح كل علامة حضورًا استثنائيًا." data-en="We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
+<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-ar="اعرف المزيد عنا" data-en="Know about us">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-ar="تواصل معنا" data-en="Let's Connect">Let's Connect</span><span>↗</span></a></div>
 </div>
 </section><div aria-label="Offer strip" class="offer-strip">
 <div class="offer-track">
@@ -538,81 +599,79 @@ body{background:#fff}
 <section class="services-showcase" id="services">
 <div class="container services-showcase-grid">
 <div class="services-showcase-heading">
-<span class="section-index reveal">02 / OUR EXPERTISE</span>
-<h2 class="reveal">Our Services<span class="red-dot">.</span></h2>
-<p class="reveal">We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.</p>
-<a class="white-action reveal" href="#pricing">Explore Our Services <span>↗</span></a>
+<span class="section-index reveal" data-ar="02 / خبراتنا" data-en="02 / OUR EXPERTISE">02 / OUR EXPERTISE</span>
+<h2 class="reveal"><span data-ar="خدماتنا" data-en="Our Services">Our Services</span><span class="red-dot">.</span></h2>
+<p class="reveal" data-ar="نصنع تجارب تصميم متكاملة، من الهوية البصرية إلى الحضور الرقمي المستمر. اكتشف الخدمة المناسبة لرؤيتك." data-en="We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.">We create complete design experiences — from a new brand identity to a consistent digital presence. Discover a service that fits your vision.</p>
+<a class="white-action reveal" href="#pricing"><span data-ar="استكشف خدماتنا" data-en="Explore Our Services">Explore Our Services</span><span>↗</span></a>
 </div>
 <div class="services-cards">
-<article class="svc-card reveal"><span class="svc-index">01 /</span><h3>Brand Identity</h3><div class="svc-tags"><span>Logo Design</span><span>Visual Identity</span><span>Brand Guidelines</span><span>Social Media Design</span><span>Brand Touchpoints</span><span>Packaging Concepts</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">02 /</span><h3>Digital &amp; Social</h3><div class="svc-tags"><span>Instagram Posts</span><span>Story Templates</span><span>Campaign Graphics</span><span>Reels Covers</span><span>Social Identity</span><span>Salla Stores</span></div></article>
-<article class="svc-card reveal"><span class="svc-index">03 /</span><h3>Gaming &amp; Streaming</h3><div class="svc-tags"><span>FiveM Branding</span><span>Streaming Overlays</span><span>Banners</span><span>Motion Assets</span><span>Alerts &amp; Panels</span><span>Channel Visuals</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">01 /</span><h3 data-ar="الهوية البصرية" data-en="Brand Identity">Brand Identity</h3><div class="svc-tags"><span data-ar="تصميم الشعارات" data-en="Logo Design">Logo Design</span><span data-ar="الهوية المرئية" data-en="Visual Identity">Visual Identity</span><span data-ar="دليل الهوية" data-en="Brand Guidelines">Brand Guidelines</span><span data-ar="تصميم وسائل التواصل" data-en="Social Media Design">Social Media Design</span><span data-ar="تطبيقات الهوية" data-en="Brand Touchpoints">Brand Touchpoints</span><span data-ar="تصميم العبوات" data-en="Packaging Concepts">Packaging Concepts</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">02 /</span><h3 data-ar="التصميم الرقمي والسوشيال" data-en="Digital &amp; Social">Digital &amp; Social</h3><div class="svc-tags"><span data-ar="بوستات إنستجرام" data-en="Instagram Posts">Instagram Posts</span><span data-ar="قوالب القصص" data-en="Story Templates">Story Templates</span><span data-ar="تصميم الحملات" data-en="Campaign Graphics">Campaign Graphics</span><span data-ar="أغلفة الريلز" data-en="Reels Covers">Reels Covers</span><span data-ar="هوية السوشيال" data-en="Social Identity">Social Identity</span><span data-ar="متاجر سلة" data-en="Salla Stores">Salla Stores</span></div></article>
+<article class="svc-card reveal"><span class="svc-index">03 /</span><h3 data-ar="الألعاب والبث المباشر" data-en="Gaming &amp; Streaming">Gaming &amp; Streaming</h3><div class="svc-tags"><span data-ar="هويات فايف إم" data-en="FiveM Branding">FiveM Branding</span><span data-ar="واجهات البث" data-en="Streaming Overlays">Streaming Overlays</span><span data-ar="البنرات" data-en="Banners">Banners</span><span data-ar="تصاميم متحركة" data-en="Motion Assets">Motion Assets</span><span data-ar="تنبيهات ولوحات" data-en="Alerts &amp; Panels">Alerts &amp; Panels</span><span data-ar="تصميم القنوات" data-en="Channel Visuals">Channel Visuals</span></div></article>
 </div>
 </div>
 </section>
 <section class="section" id="works">
 <div class="container">
-<div class="eyebrow reveal">03 / Selected work</div>
+<div class="eyebrow reveal" data-ar="03 / أعمال مختارة" data-en="03 / Selected work">03 / Selected work</div>
 <div style="display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin-bottom:34px">
-<h2 class="title-lg reveal">Visuals with<br/>presence.</h2>
-<a class="pill reveal" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">View portfolio ↗</a>
+<h2 class="title-lg reveal" data-ar-html="أعمال&lt;br&gt;تلفت الأنظار." data-en-html="Visuals with&lt;br&gt;presence.">Visuals with<br/>presence.</h2>
+<a class="pill reveal" data-ar="عرض معرض الأعمال ↗" data-en="View portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">View portfolio ↗</a>
 </div>
 <div class="works-grid portfolio-gallery">
 <article class="work-card reveal" data-project="01">
 <a aria-label="Open Arab Designers project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/1z1b2Pyw/7.png" rel="noopener noreferrer" target="_blank">
 <img alt="Arab Designers design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/1z1b2Pyw/7.png"/>
-<span class="portfolio-view">VIEW PROJECT ↗</span>
+<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
 </a>
-<div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+<div class="work-info portfolio-info"><div><h3>Arab Designers</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="02">
 <a aria-label="Open One Nation project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png" rel="noopener noreferrer" target="_blank">
 <img alt="One Nation design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"/>
-<span class="portfolio-view">VIEW PROJECT ↗</span>
+<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
 </a>
-<div class="work-info portfolio-info"><div><h3>One Nation</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+<div class="work-info portfolio-info"><div><h3>One Nation</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="03">
 <a aria-label="Open Gulf project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png" rel="noopener noreferrer" target="_blank">
 <img alt="Gulf design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLzyfmvX/f25a09a7-8c43-4391-8265-cae11e63fa2b.png"/>
-<span class="portfolio-view">VIEW PROJECT ↗</span>
+<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
 </a>
-<div class="work-info portfolio-info"><div><h3>Gulf</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+<div class="work-info portfolio-info"><div><h3>Gulf</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 <article class="work-card reveal" data-project="04">
 <a aria-label="Open Dajani project image" class="thumb portfolio-thumb" href="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dajani design project" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/6qpkc0BJ/Mockup-2026-dajani.png"/>
-<span class="portfolio-view">VIEW PROJECT ↗</span>
+<span class="portfolio-view" data-ar="عرض المشروع ↗" data-en="VIEW PROJECT ↗">VIEW PROJECT ↗</span>
 </a>
-<div class="work-info portfolio-info"><div><h3>Dajani</h3><p>Visual design project</p></div><div class="portfolio-tags"><span>Creative Design</span><span>Portfolio</span></div></div>
+<div class="work-info portfolio-info"><div><h3>Dajani</h3><p data-ar="مشروع تصميم بصري" data-en="Visual design project">Visual design project</p></div><div class="portfolio-tags"><span data-ar="تصميم إبداعي" data-en="Creative Design">Creative Design</span><span data-ar="معرض الأعمال" data-en="Portfolio">Portfolio</span></div></div>
 </article>
 </div>
 </div>
 </section>
-<section class="section pricing" id="pricing">
-<div class="container">
-<div class="eyebrow reveal">04 / Pricing</div>
-<div class="pricing-top">
-<div>
-<h2 class="title-lg reveal">Choose the<br/>right package.</h2>
-<p class="small reveal"><span class="arab">اختر الفئة المناسبة وشوف الباقة اللي تناسب مشروعك.</span> All pricing is shown in USD and SAR.</p>
+<section class="section pricing pricing-redesign" id="pricing"><div class="container">
+<div class="eyebrow reveal" data-ar="04 / الأسعار" data-en="04 / PRICING">04 / PRICING</div>
+<div class="pricing-hero reveal">
+<div><div class="pricing-overline" data-ar="باقات واضحة. بدون مفاجآت." data-en="CLEAR PLANS. NO SURPRISES.">CLEAR PLANS. NO SURPRISES.</div>
+<h2 data-ar="اختر باقتك." data-en="Choose your plan.">Choose your plan.</h2>
+<p data-ar="باقات الخدمات الرسمية حسب ملف أسعار فيركو. اختر الفئة واستعرض تفاصيل الخدمات." data-en="Official service packages from VERQO's rate card. Select a category and see what's included.">Official service packages from VERQO's rate card. Select a category and see what's included.</p></div>
+<div class="pricing-hero-stamp"><span>VERQO</span><small>2026 / PRICE GUIDE</small></div>
 </div>
-<div class="small reveal">Interactive pricing inside the same page. Choose a category, compare packages and open details from the side panel.</div>
-</div>
-<div aria-label="Choose service" class="category-selector reveal" id="categorySelector" role="group"></div>
-<div class="currency-row reveal"><strong id="categoryName">Instagram packages</strong><div class="right"><span>Currency</span><button class="active" id="usdBtn" type="button">USD $</button><button id="sarBtn" type="button">SAR ر.س</button></div></div>
+<div aria-label="Choose service" class="category-selector" id="categorySelector" role="group"></div>
+<div class="currency-row"><strong id="categoryName"></strong><div class="right"><span data-ar="عرض السعر" data-en="DISPLAY">DISPLAY</span><button class="active" id="sarBtn" type="button">SAR / ر.س</button><button id="usdBtn" type="button">USD / $</button></div></div>
 <div aria-live="polite" class="package-grid" id="packageGrid"></div>
-<p class="pricing-hint">SAR amounts are calculated using 1 USD = 3.75 SAR. Request buttons open package details and contact flow; no payment is processed on the site.</p>
-</div>
-</section>
+<p class="pricing-hint" id="pricingNote"></p>
+<p class="pricing-legal" data-ar="الدولار تقديري على أساس 1 دولار = 3.75 ريال. الأسعار الرسمية في الملف بالريال السعودي، وتُعتمد الشروط النهائية كتابيًا." data-en="USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.">USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.</p>
+</div></section>
 <section class="contact-finish" id="contact">
 <div class="container">
 <div class="red-cta reveal">
 <div aria-hidden="true" class="red-cta-orb">✳</div>
-<span>LET'S MAKE SOMETHING GREAT</span>
-<h2>Are You Ready To Build Your Brand?</h2>
-<p>Tell us about your project. Let's create something that stands out.</p>
-<a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Connect With Us <span>↗</span></a>
+<span data-ar="لنبنِ شيئًا مميزًا" data-en="LET'S MAKE SOMETHING GREAT">LET'S MAKE SOMETHING GREAT</span>
+<h2 data-ar="هل أنت مستعد لبناء علامتك؟" data-en="Are You Ready To Build Your Brand?">Are You Ready To Build Your Brand?</h2>
+<p data-ar="أخبرنا عن مشروعك، ولنصنع معًا حضورًا يلفت الأنظار." data-en="Tell us about your project. Let's create something that stands out.">Tell us about your project. Let's create something that stands out.</p>
+<a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><span data-ar="تواصل معنا" data-en="Connect With Us">Connect With Us</span><span>↗</span></a>
 </div>
 </div>
 </section>
@@ -620,12 +679,12 @@ body{background:#fff}
 <footer class="footer footer-refined">
 <div class="container">
 <div class="footer-columns">
-<div class="footer-brand"><img alt="Verqo Studio logo" src="assets/verqo-logo.png"/><h2>VERQO<br/>STUDIO.</h2><p>Independent creative design studio.<br/>Made to stand out.</p></div>
-<div class="footer-col"><h3>Pages</h3><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Portfolio</a><a href="#pricing">Pricing</a></div>
-<div class="footer-col"><h3>Explore</h3><a href="#pricing">Our Packages</a><a href="#works">Selected Work</a><a href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a href="#contact">Start a Project</a></div>
-<div class="footer-social"><h3>Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true"><path d="M0 3h11.2c5.2 0 7.4 2.3 7.4 5.7 0 2.3-1.2 3.8-3.1 4.6 2.8.7 4.1 2.8 4.1 5.3 0 4.4-3.7 6.4-8.3 6.4H0V3zm5.4 8.6h5.1c1.7 0 2.7-.9 2.7-2.3S12.2 7 10.5 7H5.4v4.6zm0 9h5.6c2 0 3.2-1 3.2-2.7 0-1.6-1.2-2.5-3.2-2.5H5.4v5.2z" transform="scale(.85)"/><path d="M21 5h10v2.2H21zM32 15.7c0-5.5-3.4-8.7-8.5-8.7-5.3 0-8.5 3.8-8.5 8.7 0 5.2 3.2 8.5 8.5 8.5 4 0 6.7-1.8 8.1-5.2h-4.7c-.4 1-1.5 1.4-3.1 1.4-2 0-3.3-1.3-3.4-3.2H32v-1.5zm-12.1-2.3c.2-1.7 1.5-2.7 3.4-2.7 1.8 0 3.1 1.1 3.3 2.7h-6.7z" transform="translate(5 -2) scale(.8)"/></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg></a></div><div class="footer-inquiry"><strong>Let's build something.</strong><a href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
+<div class="footer-brand"><img alt="Verqo Studio logo" src="assets/verqo-logo.png"/><h2>VERQO<br/>STUDIO.</h2><p><span data-ar="استوديو تصميم إبداعي مستقل." data-en="Independent creative design studio.">Independent creative design studio.</span><br/><span data-ar="صُنعنا لنتميّز." data-en="Made to stand out.">Made to stand out.</span></p></div>
+<div class="footer-col"><h3 data-ar="الصفحات" data-en="Pages">Pages</h3><a data-ar="الرئيسية" data-en="Home" href="#home">Home</a><a data-ar="من نحن" data-en="About" href="#about">About</a><a data-ar="الخدمات" data-en="Services" href="#services">Services</a><a data-ar="معرض الأعمال" data-en="Portfolio" href="#works">Portfolio</a><a data-ar="الأسعار" data-en="Pricing" href="#pricing">Pricing</a></div>
+<div class="footer-col"><h3 data-ar="استكشف" data-en="Explore">Explore</h3><a data-ar="الباقات" data-en="Our Packages" href="#pricing">Our Packages</a><a data-ar="أعمال مختارة" data-en="Selected Work" href="#works">Selected Work</a><a data-ar="أعمالنا على بيهانس ↗" data-en="Behance Portfolio ↗" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank">Behance Portfolio ↗</a><a data-ar="ابدأ مشروعك" data-en="Start a Project" href="#contact">Start a Project</a></div>
+<div class="footer-social"><h3 data-ar="تابعنا" data-en="Follow Us">Follow Us</h3><div class="footer-social-icons"><a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg"><rect height="19" rx="5.4" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Behance" href="https://www.behance.net/i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 32 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h11.2c5.2 0 7.4 2.3 7.4 5.7 0 2.3-1.2 3.8-3.1 4.6 2.8.7 4.1 2.8 4.1 5.3 0 4.4-3.7 6.4-8.3 6.4H0V3zm5.4 8.6h5.1c1.7 0 2.7-.9 2.7-2.3S12.2 7 10.5 7H5.4v4.6zm0 9h5.6c2 0 3.2-1 3.2-2.7 0-1.6-1.2-2.5-3.2-2.5H5.4v5.2z" transform="scale(.85)"></path><path d="M21 5h10v2.2H21zM32 15.7c0-5.5-3.4-8.7-8.5-8.7-5.3 0-8.5 3.8-8.5 8.7 0 5.2 3.2 8.5 8.5 8.5 4 0 6.7-1.8 8.1-5.2h-4.7c-.4 1-1.5 1.4-3.1 1.4-2 0-3.3-1.3-3.4-3.2H32v-1.5zm-12.1-2.3c.2-1.7 1.5-2.7 3.4-2.7 1.8 0 3.1 1.1 3.3 2.7h-6.7z" transform="translate(5 -2) scale(.8)"></path></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@i7amada" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"></path></svg></a></div><div class="footer-inquiry"><strong data-ar="لنصنع شيئًا مميزًا." data-en="Let's build something.">Let's build something.</strong><a data-ar="أرسل استفسار مشروع ↗" data-en="Send a project inquiry ↗" href="https://www.instagram.com/verqostudio/" rel="noopener noreferrer" target="_blank">Send a project inquiry ↗</a></div></div>
 </div>
-<div class="footer-bottom"><span>© 2026 Verqo Studio. All rights reserved.</span><span>Creative by design. <a class="back-top" href="#home">Back to top ↑</a></span></div>
+<div class="footer-bottom"><span>© 2026 Verqo Studio. All rights reserved.</span><span><span data-ar="إبداع في كل تفصيلة." data-en="Creative by design.">Creative by design.</span><a class="back-top" data-ar="العودة للأعلى ↑" data-en="Back to top ↑" href="#home">Back to top ↑</a></span></div>
 </div>
 </footer>
 <div class="overlay" id="overlay"></div>
@@ -636,140 +695,89 @@ body{background:#fff}
 <div class="sar" id="drawerAlternate"></div>
 <ul id="drawerFeatures"></ul>
 <a class="book" href="https://www.instagram.com/verqostudio/" id="drawerLink" rel="noopener noreferrer" target="_blank">REQUEST THIS PACKAGE ↗</a>
-<p class="fine">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
+<p class="fine" data-ar="تواصل معنا على إنستجرام مع ذكر اسم الباقة. لا توجد عمليات دفع على هذا الموقع." data-en="Contact us on Instagram and mention the package name. No payment is processed on this website.">Contact us on Instagram and mention the package name. No payment is processed on this website.</p>
 </aside>
-<script src="assets/packages.js"></script>
+<script src="assets/pricing-data.js"></script>
 <script>
-// Package data is declared by assets/packages.js as `groups`.
-const names={instagram:'Instagram',fivem:'FiveM',streaming:'Streaming',branding:'Branding',salla:'Salla Stores'};
-let active='instagram', currency='USD', lastFocus=null;
-const selector=document.getElementById('categorySelector');
-const grid=document.getElementById('packageGrid');
-const categoryName=document.getElementById('categoryName');
-const drawer=document.getElementById('drawer');
-const overlay=document.getElementById('overlay');
-const money=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-const displayPrice=n=>currency==='USD'?'$'+money(n):money(n*3.75)+' SAR';
+const I18N={en:'en',ar:'ar'};
+let language='en',active='monthly',currency='SAR',lastFocus=null,numberFrame=0;
+const selector=document.getElementById('categorySelector'),grid=document.getElementById('packageGrid'),drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay');
+const fmt=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money=(sar,unit=currency)=>unit==='SAR'?fmt(sar)+' '+(language==='ar'?'ر.س':'SAR'):'$'+fmt(sar/3.75);
+const trans=(en,ar)=>language==='ar'?ar:en;
+function setLanguage(next){
+ language=next;
+ document.documentElement.lang=next;
+ document.documentElement.dir=next==='ar'?'rtl':'ltr';
+ document.body.classList.toggle('is-ar',next==='ar');
+ document.querySelectorAll('[data-en][data-ar]').forEach(el=>{if(!el.closest('#packageGrid'))el.textContent=el.getAttribute('data-'+next);});
+ document.querySelectorAll('[data-en-html][data-ar-html]').forEach(el=>el.innerHTML=el.getAttribute('data-'+next+'-html'));
+ document.querySelectorAll('.language-option').forEach(el=>{const yes=el.dataset.lang===next;el.classList.toggle('is-active',yes);el.setAttribute('aria-pressed',String(yes));});
+ document.querySelectorAll('.hero-slide').forEach(el=>{el.dataset.title=el.getAttribute('data-title-'+next);});
+ document.querySelectorAll('.work-card .portfolio-thumb').forEach(a=>{a.setAttribute('aria-label',trans('Open project image','افتح صورة المشروع'));});
+ renderCategories();renderPackages();updateHero();
+}
 function renderCategories(){
-  selector.replaceChildren();
-  groups.forEach(g=>{
-    const b=document.createElement('button');
-    b.type='button';
-    b.textContent=g.name;
-    b.className=g.id===active?'active':'';
-    b.setAttribute('aria-pressed', String(g.id===active));
-    b.addEventListener('click',()=>{active=g.id;renderCategories();renderPackages()});
-    selector.append(b);
-  });
+ selector.replaceChildren();groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=trans(g.en,g.ar);b.className=(g.id===active?'active ':'')+'service-tab';b.setAttribute('aria-pressed',String(g.id===active));b.addEventListener('click',()=>{active=g.id;renderCategories();renderPackages();});selector.append(b);});
 }
 function renderPackages(){
-  const g=groups.find(x=>x.id===active) || groups[0];
-  if(!g) return;
-  categoryName.textContent=names[g.id]+' packages';
-  grid.replaceChildren();
-  grid.className='package-grid'+(g.packs.length===4?' four':'');
-  g.packs.forEach((p,i)=>{
-    const card=document.createElement('article');
-    card.className='package';
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){card.animate([{opacity:0,transform:'translateY(35px) scale(.97)'},{opacity:1,transform:'translateY(0) scale(1)'}],{duration:750,delay:i*90,easing:'cubic-bezier(.19,1,.22,1)',fill:'both'});}
-    const kicker=document.createElement('span'); kicker.className='package-kicker'; kicker.textContent=`0${i+1} / ${g.name}`;
-    const title=document.createElement('h3'); title.textContent=p.name;
-    const amount=document.createElement('div'); amount.className='amount'; amount.textContent=displayPrice(p.usd);
-    const other=document.createElement('div'); other.className='other'; other.textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);
-    const list=document.createElement('ul');
-    p.features.forEach(f=>{const li=document.createElement('li'); li.textContent=f; list.append(li)});
-    const button=document.createElement('button'); button.className='book'; button.textContent='VIEW PACKAGE / عرض الباقة ↗'; button.addEventListener('click',()=>openPackage(g,p));
-    card.append(kicker,title,amount,other,list,button); grid.append(card);
-  });
+ const g=groups.find(v=>v.id===active);if(!g)return;
+ document.getElementById('categoryName').textContent=trans(g.en,g.ar);
+ document.getElementById('pricingNote').textContent=trans(g.note_en,g.note_ar);
+ grid.replaceChildren();grid.className='package-grid'+(g.packs.length===2?' two':'');
+ g.packs.forEach((p,i)=>{
+  const card=document.createElement('article');card.className='package price-tilt';card.tabIndex=0;
+  if(i===1 && g.packs.length===3)card.classList.add('popular');
+  const kicker=document.createElement('div');kicker.className='package-kicker';kicker.textContent=String(i+1).padStart(2,'0')+' / '+trans(g.en,g.ar);
+  const heading=document.createElement('h3');heading.textContent=trans(p.en,p.ar);
+  const amount=document.createElement('div');amount.className='amount';amount.textContent=money(p.sar);
+  const other=document.createElement('div');other.className='other';other.textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
+  const line=document.createElement('div');line.className='package-line';
+  const list=document.createElement('ul');list.dir=language==='ar'?'rtl':'ltr';(language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;list.append(li);});
+  const button=document.createElement('button');button.type='button';button.className='book';button.textContent=trans('VIEW PACKAGE ↗','تفاصيل الباقة ↗');button.addEventListener('click',()=>openPackage(g,p));
+  card.append(kicker,heading,amount,other,line,list,button);
+  grid.append(card);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) card.animate([{opacity:0,transform:'translateY(32px) rotateY(-7deg)'},{opacity:1,transform:'translateY(0) rotateY(0deg)'}],{duration:580,delay:i*95,easing:'cubic-bezier(.18,.7,.2,1)',fill:'both'});
+ });
 }
-function animateNumber(target,to,curr){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){target.textContent=(curr==='USD'?'$':'')+money(to)+(curr==='SAR'?' SAR':'');return;}
-  const start=performance.now(), duration=900;
-  function step(t){
-    if(!drawer.classList.contains('show')) return;
-    const k=Math.min((t-start)/duration,1), e=1-Math.pow(1-k,4);
-    target.textContent=(curr==='USD'?'$':'')+money(to*e)+(curr==='SAR'?' SAR':'');
-    if(k<1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+function animateNumber(target,to,unit){
+ cancelAnimationFrame(numberFrame);
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){target.textContent=(unit==='SAR'?fmt(to)+' '+trans('SAR','ر.س'):'$'+fmt(to));return;}
+ const start=performance.now();function frame(now){if(!drawer.classList.contains('show'))return;const t=Math.min((now-start)/1050,1);const v=to*(1-Math.pow(1-t,3));target.textContent=(unit==='SAR'?fmt(v)+' '+trans('SAR','ر.س'):'$'+fmt(v));if(t<1)numberFrame=requestAnimationFrame(frame);}
+ numberFrame=requestAnimationFrame(frame);
 }
 function openPackage(g,p){
-  lastFocus=document.activeElement;
-  drawer.classList.add('show'); overlay.classList.add('show'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
-  document.getElementById('drawerTitle').textContent=g.name+' — '+p.name;
-  animateNumber(document.getElementById('drawerAmount'), currency==='USD'?p.usd:p.usd*3.75, currency);
-  document.getElementById('drawerAlternate').textContent=currency==='USD'?money(p.usd*3.75)+' SAR':'$'+money(p.usd);
-  const list=document.getElementById('drawerFeatures'); list.replaceChildren();
-  p.features.forEach(f=>{const li=document.createElement('li'); li.textContent=f; list.append(li)});
-  document.getElementById('closeDrawer').focus();
+ lastFocus=document.activeElement;drawer.classList.add('show');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+ document.getElementById('drawerTitle').textContent=trans(g.en,g.ar)+' — '+trans(p.en,p.ar);
+ document.getElementById('drawerFeatures').replaceChildren();
+ (language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;document.getElementById('drawerFeatures').append(li);});
+ const actual=currency==='SAR'?p.sar:p.sar/3.75;
+ document.getElementById('drawerAlternate').textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
+ document.getElementById('drawerLink').textContent=trans('REQUEST THIS PACKAGE ↗','اطلب هذه الباقة ↗');
+ document.getElementById('drawerLink').setAttribute('aria-label',trans('Request','اطلب')+' '+trans(p.en,p.ar));
+ animateNumber(document.getElementById('drawerAmount'),actual,currency);
+ document.getElementById('closeDrawer').focus();
 }
-function closePackage(){drawer.classList.remove('show'); overlay.classList.remove('show'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if(lastFocus) lastFocus.focus();}
-document.getElementById('closeDrawer').addEventListener('click',closePackage); overlay.addEventListener('click',closePackage);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show')) closePackage();});
-const usd=document.getElementById('usdBtn'), sar=document.getElementById('sarBtn');
-[usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD'; usd.classList.toggle('active',!i); sar.classList.toggle('active',!!i); renderPackages();}));
-
+function closePackage(){cancelAnimationFrame(numberFrame);drawer.classList.remove('show');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+document.getElementById('closeDrawer').addEventListener('click',closePackage);overlay.addEventListener('click',closePackage);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show'))closePackage();});
+const usd=document.getElementById('usdBtn'),sar=document.getElementById('sarBtn');
+[usd,sar].forEach((b,i)=>b.addEventListener('click',()=>{currency=i?'SAR':'USD';sar.classList.toggle('active',currency==='SAR');usd.classList.toggle('active',currency==='USD');renderPackages();}));
+document.querySelectorAll('.language-option').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 const menuBtn=document.getElementById('menuBtn');
-menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav'); const open=nav.classList.toggle('show'); menuBtn.setAttribute('aria-expanded',String(open));});
-document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show'); menuBtn.setAttribute('aria-expanded','false');}));
-
-const slides=[...document.querySelectorAll('.hero-slide')];
-const counter=document.getElementById('heroCounter');
-const heroLabel=document.getElementById('heroLabel');
-let slideIndex=0, heroTimer=null;
-function updateHero(){
-  slides.forEach((s,i)=>s.classList.toggle('active',i===slideIndex));
-  counter.textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-  heroLabel.textContent=(slides[slideIndex].dataset.title || 'Featured')+' / '+String(slideIndex+1).padStart(2,'0');
-  const line=document.getElementById('heroProgress');
-  if(line){line.classList.remove('running');void line.offsetWidth;if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)line.classList.add('running');}
-}
+menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav');const open=nav.classList.toggle('show');menuBtn.setAttribute('aria-expanded',String(open));});
+document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('show');menuBtn.setAttribute('aria-expanded','false');}));
+const slides=[...document.querySelectorAll('.hero-slide')],counter=document.getElementById('heroCounter'),heroLabel=document.getElementById('heroLabel');let slideIndex=0,heroTimer=null;
+function updateHero(){slides.forEach((s,i)=>s.classList.toggle('active',i===slideIndex));counter.textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');heroLabel.textContent=(slides[slideIndex].dataset.title || 'VERQO')+' / '+String(slideIndex+1).padStart(2,'0');const line=document.getElementById('heroProgress');if(line){line.classList.remove('running');void line.offsetWidth;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)line.classList.add('running');}}
 function goSlide(dir){slideIndex=(slideIndex+dir+slides.length)%slides.length;updateHero();restartHero();}
-document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(heroTimer)}else{restartHero()}});
-function restartHero(){ clearInterval(heroTimer); heroTimer=setInterval(()=>{slideIndex=(slideIndex+1)%slides.length; updateHero();}, 5500); }
-document.getElementById('prevSlide').addEventListener('click',()=>goSlide(-1));
-document.getElementById('nextSlide').addEventListener('click',()=>goSlide(1));
-updateHero(); restartHero();
-
-// Motion initialized without hiding a working page if a script fails.
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const motionElements=[...document.querySelectorAll('.reveal')];
-// Make transitions varied, with intentional left/right entrances.
-motionElements.forEach((el,i)=>{
-  if(el.closest('#home'))return;
-  const tag=el.tagName.toLowerCase();
-  const side=(i%2===0?'from-left':'from-right');
-  if(el.classList.contains('service-item') || el.classList.contains('work-card') || el.classList.contains('stat-box') || el.classList.contains('contact-card'))el.classList.add(side);
-  else if(tag==='h2')el.classList.add('from-left');
-  else if(tag==='p' || tag==='a')el.classList.add('from-right');
-  el.style.setProperty('--reveal-delay',((i%3)*90)+'ms');
-});
-if(!reduceMotion.matches && 'IntersectionObserver' in window){
-  const viewObserver = new IntersectionObserver(entries=>entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('visible');viewObserver.unobserve(entry.target)}
-  }),{threshold:.06,rootMargin:'0px 0px -35px 0px'});
-  motionElements.forEach(el=>viewObserver.observe(el));
-  // Hidden elements must never persist indefinitely in case the observer is blocked.
-  document.documentElement.classList.add('motion-ready');
-  setTimeout(()=>motionElements.forEach(el=>{if(el.getBoundingClientRect().top < innerHeight)el.classList.add('visible')}),1200);
-}else{motionElements.forEach(el=>el.classList.add('visible'))}
-// Native browser scrolling: intentionally no wheel interception or queued inertia.
-// Cinematic feel is retained by section reveals and slide transitions.
-// Small cursor-responsive lighting on desktop.
-if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-  let scheduled=false, mouseX=0,mouseY=0;
-  window.addEventListener('pointermove',e=>{
-    mouseX=e.clientX;mouseY=e.clientY;
-    if(!scheduled){scheduled=true;requestAnimationFrame(()=>{
-      document.documentElement.style.setProperty('--cx',mouseX+'px');
-      document.documentElement.style.setProperty('--cy',mouseY+'px');scheduled=false;
-    });}
-  },{passive:true});
-}
-
-function setProgress(){const max=document.documentElement.scrollHeight-innerHeight; document.getElementById('progress').style.width=(max>0?(scrollY/max)*100:0)+'%';}
-window.addEventListener('scroll',setProgress,{passive:true}); window.addEventListener('resize',setProgress); setProgress();
-renderCategories(); renderPackages();
+function restartHero(){clearInterval(heroTimer);heroTimer=setInterval(()=>{slideIndex=(slideIndex+1)%slides.length;updateHero();},5500);}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(heroTimer);else restartHero();});
+document.getElementById('prevSlide').addEventListener('click',()=>goSlide(-1));document.getElementById('nextSlide').addEventListener('click',()=>goSlide(1));
+// Visual entrances only; leave wheel scrolling to browser, avoid previous stutter.
+const motion=[...document.querySelectorAll('.reveal')],reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+if(!reduceMotion.matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.06});motion.forEach(el=>observer.observe(el));document.documentElement.classList.add('motion-ready');setTimeout(()=>motion.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('visible');}),1300);}else motion.forEach(el=>el.classList.add('visible'));
+function setProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?scrollY/max*100:0)+'%';}window.addEventListener('scroll',setProgress,{passive:true});window.addEventListener('resize',setProgress);
+setLanguage('en');setProgress();restartHero();
 </script>
 </body>
 </html>
