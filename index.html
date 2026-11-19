@@ -508,6 +508,59 @@ body{overflow-x:hidden}
 @media(max-width:360px){.package{padding:10px!important}.package .amount{font-size:19px!important}.package ul{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.partners-strip .partners-track{animation:none!important}}
 
+
+/* 2026 / Geometric case studies — deliberate diamond shapes */
+.diamond-showcase{position:relative;overflow:hidden;background:#f7f7f6;color:#111;padding:clamp(72px,8vw,126px) 0 120px;border-top:1px solid #e8e8e8}
+.diamond-showcase .container{position:relative}
+.diamond-intro{text-align:center;max-width:720px;margin:0 auto clamp(30px,4vw,60px)}
+.diamond-eyebrow{display:block;font-size:11px;letter-spacing:.22em;color:#43474f;font-weight:700;margin-bottom:14px}
+.diamond-intro h2{font-size:clamp(36px,5vw,72px);font-family:var(--display)!important;line-height:1.15;margin:0 0 14px;letter-spacing:-.055em}
+.diamond-intro p{font-size:14px;line-height:1.9;color:#656565;margin:0}
+.diamond-list{display:flex;flex-direction:column;gap:clamp(34px,5.6vw,96px)}
+.diamond-project{width:min(100%,650px);position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate;min-height:clamp(355px,38vw,525px)}
+.diamond-project.align-right{margin-left:auto;margin-right:0}
+.diamond-project.align-left{margin-right:auto;margin-left:0}
+.diamond-card{width:clamp(260px,31vw,445px);aspect-ratio:1;position:relative;z-index:2;filter:drop-shadow(0 22px 35px #0002);transition:filter .45s ease,transform .65s cubic-bezier(.22,1,.36,1)}
+.diamond-project:hover .diamond-card{transform:translateY(-6px);filter:drop-shadow(0 34px 44px #0003)}
+.diamond-image{position:absolute;inset:0;overflow:hidden;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);background:#181818}
+.diamond-image img{height:100%;width:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.diamond-project:hover .diamond-image img{transform:scale(1.08)}
+.diamond-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,#0004);pointer-events:none}
+.diamond-number{position:absolute;z-index:3;left:50%;bottom:8%;transform:translateX(-50%);font-size:12px;font-weight:800;color:white;letter-spacing:.22em}
+.diamond-action{position:absolute;z-index:1;top:50%;left:calc(50% + clamp(125px,16vw,212px) - 16px);transform:translateY(-50%);border:1px solid #43474f;background:#43474f;color:white;padding:17px 25px 17px 40px;border-radius:0 99px 99px 0;min-height:57px;white-space:nowrap;font-size:13px;font-weight:800;cursor:pointer;transition:background .3s,transform .3s,padding .3s}
+.diamond-action:hover,.diamond-action:focus-visible{background:#080808;padding-left:48px;transform:translateY(-50%) translateX(5px)}
+.diamond-project.align-left .diamond-action{left:auto;right:calc(50% + clamp(125px,16vw,212px) - 16px);border-radius:99px 0 0 99px;padding:17px 40px 17px 25px}
+.diamond-project.align-left .diamond-action:hover{padding-right:48px;transform:translateY(-50%) translateX(-5px)}
+.diamond-meta{position:absolute;bottom:7px;inset-inline-start:0;display:flex;flex-direction:column;gap:3px;color:#191919;max-width:190px}
+.diamond-meta strong{font-size:18px;letter-spacing:-.03em}
+.diamond-meta span{font-size:11px;color:#767676}
+.diamond-project.align-left .diamond-meta{inset-inline-start:auto;inset-inline-end:0;text-align:end}
+.diamond-modal{position:fixed;inset:0;z-index:2500;display:flex;align-items:center;justify-content:center;padding:clamp(14px,3vw,46px);background:rgba(6,6,7,.87);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility .35s ease}
+.diamond-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.diamond-modal-inner{width:min(1160px,100%);position:relative;transform:scale(.78) translateY(35px);opacity:0;transition:transform .55s cubic-bezier(.18,.8,.2,1),opacity .4s ease;display:flex;flex-direction:column;gap:12px}
+.diamond-modal.is-open .diamond-modal-inner{transform:scale(1) translateY(0);opacity:1}
+.diamond-modal-image{display:block;width:100%;max-height:min(80vh,850px);object-fit:contain;border-radius:16px;background:#151515;box-shadow:0 25px 85px #0007}
+.diamond-modal-caption{color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em;padding-inline:4px}
+.diamond-modal-close{position:absolute;z-index:2;right:10px;top:10px;width:46px;height:46px;border:1px solid #ffffffaa;background:#0a0a0add;color:#fff;font-size:23px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.diamond-modal-close:hover{background:#fff;color:#111}
+/* Logo normalization: each logo has an equal optical cell; scale smaller logos without changing ticker cadence */
+.partners-strip .partners-item,.partners-strip .partner-item{overflow:visible!important}
+.partners-strip .partner-logo{width:135px!important;height:64px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:center!important;transform:scale(var(--logo-optical-scale,1))!important;transform-origin:center center!important;transition:transform .3s ease,filter .3s ease!important}
+.partners-strip .partner-item:nth-child(1){--logo-optical-scale:1.07}
+.partners-strip .partner-item:nth-child(2){--logo-optical-scale:1.06}
+.partners-strip .partner-item:nth-child(3){--logo-optical-scale:1.22}
+.partners-strip .partner-item:nth-child(4){--logo-optical-scale:1.12}
+.partners-strip .partner-item:nth-child(5){--logo-optical-scale:1.7}
+.partners-strip .partner-item:nth-child(6){--logo-optical-scale:1.42}
+.partners-strip .partner-item:nth-child(7){--logo-optical-scale:1.08}
+.partners-strip .partner-item:nth-child(8){--logo-optical-scale:1.3}
+.partners-strip .partner-item:nth-child(9){--logo-optical-scale:1.2}
+.partners-strip .partner-item:nth-child(10){--logo-optical-scale:1.52}
+.partners-strip .partner-item:hover .partner-logo{transform:scale(calc(var(--logo-optical-scale,1) * 1.04))!important}
+@media(max-width:800px){.diamond-project{width:100%;min-height:380px}.diamond-project .diamond-card{width:min(60vw,350px)}.diamond-action{left:calc(50% + min(30vw,175px) - 16px)}.diamond-project.align-left .diamond-action{right:calc(50% + min(30vw,175px) - 16px)}}
+@media(max-width:540px){.diamond-showcase{padding:70px 0}.diamond-list{gap:30px}.diamond-project{min-height:350px}.diamond-project .diamond-card{width:min(68vw,310px)}.diamond-action{left:calc(50% + min(34vw,155px) - 9px);min-height:44px;padding:12px 18px 12px 22px;font-size:11px}.diamond-project.align-left .diamond-action{right:calc(50% + min(34vw,155px) - 9px);padding:12px 22px 12px 18px}.diamond-meta{bottom:-6px;max-width:135px}.diamond-meta strong{font-size:14px}.diamond-meta span{font-size:10px}.partners-strip .partner-logo{width:112px!important;height:50px!important}.partners-strip .partner-item{width:148px!important;flex-basis:148px!important}}
+@media(prefers-reduced-motion:reduce){.diamond-modal,.diamond-modal-inner,.diamond-card,.diamond-image img,.diamond-action{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -553,10 +606,10 @@ body{overflow-x:hidden}
 </div></div></header>
 <main>
 <section class="hero" id="home"><div class="hero-stage">
-<div class="hero-slide active"><img class="bg" alt="VERQO STUDIO" src="https://i.postimg.cc/HkSjpSP6/10.png" fetchpriority="high" referrerpolicy="no-referrer"><div class="hero-content"><h1 class="hero-heading" data-en="VERQO STUDIO" data-ar="فيركو ستوديو">VERQO STUDIO</h1></div></div>
-<div class="hero-slide"><img class="bg" alt="Billboard campaign" loading="lazy" src="https://i.postimg.cc/sXW243DM/Free-Billboard-Mockup-1.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="BILLBOARD CAMPAIGN" data-ar="حملة إعلانية">BILLBOARD CAMPAIGN</h2></div></div>
-<div class="hero-slide"><img class="bg" alt="Poster visual" loading="lazy" src="https://i.postimg.cc/jjm5fDKK/Free-Poster-Frame-Mockup-1.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="POSTER VISUAL" data-ar="تصميم بوستر">POSTER VISUAL</h2></div></div>
-<div class="hero-slide"><img class="bg" alt="Logo core" loading="lazy" src="https://i.postimg.cc/jjm5fDTM/Logo-core.png" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="LOGO CORE" data-ar="تصميم شعار">LOGO CORE</h2></div></div>
+<div class="hero-slide active"><img class="bg" alt="VERQO STUDIO" src="https://i.postimg.cc/MTnP7Sk4/7bfa2637-5d4e-4783-8522-df32368dd791.jpg" fetchpriority="high" referrerpolicy="no-referrer"><div class="hero-content"><h1 class="hero-heading" data-en="VERQO STUDIO" data-ar="فيركو ستوديو">VERQO STUDIO</h1></div></div>
+<div class="hero-slide"><img class="bg" alt="Billboard campaign" loading="lazy" src="https://i.postimg.cc/QtF4Q3LY/97af51da-3132-4407-9c4e-5a92cdedd513.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="BILLBOARD CAMPAIGN" data-ar="حملة إعلانية">BILLBOARD CAMPAIGN</h2></div></div>
+<div class="hero-slide"><img class="bg" alt="Poster visual" loading="lazy" src="https://i.postimg.cc/QtF4Q3Lz/a6df1677-f402-49b3-945b-90a01bc013d6.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="POSTER VISUAL" data-ar="تصميم بوستر">POSTER VISUAL</h2></div></div>
+<div class="hero-slide"><img class="bg" alt="Logo core" loading="lazy" src="https://i.postimg.cc/pTmGfHNg/ca66877d-5538-4f1d-aba0-749ad963237e.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="LOGO CORE" data-ar="تصميم شعار">LOGO CORE</h2></div></div>
 <div class="hero-progress" id="heroProgress" aria-hidden="true"><span></span></div>
 <div class="hero-controls"><div class="hero-counter" id="heroCounter">01 / 04</div><div class="hero-arrows"><button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button><button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button></div></div>
 </div></section>
@@ -577,6 +630,34 @@ body{overflow-x:hidden}
   <div class="partners-track" dir="ltr">
     <div class="partners-group"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
     <div class="partners-group" aria-hidden="true"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
+  </div>
+</section>
+
+<!-- Diamond-shaped editorial work showcase -->
+<section id="featured-diamonds" class="diamond-showcase" aria-label="Selected case studies">
+  <div class="container">
+    <header class="diamond-intro reveal">
+      <span class="diamond-eyebrow" data-en="VERQO / FEATURED" data-ar="فيركو / أعمال مميزة">VERQO / FEATURED</span>
+      <h2 data-en="Beyond the frame." data-ar="أبعد من الإطار.">أبعد من الإطار.</h2>
+      <p data-en="Discover the second face of each project. Click View Work to reveal the full visual." data-ar="لكل عمل وجه آخر. اضغط عرض العمل لتكتشف التصميم الثاني بصورة أكبر.">لكل عمل وجه آخر. اضغط عرض العمل لتكتشف التصميم الثاني بصورة أكبر.</p>
+    </header>
+    <div class="diamond-list">
+      <article class="diamond-project align-right reveal side-right">
+        <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/GtZjJ8Ps/c9d6c444-5367-4f66-9ae7-9c09e3a6518a.jpg" alt="Featured visual study 01" referrerpolicy="no-referrer"><span class="diamond-number">01 / 03</span></div></div>
+        <button class="diamond-action" type="button" data-diamond-open="1" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 01">عرض العمل ↗</button>
+        <div class="diamond-meta"><strong>VERQO / 01</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
+      </article>
+      <article class="diamond-project align-left reveal side-left">
+        <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/bwPBKWbD/47d6bd24-826d-4609-9706-08b6e54e1916.jpg" alt="Featured visual study 02" referrerpolicy="no-referrer"><span class="diamond-number">02 / 03</span></div></div>
+        <button class="diamond-action" type="button" data-diamond-open="2" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 02">عرض العمل ↗</button>
+        <div class="diamond-meta"><strong>VERQO / 02</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
+      </article>
+      <article class="diamond-project align-right reveal side-right">
+        <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/t4zMykNT/b19c0a07-83bb-4745-bf86-e9fd61e78383.jpg" alt="Featured visual study 03" referrerpolicy="no-referrer"><span class="diamond-number">03 / 03</span></div></div>
+        <button class="diamond-action" type="button" data-diamond-open="3" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 03">عرض العمل ↗</button>
+        <div class="diamond-meta"><strong>VERQO / 03</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -645,6 +726,15 @@ body{overflow-x:hidden}
  <button type="button" class="side-fact-close" id="sideFactClose" aria-label="Close / إغلاق">×</button>
  <div class="side-fact-inner"><span class="side-fact-kicker" id="sideFactKicker">هل تعلم؟</span><p id="sideFactText">فيركو استوديو من أقدم الاستوديوهات في مجال التصاميم.</p></div>
 </aside>
+
+<div id="diamondModal" class="diamond-modal" role="dialog" aria-modal="true" aria-label="Featured project image" aria-hidden="true">
+ <div class="diamond-modal-inner" role="document">
+  <button id="diamondModalClose" class="diamond-modal-close" type="button" aria-label="Close project image">×</button>
+  <img id="diamondModalImage" class="diamond-modal-image" src="" alt="Second image of selected project" referrerpolicy="no-referrer">
+  <div id="diamondModalCaption" class="diamond-modal-caption">VERQO / 01</div>
+ </div>
+</div>
+
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Package details">
 <div class="drawer-top"><span>Selected package / تفاصيل الباقة</span><button class="close" id="closeDrawer" aria-label="Close">✕</button></div>
@@ -888,5 +978,41 @@ setLanguage('ar');prog();restart();
  facts.forEach(f=>{const el=document.getElementById(f.id);if(el)observer.observe(el)});
 })();
 </script>
+
+<script>
+/* Geometric gallery — opens the secondary image of each pair in an expanding overlay. */
+(function(){
+ const pairedImages = {
+   '1':'https://i.postimg.cc/Fz2xgdbd/f0ba6fc1-570d-4287-8f6f-bd9a935ddcbc.jpg',
+   '2':'https://i.postimg.cc/rFxHZMdW/b9b18e75-6d3c-4e7a-996b-1eb2c02824eb.jpg',
+   '3':'https://i.postimg.cc/Cx4QY7sh/d2456ec1-7a94-4bf4-afb9-b5c1cc0f0479.jpg'
+ };
+ const modal=document.getElementById('diamondModal');
+ const img=document.getElementById('diamondModalImage');
+ const caption=document.getElementById('diamondModalCaption');
+ const closer=document.getElementById('diamondModalClose');
+ if(!modal || !img || !closer) return;
+ let returnFocus=null, oldOverflow='';
+ function open(id,button){
+   if(!pairedImages[id])return;
+   returnFocus=button; oldOverflow=document.body.style.overflow;
+   img.src=pairedImages[id]; img.alt='VERQO featured project '+id+' — second visual';
+   caption.textContent='VERQO / '+String(id).padStart(2,'0');
+   modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';closer.focus();
+ }
+ function close(){
+   if(!modal.classList.contains('is-open'))return;
+   modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');
+   document.body.style.overflow=oldOverflow;
+   if(returnFocus) returnFocus.focus();
+ }
+ document.querySelectorAll('[data-diamond-open]').forEach(btn=>btn.addEventListener('click',()=>open(btn.dataset.diamondOpen,btn)));
+ closer.addEventListener('click',close);
+ modal.addEventListener('click',e=>{if(e.target===modal) close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape' && modal.classList.contains('is-open')){e.stopImmediatePropagation();close()};if(e.key==='Tab' && modal.classList.contains('is-open')){e.preventDefault();closer.focus()}});
+})();
+</script>
+
 </body>
 </html>
