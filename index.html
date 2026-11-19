@@ -320,7 +320,7 @@ body.is-ar :is(h1,h2,h3,h4,h5,h6,.welcome-title,.title-lg,.hero-heading,.intro-w
 
 
 /* 2026 Verqo header: clean transparent overlay, white fixed state, minimal language type */
-:root{--verqo-accent:#e91e63}
+:root{--verqo-accent:#43474f}
 .site-header{position:fixed!important;top:0;left:0;right:0;z-index:170;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:1px solid transparent!important;box-shadow:none;transition:background .35s ease,box-shadow .35s ease,border-color .35s ease,backdrop-filter .35s ease}
 .site-header.scrolled{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;border-bottom:1px solid var(--verqo-accent)!important;box-shadow:0 5px 24px rgba(0,0,0,.055)}
 .site-header .header-row{direction:inherit}
@@ -359,7 +359,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--verqo-accent);outli
 
 
 /* Partner strip + tighter black/white/accent palette */
-body{--verqo-accent:#e91e63;--paper:#ffffff}
+body{--verqo-accent:#43474f;--paper:#ffffff}
 .offer-strip{display:none!important}
 .partners-strip{position:relative;background:#fff;border-top:1px solid #efefef;border-bottom:1px solid #efefef;overflow:hidden;padding:14px 0}
 .partners-track{display:flex;align-items:center;gap:14px;width:max-content;animation:partnersMarquee 26s linear infinite;will-change:transform}
@@ -375,9 +375,9 @@ body{--verqo-accent:#e91e63;--paper:#ffffff}
 .welcome-section,.works,.contact-finish,.footer{background:#fff!important;color:#0d0d0d}
 .services-showcase,.hero-stage,.red-cta,.pricing-hero{background:#050505!important;color:#fff}
 .red-cta{border-color:#1f1f1f!important}
-.red-cta-orb{color:#e91e6322!important}
+.red-cta-orb{color:#43474f22!important}
 .pricing{background:#fff!important;color:#111}
-.pricing-hero::after{border-color:#e91e6326!important;box-shadow:0 0 0 55px #e91e6310,0 0 0 110px #e91e6308!important}
+.pricing-hero::after{border-color:#43474f26!important;box-shadow:0 0 0 55px #43474f10,0 0 0 110px #43474f08!important}
 .welcome-btn.dark{background:#050505!important;color:#fff!important}
 .welcome-btn.light,.white-action,.pill,.book{background:#fff;color:#111}
 .white-action,.pill,.book,.welcome-btn,.category-selector button,.currency-row button,.language-trigger{transition:.24s ease}
@@ -398,7 +398,7 @@ body{--verqo-accent:#e91e63;--paper:#ffffff}
 body.is-ar .site-header .nav a{text-transform:none!important}
 .partners-strip{background:#050505!important;border-top:1px solid #161616!important;border-bottom:1px solid #161616!important}
 .partners-strip .partner-item{background:#050505!important;border-color:#202020!important;border-radius:15px;transition:background-color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.partners-strip .partner-item:hover{background:var(--verqo-accent)!important;border-color:var(--verqo-accent)!important;box-shadow:0 10px 30px rgba(233,30,99,.28)}
+.partners-strip .partner-item:hover{background:var(--verqo-accent)!important;border-color:var(--verqo-accent)!important;box-shadow:0 10px 30px rgba(67,71,79,.28)}
 .partners-strip .partner-logo{filter:brightness(0) invert(1);opacity:.9;transition:opacity .25s ease;}
 .partners-strip .partner-item:hover .partner-logo{opacity:1}
 .language-transition{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;background:rgba(255,255,255,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .26s ease,visibility .26s ease;color:#080808}
@@ -417,7 +417,7 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 .partners-strip .partner-item{display:flex;flex:0 0 clamp(120px,12vw,185px);width:clamp(120px,12vw,185px);height:75px;align-items:center;justify-content:center;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transform:none!important;cursor:default}
 .partners-strip .partner-logo{display:block;width:100%;height:56px;object-fit:contain;object-position:center;filter:brightness(0) invert(1)!important;opacity:.86;transition:filter .25s ease,opacity .25s ease,transform .25s ease}
 .partners-strip .partner-item:hover{background:transparent!important;border:0!important;box-shadow:none!important;transform:none!important}
-.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(3998%) hue-rotate(321deg) brightness(94%) contrast(94%)!important;opacity:1;transform:scale(1.06)}
+.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) brightness(0) saturate(100%) invert(28%) sepia(7%) saturate(486%) hue-rotate(169deg) brightness(92%) contrast(86%)!important;opacity:1;transform:scale(1.06)}
 .partners-strip:hover .partners-track,.partners-strip:focus-within .partners-track{animation-play-state:paused!important}
 @keyframes partnersFlow{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media(max-width:650px){.partners-strip{padding:14px 0!important}.partners-strip .partner-item{flex-basis:120px;width:120px;height:62px}.partners-strip .partner-logo{height:45px}.partners-strip .partners-group{gap:30px;padding-right:30px}}
@@ -427,17 +427,17 @@ body.is-ar .site-header .nav a{text-transform:none!important}
 /* White partners band, dark logos with pink hover; preserves seamless RTL ticker. */
 .partners-strip{background:#fff!important;border-top:1px solid #eee!important;border-bottom:1px solid #eee!important}
 .partners-strip .partner-logo{filter:brightness(0)!important;opacity:.88}
-.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(3998%) hue-rotate(321deg) brightness(94%) contrast(94%)!important;opacity:1}
+.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) brightness(0) saturate(100%) invert(28%) sepia(7%) saturate(486%) hue-rotate(169deg) brightness(92%) contrast(86%)!important;opacity:1}
 
 /* Single language indicator / interaction: no second option or divider */
 .site-header .language-divider{display:none!important}
 .site-header .language-switch{gap:0!important}
 .site-header #singleLangToggle{font-weight:500!important;min-width:27px!important;opacity:1!important;cursor:pointer}
 /* Pink off-canvas triangular editorial facts */
-.verqo-side-fact{position:fixed;z-index:205;right:0;top:50%;width:min(352px,calc(100vw - 28px));min-height:148px;transform:translate(110%,-50%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .45s ease,visibility .45s ease;filter:drop-shadow(0 12px 34px rgba(233,30,99,.18));font-family:var(--ar),Cairo,sans-serif!important;direction:rtl}
+.verqo-side-fact{position:fixed;z-index:205;right:0;top:50%;width:min(352px,calc(100vw - 28px));min-height:148px;transform:translate(110%,-50%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .45s ease,visibility .45s ease;filter:drop-shadow(0 12px 34px rgba(67,71,79,.18));font-family:var(--ar),Cairo,sans-serif!important;direction:rtl}
 .verqo-side-fact.is-visible{transform:translate(0,-50%);opacity:1;visibility:visible;pointer-events:auto}
-.verqo-side-fact::before{content:"";position:absolute;inset:0;background:#e91e63;clip-path:polygon(11% 0,100% 0,100% 100%,11% 100%,0 50%)}
-.side-fact-triangle{position:absolute;left:-36px;top:40%;width:40px;height:40px;background:#e91e63;clip-path:polygon(100% 0,100% 100%,0 50%);opacity:.9;transform:rotate(0deg)}
+.verqo-side-fact::before{content:"";position:absolute;inset:0;background:#43474f;clip-path:polygon(11% 0,100% 0,100% 100%,11% 100%,0 50%)}
+.side-fact-triangle{position:absolute;left:-36px;top:40%;width:40px;height:40px;background:#43474f;clip-path:polygon(100% 0,100% 100%,0 50%);opacity:.9;transform:rotate(0deg)}
 .side-fact-inner{position:relative;z-index:1;padding:30px 32px 30px 58px;color:#fff;text-align:right}
 .side-fact-kicker{display:block;font-size:17px;font-weight:600;line-height:1.4;margin-bottom:8px}
 .side-fact-inner p{margin:0;font-size:14px;line-height:1.85;font-weight:400}
@@ -456,6 +456,57 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 .partners-strip .partner-item{flex:0 0 clamp(128px,12.5vw,170px)!important;width:clamp(128px,12.5vw,170px)!important;height:78px!important}
 .partners-strip .partner-logo{width:auto!important;max-width:82%!important;height:auto!important;max-height:34px!important;object-fit:contain!important;object-position:center!important}
 @media(max-width:700px){.clients-band{padding:22px 0 6px}.clients-kicker{font-size:20px}.partners-strip .partner-item{flex-basis:118px!important;width:118px!important;height:66px!important}.partners-strip .partner-logo{max-width:84%!important;max-height:28px!important}}
+
+
+/* VERQO November 2026 refinements */
+:root,body{--verqo-accent:#43474f!important}
+*{scroll-margin-top:84px}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+.portfolio-gallery{align-items:start;grid-auto-flow:row;row-gap:36px;column-gap:26px}
+.portfolio-gallery>article{min-width:0;align-self:start}
+.portfolio-info{min-height:72px}
+.portfolio-tags span{color:#0c0c0c!important;border-color:#43474f!important;background:#fff!important;opacity:1}
+.partners-strip{overflow:hidden!important}
+.partners-track{align-items:stretch!important;gap:0!important;animation:partnersFlow 33s linear infinite!important}
+.partners-strip .partners-group{display:flex!important;gap:0!important;padding:0!important}
+.partners-strip .partner-item{flex:0 0 165px!important;width:165px!important;height:88px!important;padding:14px 18px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.partners-strip .partner-logo{width:100%!important;height:52px!important;max-width:128px!important;max-height:52px!important;object-fit:contain!important;object-position:center!important;margin:auto!important;transform:none;display:block}
+.partners-strip .partner-item:hover .partner-logo{transform:scale(1.045)!important}
+.clients-band{padding-bottom:0}
+.services-cards{gap:16px!important}
+.svc-card{min-height:185px;display:flex;flex-direction:column;justify-content:center}
+.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px!important;align-items:stretch}
+.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.package{min-width:0;min-height:460px;padding:clamp(15px,2.1vw,30px)!important}
+.package .amount{font-size:clamp(24px,3.3vw,44px)!important;white-space:nowrap}
+.price-actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 12px}
+.custom-action{display:inline-flex;align-items:center;justify-content:center;background:#111;border:1px solid #111;color:white!important;border-radius:999px;padding:13px 22px;font-weight:800;font-size:13px;transition:.2s}
+.custom-action.secondary{background:#fff!important;color:#111!important}
+.custom-action:hover{background:#43474f!important;border-color:#43474f!important;color:#fff!important;transform:translateY(-2px)}
+.site-header.scrolled{border-bottom-color:#43474f!important}
+@media(max-width:820px){.container{width:min(100% - 28px,1180px)}.services-showcase-grid{gap:18px}.services-showcase{padding:75px 0}.services-showcase-heading{position:static!important}.footer-columns{gap:28px}.svc-card{min-height:0}.site-header .nav{max-height:75vh;overflow-y:auto}}
+@media(max-width:700px){
+ .package-grid,.package-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .package{padding:14px!important;border-radius:15px;min-height:430px}
+ .package h3{font-size:clamp(15px,3.7vw,23px);margin:12px 0 8px;overflow-wrap:anywhere}
+ .package .amount{font-size:clamp(19px,5vw,30px)!important}
+ .package .other{font-size:11px;white-space:normal}
+ .package-kicker{font-size:9px;letter-spacing:0}
+ .package ul{gap:8px;font-size:11px;line-height:1.55}
+ .package li{gap:5px}
+ .package li::before{width:16px;height:16px;font-size:10px}
+ .package .book{padding:11px 7px;font-size:11px}
+ .partners-strip .partner-item{flex-basis:132px!important;width:132px!important;height:70px!important;padding:10px!important}
+ .partners-strip .partner-logo{height:43px!important;max-height:43px!important;max-width:110px!important}
+ .clients-band{padding-top:22px}
+ .portfolio-info{min-height:70px}
+ .pricing{padding:66px 0 74px}
+ .pricing-hero{border-radius:20px;padding:23px}
+ .currency-row strong{font-size:21px}
+}
+@media(max-width:360px){.package{padding:10px!important}.package .amount{font-size:19px!important}.package ul{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.partners-strip .partners-track{animation:none!important}}
 
 </style>
 </head>
@@ -492,7 +543,7 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 <header class="site-header"><div class="container header-row">
 <a class="brand" href="#home" aria-label="Verqo Studio"><img alt="Verqo Studio" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></a>
 <nav class="nav" id="mainNav">
-<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
 </nav>
 <div class="header-tools">
 <div class="language-switch" id="languageSwitch" role="group" aria-label="Switch language / تغيير اللغة">
@@ -524,8 +575,8 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 </section>
 <section class="partners-strip" aria-label="Partners" dir="ltr">
   <div class="partners-track" dir="ltr">
-    <div class="partners-group"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
-    <div class="partners-group" aria-hidden="true"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
+    <div class="partners-group"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
+    <div class="partners-group" aria-hidden="true"><div class="partner-item"><img alt="Partner logo 1" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/GpCBSCYf/1-2-png.webp"/></div><div class="partner-item"><img alt="Partner logo 2" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/rpkdYkx6/2-1-png.webp"/></div><div class="partner-item"><img alt="Partner logo 3" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/25DqXDhR/26-png.webp"/></div><div class="partner-item"><img alt="Partner logo 4" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/mrsc6sCW/30-png.webp"/></div><div class="partner-item"><img alt="Partner logo 5" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/hGBJ3BTB/31-png.webp"/></div><div class="partner-item"><img alt="Partner logo 6" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/FK4fn4cM/6-png.webp"/></div><div class="partner-item"><img alt="Partner logo 7" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/d0Y7SYrw/Asset-82x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 8" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/wBptbpLH/Asset-94x-png.webp"/></div><div class="partner-item"><img alt="Partner logo 9" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/nLJswJBH/logo-white-png.webp"/></div><div class="partner-item"><img alt="Partner logo 10" class="partner-logo" loading="eager" referrerpolicy="no-referrer" src="https://i.postimg.cc/5tVHkVL2/Tybography-1-2-png.webp"/></div></div>
   </div>
 </section>
 
@@ -559,6 +610,7 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 <div class="category-selector" id="categorySelector" role="group" aria-label="Choose service"></div>
 <div class="currency-row"><strong id="categoryName"></strong><div class="right"><span data-en="DISPLAY" data-ar="عرض السعر">DISPLAY</span><button class="active" id="sarBtn" type="button">SAR / ر.س</button><button id="usdBtn" type="button">USD / $</button></div></div>
 <div class="package-grid" id="packageGrid" aria-live="polite"></div>
+<div class="price-actions"><a class="custom-action" href="ar/request/" data-route="request" data-en="Build a custom request ↗" data-ar="اطلب خدمة فردية ↗">اطلب خدمة فردية ↗</a><a class="custom-action secondary" href="ar/prices/" data-route="prices" data-en="Explore all pricing ↗" data-ar="استعرض جميع الأسعار ↗">استعرض جميع الأسعار ↗</a></div>
 <p class="pricing-hint" id="pricingNote"></p>
 <p class="pricing-legal" data-en="USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing." data-ar="الدولار تقديري على أساس 1 دولار = 3.75 ريال. الأسعار الرسمية في الملف بالريال السعودي، وتُعتمد الشروط النهائية كتابيًا.">USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.</p>
 </div></section>
@@ -575,8 +627,8 @@ body:not(.is-ar) .verqo-side-fact{direction:ltr}
 <footer class="footer"><div class="container">
 <div class="footer-columns">
 <div><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
-<div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a></div>
-<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="#pricing" data-en="Our Packages" data-ar="الباقات">Our Packages</a><a href="#works" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="#contact" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a></div>
+<div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a></div>
+<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="ar/prices/" data-en="Our Packages" data-ar="الباقات" data-route="prices">Our Packages</a><a href="#works" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="ar/request/" data-en="Start a Project" data-ar="ابدأ مشروعك" data-route="request">Start a Project</a></div>
 <div><h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
 <div class="footer-social-icons">
 <a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -669,6 +721,7 @@ const money=(s,u=currency)=>u==='SAR'?fmt(s)+' '+trans('SAR','ر.س'):'$'+fmt(s/
 function setLanguage(l){
  language=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.body.classList.toggle('is-ar',l==='ar');
  document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=el.dataset[l]);
+ document.querySelectorAll('[data-route]').forEach(a=>a.href=l+'/'+a.dataset.route+'/');
  document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
  const langToggle=$('singleLangToggle');
  langToggle.textContent=l==='ar'?'ع':'EN';
@@ -707,6 +760,7 @@ function openPackage(g,p){
  $('drawer').dir=language==='ar'?'rtl':'ltr';
  $('drawerAlternate').textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
  $('drawerLink').textContent=trans('REQUEST THIS PACKAGE ↗','اطلب هذه الباقة ↗');
+ $('drawerLink').href=language+'/request/?category='+encodeURIComponent(g.id)+'&package='+encodeURIComponent(p.ar);$('drawerLink').onclick=()=>{try{sessionStorage.setItem('verqo_selected',JSON.stringify({cat:g.id,package:p.ar}))}catch(e){}};
  animateNumber($('drawerAmount'),currency==='SAR'?p.sar:p.sar/3.75,currency);$('closeDrawer').focus();
 }
 function closePackage(){cancelAnimationFrame(nf);$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
