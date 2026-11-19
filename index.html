@@ -561,6 +561,100 @@ body{overflow-x:hidden}
 @media(max-width:540px){.diamond-showcase{padding:70px 0}.diamond-list{gap:30px}.diamond-project{min-height:350px}.diamond-project .diamond-card{width:min(68vw,310px)}.diamond-action{left:calc(50% + min(34vw,155px) - 9px);min-height:44px;padding:12px 18px 12px 22px;font-size:11px}.diamond-project.align-left .diamond-action{right:calc(50% + min(34vw,155px) - 9px);padding:12px 22px 12px 18px}.diamond-meta{bottom:-6px;max-width:135px}.diamond-meta strong{font-size:14px}.diamond-meta span{font-size:10px}.partners-strip .partner-logo{width:112px!important;height:50px!important}.partners-strip .partner-item{width:148px!important;flex-basis:148px!important}}
 @media(prefers-reduced-motion:reduce){.diamond-modal,.diamond-modal-inner,.diamond-card,.diamond-image img,.diamond-action{transition:none!important}}
 
+
+/* VERQO / Geometric chapter – intentionally restrained monochrome visual motion */
+:root{--diamond-ink:#141619;--diamond-accent:#43474f}
+.diamond-showcase{
+ position:relative; isolation:isolate; overflow:hidden;
+ background:
+  radial-gradient(ellipse 30% 22% at 12% 20%,rgba(67,71,79,.085),transparent 85%),
+  radial-gradient(ellipse 33% 24% at 88% 66%,rgba(67,71,79,.08),transparent 85%),
+  repeating-linear-gradient(90deg,transparent 0,transparent 119px,rgba(39,43,48,.034) 120px),
+  repeating-linear-gradient(0deg,transparent 0,transparent 119px,rgba(39,43,48,.026) 120px),
+  #fafaf9!important;
+ padding:clamp(86px,9vw,148px) 0 clamp(100px,10vw,160px)!important;
+}
+.diamond-showcase:before,.diamond-showcase:after{content:"";position:absolute;pointer-events:none;z-index:-1;border:1px solid rgba(67,71,79,.11);width:clamp(350px,42vw,720px);aspect-ratio:1;transform:rotate(45deg);}
+.diamond-showcase:before{left:-28%;top:15%;box-shadow:0 0 0 72px rgba(67,71,79,.028),0 0 0 145px rgba(67,71,79,.014)}
+.diamond-showcase:after{right:-27%;bottom:9%;box-shadow:0 0 0 78px rgba(67,71,79,.024),0 0 0 156px rgba(67,71,79,.012)}
+.diamond-intro{position:relative;margin-bottom:clamp(60px,6.5vw,100px)!important}
+.diamond-intro:after{content:"";display:block;margin:30px auto 0;width:100px;height:1px;background:linear-gradient(90deg,transparent,#43474f,transparent)}
+.diamond-list{gap:clamp(55px,8vw,122px)!important;position:relative}
+.diamond-list:before{content:"";position:absolute;left:50%;top:4%;bottom:4%;width:1px;background:linear-gradient(180deg,transparent,rgba(67,71,79,.17) 12%,rgba(67,71,79,.17) 88%,transparent);pointer-events:none}
+.diamond-project{min-height:clamp(410px,42vw,555px)!important;width:min(100%,735px)!important;transition:transform 1.05s cubic-bezier(.16,1,.3,1),opacity .85s ease,filter .85s ease!important;opacity:1;transform:translateX(0)}
+.diamond-project:before{content:"";position:absolute;z-index:0;width:clamp(310px,37vw,510px);aspect-ratio:1;border:1px solid rgba(67,71,79,.15);transform:rotate(45deg) scale(.99);pointer-events:none;transition:transform 1.1s ease;}
+.diamond-project:after{content:"";position:absolute;z-index:0;width:clamp(380px,47vw,625px);height:clamp(380px,47vw,625px);border:1px dashed rgba(67,71,79,.11);border-radius:50%;pointer-events:none;animation:verqoOrbit 32s linear infinite;}
+@keyframes verqoOrbit{to{transform:rotate(360deg)}}
+.diamond-project:hover:before{transform:rotate(45deg) scale(1.07)}
+.diamond-project .diamond-card{z-index:2;width:clamp(275px,32vw,455px)!important}
+.diamond-image{box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.diamond-project .diamond-meta{z-index:3;bottom:22px;min-width:160px;padding:12px 0;border-top:1px solid rgba(67,71,79,.24)}
+.diamond-meta strong{font-size:15px!important;letter-spacing:.08em!important}
+/* Sleek interactive tab emerging from behind the diamond */
+.diamond-project .diamond-action{
+ z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:16px;
+ left:calc(50% + clamp(128px,16vw,219px) - 12px);
+ min-height:62px;padding:8px 11px 8px 29px!important;
+ border-radius:100px!important;border:1px solid rgba(255,255,255,.32)!important;
+ background:linear-gradient(125deg,#484c55,#202329 85%)!important;color:white!important;
+ box-shadow:0 15px 40px rgba(23,27,32,.24),inset 0 1px 1px rgba(255,255,255,.3);
+ font-size:13px;letter-spacing:.03em;line-height:1.3;
+ transition:box-shadow .35s,background .35s,transform .35s,filter .35s!important;
+}
+.diamond-project .diamond-action:hover,.diamond-project .diamond-action:focus-visible{transform:translateY(-50%) translateX(7px)!important;box-shadow:0 19px 45px rgba(23,27,32,.30),inset 0 1px 1px rgba(255,255,255,.45)!important;filter:brightness(1.11)}
+.diamond-project.align-left .diamond-action{left:auto;right:calc(50% + clamp(128px,16vw,219px) - 12px);padding:8px 29px 8px 11px!important;flex-direction:row-reverse}
+.diamond-project.align-left .diamond-action:hover{transform:translateY(-50%) translateX(-7px)!important}
+.diamond-action-icon{height:40px;width:40px;border-radius:50%;background:#fff;color:#171a1e;display:grid;place-items:center;flex:none;font-size:20px;font-family:Arial,sans-serif;transition:transform .35s;box-shadow:0 2px 9px #0002}
+.diamond-action:hover .diamond-action-icon{transform:rotate(45deg)}
+.diamond-action-label{white-space:nowrap}
+/* scroll in from alternating edges — only if the observer is running */
+body.diamond-motion-on .diamond-project:not(.is-inview){opacity:0;filter:blur(7px)}
+body.diamond-motion-on .diamond-project.align-right:not(.is-inview){transform:translateX(125px)}
+body.diamond-motion-on .diamond-project.align-left:not(.is-inview){transform:translateX(-125px)}
+/* animated, contrasting chapter transitions */
+.verqo-section-ribbon{position:relative;z-index:3;overflow:hidden;background:#101113;color:#f9f9f9;border-block:1px solid #36383d;padding:15px 0;direction:ltr;isolation:isolate}
+.verqo-section-ribbon.alt{background:#f7f7f6;color:#22252b;border-color:#dedfdf}
+.verqo-section-ribbon:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.08) 50%,transparent 60%);transform:translateX(-100%);animation:verqoShimmer 7s linear infinite;pointer-events:none;z-index:1}
+@keyframes verqoShimmer{to{transform:translateX(100%)}}
+.verqo-ribbon-track{display:flex;width:max-content;will-change:transform;animation:verqoRibbon 24s linear infinite}
+.verqo-section-ribbon.alt .verqo-ribbon-track{animation-direction:reverse}
+.verqo-ribbon-group{flex:none;display:flex;align-items:center;gap:clamp(28px,4vw,64px);padding-right:clamp(28px,4vw,64px);white-space:nowrap;font:700 12px/1.4 var(--sans);letter-spacing:.19em}
+.verqo-ribbon-group i{width:13px;height:13px;border:1px solid currentColor;transform:rotate(45deg);display:block;opacity:.65}
+@keyframes verqoRibbon{to{transform:translateX(-50%)}}
+/* modestly smaller, still optically balanced client marks */
+.partners-strip .partner-item{flex-basis:148px!important;width:148px!important;height:73px!important;padding:10px 14px!important}
+.partners-strip .partner-logo{width:117px!important;height:47px!important;max-width:117px!important;max-height:47px!important}
+.partners-strip .partner-item:nth-child(5),.partners-strip .partner-item:nth-child(6){--logo-optical-scale:1.28}
+.partners-strip .partner-item:nth-child(10){--logo-optical-scale:1.22}
+@media(max-width:800px){
+ .diamond-project{min-height:400px!important}
+ .diamond-project .diamond-card{width:min(59vw,350px)!important}
+ .diamond-project:before{width:min(62vw,365px)}
+ .diamond-project:after{width: min(75vw,445px);height:min(75vw,445px)}
+ .diamond-project .diamond-action{left:calc(50% + min(29.5vw,175px) - 12px)}
+ .diamond-project.align-left .diamond-action{right:calc(50% + min(29.5vw,175px) - 12px)}
+}
+@media(max-width:540px){
+ .diamond-showcase{padding:70px 0 85px!important}
+ .diamond-list{gap:45px!important}.diamond-list:before{display:none}
+ .diamond-project{min-height:335px!important}
+ .diamond-project .diamond-card{width:min(64vw,295px)!important}
+ .diamond-project:before{width:min(69vw,315px)}
+ .diamond-project:after{width:min(77vw,355px);height:min(77vw,355px)}
+ .diamond-project .diamond-action{min-height:45px;padding:5px 6px 5px 12px!important;gap:7px;left:calc(50% + min(32vw,147px) - 11px);font-size:10px}
+ .diamond-project.align-left .diamond-action{right:calc(50% + min(32vw,147px) - 11px);padding:5px 12px 5px 6px!important}
+ .diamond-action-icon{width:29px;height:29px;font-size:15px}
+ .diamond-project .diamond-meta{bottom:0;min-width:90px;padding:5px 0}
+ .diamond-meta strong{font-size:11px!important}.diamond-meta span{font-size:9px}
+ .partners-strip .partner-item{flex-basis:129px!important;width:129px!important;height:62px!important;padding:7px 10px!important}
+ .partners-strip .partner-logo{width:104px!important;height:39px!important;max-width:104px!important;max-height:39px!important}
+ .verqo-section-ribbon{padding:12px 0}.verqo-ribbon-group{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.diamond-motion-on .diamond-project:not(.is-inview){opacity:1;filter:none;transform:none}
+ .diamond-project:after,.verqo-ribbon-track,.verqo-section-ribbon:before{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -633,6 +727,7 @@ body{overflow-x:hidden}
   </div>
 </section>
 
+<div class="verqo-section-ribbon" aria-hidden="true"><div class="verqo-ribbon-track"><div class="verqo-ribbon-group"><span>VERQO STUDIO</span><i aria-hidden="true"></i><span>FEATURED WORK</span><i aria-hidden="true"></i><span>VISUAL STORIES</span><i aria-hidden="true"></i><span>BEYOND THE FRAME</span><i aria-hidden="true"></i></div><div class="verqo-ribbon-group"><span>VERQO STUDIO</span><i aria-hidden="true"></i><span>FEATURED WORK</span><i aria-hidden="true"></i><span>VISUAL STORIES</span><i aria-hidden="true"></i><span>BEYOND THE FRAME</span><i aria-hidden="true"></i></div></div></div>
 <!-- Diamond-shaped editorial work showcase -->
 <section id="featured-diamonds" class="diamond-showcase" aria-label="Selected case studies">
   <div class="container">
@@ -642,25 +737,26 @@ body{overflow-x:hidden}
       <p data-en="Discover the second face of each project. Click View Work to reveal the full visual." data-ar="لكل عمل وجه آخر. اضغط عرض العمل لتكتشف التصميم الثاني بصورة أكبر.">لكل عمل وجه آخر. اضغط عرض العمل لتكتشف التصميم الثاني بصورة أكبر.</p>
     </header>
     <div class="diamond-list">
-      <article class="diamond-project align-right reveal side-right">
+      <article class="diamond-project align-right">
         <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/GtZjJ8Ps/c9d6c444-5367-4f66-9ae7-9c09e3a6518a.jpg" alt="Featured visual study 01" referrerpolicy="no-referrer"><span class="diamond-number">01 / 03</span></div></div>
-        <button class="diamond-action" type="button" data-diamond-open="1" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 01">عرض العمل ↗</button>
+        <button class="diamond-action" type="button" data-diamond-open="1" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 01"><span class="diamond-action-label" data-en="VIEW WORK" data-ar="عرض العمل">عرض العمل</span><span class="diamond-action-icon" aria-hidden="true">↗</span></button>
         <div class="diamond-meta"><strong>VERQO / 01</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
       </article>
-      <article class="diamond-project align-left reveal side-left">
+      <article class="diamond-project align-left">
         <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/bwPBKWbD/47d6bd24-826d-4609-9706-08b6e54e1916.jpg" alt="Featured visual study 02" referrerpolicy="no-referrer"><span class="diamond-number">02 / 03</span></div></div>
-        <button class="diamond-action" type="button" data-diamond-open="2" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 02">عرض العمل ↗</button>
+        <button class="diamond-action" type="button" data-diamond-open="2" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 02"><span class="diamond-action-label" data-en="VIEW WORK" data-ar="عرض العمل">عرض العمل</span><span class="diamond-action-icon" aria-hidden="true">↗</span></button>
         <div class="diamond-meta"><strong>VERQO / 02</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
       </article>
-      <article class="diamond-project align-right reveal side-right">
+      <article class="diamond-project align-right">
         <div class="diamond-card"><div class="diamond-image"><img loading="lazy" src="https://i.postimg.cc/t4zMykNT/b19c0a07-83bb-4745-bf86-e9fd61e78383.jpg" alt="Featured visual study 03" referrerpolicy="no-referrer"><span class="diamond-number">03 / 03</span></div></div>
-        <button class="diamond-action" type="button" data-diamond-open="3" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 03">عرض العمل ↗</button>
+        <button class="diamond-action" type="button" data-diamond-open="3" data-en="VIEW WORK ↗" data-ar="عرض العمل ↗" aria-label="View work 03"><span class="diamond-action-label" data-en="VIEW WORK" data-ar="عرض العمل">عرض العمل</span><span class="diamond-action-icon" aria-hidden="true">↗</span></button>
         <div class="diamond-meta"><strong>VERQO / 03</strong><span data-en="Selected visual project" data-ar="مشروع بصري مختار">مشروع بصري مختار</span></div>
       </article>
     </div>
   </div>
 </section>
 
+<div class="verqo-section-ribbon alt" aria-hidden="true"><div class="verqo-ribbon-track"><div class="verqo-ribbon-group"><span>VERQO STUDIO</span><i aria-hidden="true"></i><span>FEATURED WORK</span><i aria-hidden="true"></i><span>VISUAL STORIES</span><i aria-hidden="true"></i><span>BEYOND THE FRAME</span><i aria-hidden="true"></i></div><div class="verqo-ribbon-group"><span>VERQO STUDIO</span><i aria-hidden="true"></i><span>FEATURED WORK</span><i aria-hidden="true"></i><span>VISUAL STORIES</span><i aria-hidden="true"></i><span>BEYOND THE FRAME</span><i aria-hidden="true"></i></div></div></div>
 <section class="services-showcase motion-shell" id="services"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">BEYOND ORDINARY</span><span class="edge-label from-right">FORM FOLLOWS VISION</span></div><div class="container services-showcase-grid">
 <div class="services-showcase-heading">
 <span class="section-index reveal" data-en="02 / OUR EXPERTISE" data-ar="02 / خبراتنا">02 / OUR EXPERTISE</span>
@@ -1014,5 +1110,19 @@ setLanguage('ar');prog();restart();
 })();
 </script>
 
+
+<script>
+/* Standalone reveal logic. No wheel interception; native scrolling remains smooth. */
+(function(){
+ const cards=[...document.querySelectorAll('.diamond-project')];
+ if(!cards.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const io=new IntersectionObserver(entries=>{
+   entries.forEach(({target,isIntersecting})=>target.classList.toggle('is-inview',isIntersecting));
+ },{threshold:.13,rootMargin:'0px 0px -4% 0px'});
+ cards.forEach(c=>{c.classList.add('is-inview');io.observe(c)});
+ // Initial intersection state is available on the next frame, avoiding a blank section on script failure.
+ requestAnimationFrame(()=>{document.body.classList.add('diamond-motion-on')});
+})();
+</script>
 </body>
 </html>
