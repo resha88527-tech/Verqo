@@ -1,0 +1,49 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Custom Request | Verqo Studio</title><link rel="icon" href="../../assets/verqo-logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/subpages.css"></head><body>
+<header class="site-head"><div class="wrap head-inner"><a href="../../" aria-label="Verqo Studio"><img class="logo" src="../../assets/verqo-logo.png" alt="Verqo Studio"></a><nav><a href="../../">Home</a><a href="../prices/" >Prices</a><a href="../request/" class="active-link">Custom Request</a><a class="head-lang" href="../../ar/request/">🇸🇦 عربي</a></nav></div></header>
+<section class="masthead"><div class="wrap"><div class="crumb"><a href="../../">Home</a><span>/</span><a href="../prices/">Pricing</a><span>/</span>Custom Request</div><div class="kicker">VERQO / REQUEST BUILDER</div><h1>Build Your Custom Request</h1><p>Choose services and quantities, then add your contact details. Officially priced services total instantly; extras require a separate quotation.</p></div></section>
+<main class="main-area"><div class="wrap"><div class="req-layout"><div class="req-panel"><h2>Available Services</h2><p class="muted">Select multiple services and adjust quantities</p><div id="requestGroups"></div><h2 style="margin-top:25px">Extra Services — Quote Required</h2><p class="muted">The rate card does not publish standalone unit prices for these items.</p><div id="requestExtras"></div></div>
+<aside class="req-panel summary"><h2>Order Summary</h2><p class="muted">Based on the official VERQO rate card</p><div id="summaryItems" aria-live="polite"><p class="small-muted">Select a service to begin</p></div><div class="total"><span>Total</span><strong id="totalValue">0.00 SAR</strong></div><p class="small-muted" id="usdValue">≈ $0.00</p><div class="warn" id="quotationNotice" hidden>You selected quote-only extras; their costs will be confirmed before work starts.</div>
+<h3 style="margin:26px 0 13px">Contact Information</h3>
+<form id="requestForm" method="POST" action="https://formsubmit.co/dali202058@gmail.com" accept-charset="UTF-8">
+<input type="hidden" name="_subject" value="VERQO Studio — New Service Request"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="field"><label for="clientName">Full Name *</label><input id="clientName" name="name" type="text" minlength="2" maxlength="120" autocomplete="name" required></div>
+<div class="form-grid"><div class="field"><label for="clientPhone">Phone Number *</label><input id="clientPhone" name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="25" required placeholder="+966 ..."></div><div class="field"><label for="clientEmail">Email Address *</label><input id="clientEmail" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></div></div>
+<div class="field"><label for="requestNotes">Project Details</label><textarea name="notes" id="requestNotes" rows="3" placeholder="Share requirements or notes..."></textarea></div>
+<input type="hidden" name="selected_services" id="orderSummaryField"><input type="hidden" name="official_subtotal_sar" id="orderTotalField"><input type="hidden" name="language" value="en"><input type="hidden" name="pricing_note" value="Amounts are SAR official published prices; extras quoted separately. Monthly service entails 12-month agreement, monthly payment upfront.">
+<button type="submit" class="cta req-submit" id="submitOrder">Send Service Request ↗</button>
+<p class="tiny">Requests are emailed to the company via external FormSubmit. The company must activate the address upon first use. No payment is processed here.</p>
+</form></aside></div></div></main>
+<footer class="foot"><div class="wrap foot-inner"><span>© 2018 Verqo Studio — All rights reserved</span><a href="../../">Back to website</a><a href="mailto:dali202058@gmail.com">dali202058@gmail.com</a></div></footer><script src="../../assets/services-data.js"></script><script>
+const DATA=window.VERQO_CATALOG||[], EXTRAS=window.VERQO_EXTRAS||[], LANG="en", AR=LANG==='ar';
+const root=document.getElementById('requestGroups'), extraRoot=document.getElementById('requestExtras');
+const chosen=new Map(), extraChosen=new Set();
+const fmt=n=>Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const label=(ar,en)=>AR?ar:en;
+const field=(e)=>document.createElement(e);
+function makeOption(it,group){
+ const row=field('div');row.className='req-option';const c=field('input');c.type='checkbox';c.id='item-'+it.id;c.setAttribute('aria-label',it[LANG]);
+ const txt=field('label');txt.className='opt-text';txt.htmlFor=c.id;const bold=field('strong');bold.textContent=it[LANG];const sm=field('small');sm.textContent=it[LANG+'_desc'];txt.append(bold,sm);
+ const price=field('span');price.className='opt-price';price.textContent=fmt(it.sar)+' SAR';
+ const box=field('div');box.className='counter';const less=field('button'),more=field('button'),out=field('output');less.type=more.type='button';less.textContent='−';more.textContent='+';out.textContent='1';box.append(less,out,more);
+ function change(n){let v=Math.min(25,Math.max(1,Number(out.textContent)+n));out.textContent=v;if(c.checked){chosen.set(it.id,{item:it,qty:v,category:group});update()}}
+ c.onchange=()=>{if(c.checked)chosen.set(it.id,{item:it,qty:Number(out.textContent),category:group});else chosen.delete(it.id);update()};
+ less.onclick=()=>change(-1);more.onclick=()=>change(1);
+ row.append(c,txt,price,box);return row;
+}
+DATA.forEach(g=>{const block=field('section');block.className='req-group';const title=field('h3');title.textContent=g[LANG];const p=field('p');p.textContent=g['subtitle_'+LANG];block.append(title,p);g.items.forEach(it=>block.append(makeOption(it,g)));root.append(block)});
+EXTRAS.forEach(it=>{const row=field('div');row.className='req-option';const c=field('input');c.type='checkbox';c.id='extra-'+it.id;const labelEl=field('label');labelEl.className='opt-text';labelEl.htmlFor=c.id;const b=field('strong');b.textContent=it[LANG];const sm=field('small');sm.textContent=label('السعر حسب العرض','Price on request');labelEl.append(b,sm);c.onchange=()=>{c.checked?extraChosen.add(it.id):extraChosen.delete(it.id);update()};row.append(c,labelEl);extraRoot.append(row)});
+function update(){
+ const list=field('div');let total=0,selected=[];
+ for(const {item,qty,category} of chosen.values()){const unit=item.sar*(item.cycle==='month'?12:1),price=qty*unit;total+=price;const line=field('div');line.className='quote-line';const left=field('span');left.textContent=item[LANG]+' × '+qty+(item.cycle==='month'?label(' (12 شهرًا)',' (12 months)'):'');const right=field('strong');right.textContent=fmt(price)+' SAR';line.append(left,right);list.append(line);selected.push(item[LANG]+' x'+qty+' | '+fmt(price)+' SAR'+(item.cycle==='month'?' (12 months, monthly payment '+fmt(item.sar)+' SAR)':''))}
+ EXTRAS.filter(x=>extraChosen.has(x.id)).forEach(e=>{const line=field('div');line.className='quote-line';line.textContent=e[LANG]+' — '+label('عرض سعر','Quote needed');list.append(line);selected.push(e[LANG]+' — quote required')});
+ if(!selected.length){const p=field('p');p.className='small-muted';p.textContent=label('اختر خدمة للبدء','Select a service to begin');list.append(p)}
+ document.getElementById('summaryItems').replaceChildren(list);document.getElementById('totalValue').textContent=fmt(total)+' SAR';document.getElementById('usdValue').textContent='≈ $'+fmt(total/3.75);
+ document.getElementById('quotationNotice').hidden=extraChosen.size===0;
+ document.getElementById('orderSummaryField').value=selected.join('\n');document.getElementById('orderTotalField').value=fmt(total)+' SAR + quote-only extras if selected';
+ document.getElementById('submitOrder').disabled=selected.length===0;document.getElementById('submitOrder').style.opacity=selected.length?1:.45;
+}
+document.getElementById('requestForm').addEventListener('submit',e=>{if(!chosen.size&&!extraChosen.size){e.preventDefault();alert(label('اختر خدمة واحدة على الأقل','Select at least one service'));return}update()});
+let param=new URLSearchParams(location.search).get('item');if(!param){try{const st=JSON.parse(sessionStorage.getItem('verqo_selected')||'null');if(st){const g=DATA.find(x=>x.id===st.cat);if(g){const it=g.items.find(x=>x.ar===st.package);param=it?.id}}}catch(e){}}
+if(param){const input=document.getElementById('item-'+param);if(input){input.checked=true;input.dispatchEvent(new Event('change'))}}
+update();
+</script></body></html>
