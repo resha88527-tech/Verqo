@@ -31,3 +31,17 @@
 .masthead .crumb{color:#eee}
 .price-card,.req-panel{box-shadow:0 12px 40px #241b3010}
 @media(max-width:650px){.masthead{min-height:300px;padding:55px 0 55px}.masthead .page-hero-video{object-position:center}.masthead::after{background:linear-gradient(90deg,#09070cdd,#1d1421c4)}.head-inner{gap:10px}}
+
+/* Glass navigation over expanded cinematic video masthead */
+.site-head{position:absolute;top:0;left:0;right:0;z-index:60;background:rgba(10,8,14,.43)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,166,87,.75)!important;transition:background .25s ease}
+.site-head:hover,.site-head:focus-within{background:rgba(10,8,14,.68)!important}
+.masthead{min-height:clamp(425px,44vw,620px)!important;padding:140px 0 105px!important}
+.masthead>.wrap{z-index:2}
+.masthead .page-hero-video{opacity:1!important;object-position:center 45%}
+.masthead::after{background:linear-gradient(90deg,#08060add 0%,#170d20aa 56%,#09050bcc 100%)!important}
+/* Gold center package for rate card groups with three items */
+.cards:not(.two) .price-card:nth-child(2){background:linear-gradient(155deg,#f5e2b2,#caa45a)!important;border-color:#bd9149!important;color:#12100a!important;box-shadow:0 20px 42px #9c763725!important}
+.cards:not(.two) .price-card:nth-child(2) :is(h3,.tag,.price,.currency-small,p){color:#15110a!important}
+.cards:not(.two) .price-card:nth-child(2) .cta{background:#111!important;color:#fff!important;border-color:#111!important}
+.cards:not(.two) .price-card:nth-child(2) .cta:hover{background:#735b8b!important;border-color:#735b8b!important}
+@media(max-width:700px){.masthead{min-height:410px!important;padding:135px 0 75px!important}.site-head .head-inner{min-height:68px}}
