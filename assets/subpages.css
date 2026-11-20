@@ -76,3 +76,8 @@
 .group .section-head h2:after{content:'';display:block;width:60px;height:3px;margin-top:7px;background:linear-gradient(90deg,#c8a657,#ead49b);border-radius:99px}
 .head-lang{display:grid;place-items:center;width:43px;height:39px;padding:0!important}
 .nav-flag{width:27px;height:19px;border-radius:3px;object-fit:cover;display:block}
+
+/* 2026 user-requested gold tab/buttons, no mauve selection */
+.tab.active,.tab:hover,.active-link{background:#c8a657!important;border-color:#c8a657!important;color:#111!important}
+.head-lang{display:grid;place-items:center;min-width:45px;min-height:40px}
+.nav-flag{width:31px!important;height:23px!important;object-fit:contain!important;box-shadow:none!important}

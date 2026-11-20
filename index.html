@@ -799,6 +799,15 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 .site-header.scrolled .language-switch #singleLangToggle{border-color:#aaa!important}
 .nav-flag{width:27px;height:19px;display:block;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px #ffffff77}
 .site-header #singleLangToggle img{pointer-events:none}
+
+/* 2026 pricing/language correction: visible country flags and gold selections. */
+.language-transition{display:none!important}
+.category-selector button.active,.category-selector button:hover,.currency-row button.active{
+ background:#c8a657!important;border-color:#c8a657!important;color:#101010!important;
+}
+.site-header .nav-flag{width:31px!important;height:23px!important;object-fit:contain!important;box-shadow:none!important;border-radius:3px!important}
+.site-header .language-switch #singleLangToggle{background:rgba(0,0,0,.18)!important}
+.site-header.scrolled .language-switch #singleLangToggle{background:#f6f5f2!important}
 </style>
 <!-- VERQO / Social link preview -->
 <meta name="description" content="Creative identities and distinctive visuals that make brands stand out.
@@ -862,7 +871,7 @@ Verqo Studio — Where bold ideas become remarkable work.">
 </nav>
 <div class="header-tools">
 <div class="language-switch" id="languageSwitch" role="group" aria-label="Switch language / تغيير اللغة">
-<button class="language-option is-active" id="singleLangToggle" type="button" aria-label="Change language" title="تغيير اللغة / Switch language"><img class="nav-flag" src="assets/flag-sa.svg" alt="Saudi Arabia flag"></button>
+<button class="language-option is-active" id="singleLangToggle" type="button" aria-label="Change language" title="تغيير اللغة / Switch language"><img class="nav-flag" src="assets/flag-sa.png" alt="Saudi Arabia flag"></button>
 </div>
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
@@ -1048,11 +1057,11 @@ function setLanguage(l){
  document.querySelectorAll('[data-route]').forEach(a=>a.href=l+'/'+a.dataset.route+'/');
  document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
  const langToggle=$('singleLangToggle');
- langToggle.replaceChildren();const flag=document.createElement('img');flag.className='nav-flag';flag.src='assets/flag-'+(l==='ar'?'sa':'gb')+'.svg';flag.alt=l==='ar'?'Saudi Arabia flag':'United Kingdom flag';langToggle.append(flag);
+ langToggle.replaceChildren();const flag=document.createElement('img');flag.className='nav-flag';flag.src='assets/flag-'+(l==='ar'?'sa':'gb')+'.png';flag.alt=l==='ar'?'Saudi Arabia flag':'United Kingdom flag';langToggle.append(flag);
  langToggle.classList.toggle('arabic-option',l==='ar');
  langToggle.setAttribute('aria-label',l==='ar'?'Switch to English':'التبديل إلى العربية');
  langToggle.title=l==='ar'?'English':'العربية';
- renderCategories();renderPackages();updateHero();
+ renderCategories();renderPackages();
 }
 function renderCategories(){
  if(!window.groups)return;const s=$('categorySelector');s.replaceChildren();
@@ -1090,23 +1099,12 @@ function openPackage(g,p){
 function closePackage(){cancelAnimationFrame(nf);$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
 $('closeDrawer').onclick=closePackage;$('overlay').onclick=closePackage;
 [$('sarBtn'),$('usdBtn')].forEach((b,i)=>b.onclick=()=>{currency=i?'USD':'SAR';$('sarBtn').classList.toggle('active',!i);$('usdBtn').classList.toggle('active',!!i);renderPackages()});
-let languageSwitchPending=false;
+// Direct language switching: no blocking overlay, delay, or page reload.
 function transitionLanguage(target){
- if(languageSwitchPending || target===language)return;
- languageSwitchPending=true;
- const layer=$('languageTransition');
- const message=$('languageTransitionText');
- message.textContent=target==='ar'?'جاري تحويل اللغة...':'Switching language...';
- layer.classList.add('show');layer.setAttribute('aria-hidden','false');
- window.setTimeout(()=>{
-  if($('drawer').classList.contains('show'))closePackage();
-  setLanguage(target);
-  nav.classList.remove('show');mb.setAttribute('aria-expanded','false');
-  window.setTimeout(()=>{
-   layer.classList.remove('show');layer.setAttribute('aria-hidden','true');
-   languageSwitchPending=false;
-  },260);
- },690);
+ if(target===language)return;
+ if($('drawer').classList.contains('show'))closePackage();
+ setLanguage(target);
+ nav.classList.remove('show');mb.setAttribute('aria-expanded','false');
 }
 $('singleLangToggle').onclick=()=>transitionLanguage(language==='ar'?'en':'ar');
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('drawer').classList.contains('show'))closePackage()});
