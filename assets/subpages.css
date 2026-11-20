@@ -57,3 +57,22 @@
 .group:nth-of-type(even) .cards.two .price-card:first-child :is(h3,.tag,.price,.currency-small,p){color:#15110a!important}
 .group:nth-of-type(even) .cards:not(.two) .price-card:is(:first-child,:last-child) .cta,
 .group:nth-of-type(even) .cards.two .price-card:first-child .cta{background:#111!important;color:#fff!important;border-color:#111!important}
+
+/* Unified gold middle cards, white sides, in all pricing categories */
+.group:nth-of-type(even) .cards:not(.two) .price-card:nth-child(2),
+.group:nth-of-type(odd) .cards:not(.two) .price-card:nth-child(2),
+.cards:not(.two) .price-card:nth-child(2){background:linear-gradient(145deg,#f6e5b7,#d3ae62 70%,#c9a052)!important;color:#111!important;border:1px solid #bf964a!important;box-shadow:0 18px 42px #9c763725!important}
+.group:nth-of-type(even) .cards:not(.two) .price-card:nth-child(2) :is(h3,.tag,.price,.currency-small,p){color:#15100a!important}
+.group:nth-of-type(even) .cards:not(.two) .price-card:first-child,
+.group:nth-of-type(even) .cards:not(.two) .price-card:last-child,
+.group:nth-of-type(even) .cards.two .price-card:first-child{background:#fff!important;color:#111!important;border:1px solid #ddd!important;box-shadow:0 8px 32px #11111106!important}
+.group:nth-of-type(even) .cards:not(.two) .price-card:is(:first-child,:last-child) :is(h3,.tag,.price,.currency-small,p),
+.group:nth-of-type(even) .cards.two .price-card:first-child :is(h3,.tag,.price,.currency-small,p){color:#111!important}
+.group:nth-of-type(even) .cards:not(.two) .price-card:is(:first-child,:last-child) .cta,
+.group:nth-of-type(even) .cards.two .price-card:first-child .cta{background:#111!important;color:#fff!important}
+/* Gold service-category labels for monthly content and neighboring groups */
+.tabs .tab:not(.active){border-color:#c7a85d;color:#846225}
+.group .section-head h2{position:relative;display:inline-block}
+.group .section-head h2:after{content:'';display:block;width:60px;height:3px;margin-top:7px;background:linear-gradient(90deg,#c8a657,#ead49b);border-radius:99px}
+.head-lang{display:grid;place-items:center;width:43px;height:39px;padding:0!important}
+.nav-flag{width:27px;height:19px;border-radius:3px;object-fit:cover;display:block}

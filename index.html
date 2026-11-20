@@ -788,30 +788,42 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 .package-grid .package.gold-side .book{background:#111!important;color:#fff!important}
 .package-grid .package.gold-side .book:hover{background:#735b8b!important;color:#fff!important}
 @media(prefers-reduced-motion:reduce){.restored-mauve-ribbon .verqo-ribbon-track{animation:none!important}}
+
+/* November 2026: consistent centered gold pricing & actual flag marks */
+.package-grid .package{background:#fff!important;color:#111!important;border-color:#ddd!important;box-shadow:0 10px 26px #0000000a!important}
+.package-grid .package.popular:nth-child(2){background:linear-gradient(145deg,#f6e5b7,#d2ad60 65%,#caa052)!important;color:#111!important;border-color:#be9349!important;box-shadow:0 18px 40px rgba(138,105,46,.2)!important}
+.package-grid .package.popular:nth-child(2) :is(.amount,h3,.other,.package-kicker,ul){color:#15100a!important}
+.package-grid .package.popular:nth-child(2) li::before{background:#181818!important;color:#fff!important}
+.package-grid .package.popular:nth-child(2) .book{background:#0d0d0d!important;color:#fff!important}
+.site-header .language-switch #singleLangToggle{display:inline-grid!important;place-items:center!important;width:45px!important;height:43px!important;border:1px solid rgba(255,255,255,.5)!important;border-radius:99px!important;padding:0!important;overflow:hidden}
+.site-header.scrolled .language-switch #singleLangToggle{border-color:#aaa!important}
+.nav-flag{width:27px;height:19px;display:block;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px #ffffff77}
+.site-header #singleLangToggle img{pointer-events:none}
 </style>
-<!-- Link preview: Open Graph / Twitter Card -->
-<meta name="description" content="نصنع هويات بصرية وتصاميم إبداعية تعكس شخصية علامتك.
-نقدم حلول التصميم والمحتوى الرقمي وتجارب ويب احترافية.
-Verqo Studio — حيث تتحول الأفكار إلى أعمال مميزة.">
+<!-- VERQO / Social link preview -->
+<meta name="description" content="Creative identities and distinctive visuals that make brands stand out.
+Branding, digital content, web experiences, and design solutions.
+Verqo Studio — Where bold ideas become remarkable work.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Verqo Studio">
 <meta property="og:title" content="Verqo Studio">
-<meta property="og:description" content="نصنع هويات بصرية وتصاميم إبداعية تعكس شخصية علامتك.
-نقدم حلول التصميم والمحتوى الرقمي وتجارب ويب احترافية.
-Verqo Studio — حيث تتحول الأفكار إلى أعمال مميزة.">
-<meta property="og:url" content="https://resha38527-tech.github.io/Verqo/">
-<meta property="og:image" content="https://resha38527-tech.github.io/Verqo/assets/hero-slide-3.png">
+<meta property="og:description" content="Creative identities and distinctive visuals that make brands stand out.
+Branding, digital content, web experiences, and design solutions.
+Verqo Studio — Where bold ideas become remarkable work.">
+<meta property="og:url" content="https://verqo-ai.vercel.app/">
+<meta property="og:image" content="https://i.postimg.cc/9XSpJjxd/hero-slide-3.png">
+<meta property="og:image:secure_url" content="https://i.postimg.cc/9XSpJjxd/hero-slide-3.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1920">
-<meta property="og:image:height" content="1080">
-<meta property="og:image:alt" content="Verqo Studio — Creative Design">
+<meta property="og:image:width" content="970">
+<meta property="og:image:height" content="563">
+<meta property="og:image:alt" content="Verqo Studio chrome identity — visual showcase">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Verqo Studio">
-<meta name="twitter:description" content="نصنع هويات بصرية وتصاميم إبداعية تعكس شخصية علامتك.
-نقدم حلول التصميم والمحتوى الرقمي وتجارب ويب احترافية.
-Verqo Studio — حيث تتحول الأفكار إلى أعمال مميزة.">
-<meta name="twitter:image" content="https://resha38527-tech.github.io/Verqo/assets/hero-slide-3.png">
-<!-- End link preview -->
+<meta name="twitter:description" content="Creative identities and distinctive visuals that make brands stand out.
+Branding, digital content, web experiences, and design solutions.
+Verqo Studio — Where bold ideas become remarkable work.">
+<meta name="twitter:image" content="https://i.postimg.cc/9XSpJjxd/hero-slide-3.png">
+<!-- End social link preview -->
 </head>
 <body>
 
@@ -850,7 +862,7 @@ Verqo Studio — حيث تتحول الأفكار إلى أعمال مميزة."
 </nav>
 <div class="header-tools">
 <div class="language-switch" id="languageSwitch" role="group" aria-label="Switch language / تغيير اللغة">
-<button class="language-option arabic-option is-active" id="singleLangToggle" type="button" aria-label="Switch to English" title="English">ع</button>
+<button class="language-option is-active" id="singleLangToggle" type="button" aria-label="Change language" title="تغيير اللغة / Switch language"><img class="nav-flag" src="assets/flag-sa.svg" alt="Saudi Arabia flag"></button>
 </div>
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
@@ -1036,7 +1048,7 @@ function setLanguage(l){
  document.querySelectorAll('[data-route]').forEach(a=>a.href=l+'/'+a.dataset.route+'/');
  document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l+'Html']);
  const langToggle=$('singleLangToggle');
- langToggle.textContent=l==='ar'?'ع':'EN';
+ langToggle.replaceChildren();const flag=document.createElement('img');flag.className='nav-flag';flag.src='assets/flag-'+(l==='ar'?'sa':'gb')+'.svg';flag.alt=l==='ar'?'Saudi Arabia flag':'United Kingdom flag';langToggle.append(flag);
  langToggle.classList.toggle('arabic-option',l==='ar');
  langToggle.setAttribute('aria-label',l==='ar'?'Switch to English':'التبديل إلى العربية');
  langToggle.title=l==='ar'?'English':'العربية';
@@ -1049,9 +1061,9 @@ function renderCategories(){
 function renderPackages(){
  if(!window.groups)return;const g=groups.find(v=>v.id===active);if(!g)return;const grid=$('packageGrid');
  $('categoryName').textContent=trans(g.en,g.ar);$('pricingNote').textContent=trans(g.note_en,g.note_ar);
- grid.replaceChildren();grid.className='package-grid'+(g.packs.length===2?' two':'')+(groups.findIndex(x=>x.id===g.id)%2===1?' gold-sides':'');
+ grid.replaceChildren();grid.className='package-grid'+(g.packs.length===2?' two':'');
  g.packs.forEach((p,i)=>{
-  const c=document.createElement('article');const groupPos=groups.findIndex(x=>x.id===g.id);const sideGold=groupPos%2===1;const isGold=g.packs.length===3?(sideGold?i!==1:i===1):(sideGold?i===0:i===1);c.className='package'+(isGold?(sideGold?' gold-side':' popular'):'');
+  const c=document.createElement('article');const isGold=i===1;c.className='package'+(isGold?' popular':'');
   const mk=(t,cls,txt)=>{const e=document.createElement(t);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
   const ul=mk('ul');ul.dir=language==='ar'?'rtl':'ltr';(language==='ar'?p.arf:p.enf).forEach(f=>ul.append(mk('li',0,f)));
   const b=mk('button','book',trans('VIEW PACKAGE ↗','تفاصيل الباقة ↗'));b.type='button';b.onclick=()=>openPackage(g,p);

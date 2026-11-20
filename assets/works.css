@@ -30,3 +30,15 @@
 .viewer-image img{width:100%;height:100%;object-fit:contain}.viewer-image span{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);border-radius:99px;background:#111a;color:white;padding:5px 15px}
 @media(max-width:780px){.work-gallery{grid-template-columns:1fr}.gallery-stage{grid-row:1}.main-photo{height:clamp(240px,60vw,410px)}.works-lede{display:block}.viewer{padding:14px 7px;gap:5px}.viewer-arrow{width:32px;height:38px}.viewer-image{height:75vh}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* Editorial, interactive portfolio instead of numbered projects */
+.works-lede{border-top:2px solid #c8a657;padding-top:22px}
+.work-gallery{position:relative;border-radius:28px;box-shadow:0 24px 65px #231b3015;transition:transform .4s ease,box-shadow .4s ease}
+.work-gallery:hover{transform:translateY(-5px);box-shadow:0 30px 78px #231b3026}
+.work-gallery:before{content:'VERQO STUDIO / SELECTED WORK';position:absolute;top:13px;inset-inline-end:24px;color:#998d9e;letter-spacing:.12em;font:700 9px Arial,sans-serif}
+.gallery-info .eyebrow{display:inline-flex;border:1px solid #d9c8a6;border-radius:999px;padding:6px 12px;color:#8b6a36;background:#faf6ed}
+.gallery-info h2{font-size:clamp(28px,3.3vw,44px);letter-spacing:-.035em}
+.gallery-tools{border-top:1px solid #eae5e5;padding-top:21px}
+.gallery-stage{padding:6px;background:linear-gradient(130deg,#faf6ed,#f8f5fa);border-radius:20px}
+.main-photo{background:#f8f7f6}
+@media(max-width:780px){.work-gallery:before{font-size:8px;top:9px;inset-inline-end:16px}.gallery-info{padding-top:14px}}
