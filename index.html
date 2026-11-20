@@ -727,6 +727,39 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 .hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;background:#050505}
 @media(max-width:820px){.video-hero{height:62svh;min-height:400px}}
 @media(max-width:560px){.video-hero{height:65svh;min-height:380px}}
+
+/* VERQO GOLD x MAUVE / 2026 */
+:root,body{--verqo-accent:#c8a657!important;--verqo-gold:#c8a657;--verqo-gold-light:#e8d5a0;--verqo-mauve:#735b8b;--verqo-mauve-soft:#9f85bb}
+#progress,.hero-progress span{background:var(--verqo-gold)!important}
+.site-header.scrolled{border-bottom-color:var(--verqo-gold)!important}
+.site-header .nav a:hover{color:var(--verqo-gold-light)!important}
+.site-header.scrolled .nav a:hover{color:var(--verqo-mauve)!important}
+.verqo-section-ribbon{background:linear-gradient(100deg,#b69242 0%,#e7d29b 48%,#b99b56 100%)!important;color:#090909!important;border-color:#c7a75c!important;box-shadow:inset 0 1px #fff7,inset 0 -1px #0002}
+.verqo-section-ribbon.alt{background:linear-gradient(95deg,#dfc78d,#c3a25a,#e5d099)!important;color:#090909!important}
+.verqo-ribbon-group i{border-color:#1d1b1a!important}
+.verqo-section-ribbon:before{background:linear-gradient(110deg,transparent 40%,#ffffff65 50%,transparent 60%)}
+.verqo-work-link{background:linear-gradient(110deg,#baa16e,#edd49c)!important;color:#141112!important;border-color:#b69a59!important;box-shadow:0 8px 27px #bba36b35}
+.verqo-work-link:hover{background:#735b8b!important;border-color:#735b8b!important;color:#fff!important;transform:translateY(-3px)}
+.diamond-showcase{background:radial-gradient(circle at 8% 28%,#735b8b13,transparent 33%),radial-gradient(circle at 93% 77%,#c8a6571c,transparent 35%),#fcfbf9!important}
+.diamond-eyebrow,.diamond-meta strong{color:#735b8b!important}
+.diamond-action{background:linear-gradient(110deg,#66517d,#8f73ab)!important;border-color:#735b8b!important;color:#fff!important}
+.diamond-action:hover{background:linear-gradient(110deg,#9b7e4a,#c8a657)!important;border-color:#c8a657!important;color:#131313!important}
+.diamond-card,.compact-work-card,.portfolio-thumb{box-shadow:0 14px 35px #31244112}
+.package:hover,.price-card:hover{border-color:#735b8b!important}
+.category-selector button.active,.category-selector button:hover,.currency-row button.active{background:#735b8b!important;border-color:#735b8b!important}
+.verqo-side-fact::before,.side-fact-triangle{background:#735b8b!important}
+.verqo-side-fact{filter:drop-shadow(0 12px 34px #735b8b36)!important}
+.partners-strip .partner-item:hover .partner-logo{filter:brightness(0) saturate(100%) invert(37%) sepia(15%) saturate(1185%) hue-rotate(223deg) brightness(97%) contrast(91%)!important}
+/* Contact: replace bright green/incompatible colors by refined black + gold + mauve. */
+.contact-finish{background:#fff!important;padding:62px 0 26px!important}
+.red-cta{background:radial-gradient(circle at 18% 0%,#735b8b65,transparent 43%),linear-gradient(125deg,#15121b 0%,#09090c 62%,#332638 100%)!important;border:1px solid #8b7453!important;border-radius:26px!important;box-shadow:0 25px 65px #2b243625!important;color:#fff!important;padding:clamp(30px,6vw,72px) 24px!important;min-height:270px}
+.red-cta-orb{color:#c8a65722!important;transform:rotate(17deg);font-size:clamp(130px,18vw,290px)}
+.red-cta h2{color:#fff!important}.red-cta p{color:#e9e1ed!important;font-size:clamp(13px,1.4vw,17px)}
+.red-cta>a{background:linear-gradient(100deg,#c6a45b,#f2dca7)!important;color:#151218!important;border:1px solid #e4c787!important;box-shadow:0 10px 30px #0003!important;min-height:48px;justify-content:center}
+.red-cta>a:hover{background:#fff!important;color:#735b8b!important;transform:translateY(-3px)}
+.footer-social-icons a:hover{background:#735b8b!important;box-shadow:0 0 0 2px #c8a657!important}
+@media(max-width:650px){.red-cta{min-height:250px!important;margin:0 2px;padding:36px 20px!important}.red-cta-orb{right:-12%;top:-50px;opacity:.25}.red-cta>a{padding:13px 22px!important;max-width:85%;font-size:14px!important}.verqo-section-ribbon{padding:11px 0!important}}
+@media(prefers-reduced-motion:reduce){.verqo-section-ribbon:before{animation:none!important}}
 </style>
 </head>
 <body>
@@ -762,7 +795,7 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 <header class="site-header"><div class="container header-row">
 <a class="brand" href="#home" aria-label="Verqo Studio"><img alt="Verqo Studio" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"></a>
 <nav class="nav" id="mainNav">
-<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Works" data-ar="الأعمال">Works</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#featured-diamonds" data-en="Works" data-ar="الأعمال">Works</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
 </nav>
 <div class="header-tools">
 <div class="language-switch" id="languageSwitch" role="group" aria-label="Switch language / تغيير اللغة">
@@ -784,7 +817,7 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 <div class="welcome-rule reveal" data-en="01 / THE STUDIO" data-ar="01 / الاستوديو">01 / THE STUDIO</div>
 <h2 class="welcome-title reveal"><span data-en="Welcome To" data-ar="مرحبًا بك في">Welcome To</span><span data-en="Verqo Studio." data-ar="فيركو ستوديو.">Verqo Studio.</span></h2>
 <p class="welcome-intro reveal" data-en="We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out." data-ar="نحوّل الأفكار إلى هويات بصرية مميزة ومحتوى مؤثر وتجارب رقمية جريئة، لنمنح كل علامة حضورًا استثنائيًا.">We bring ideas to life through distinctive visual identities, engaging content and bold digital experiences — crafted to make every brand stand out.</p>
-<div class="welcome-buttons reveal"><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
+<div class="welcome-buttons reveal"><a class="welcome-btn verqo-work-link" href="#featured-diamonds"><span data-en="Our Work" data-ar="أعمالنا">أعمالنا</span><span>↗</span></a><a class="welcome-btn dark" href="#services"><span data-en="Know about us" data-ar="اعرف المزيد عنا">Know about us</span><span>↗</span></a><a class="welcome-btn light" href="#contact"><span data-en="Let's Connect" data-ar="تواصل معنا">Let's Connect</span><span>↗</span></a></div>
 </div></section>
 
 <section class="clients-band reveal side-left" aria-label="Our Clients section">
@@ -876,8 +909,8 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 <footer class="footer"><div class="container">
 <div class="footer-columns">
 <div><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
-<div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#works" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a></div>
-<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="ar/prices/" data-en="Our Packages" data-ar="الباقات" data-route="prices">Our Packages</a><a href="#works" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="ar/request/" data-en="Start a Project" data-ar="ابدأ مشروعك" data-route="request">Start a Project</a></div>
+<div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="#featured-diamonds" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a></div>
+<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="ar/prices/" data-en="Our Packages" data-ar="الباقات" data-route="prices">Our Packages</a><a href="#featured-diamonds" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="ar/request/" data-en="Start a Project" data-ar="ابدأ مشروعك" data-route="request">Start a Project</a></div>
 <div><h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
 <div class="footer-social-icons">
 <a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>

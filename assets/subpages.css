@@ -10,3 +10,24 @@
 @media(max-width:700px){.head-inner{min-height:68px}.logo{width:105px;height:30px}nav{font-size:11px;gap:7px}.head-lang{padding:4px 8px}.masthead{padding:44px 0 56px}.main-area{padding:32px 0 64px}.cards,.cards.two{grid-template-columns:repeat(2,minmax(0,1fr))}.price-card{padding:14px;border-radius:15px;min-height:255px}.price-card h3{font-size:16px}.price{font-size:clamp(18px,5vw,26px)}.price-card p{font-size:11px}.cta{padding:10px 12px;font-size:12px}.req-panel{padding:15px;border-radius:16px}.req-option{flex-wrap:wrap;gap:8px}.req-option .opt-text{min-width:calc(100% - 35px)}.req-option .opt-price{margin-inline-start:auto}.form-grid{grid-template-columns:1fr}.section-head{align-items:start}}
 @media(max-width:360px){.cards,.cards.two{gap:8px}.price-card{padding:11px}.price-card h3{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* VERQO special pages: gold and mauve cinematic identity */
+:root{--accent:#c8a657;--mauve:#735b8b;--soft:#f6f3f8}
+.site-head{border-bottom:2px solid #c8a657}
+.active-link,.tab.active,.tab:hover{background:#735b8b;border-color:#735b8b;color:#fff}
+.head-lang:hover,nav a:hover{color:#e8d5a0}
+.tag,.kicker{color:#c8a657}
+.price-card:hover{border-color:#735b8b}
+.cta:hover,.cta.light:hover{background:#735b8b;border-color:#735b8b}
+.req-option input[type=checkbox]{accent-color:#735b8b}
+.field input:focus,.field textarea:focus{outline-color:#735b8b}
+/* Real video runs behind the masthead; content remains fully readable. */
+.masthead{position:relative;isolation:isolate;overflow:hidden;background:#151018;min-height:clamp(260px,32vw,440px);display:flex;align-items:center}
+.masthead>.wrap{position:relative;z-index:3;width:min(1180px,calc(100% - 32px))}
+.masthead .page-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2;opacity:.85}
+.masthead::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0a090de8 0%,#251a2caa 54%,#09080bc9 100%);pointer-events:none}
+.masthead h1{text-shadow:0 2px 15px #0008}.masthead p{color:#eee!important}
+.masthead .kicker{color:#e8d5a0}
+.masthead .crumb{color:#eee}
+.price-card,.req-panel{box-shadow:0 12px 40px #241b3010}
+@media(max-width:650px){.masthead{min-height:300px;padding:55px 0 55px}.masthead .page-hero-video{object-position:center}.masthead::after{background:linear-gradient(90deg,#09070cdd,#1d1421c4)}.head-inner{gap:10px}}
