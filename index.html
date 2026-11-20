@@ -721,6 +721,12 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 }
 @media(prefers-reduced-motion:reduce){body.diamond-motion-on #featured-diamonds .diamond-project:not(.is-inview){opacity:1;filter:none;transform:none}}
 
+
+/* Full-width auto-looping hero: replaces former four-image slideshow. */
+.video-hero{position:relative;overflow:hidden;isolation:isolate;height:clamp(420px,46vw,760px);background:#050505}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;background:#050505}
+@media(max-width:820px){.video-hero{height:62svh;min-height:400px}}
+@media(max-width:560px){.video-hero{height:65svh;min-height:380px}}
 </style>
 </head>
 <body>
@@ -765,14 +771,14 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
 </div></div></header>
 <main>
-<section class="hero" id="home"><div class="hero-stage">
-<div class="hero-slide active"><img class="bg" alt="VERQO STUDIO" src="https://i.postimg.cc/MTnP7Sk4/7bfa2637-5d4e-4783-8522-df32368dd791.jpg" fetchpriority="high" referrerpolicy="no-referrer"><div class="hero-content"><h1 class="hero-heading" data-en="VERQO STUDIO" data-ar="فيركو ستوديو">VERQO STUDIO</h1></div></div>
-<div class="hero-slide"><img class="bg" alt="Billboard campaign" loading="lazy" src="https://i.postimg.cc/QtF4Q3LY/97af51da-3132-4407-9c4e-5a92cdedd513.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="BILLBOARD CAMPAIGN" data-ar="حملة إعلانية">BILLBOARD CAMPAIGN</h2></div></div>
-<div class="hero-slide"><img class="bg" alt="Poster visual" loading="lazy" src="https://i.postimg.cc/QtF4Q3Lz/a6df1677-f402-49b3-945b-90a01bc013d6.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="POSTER VISUAL" data-ar="تصميم بوستر">POSTER VISUAL</h2></div></div>
-<div class="hero-slide"><img class="bg" alt="Logo core" loading="lazy" src="https://i.postimg.cc/pTmGfHNg/ca66877d-5538-4f1d-aba0-749ad963237e.jpg" referrerpolicy="no-referrer"><div class="hero-content"><h2 class="hero-heading" data-en="LOGO CORE" data-ar="تصميم شعار">LOGO CORE</h2></div></div>
-<div class="hero-progress" id="heroProgress" aria-hidden="true"><span></span></div>
-<div class="hero-controls"><div class="hero-counter" id="heroCounter">01 / 04</div><div class="hero-arrows"><button class="hero-arrow" id="prevSlide" aria-label="Previous slide">←</button><button class="hero-arrow" id="nextSlide" aria-label="Next slide">→</button></div></div>
-</div></section>
+<section class="hero" id="home" aria-label="VERQO Studio introduction">
+  <div class="hero-stage video-hero">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/grayvi-poster.jpg" aria-label="VERQO Studio showreel">
+      <source src="assets/grayvi.mp4" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+</section>
 
 <section class="welcome-section" id="about"><div class="container welcome-inner">
 <div class="welcome-rule reveal" data-en="01 / THE STUDIO" data-ar="01 / الاستوديو">01 / THE STUDIO</div>
@@ -1041,12 +1047,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('drawer').classLi
 const mb=$('menuBtn'),nav=$('mainNav');
 mb.onclick=()=>mb.setAttribute('aria-expanded',nav.classList.toggle('show'));
 nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('show');mb.setAttribute('aria-expanded','false')});
-const slides=[...document.querySelectorAll('.hero-slide')];let si=0,timer;
-function updateHero(){slides.forEach((s,i)=>s.classList.toggle('active',i===si));$('heroCounter').textContent=String(si+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');const l=$('heroProgress');l.classList.remove('running');void l.offsetWidth;if(!RM)l.classList.add('running')}
-function restart(){clearInterval(timer);timer=setInterval(()=>{si=(si+1)%slides.length;updateHero()},5500)}
-function go(d){si=(si+d+slides.length)%slides.length;updateHero();restart()}
-$('prevSlide').onclick=()=>go(-1);$('nextSlide').onclick=()=>go(1);
-document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):restart());
+// Hero is now a continuously looping, muted HTML5 video.
+const heroVideo=document.getElementById('heroVideo');
+if(heroVideo){
+  const tryPlay=()=>{const promise=heroVideo.play();if(promise&&typeof promise.catch==='function')promise.catch(()=>{});};
+  heroVideo.addEventListener('canplay',tryPlay,{once:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)tryPlay();});
+  tryPlay();
+}
 const rv=[...document.querySelectorAll('.reveal')];
 if(!RM&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.06});rv.forEach(el=>io.observe(el));document.documentElement.classList.add('motion-ready');setTimeout(()=>rv.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('visible')}),1300)}else rv.forEach(el=>el.classList.add('visible'));
 function prog(){const m=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(m>0?scrollY/m*100:0)+'%'}
@@ -1056,7 +1064,7 @@ function updateHeader(){header.classList.toggle('scrolled',window.scrollY>48)}
 addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader);
 updateHeader();
 
-setLanguage('ar');prog();restart();
+setLanguage('ar');prog();
 </script>
 <script>
 
