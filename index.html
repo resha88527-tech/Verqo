@@ -836,6 +836,13 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 .verqo-order-total{font-size:20px;margin:18px 0}
 .order-whatsapp{display:block;background:#168b52;color:#fff!important;text-align:center;font-weight:700;border-radius:13px;padding:16px 20px;transition:background .2s}
 .order-whatsapp:hover{background:#117342}
+
+/* Contact actions: WhatsApp + Behance portfolio */
+.contact-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px;position:relative;z-index:2}
+.red-cta .contact-actions>a{display:inline-flex;align-items:center;gap:16px;border-radius:99px;font-size:14px;font-weight:700;padding:14px 25px;transition:transform .25s ease,background .25s ease;color:#151218;background:linear-gradient(100deg,#c6a45b,#f2dca7);border:1px solid #e4c787;box-shadow:0 10px 30px #0003;min-height:50px;justify-content:center}
+.red-cta .contact-actions>a.contact-portfolio{background:transparent;color:#fff;border:1px solid #b89cca;box-shadow:none}
+.red-cta .contact-actions>a:hover{background:#fff;color:#735b8b;transform:translateY(-3px)}
+@media(max-width:480px){.contact-actions{flex-direction:column}.red-cta .contact-actions>a{width:min(100%,280px)}}
 </style>
 <!-- VERQO / Social link preview -->
 <meta name="description" content="Creative identities and distinctive visuals that make brands stand out.
@@ -956,7 +963,7 @@ Verqo Studio — Where bold ideas become remarkable work.">
 <section class="works motion-shell" id="works"><div class="edge-decoration" aria-hidden="true"><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-hex"></span><span class="edge-label from-left">SELECTED CREATIONS</span><span class="edge-label from-right">MADE TO STAND OUT</span></div><div class="container">
 <div class="eyebrow reveal" data-en="03 / Selected work" data-ar="03 / أعمال مختارة">03 / Selected work</div>
 <div class="works-head"><h2 class="title-lg reveal" data-en-html="Visuals with<br>presence." data-ar-html="أعمال<br>تلفت الأنظار.">Visuals with<br>presence.</h2>
-<a class="pill reveal" data-en="View portfolio ↗" data-ar="عرض معرض الأعمال ↗" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer">View portfolio ↗</a></div>
+<a class="pill reveal" data-en="View Our Work ↗" data-ar="عرض أعمالنا ↗" href="https://www.behance.net/verqo" target="_blank" rel="noopener noreferrer">View Our Work ↗</a></div>
 <div class="portfolio-gallery">
 <article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="coachy" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/D08RRkbv/5dff1a246240591-69c0516c2fdd3.png"></div><div class="portfolio-info"><div><h3>coachy</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
 <article class="reveal side-left"><div class="portfolio-thumb" aria-label="Project preview"><img alt="One Nation" loading="lazy" referrerpolicy="no-referrer" src="https://i.postimg.cc/TYSzjgFG/a4b287d-ccb-40bb-bb35-c373d98ba.png"></div><div class="portfolio-info"><div><h3>One Nation</h3><p data-en="Visual design project" data-ar="مشروع تصميم بصري">Visual design project</p></div><div class="portfolio-tags"><span data-en="Creative Design" data-ar="تصميم إبداعي">Creative Design</span><span data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</span></div></div></article>
@@ -973,7 +980,6 @@ Verqo Studio — Where bold ideas become remarkable work.">
 <section class="verqo-order" id="verqoOrder" aria-label="Selected order" hidden><div class="verqo-order-head"><strong data-en="Your selected packages" data-ar="باقات طلبك">باقات طلبك</strong><span id="orderCount"></span></div><div id="orderItems"></div><div class="verqo-order-total"><strong data-en="Total" data-ar="الإجمالي">الإجمالي</strong><strong id="orderTotal"></strong></div><a href="#" class="order-whatsapp" id="orderWhatsapp" target="_blank" rel="noopener noreferrer" data-en="Send complete order on WhatsApp ↗" data-ar="أرسل الطلب كاملًا على واتساب ↗">أرسل الطلب كاملًا على واتساب ↗</a></section>
 <div class="price-actions"><a class="custom-action" href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20would%20like%20a%20custom%20quote." target="_blank" rel="noopener noreferrer" data-en="Build a custom request ↗" data-ar="اطلب خدمة فردية ↗">اطلب خدمة فردية ↗</a><a class="custom-action secondary" href="ar/prices/" data-route="prices" data-en="Explore all pricing ↗" data-ar="استعرض جميع الأسعار ↗">استعرض جميع الأسعار ↗</a></div>
 <p class="pricing-hint" id="pricingNote"></p>
-<p class="pricing-legal" data-en="USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing." data-ar="الدولار تقديري على أساس 1 دولار = 3.75 ريال. الأسعار الرسمية في الملف بالريال السعودي، وتُعتمد الشروط النهائية كتابيًا.">USD estimates use 1 USD = 3.75 SAR and are for display only. The official rate card is priced in SAR. Final terms are agreed in writing.</p>
 </div></section>
 
 <section class="contact-finish" id="contact"><div class="container"><div class="red-cta reveal">
@@ -981,7 +987,8 @@ Verqo Studio — Where bold ideas become remarkable work.">
 <span data-en="LET'S MAKE SOMETHING GREAT" data-ar="لنبنِ شيئًا مميزًا">LET'S MAKE SOMETHING GREAT</span>
 <h2 data-en="Are You Ready To Build Your Brand?" data-ar="هل أنت مستعد لبناء علامتك؟">Are You Ready To Build Your Brand?</h2>
 <p data-en="Tell us about your project. Let's create something that stands out." data-ar="أخبرنا عن مشروعك، ولنصنع معًا حضورًا يلفت الأنظار.">Tell us about your project. Let's create something that stands out.</p>
-<a href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"><span data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</span><span>↗</span></a>
+<div class="contact-actions"><a href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"><span data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</span><span>↗</span></a>
+<a class="contact-portfolio" href="https://www.behance.net/verqo" target="_blank" rel="noopener noreferrer"><span data-en="View Our Work" data-ar="عرض أعمالنا">View Our Work</span><span>↗</span></a></div>
 </div></div></section>
 </main>
 
@@ -989,11 +996,11 @@ Verqo Studio — Where bold ideas become remarkable work.">
 <div class="footer-columns">
 <div><img class="footer-new-logo" alt="Verqo Studio logo" src="https://i.postimg.cc/28wb9dnR/Artboard-1.png" onerror="this.onerror=null;this.src='assets/verqo-logo.png'"><p><span data-en="Independent creative design studio." data-ar="استوديو تصميم إبداعي مستقل.">Independent creative design studio.</span><br><span data-en="Made to stand out." data-ar="صُنعنا لنتميّز.">Made to stand out.</span></p></div>
 <div class="footer-col"><h3 data-en="Pages" data-ar="الصفحات">Pages</h3><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#services" data-en="Services" data-ar="الخدمات">Services</a><a href="ar/prices/" data-en="Pricing" data-ar="الأسعار" data-route="prices">Pricing</a></div>
-<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="ar/prices/" data-en="Our Packages" data-ar="الباقات" data-route="prices">Our Packages</a><a href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20want%20to%20start%20a%20project." target="_blank" rel="noopener noreferrer" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a></div>
+<div class="footer-col"><h3 data-en="Explore" data-ar="استكشف">Explore</h3><a href="ar/prices/" data-en="Our Packages" data-ar="الباقات" data-route="prices">Our Packages</a><a href="https://www.behance.net/verqo" target="_blank" rel="noopener noreferrer" data-en="Behance Portfolio ↗" data-ar="أعمالنا على بيهانس ↗">Behance Portfolio ↗</a><a href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20want%20to%20start%20a%20project." target="_blank" rel="noopener noreferrer" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a></div>
 <div><h3 data-en="Watch Our Channels" data-ar="مشاهدة قنواتنا">Watch Our Channels</h3>
 <div class="footer-social-icons">
 <a aria-label="Instagram" href="https://www.instagram.com/verqostudio/" target="_blank" rel="noopener noreferrer"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>
-<a aria-label="Behance" href="https://www.behance.net/i7amada" target="_blank" rel="noopener noreferrer"><b style="font-size:15px;letter-spacing:-.03em">Bē</b></a>
+<a aria-label="Behance" href="https://www.behance.net/verqo" target="_blank" rel="noopener noreferrer"><b style="font-size:15px;letter-spacing:-.03em">Bē</b></a>
 <a aria-label="YouTube" href="https://www.youtube.com/@i7amada" target="_blank" rel="noopener noreferrer"><svg width="25" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.3a3 3 0 0 0-2.1-2.1C19.5 3.7 12 3.7 12 3.7s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8.2 0 12 0 12s0 3.8.5 5.7a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.7.5-5.7s0-3.8-.5-5.7zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg></a>
 </div>
 <div class="footer-inquiry"><a href="https://wa.me/201111753876" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:#735b8b" dir="ltr">WhatsApp: 01111753876</a><strong data-en="Let's build something." data-ar="لنصنع شيئًا مميزًا.">Let's build something.</strong><a href="https://wa.me/201111753876?text=Hello%20Verqo%20Studio%2C%20I%20have%20a%20project%20inquiry." target="_blank" rel="noopener noreferrer" data-en="Send a project inquiry ↗" data-ar="أرسل استفسار مشروع ↗">Send a project inquiry ↗</a></div></div>
@@ -1021,8 +1028,8 @@ Verqo Studio — Where bold ideas become remarkable work.">
 /* VERQO price list 2026 — SAR. Edit prices here. */
 window.groups=[
 {id:"monthly",en:"Monthly Content",ar:"المحتوى الرقمي الشهري",
- note_en:"12-month contract, paid monthly in advance. Videos 15–30 seconds, each design is one page, published on the client's authorized accounts. Does not include replying to customers or paid ads. No guarantee of sales results.",
- note_ar:"عقد لمدة 12 شهرًا، والدفع شهريًا مقدمًا. فيديوهات 15–30 ثانية، وكل تصميم صفحة واحدة، والنشر على حسابات العميل المصرح بها. لا تشمل الرد على العملاء أو الحملات الممولة، ولا يوجد ضمان لنتائج المبيعات.",
+ note_en:"",
+ note_ar:"",
  packs:[
  {en:"Essential",ar:"الباقة الأساسية",sar:849,
   enf:["4 AI videos per month","8 ad designs per month","Marketing copywriting","Publishing on agreed platforms","One revision round per item"],
@@ -1090,7 +1097,6 @@ function orderMessage(items){
  const lines=language==='ar'?['مرحبًا فيركو ستوديو، أرغب في طلب الخدمات التالية:','','تفاصيل الطلب:']:['Hello Verqo Studio, I would like to order the following services:','','Order details:'];
  items.forEach((item,i)=>lines.push(`${i+1}. ${trans(item.categoryEn,item.categoryAr)} — ${trans(item.nameEn,item.nameAr)}: ${money(item.sar)}`));
  lines.push('',(language==='ar'?'الإجمالي: ':'Total: ')+money(sarTotal));
- if(currency==='USD')lines.push(language==='ar'?'الأسعار بالدولار تقديرية، والأسعار الرسمية بالريال السعودي.':'USD prices are estimates; official pricing is in SAR.');
  lines.push('',language==='ar'?'أرجو تأكيد الطلب وتوضيح الخطوات التالية.':'Please confirm my order and the next steps.');
  return lines.join('\n');
 }
