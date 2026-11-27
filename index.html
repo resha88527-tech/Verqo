@@ -843,6 +843,10 @@ body.diamond-motion-on #featured-diamonds .diamond-project.align-left:not(.is-in
 .red-cta .contact-actions>a.contact-portfolio{background:transparent;color:#fff;border:1px solid #b89cca;box-shadow:none}
 .red-cta .contact-actions>a:hover{background:#fff;color:#735b8b;transform:translateY(-3px)}
 @media(max-width:480px){.contact-actions{flex-direction:column}.red-cta .contact-actions>a{width:min(100%,280px)}}
+
+.package .package-request{width:100%;padding:15px;border:1px solid #111;border-radius:14px;background:#111;color:#fff;font-weight:700;cursor:pointer;transition:.2s}
+.package .package-request:hover{background:#735b8b;border-color:#735b8b;color:#fff}
+.package .package-previous{text-decoration-thickness:1px!important;text-decoration-color:rgba(110,110,110,.38)!important}
 </style>
 <!-- VERQO / Social link preview -->
 <meta name="description" content="Creative identities and distinctive visuals that make brands stand out.
@@ -880,7 +884,7 @@ Verqo Studio — Where bold ideas become remarkable work.">
 .package-tier-badge .tier-text{display:flex;flex-direction:column;line-height:1.1}
 .package-tier-badge .tier-text small{font-size:9px;font-weight:700;color:#696969;letter-spacing:.08em}
 .package.popular .package-visual{border-color:#d3c8b3}
-.package .package-previous{font-size:13px;color:#777;text-decoration:line-through;margin:0 0 6px;direction:ltr;text-align:start}
+.package .package-previous{font-size:13px;color:#777;text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:rgba(110,110,110,.38);margin:0 0 6px;direction:ltr;text-align:start}
 .package.popular .package-previous{color:#706454}
 .package .package-promo{display:inline-flex;width:max-content;align-items:center;margin:0 0 7px;padding:5px 11px;background:#111;color:#fff;font-size:11px;border-radius:50px;font-weight:800}
 .package .other{margin-top:6px}
@@ -1093,7 +1097,7 @@ Verqo Studio — Where bold ideas become remarkable work.">
 <div class="drawer-top"><span>Selected package / تفاصيل الباقة</span><button class="close" id="closeDrawer" aria-label="Close">✕</button></div>
 <h3 id="drawerTitle"></h3><div class="drawer-package-image" id="drawerPackageImage"></div><div class="big-price" id="drawerAmount"></div><div class="sar" id="drawerAlternate"></div>
 <ul id="drawerFeatures"></ul>
-<button class="drawer-terms-btn" id="drawerTerms" type="button">شروط هذه الباقة ↗</button><button class="cart-add" id="drawerAddCart" type="button" data-en="Add to order +" data-ar="أضف إلى طلباتي +">أضف إلى طلباتي +</button>
+<button class="drawer-terms-btn" id="drawerTerms" type="button">شروط هذه الباقة ↗</button><button class="cart-add" id="drawerAddCart" hidden style="display:none" type="button" data-en="Add to order +" data-ar="أضف إلى طلباتي +">أضف إلى طلباتي +</button>
 <a class="book" id="drawerLink" href="https://wa.me/201111753876" target="_blank" rel="noopener noreferrer">REQUEST THIS PACKAGE ↗</a>
 <p class="fine" data-en="Your order details and total will open in WhatsApp, ready to send. No payment is processed here." data-ar="ستظهر تفاصيل الطلب والسعر والإجمالي في رسالة واتساب جاهزة للإرسال. لا توجد عمليات دفع على الموقع.">Your order details and total will open in WhatsApp, ready to send. No payment is processed here.</p>
 </aside>
@@ -1286,9 +1290,10 @@ function renderPackages(){
 
   const badgeInfo=tierBadge(i);const badge=mk('span','package-tier-badge');const badgeIcon=mk('span','tier-icon',badgeInfo.icon);const badgeText=mk('span','tier-text');badgeText.innerHTML='<span>'+trans(badgeInfo.en,badgeInfo.ar)+'</span><small>'+trans(badgeInfo.subEn,badgeInfo.subAr)+'</small>';badge.append(badgeIcon,badgeText);if(visual)visual.append(badge);
   const termsB=mk('button','package-terms',trans('Plan terms ↗','شروط الباقة ↗'));termsB.type='button';termsB.onclick=()=>openTerms(g.id==='monthly'?'monthly':'project');
-  const buttons=mk('div','package-buttons');buttons.append(b,termsB);
+  const request=mk('button','package-request',trans('Order +','طلب +'));request.type='button';request.onclick=()=>addToCart(g,p);
+  const buttons=mk('div','package-buttons');buttons.append(request,b,termsB);
   const previous=oldRates[g.id]?.[i]||0;
-  const original=mk('div','package-previous',trans('Was: ','السعر السابق: ')+money(previous));
+  const original=mk('div','package-previous',money(previous));
   if(visual)c.append(visual);c.append(mk('div','package-kicker',trans(g.en,g.ar)),mk('h3',0,trans(p.en,p.ar)),mk('div','package-promo',trans('NEW PRICE','السعر الجديد')),original,mk('div','amount',money(p.sar)),mk('div','other',money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا')),mk('div','package-line'),ul,buttons);
   grid.append(c);
   if(!RM)c.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:560,delay:i*90,easing:'cubic-bezier(.18,.7,.2,1)',fill:'both'});
@@ -1312,8 +1317,8 @@ $('drawerTerms').textContent=trans('Terms for this service ↗','شروط هذه
  const ul=$('drawerFeatures');ul.replaceChildren();(language==='ar'?p.arf:p.enf).forEach(f=>{const li=document.createElement('li');li.textContent=f;ul.append(li)});
  $('drawer').dir=language==='ar'?'rtl':'ltr';
  $('drawerAlternate').textContent=money(p.sar,currency==='SAR'?'USD':'SAR')+' · '+trans('approx.','تقريبًا');
- $('drawerLink').textContent=trans('REQUEST THIS PACKAGE ↗','اطلب هذه الباقة ↗');
- $('drawerLink').href=whatsappUrl(orderMessage([cartItem(g,p)]));$('drawerLink').onclick=null;
+ $('drawerLink').textContent=trans('Order +','طلب +');
+ $('drawerLink').href='#verqoOrder';$('drawerLink').removeAttribute('target');$('drawerLink').onclick=e=>{e.preventDefault();addToCart(g,p)};
  $('drawerAddCart').textContent=trans('Add to order +','أضف إلى طلباتي +');$('drawerAddCart').onclick=()=>addToCart(g,p);
  animateNumber($('drawerAmount'),currency==='SAR'?p.sar:p.sar/3.75,currency);$('closeDrawer').focus();
 }
